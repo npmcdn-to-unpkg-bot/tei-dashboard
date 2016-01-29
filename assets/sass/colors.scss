@@ -1,0 +1,27 @@
+// Global Site Colors
+// Description: sitewide colors come from here. THINK HARD before using hex elsewhere.
+$tei-primary: #2A5781;
+$tei-secondary: lighten($tei-primary, 35%);
+$tei-third: #E6711B;
+$tei-success: #719c4d;
+$tei-gold: #FEE172;
+$body-copy: #444d56;
+$tei-gradient: -webkit-gradient(radial, center bottom, 0, center bottom, 700, color-stop(0, $tei-primary), color-stop(1, darken($tei-primary, 10%)));
+$tei-primary-hover: lighten($tei-primary, 25%);
+//border color
+// $border: #e9eef2;
+$border: #ddd;
+// $border: #eee;
+// Endpoints
+$white: #fff;
+$black: #000;
+//transparent Colors
+$white-trans: rgba(255, 255, 255, 0.6);
+$tei-primary-trans: rgba(42, 87, 129, 0.7);
+// Greys
+$light-grey: #ECEEF1;
+$mid-grey: #dadada;
+$new-grey: #F5F8FB;
+// $dark-grey: #818181;
+$dark-grey: #99A7BA;
+$cool-grey: #8c989f;

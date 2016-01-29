@@ -1,0 +1,89 @@
+@import 'colors';
+html {
+    /*height: 100%*/
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    background: none;
+}
+
+.navbar.dash-navbar-top {
+    margin-bottom: 0;
+}
+
+.content-wrap {
+    /*background: #f8f8f8;*/
+    background-color: #fff;
+}
+
+#content {
+    /*padding: 40px 0;*/
+}
+
+.ExpertListPic {
+    max-width: 40px;
+    border-radius: 50%;
+}
+
+.wppb-front-end-logout span {
+    display: none;
+}
+
+//full width iframe
+iframe#salesforce-content {
+    width: 100%;
+}
+
+.navbar-brand>img.header-tei-logo {
+    display: inline-block;
+}
+
+.header-tei-logo {
+    max-width: 250px;
+    @media (max-width: 768px) {
+        max-width: 170px;
+    }
+    display: inline-block;
+}
+
+.beta-tag {
+    display: inline-block;
+}
+
+
+/* 
+    LOG-IN PAGE
+ */
+
+body.login-page {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+}
+
+.jumbotron.login-box {
+    max-width: 480px;
+    margin: 20% auto;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    label {
+        font-weight: normal;
+    }
+    .login-remember {
+        color: $cool-grey;
+        font-size: 1em;
+    }
+    .login-logo {
+        width: 340px;
+        margin: 0 auto;
+    }
+    h2 {
+        margin: 10px auto 20px;
+        text-transform: uppercase;
+        color: $tei-primary;
+        font-size: 1.1em;
+    }
+}

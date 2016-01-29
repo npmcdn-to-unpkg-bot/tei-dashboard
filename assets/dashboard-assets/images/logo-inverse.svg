@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="86px" height="61px" viewBox="0 0 86 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.1 (9971) - http://www.bohemiancoding.com/sketch -->
+    <title>inverse</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Styleguide-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Logos" sketch:type="MSArtboardGroup" transform="translate(-332.000000, -896.000000)" fill="#FFFFFF">
+            <g id="Rectangle-52-+-EXPERT--+-inverse" sketch:type="MSLayerGroup" transform="translate(289.000000, 876.000000)">
+                <g id="inverse" transform="translate(43.500000, 20.000000)" sketch:type="MSShapeGroup">
+                    <path d="M46.8606111,16.9767714 L30.1041667,0 L0,30.5 L30.1041667,61 L60.2083333,30.5 L49.7930633,19.9477818 L44.7132249,25.0276203 L49.9375,30.3205882 L29.9270833,50.5941176 L9.91666667,30.3205882 L29.9270833,10.0470588 L41.7807727,22.0566099 L46.8606111,16.9767714 Z" id="left"></path>
+                    <path d="M37.8124936,43.692035 L54.8958333,61 L85,30.5 L54.8958333,0 L24.7916667,30.5 L34.8503605,40.6909534 L39.9301989,35.611115 L34.7083333,30.3205882 L54.71875,10.0470588 L74.7291667,30.3205882 L54.71875,50.5941176 L42.892332,38.6121966 L37.8124936,43.692035 Z" id="right"></path>
+                    <path d="M43.3484259,37.3176471 L48.3838833,42.3921781 L41.334243,49.4965215 L36.2987856,44.4219905 L43.3484259,37.3176471 L43.3484259,37.3176471 Z" id="Rectangle-153"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

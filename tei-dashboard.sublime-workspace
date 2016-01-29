@@ -1,0 +1,3233 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"offse",
+				"offset_time"
+			],
+			[
+				"out",
+				"output_arrays"
+			],
+			[
+				"select",
+				"selected_time"
+			],
+			[
+				"parse",
+				"parse	$.parseJSON()"
+			],
+			[
+				"salesforce",
+				"salesforce_response"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"rang",
+				"range_end"
+			],
+			[
+				"range",
+				"range_start"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"sales",
+				"salesforce_response"
+			],
+			[
+				"in",
+				"inside"
+			],
+			[
+				"listy",
+				"list-style-type"
+			],
+			[
+				"bord",
+				"border-color"
+			],
+			[
+				"col-md",
+				"col-md-12"
+			],
+			[
+				"fd",
+				"fxd-c	flex-direction: column;"
+			],
+			[
+				"sect",
+				"section	<section>"
+			],
+			[
+				"alt_excerpt_",
+				"alt_excerpt_horizontal"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"wp_enque",
+				"wp_enqueue_style"
+			],
+			[
+				"dashboard-",
+				"dashboard-print-css"
+			],
+			[
+				"co",
+				"cover"
+			],
+			[
+				"get_head",
+				"get_header"
+			],
+			[
+				"contest",
+				"contest_over"
+			],
+			[
+				"p",
+				"p	Tag"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"tc",
+				"table-cell"
+			],
+			[
+				"col-md-",
+				"col-md-6"
+			],
+			[
+				"image",
+				"image_thumb"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"border-c",
+				"border-collapse"
+			],
+			[
+				"get_templat",
+				"get_template_directory_uri"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"shortcod",
+				"shortcode_exists"
+			],
+			[
+				"cate",
+				"category_link"
+			],
+			[
+				"get_ter",
+				"get_term_link"
+			],
+			[
+				"the_c",
+				"the_content"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"Nomina",
+				"nominations"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"hr",
+				"hiw-reach"
+			],
+			[
+				"lsp",
+				"letter-spacing"
+			],
+			[
+				"col-",
+				"col-sm-4"
+			],
+			[
+				"list-sty",
+				"list-style-type"
+			],
+			[
+				"list",
+				"list:s	list-style-type:square"
+			],
+			[
+				"list-",
+				"list-style-image"
+			],
+			[
+				"ehco",
+				"echo"
+			],
+			[
+				"fade",
+				"fadeToggle	.fadeToggle()"
+			],
+			[
+				"test",
+				"testimonial_type"
+			],
+			[
+				"add",
+				"addClass	.addClass()"
+			],
+			[
+				"slide",
+				"slideDown	.slideDown()"
+			],
+			[
+				"cl",
+				"clearfix"
+			],
+			[
+				"answer",
+				"answer2"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"section",
+				"section	Tag"
+			],
+			[
+				"linked",
+				"LinkedIn"
+			],
+			[
+				"expert",
+				"expertNumber"
+			],
+			[
+				"lis",
+				"lisp:o	list-style-position:outside"
+			],
+			[
+				"webin",
+				"webinar_title"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"body",
+				"body-copy"
+			],
+			[
+				"light-g",
+				"light-grey"
+			],
+			[
+				"f",
+				"ff	font-family"
+			],
+			[
+				"Publ",
+				"publications"
+			],
+			[
+				"last-",
+				"last-of-type"
+			],
+			[
+				"rgba",
+				"rgba(r,g,b,a)"
+			],
+			[
+				"network",
+				"Network"
+			],
+			[
+				"access",
+				"Access"
+			],
+			[
+				"comprehen",
+				"Comprehensive"
+			],
+			[
+				"Check",
+				"Check"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"c",
+				"cover"
+			],
+			[
+				"Exp",
+				"TheExpertInstitute"
+			],
+			[
+				"last",
+				"last-of-type"
+			],
+			[
+				"metho",
+				"methodology"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
+				"rbga",
+				"rgba(r,g,b,a)"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"align",
+				"text-align"
+			],
+			[
+				"j",
+				"jQuery"
+			],
+			[
+				"grid",
+				"gridSquare"
+			],
+			[
+				"random",
+				"randomOrder"
+			],
+			[
+				"exper",
+				"expertNumber"
+			],
+			[
+				"img",
+				"imgGrid"
+			],
+			[
+				"re",
+				"ready	$(document).ready"
+			],
+			[
+				"rg",
+				"rgba(r,g,b,a)"
+			],
+			[
+				"Speci",
+				"specialists"
+			],
+			[
+				"list-s",
+				"list-style-position"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
+				"oppor",
+				"Opportunities"
+			],
+			[
+				"sidebar",
+				"sidebar-cta"
+			],
+			[
+				"prev",
+				"preventDefault"
+			],
+			[
+				"search",
+				"search_string"
+			],
+			[
+				"sl",
+				"slug"
+			],
+			[
+				"uni",
+				"uniqid"
+			],
+			[
+				"prop",
+				"prop	.prop() - single"
+			],
+			[
+				"att",
+				"attr	.attr() - single"
+			],
+			[
+				"sear",
+				"searchString"
+			],
+			[
+				"url",
+				"urlencode"
+			],
+			[
+				"li",
+				"lighten(color, 10%)"
+			],
+			[
+				"type",
+				"typeSubmit"
+			],
+			[
+				"spa",
+				"spaceKey"
+			],
+			[
+				"prepen",
+				"prependTo	.prependTo()"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"sub",
+				"submit	.submit()"
+			],
+			[
+				"reso",
+				"resource-item"
+			],
+			[
+				"col",
+				"col-md-4"
+			],
+			[
+				"case_study",
+				"case_study_post_image"
+			],
+			[
+				"case_s",
+				"case_study_link"
+			],
+			[
+				"case",
+				"case_study_post_image"
+			],
+			[
+				"outer",
+				"outerHeight	.outerHeight()"
+			],
+			[
+				"read",
+				"ready	jQuery(document).ready"
+			],
+			[
+				"togg",
+				"toggle	.toggle()"
+			],
+			[
+				"results",
+				"results-old"
+			],
+			[
+				"sess",
+				"session_destroy"
+			],
+			[
+				"wid",
+				"widgettitle"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"min-",
+				"min-height"
+			],
+			[
+				"d",
+				"disc"
+			],
+			[
+				"post",
+				"postsArray"
+			],
+			[
+				"footer",
+				"footerOffset"
+			],
+			[
+				"state",
+				"statement_of_qualifications"
+			],
+			[
+				"inline",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 17643,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "header.php",
+			"settings":
+			{
+				"buffer_size": 11110,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/vf-caseIntake.css",
+			"settings":
+			{
+				"buffer_size": 6567,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/vf-caseDetails.css",
+			"settings":
+			{
+				"buffer_size": 10662,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/style.css",
+			"settings":
+			{
+				"buffer_size": 1958,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/tei-scheduler.php",
+			"settings":
+			{
+				"buffer_size": 21604,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/js/tei-scheduler-v2.js",
+			"settings":
+			{
+				"buffer_size": 12933,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/css/tei-scheduler.css",
+			"settings":
+			{
+				"buffer_size": 4369,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/js/functions.js",
+			"settings":
+			{
+				"buffer_size": 1746,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/js/libs/dash.js",
+			"settings":
+			{
+				"buffer_size": 3461,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 678,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 1132,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "header-login.php",
+			"settings":
+			{
+				"buffer_size": 2940,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "page-new-cc.php",
+			"settings":
+			{
+				"buffer_size": 3918,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 331,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/sass/style.scss",
+			"settings":
+			{
+				"buffer_size": 1391,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/sass/utility.scss",
+			"settings":
+			{
+				"buffer_size": 1386,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "html {\n  /*height: 100%*/ }\n\nbody {\n  height: 100%;\n  min-height: 100%; }\n\n.navbar.dash-navbar-top {\n  margin-bottom: 0; }\n\n.content-wrap {\n  /*background: #f8f8f8;*/\n  background-color: #fff; }\n\n#content {\n  /*padding: 40px 0;*/ }\n\n.ExpertListPic {\n  max-width: 40px;\n  border-radius: 50%; }\n\n.wppb-front-end-logout span {\n  display: none; }\n\niframe#salesforce-content {\n  width: 100%; }\n\n.navbar-brand > img.header-tei-logo {\n  display: inline-block; }\n\n.header-tei-logo {\n  max-width: 250px;\n  display: inline-block; }\n  @media (max-width: 768px) {\n    .header-tei-logo {\n      max-width: 170px; } }\n\n.beta-tag {\n  display: inline-block; }\n\n/* \n    LOG-IN PAGE\n */\nbody.login-page {\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: bottom right; }\n\n.jumbotron.login-box {\n  max-width: 480px;\n  margin: 20% auto;\n  background: #fff;\n  border-radius: 0;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }\n  .jumbotron.login-box label {\n    font-weight: normal; }\n  .jumbotron.login-box .login-remember {\n    color: #8c989f;\n    font-size: 1em; }\n  .jumbotron.login-box .login-logo {\n    width: 340px;\n    margin: 0 auto; }\n  .jumbotron.login-box h2 {\n    margin: 10px auto 20px;\n    text-transform: uppercase;\n    color: #2A5781;\n    font-size: 1.1em; }\n\n/*# sourceMappingURL=style.css.map */\n",
+			"settings":
+			{
+				"buffer_size": 1355,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "code",
+		"selected_items":
+		[
+			[
+				"code",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"form",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"gist",
+				"Gist: Add File to Gist"
+			],
+			[
+				"format",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"format code",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"h",
+				"HTMLPrettify"
+			],
+			[
+				"css",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"pretti",
+				"HTMLPrettify: Set Prettify Preferences"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"codefo",
+				"CodeFormatter: Format as CSS Syntax"
+			],
+			[
+				"sass",
+				"SassBeautify"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: list",
+				"Package Control: List Packages"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdwon",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"PACKA",
+				"Package Control: Install Package"
+			],
+			[
+				"instalkl",
+				"Package Control: Install Package"
+			],
+			[
+				"view",
+				"View In Browser"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"PACK",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"c",
+				"Color Picker"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 754.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"package",
+			"appealr",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard",
+		"/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard/assets",
+		"/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard/assets/css",
+		"/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard/assets/js",
+		"/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard/assets/js/libs",
+		"/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard/assets/sass",
+		"/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler",
+		"/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/css",
+		"/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/js",
+		"/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/php"
+	],
+	"file_history":
+	[
+		"/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/css/fullcalendar.css",
+		"/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard/image.php",
+		"/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard/gulpfile.js",
+		"/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard/style.css",
+		"/Users/TEI/Documents/wordpress/wp-content/plugins/tei-scheduler/php/utils.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/bones.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/colors.less",
+		"/Users/TEI/Documents/wordpress/wp-content/plugins/tei-scheduler/php/get-events.php",
+		"/Users/TEI/Downloads/fullcalendar-master/demos/php/utils.php",
+		"/Users/TEI/Downloads/fullcalendar-master/demos/php/get-timezones.php",
+		"/Users/TEI/Downloads/fullcalendar-master/demos/php/get-events.php",
+		"/Users/TEI/Documents/wordpress/wp-content/plugins/tei-scheduler/js/v1_old.js",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/functions.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/buttons.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/global.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/components.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/expert.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-partnership.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/js/scripts.js",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/single-landing-page.php",
+		"/etc/hosts",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/css/style.css",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/header.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-about.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/page-about.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-how-we-work.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/feature-page-layouts.less",
+		"/Users/TEI/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/TEI/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-scheduler.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/taxonomy.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/archive-casestudies.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/custom-post-type.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/content.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/index.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-thanksgiving-sale.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/js/dashboard.js",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/dashboard.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-dashboard.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/dashboard-print.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-home.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/mixins.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-dashboard-blank.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-test.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/page-home.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/css/dashboard-print.css",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/js/traffic-source-1.1.min.js",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/hero_request_modal.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/single-casestudies.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/brew/header.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/single-expert.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/parts/sidebar-cta.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-blog-contest-resources.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/taxonomy-blog-category.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/landing-request-modal.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-landing-expert-modal.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/parts/sidebar-taxonomy.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/js/min/traffic-source-1.1.min-min.js",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/single-legal-blog.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-blog-contest.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/parts/sidebar-blog.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/request_modal.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/single-team.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/search.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/author.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/library/less/bootstrap/buttons.less",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/landing-expert-modal.php",
+		"/Users/TEI/Library/Application Support/Sublime Text 3/Packages/User/CodeFormatter.sublime-settings",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-login.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/single.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/comments.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-4th-of-july.php",
+		"/Users/TEI/Documents/wordpress/wp-content/themes/brew-master/page-labor-day.php",
+		"/Users/TEI/Library/Application Support/Sublime Text 3/Local/License.sublime_license",
+		"/Users/killakyle/code/Unity-cardboard/Unity Starter/Assets/Cardboard/Scripts/Cardboard.cs",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/wp-ulike/assets/js/wp-ulike-scripts.min.js",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-faq.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/custom-post-type.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/taxonomy-blog-category.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/index.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/functions.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-medical-expert-landing.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-about.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/bones.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/js/particles.js",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-how-we-work.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-test.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/plugins/tei-login/tei-login.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/plugins/tei-login/templates/login_form.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/less/brew/colors.less",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/less/style.less",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/less/brew/comments.less",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/single.php",
+		"/Users/killakyle/Web Design/wordpress/wp-login.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-redirect.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/mdf_templates/any/cs_results/index.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/archive-casestudies.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/taxonomy.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/taxonomy-custom_cat.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/js/scripts.js",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/header.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/parts/sidebar-cta.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-recruiting.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/footer.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-blog-contest.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/less/brew/global.less",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-careers.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/less/brew/feature-page-layouts.less",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/parts/timed-modal.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-login.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/parts/sidebar-archive-casestudies.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/parts/sidebar-taxonomy-blog-category.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/single-legal-blog.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/tei-login/tei-login.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/comments.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/single-expert.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/single-whitepaper.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-home.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/single-casestudies.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/parts/sidebar-blog.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/parts/sidebar-blog-archive.php",
+		"/Users/killakyle/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/less/brew/header.less",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/less/brew/buttons.less",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-webinar-watch.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/header-alt.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/header-light.php",
+		"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/page-4th-of-july.php"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 130.0,
+		"where_history":
+		[
+			"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master",
+			"<project>",
+			"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master",
+			"<project>",
+			"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master",
+			"<project>",
+			"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master",
+			"/Users/killakyle/Web Design/wordpress/wp-content/themes/brew-master/library/less/brew/colors.less",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2/build/styles/scss",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2/build/kits",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2/build",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2/build",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2/build/styles",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2/build",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2/build/styles/scss",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2/build/",
+			"/Users/killakyle/Dropbox/TEI/CODE/tei_v2/build/styles/scss",
+			"/Users/killakyle/Web Design/expert /build",
+			"/Users/killakyle/Web Design/expert ",
+			"/Users/killakyle/web/projects/killakyle_static",
+			"<project>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"$selected_time",
+			"$selected_time;",
+			"Status",
+			"satus",
+			"'assets",
+			"/css/",
+			"fonts",
+			"twentysixteen",
+			"twentysixteen_widgets_init",
+			"twentysixteen_setup",
+			"config",
+			"templa",
+			"timekit",
+			"fc",
+			"timekit",
+			"Render",
+			"utils",
+			"appointment_json",
+			"bookingjs",
+			"#d7d7",
+			"table",
+			"eventTZ",
+			"timezones",
+			"load_timezones",
+			"myString",
+			"moment",
+			"FILE",
+			"myAjax",
+			"tei-sch",
+			"tei_sch",
+			"());\n",
+			"fade",
+			"<a",
+			"button",
+			"<li>",
+			"===",
+			"=======",
+			" ",
+			"600",
+			"                                <div class=\"col-md-8\">\n                                    <p class=\"case-example-header\">\n\n                                    </p>\n                                </div>",
+			"padding-lef",
+			"h4",
+			"sm",
+			"benefit-4",
+			"Deposition &amp; Testimony",
+			"<a class=\"btn btn-tei  white\">SEE CASE STUDY</a>",
+			"<a class=\"btn btn-tei\">SEE CASE STUDY</a>",
+			"data-parent",
+			"data-toggle=\"collapse\"",
+			"hidden-xs",
+			"•",
+			"benefit-3",
+			"panel3",
+			"Document Review",
+			"•",
+			"roster",
+			"Roster Building",
+			"cases",
+			"• ",
+			"div",
+			"12",
+			"class=\"smooth-scroll\"",
+			"tei-primary",
+			"h4",
+			"h3",
+			"col-sm-offset-",
+			"right",
+			"center",
+			"ul",
+			"$",
+			"p",
+			"alt_excerpt",
+			"alt_thumbnail",
+			"vertical",
+			"alt_excerpt",
+			"alt_thumbnail",
+			"array",
+			"dashboard-header",
+			"44px",
+			"10px",
+			"tei-card",
+			"card",
+			"box",
+			"fee",
+			"fees",
+			"read",
+			"question",
+			"Case_Summery_images",
+			"first-child",
+			"p",
+			"top",
+			"footer",
+			"content-container",
+			"logo",
+			"widtrh",
+			"height",
+			"container",
+			"before",
+			"width: 100%;",
+			"darken(#cccccc, 25%)",
+			"960",
+			"alert",
+			"card",
+			".card ",
+			".card",
+			"class=\"card\"",
+			"all",
+			"absolute",
+			"{\n",
+			"250px",
+			"padding-le",
+			"media",
+			"jQuery(\"#page-wrapper\")",
+			"MAIN-PANEL",
+			"sidebar-brand",
+			".sidebar .nav",
+			"overlay",
+			"#wrapper",
+			"overlay",
+			"$",
+			"SEPARATOR",
+			"h4",
+			".simple-text",
+			"simple-text",
+			"container",
+			"src",
+			"get startedd",
+			"CTA"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"'",
+			"<?php ",
+			"/experts/1.png",
+			"tei",
+			"<!-- @include \"modules/sidebar-carousel\" -->",
+			"<!-- @include \"modules/sidebar-posts\" -->",
+			"<!-- @include \"modules/sidebar-tags\" -->",
+			"$light-grey",
+			"$kyle-primary",
+			"$kyle-acc",
+			"#B8132A",
+			"#crappydesign",
+			"#design_critiques",
+			"",
+			"dist",
+			"Kyle"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17643,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8695,
+								8695
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5393.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "header.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								980,
+								980
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "assets/css/vf-caseIntake.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6567,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5246,
+								5246
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6416.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "assets/css/vf-caseDetails.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10662,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								891,
+								891
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 432.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "assets/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1958,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1522,
+								1522
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1437.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/tei-scheduler.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21604,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13039,
+								13039
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10263.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/js/tei-scheduler-v2.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12607,
+								12607
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7580.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Volumes/Login.TEI - Staging/wp-content/plugins/tei-scheduler/css/tei-scheduler.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4407.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "assets/js/functions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1746,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1382,
+								1382
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "assets/js/libs/dash.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3461,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1700,
+								1700
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 370.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 678,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								473,
+								473
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								630,
+								630
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "header-login.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2940,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								984,
+								984
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "page-new-cc.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3918,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3220,
+								3184
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 790.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "assets/sass/style.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								119,
+								119
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"syntax": "Packages/Syntax Highlighting for Sass/Syntaxes/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "assets/sass/utility.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1389,
+								1389
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/Syntax Highlighting for Sass/Syntaxes/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1779.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1355,
+								1355
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
+							"default_dir": "/Volumes/Login.TEI - Staging/wp-content/themes/tei-dashboard",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 339.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 45.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 107.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 116.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 152.0
+	},
+	"pinned_build_system": "",
+	"project": "tei-dashboard.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"index",
+				"tei-dashboard/index.php"
+			],
+			[
+				"color",
+				"brew-master/library/less/brew/colors.less"
+			],
+			[
+				"colors",
+				"brew-master/library/less/brew/colors.less"
+			],
+			[
+				"bones",
+				"brew-master/library/bones.php"
+			],
+			[
+				"functions",
+				"functions.php"
+			],
+			[
+				"page-sch",
+				"page-scheduler.php"
+			],
+			[
+				"scripts",
+				"library/js/scripts.js"
+			],
+			[
+				"golba",
+				"library/less/brew/global.less"
+			],
+			[
+				"buttons",
+				"library/less/brew/buttons.less"
+			],
+			[
+				"single-land",
+				"single-landing-page.php"
+			],
+			[
+				"exper",
+				"library/less/brew/expert.less"
+			],
+			[
+				"part",
+				"page-partnership.php"
+			],
+			[
+				"comp",
+				"library/less/brew/components.less"
+			],
+			[
+				"sty",
+				"library/css/style.css"
+			],
+			[
+				"exp",
+				"library/less/brew/expert.less"
+			],
+			[
+				"style",
+				"library/css/style.css"
+			],
+			[
+				"page-par",
+				"page-partnership.php"
+			],
+			[
+				"partne",
+				"page-partnership.php"
+			],
+			[
+				"header",
+				"header.php"
+			],
+			[
+				"page-about",
+				"library/less/brew/page-about.less"
+			],
+			[
+				"full",
+				"library/less/brew/feature-page-layouts.less"
+			],
+			[
+				"scrip",
+				"library/js/scripts.js"
+			],
+			[
+				"partner",
+				"page-partnership.php"
+			],
+			[
+				"how",
+				"page-how-we-work.php"
+			],
+			[
+				"landing",
+				"single-landing-page.php"
+			],
+			[
+				"com",
+				"library/less/brew/components.less"
+			],
+			[
+				"feat",
+				"library/less/brew/feature-page-layouts.less"
+			],
+			[
+				"fall",
+				"page-fall-sale.php"
+			],
+			[
+				"custom-pos",
+				"library/custom-post-type.php"
+			],
+			[
+				"tax",
+				"taxonomy.php"
+			],
+			[
+				"case",
+				"archive-casestudies.php"
+			],
+			[
+				"contn",
+				"library/less/brew/content.less"
+			],
+			[
+				"dash",
+				"library/js/dashboard.js"
+			],
+			[
+				"cont",
+				"library/less/brew/content.less"
+			],
+			[
+				"mixins",
+				"library/less/brew/mixins.less"
+			],
+			[
+				"dashb",
+				"library/less/dashboard.less"
+			],
+			[
+				"home",
+				"page-home.php"
+			],
+			[
+				"page-home",
+				"library/less/brew/page-home.less"
+			],
+			[
+				"test",
+				"page-test.php"
+			],
+			[
+				"mixin",
+				"library/less/brew/mixins.less"
+			],
+			[
+				"bone",
+				"library/bones.php"
+			],
+			[
+				"das",
+				"library/less/dashboard.less"
+			],
+			[
+				"global",
+				"library/less/brew/global.less"
+			],
+			[
+				"page-dash",
+				"page-dashboard.php"
+			],
+			[
+				"scr",
+				"library/js/scripts.js"
+			],
+			[
+				"resour",
+				"page-blog-contest-resources.php"
+			],
+			[
+				"blog-ca",
+				"taxonomy-blog-category.php"
+			],
+			[
+				"single-b",
+				"single-legal-blog.php"
+			],
+			[
+				"blog-",
+				"page-blog-contest.php"
+			],
+			[
+				"function",
+				"functions.php"
+			],
+			[
+				"single-lan",
+				"single-landing-page.php"
+			],
+			[
+				"hea",
+				"header.php"
+			],
+			[
+				"script",
+				"library/js/scripts.js"
+			],
+			[
+				"hero",
+				"hero_request_modal.php"
+			],
+			[
+				"how-we",
+				"page-how-we-work.php"
+			],
+			[
+				"sidebar-",
+				"parts/sidebar-taxonomy.php"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
+				"sidebar",
+				"parts/sidebar-blog.php"
+			],
+			[
+				"cta",
+				"parts/sidebar-cta.php"
+			],
+			[
+				"single-e",
+				"single-expert.php"
+			],
+			[
+				"conten",
+				"library/less/brew/content.less"
+			],
+			[
+				"taxo",
+				"taxonomy.php"
+			],
+			[
+				"single-",
+				"single-casestudies.php"
+			],
+			[
+				"page-how",
+				"page-how-we-work.php"
+			],
+			[
+				"modal",
+				"request_modal.php"
+			],
+			[
+				"page-land",
+				"page-landing-expert-modal.php"
+			],
+			[
+				"func",
+				"functions.php"
+			],
+			[
+				"landing-re",
+				"landing-request-modal.php"
+			],
+			[
+				"fun",
+				"functions.php"
+			],
+			[
+				"search",
+				"search.php"
+			],
+			[
+				"compo",
+				"library/less/brew/components.less"
+			],
+			[
+				"single-team",
+				"single-team.php"
+			],
+			[
+				"single-ca",
+				"single-casestudies.php"
+			],
+			[
+				"but",
+				"library/less/brew/buttons.less"
+			],
+			[
+				"butt",
+				"library/less/bootstrap/buttons.less"
+			],
+			[
+				"page-landing",
+				"page-landing-expert-modal.php"
+			],
+			[
+				"expert.les",
+				"library/less/brew/expert.less"
+			],
+			[
+				"single-le",
+				"single-legal-blog.php"
+			],
+			[
+				"blog",
+				"taxonomy-blog-category.php"
+			],
+			[
+				"scri",
+				"library/js/scripts.js"
+			],
+			[
+				"reques",
+				"landing-request-modal.php"
+			],
+			[
+				"home.less",
+				"library/less/brew/page-home.less"
+			],
+			[
+				"page-hom",
+				"library/less/brew/page-home.less"
+			],
+			[
+				"compon",
+				"library/less/brew/components.less"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 204.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

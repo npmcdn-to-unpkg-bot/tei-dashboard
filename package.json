@@ -1,0 +1,26 @@
+{
+  "name": "tei-dashboard",
+  "version": "1.0.0",
+  "description": "===== TEI DASHBOARD ====== Log-in portal for clients to view open and closed cases, and submit new cases.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/killa-kyle/tei-dashboard.git"
+  },
+  "keywords": [
+    "wordpress",
+    "theme"
+  ],
+  "author": "Kyle Rose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/killa-kyle/tei-dashboard/issues"
+  },
+  "homepage": "https://github.com/killa-kyle/tei-dashboard#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}

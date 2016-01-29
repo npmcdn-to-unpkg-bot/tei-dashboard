@@ -1,0 +1,640 @@
+/*-------------------------------------------------------------------------
+| 1. UTILITY CLASSES
+/--------------------------------------------------------------------------*/
+
+.mb {
+    margin-bottom: 60px;
+}
+
+.mt {
+    margin-top: 60px;
+}
+
+.pt {
+    padding-top: 7px;
+}
+
+.np {
+    padding: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.float-right {
+    float: right;
+}
+
+.emphasis {
+    font-weight: bold;
+}
+
+.g-m-title {
+    font-weight: bold;
+}
+
+hr:last-of-type {
+    display: none;
+}
+
+
+/*-------------------------------------------------------------------------
+| 2. GLOBAL STYLES
+/--------------------------------------------------------------------------*/
+
+* {
+    font-family: proxima-nova, "proxima nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+div {
+    line-height: 1.8em;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.6;
+    /*background-color: #f8f8f8;*/
+    color: #444d56;
+}
+
+p {
+    line-height: 30px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "proxima nova", "proxima-nova", "Open Sans", Arial, sans-serif;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+h2 {
+    font-size: 22px;
+    line-height: 26px;
+}
+
+@media screen and (max-width: 420px) {
+    .case-manager-card {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 26px;
+        line-height: 48px;
+    }
+    h2 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    body {
+        font-size: 17px;
+    }
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.navbar-default {
+    background-color: #2a5781;
+    border: none;
+}
+
+.navbar {
+    min-height: 37px;
+}
+
+.main-container {
+    background-color: #fff;
+    /*border-radius: 3px;*/
+    /*box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);*/
+}
+
+.logo-row {
+    margin-bottom: 14px;
+}
+
+.logo {
+    width: 40px;
+    line-height: 26px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.logo-text {
+    display: inline-block;
+    line-height: 29px;
+    color: #2a5781;
+    margin-top: 0;
+}
+
+.casetitle {
+    font-size: 36px;
+    line-height: 47px;
+    color: #2a5781;
+    margin-bottom: 40px;
+}
+
+.case-manager-card {
+    position: relative;
+    margin-top: 25px;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.case-manager-card p {
+    margin-bottom: 0;
+}
+
+.case-manager-card h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.case-manager-card ul {
+    list-style: none;
+    padding-left: 20px;
+    padding-top: 214px;
+    padding-bottom: 40px;
+}
+
+.case-manager-card span {
+    font-size: 24px;
+}
+
+.cardimg {
+    position: absolute;
+    text-align: center;
+    margin-top: -40px;
+    margin-left: -81px;
+    left: 50%;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 990px) {
+    .card {
+        margin-top: 100px;
+    }
+}
+
+.case-manager-img {
+    border: 5px solid #fff;
+    width: 162px;
+    margin-bottom: 12px;
+}
+
+.read-more-show,
+.read-more-hide {
+    padding-top: 20px;
+    float: right;
+}
+
+.expert-questions {
+    padding-left: 0;
+}
+
+.sec-questions li {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: 2em;
+}
+
+.sec-expert hr {
+    border-top: 1px solid #dedede;
+}
+
+.expert-pic {
+    padding: 0 0 60px 0;
+    text-align: center;
+}
+
+.expert-pic p {
+    margin: 0;
+}
+
+.expert-id {
+    margin-top: 0;
+    color: #2a5781;
+}
+
+.feedback {
+    /*font-size: 22px;*/
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 1em;
+    background: #eceef1;
+    padding: 25px 15px;
+}
+
+.price {
+    float: right;
+}
+
+.sec-fee ul {
+    list-style: none;
+    padding-left: 0;
+    padding-right: 20%;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 400px) {
+    .btn-default {
+        font-size: 12px;
+    }
+    .logo-row {
+        text-align: center;
+    }
+    .casetitle {
+        font-size: 1.2em;
+        text-align: center;
+        line-height: 1.2em;
+    }
+    .feedback {
+        font-size: 1.2em;
+    }
+    h1 {
+        text-align: center;
+    }
+}
+
+footer {
+    background-color: #2a5781;
+    border: none;
+    width: 100%;
+    height: 25px;
+}
+
+.heading-underline {
+    line-height: normal;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    /*font-size: 1em;*/
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 14px;
+    color: #2a5781;
+}
+
+.text-underline {
+    width: auto;
+    padding-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+    .text-underline {
+        border-bottom: 3px solid #dadada;
+    }
+}
+
+
+/*-------------------------------------------------------------------------
+| 3. VIDEO STYLES
+/--------------------------------------------------------------------------*/
+
+.jwplayer {
+    max-height: 100% !important;
+}
+
+
+/*-------------------------------------------------------------------------
+| 4. FORM STYLES
+/--------------------------------------------------------------------------*/
+
+fieldset {
+    border-radius: 6px;
+    padding: 10px;
+}
+
+legend {
+    padding-top: 50px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: #CCC;
+    height: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #333;
+    opacity: 0.9;
+    width: 20px;
+    height: 26px;
+}
+
+.input-holder {
+    position: relative;
+    margin: 0 0 20px;
+}
+
+input,
+textarea {
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    padding: 5px;
+    width: 100%;
+    resize: none;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+input:focus,
+textarea:focus {
+    border: 2px solid #2a5781;
+    outline: none;
+}
+
+textarea {
+    min-height: 150px;
+}
+
+textarea[name=inputInitthoughts],
+textarea[name=inputQualifications] {
+    min-height: 200px;
+}
+
+input[type="file"] {
+    border: none;
+}
+
+.message {
+    position: absolute;
+    z-index: 9;
+    display: none;
+    width: 280px;
+    padding: 10px;
+    margin-top: 10px;
+    background: orange;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.message:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 33%;
+    display: block;
+    margin-left: -10px;
+    border: solid;
+    border-color: orange transparent orange;
+    border-width: 0 10px 10px;
+}
+
+@media screen and (max-width: 620px) {
+    .message {
+        width: 100%;
+    }
+}
+
+.btn-valid {
+    background-color: #AAD661;
+    color: #fff;
+}
+
+.btn-valid:hover {
+    border-color: #AAD661;
+}
+
+.is-valid {
+    border-color: #AAD661;
+}
+
+.not-valid {
+    border-color: orange;
+    -webkit-transition: 0;
+    transition: 0;
+}
+
+.not-valid + .message {
+    display: block !important;
+    box-shadow: 20px black;
+}
+
+.submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #CCC;
+    border-radius: 4px;
+    background: transparent;
+    color: #CCC;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.hourly {
+    padding-left: 18px;
+    padding-right: 40px;
+}
+
+.daily {
+    padding-left: 18px;
+    padding-right: 46px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.tei-placeholder-wrap {
+    display: inline-block;
+    position: relative;
+}
+
+.tei-placeholder-wrap .tei-placeholder.tei-left {
+    left: 0px;
+}
+
+.tei-placeholder-wrap .tei-placeholder {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    cursor: text;
+    color: #666;
+    padding: 6px 6px;
+}
+
+.tei-placeholder-wrap .tei-placeholder.tei-right {
+    right: 0;
+}
+
+
+/*-------------------------------------------------------------------------
+| 5. BUTTON STYLES
+/--------------------------------------------------------------------------*/
+
+.btn {
+    display: inline-block !important;
+}
+
+.btn-success {
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    background-color: #2A8414;
+    border: 2px solid #2A8414;
+    font-size: 17px;
+    padding: 16px 32px;
+}
+
+.btn-default {
+    font-size: 17px;
+    padding: 16px 32px;
+    border: 2px solid #333;
+    margin: 20px;
+}
+
+.btn-hire {
+    /*color: #fff;*/
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    border: 2px solid #E6711B;
+    /*background-color: #E6711B;*/
+    padding: 16px 32px;
+    max-width: 400px;
+    margin: 0 auto;
+    color: #E6711B;
+    background-color: transparent;
+    transition: background 0.2s ease-in-out;
+}
+
+.btn-hire:hover {
+    color: #fff;
+    border: 2px solid #E6711B;
+    background-color: #E6711B;
+}
+
+.btn-hire:active {
+    color: #2A8414;
+}
+
+
+/*-------------------------------------------------------------------------
+| 6. PROGRESS BAR STYLES
+/--------------------------------------------------------------------------*/
+
+
+/* progress bar statuses : active, complete, disabled*/
+
+.smpl-step-icon {
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.first {
+    padding-left: 24px;
+}
+
+.smpl-step {
+    margin-top: 40px;
+}
+
+.smpl-step {
+    border-bottom: solid 1px #e0e0e0;
+    padding: 0 0 10px 0;
+}
+
+.smpl-step > .smpl-step-step {
+    padding: 0;
+    position: relative;
+}
+
+.smpl-step > .smpl-step-step .smpl-step-num {
+    font-size: 17px;
+    margin-top: -20px;
+    margin-left: 47px;
+    color: #2a5781;
+}
+
+.smpl-step > .smpl-step-step .smpl-step-info {
+    font-size: 14px;
+    padding-top: 27px;
+    padding-left: 40px;
+}
+
+.smpl-step > .smpl-step-step > .smpl-step-icon {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    display: block;
+    background: #153E67;
+    top: 45px;
+    left: 50%;
+    margin-top: -35px;
+    margin-left: -15px;
+    border-radius: 3%;
+}
+
+.smpl-step > .smpl-step-step > .progress {
+    position: relative;
+    border-radius: 0px;
+    height: 8px;
+    box-shadow: none;
+    margin-top: 37px;
+}
+
+.smpl-step > .smpl-step-step > .progress > .progress-bar {
+    width: 0px;
+    box-shadow: none;
+    background: #2a5781;
+}
+
+.smpl-step > .smpl-step-step.complete > .progress > .progress-bar {
+    width: 100%;
+}
+
+.smpl-step > .smpl-step-step.active > .progress > .progress-bar {
+    width: 50%;
+}
+
+.smpl-step > .smpl-step-step:first-child.active > .progress > .progress-bar {
+    width: 0%;
+}
+
+.smpl-step > .smpl-step-step:last-child.active > .progress > .progress-bar {
+    width: 100%;
+}
+
+.smpl-step > .smpl-step-step.disabled > .smpl-step-icon {
+    background-color: #f5f5f5;
+    color: #CCCCCC;
+}
+
+.smpl-step > .smpl-step-step.disabled > .smpl-step-icon:after {
+    opacity: 0;
+}
+
+.smpl-step > .smpl-step-step:first-child > .progress {
+    left: 50%;
+    width: 50%;
+}
+
+.smpl-step > .smpl-step-step:last-child > .progress {
+    width: 50%;
+}
+
+.smpl-step > .smpl-step-step.disabled a.smpl-step-icon {
+    pointer-events: none;
+}
