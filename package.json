@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/killa-kyle/tei-dashboard#readme",
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7"
   }
 }
