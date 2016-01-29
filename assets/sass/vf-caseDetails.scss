@@ -211,6 +211,9 @@ a:hover {
 }
 
 .expert-pic {
+    img {
+        display: inline;
+    }
     padding: 0 0 60px 0;
     text-align: center;
 }

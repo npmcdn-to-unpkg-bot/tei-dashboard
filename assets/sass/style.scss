@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'utility';
 html {
     /*height: 100%*/
 }
@@ -70,6 +71,7 @@ body.login-page {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     label {
         font-weight: normal;
+        font-size: 18px;
     }
     .login-remember {
         color: $cool-grey;
@@ -79,10 +81,37 @@ body.login-page {
         width: 340px;
         margin: 0 auto;
     }
+    p.mini {
+        font-size: 1.1em;
+    }
+    #login-form,#register-form {
+        transition: all 0.2s ease-in-all;
+    }
+    .register-switch {
+        font-weight: 600;
+    }
     h2 {
         margin: 10px auto 20px;
         text-transform: uppercase;
         color: $tei-primary;
         font-size: 1.1em;
     }
+    .login-submit input ,.form-submit input {
+        transition: all 0.2s ease-in-out;
+        border: 2px solid $tei-primary;
+        background: transparent;
+        max-width: 150px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: "proxima-nova";
+        color: $tei-primary;
+        padding: 6px 24px;
+        &:hover {
+            background: $tei-primary;
+            color: $white;
+        }
+    }
+
 }

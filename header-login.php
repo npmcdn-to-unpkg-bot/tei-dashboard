@@ -56,7 +56,7 @@ $cid= get_field('cid', $field_meta);
     </style>
                 
 </head>
-<body  class="login-page" <?php body_class(); ?> style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-bg.jpg)">
+<body  class="login-page" <?php body_class(); ?> style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-bg.png)">
 
     <!-- Dash Navbar Top 
     Available versions: dnl-visible, dnl-hidden -->

@@ -24,18 +24,34 @@ include 'header-login.php'; ?>
         <div class="jumbotron login-box">
         <div class="text-center">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-logo-dark.svg" class="img img-responsive login-logo">
-            <h2>Log In</h2>
-        </div>    
+        </div> 
            
-            <? echo do_shortcode( '[wppb-login]' );
+         
+           <div id="login-form" class="">
+            <h2 class="text-center">Log In</h2>
+               <? echo do_shortcode( '[wppb-login]' );
 
-            $user_id=get_current_user_id( );
-            $user_info = get_userdata($user_id);
-            $role=$user_info->roles[0];
 
-            // print_r($role);
 
-            ?>
+               $user_id=get_current_user_id( );
+               $user_info = get_userdata($user_id);
+               $role=$user_info->roles[0];
+
+               print_r($role);
+               ?>
+               <hr>
+               <p class="mini">Don't have a login? <a class="mini register-switch"href="#">Register Here</a></p>
+           </div>
+
+            <div id="register-form" class="hidden">
+                <h2 class="text-center">Register</h2>
+                <?php echo do_shortcode('[wppb-register]' );
+
+                ?>
+                <hr>
+                <p class="mini">Already registered? <a class=" mini register-switch"href="#">Login Here</a></p>
+            </div>
+
         </div>
 
 

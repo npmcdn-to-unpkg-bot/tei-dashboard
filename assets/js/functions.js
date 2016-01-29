@@ -9,6 +9,12 @@
     /*Initialize*/
     console.log('tei-dashboard scripts running....');
 
+    $('.register-switch').click(function(e){
+        e.preventDefault();
+        $('#login-form').toggleClass('hidden');
+        $('#register-form').toggleClass('hidden');
+    });
+
     var isOldIE = (navigator.userAgent.indexOf("MSIE") !== -1); // Detect IE10 and below
     var $iframe = $('iframe');
     /*iFrameResizer plugin*/
