@@ -57,7 +57,7 @@ textarea {
 }
 
 .apexp .bPageBlock.apexDefaultPageBlock .pbBody {
-    /*margin: 0;*/
+    margin: 0;
 }
 
 
@@ -147,9 +147,13 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
     @media (min-width: 768px){
         margin-top: 88px;
     }
-    border: 1px solid #ddd;
-    background: #f8f8f8;
-
+    
+   
+    .CaseContainer {
+        padding: 15px;
+        border: 1px solid #ddd;
+        background: #f8f8f8;
+    }
     .SupportHeading {
         display: block;
         text-align: center;
@@ -174,8 +178,8 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
 .vf-flow.secondary .secondaryPalette.bPageBlock,
 .vf-flow.secondary .pbBottomButtons,
 .vf-flow.secondary table {
-    background: #f8f8f8;
-    border-color: #f8f8f8 !important;
+    background: #fff;
+    border-color: #fff !important;
 }
 
 .vf-flow.secondary .CaseContainer {

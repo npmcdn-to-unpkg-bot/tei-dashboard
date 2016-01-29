@@ -107,6 +107,7 @@ $cid= get_field('cid', $field_meta);
                     get_currentuserinfo();
                 	?> <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
+
                 <li><? echo do_shortcode( '[wppb-logout]' );?></li>
 <!--                 <li><a href="#">Link 2</a></li>
                 <li><a href="#">Link 3</a></li> -->
@@ -121,6 +122,12 @@ $cid= get_field('cid', $field_meta);
     <!-- Dash Navbar Left 
     Available versions: dnl-visible, dnl-hidden -->
     <div class="dash-navbar-left dnl-visible">
+      <p class="dnl-nav-title">DASHBOARD</p>
+      <ul class="dnl-nav">
+        <!-- Dashboard summary -->
+        <li><a href="https://theexpertinstitute.secure.force.com/ClientDashboad/?IDU=003E000000HTeqLIAT" target="MainIframe"><span class="fa fa-tachometer dnl-link-icon"></span>
+            <span class="dnl-link-text">Dashboard Summary</span></a> </li>
+            <p class="dnl-nav-title"></p>
       <p class="dnl-nav-title">MAIN</p>
       <ul class="dnl-nav">
         <!-- NEW CASE -->
@@ -145,12 +152,7 @@ $cid= get_field('cid', $field_meta);
           </a>
         </li>
 
-           <li>
-          <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&OC=hidden&NC=hidden&CC=hidden" target="MainIframe">
-            <span class="fa fa-phone dnl-link-icon"></span>
-            <span class="dnl-link-text">Conference Calls</span>
-          </a>
-        </li>
+
 <!--         <li>
           <a href="#">
             <span class="glyphicon glyphicon-comment dnl-link-icon"></span>
@@ -209,12 +211,19 @@ $cid= get_field('cid', $field_meta);
           </ul>
         </li>
       </ul>
-      <p class="dnl-nav-title">Scheduled  Calls</p>
+      <p class="dnl-nav-title"></p>
+      <p class="dnl-nav-title">Conference Calls</p>
       <ul class="dnl-nav ">
         <li>
-          <a href="https://logintei.staging.wpengine.com/scheduler/?ID=006E0000004dajd&IDCC=a1lE0000000NboUIAS&IDU=003E000000HTeqLIAT" target="MainIframe">
+          <a href="#">
             <span class="fa fa-calendar dnl-link-icon"></span>
-            <span class="dnl-link-text">Tom T vs USA</span>
+            <span class="dnl-link-text">Your Availability</span>
+          </a>
+        </li>
+           <li>
+          <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&OC=hidden&NC=hidden&CC=hidden" target="MainIframe">
+            <span class="fa fa-phone dnl-link-icon"></span>
+            <span class="dnl-link-text">Call Activity</span>
           </a>
         </li>
       </ul>
