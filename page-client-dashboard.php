@@ -38,7 +38,8 @@ get_header(); ?>
       <div class="container-fluid">
         <div id="content">
             <p id="callback"></p>
-              <iframe id="salesforce-content" src="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>" frameborder="0" scrolling="no" name="MainIframe">
+
+              <iframe id="salesforce-content" src="https://theexpertinstitute.secure.force.com/ClientDashboad/?IDU=<?php echo $id_sf;?>" frameborder="0" scrolling="no" name="MainIframe">
             <p>Your browser does not support iframes.</p>
              </iframe>
         </div>

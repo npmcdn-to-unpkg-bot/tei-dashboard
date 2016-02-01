@@ -144,9 +144,7 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
 }
 
 .vf-flow.secondary {
-    @media (min-width: 768px){
-        margin-top: 88px;
-    }
+
     
    
     .CaseContainer {
@@ -160,16 +158,30 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
         text-transform: uppercase;
         font-weight: 600;
         font-size: 1.2em;
-        margin: 0;
-    }
-    .SupportTitle {
-        font-weight: 600;
+        margin-bottom: 1.2em;
     }
     img.SupportPic {
         border-radius: 50%;
         max-width: 70px;
+        margin-top: 1em;
         margin-bottom: 1em;
         // box-shadow: 0 0 0 2px #ddd, 0 0 0 4px $tei-primary;
+    }
+}
+
+.CaseContainer {
+    .SupportHeading{}
+    .SupportName{
+        font-weight: 600;
+        color: $tei-primary;
+    }
+    .SupportTitle{
+        color: $cool-grey;
+        font-size: 0.9em;
+    }
+    .SupportPhone{}
+    .SupportEmail{
+        margin-bottom: 1em;
     }
 }
 

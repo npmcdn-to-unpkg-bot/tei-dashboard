@@ -109,8 +109,8 @@ $cid= get_field('cid', $field_meta);
               <ul class="dropdown-menu" role="menu">
 
                 <li><? echo do_shortcode( '[wppb-logout]' );?></li>
-<!--                 <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li> -->
+                <li><a href="<?php bloginfo('url'); ?>/edit-profile" target="MainIframe">Edit Profile</a></li>
+                <li><a href="#">Link 3</a></li>
               </ul>
             </li>
           </ul>        
@@ -125,10 +125,10 @@ $cid= get_field('cid', $field_meta);
       <p class="dnl-nav-title">DASHBOARD</p>
       <ul class="dnl-nav">
         <!-- Dashboard summary -->
-        <li><a href="https://theexpertinstitute.secure.force.com/ClientDashboad/?IDU=003E000000HTeqLIAT" target="MainIframe"><span class="fa fa-tachometer dnl-link-icon"></span>
+        <li><a href="https://theexpertinstitute.secure.force.com/ClientDashboad/?IDU=<?php echo $id_sf;?>" target="MainIframe"><span class="fa fa-tachometer dnl-link-icon"></span>
             <span class="dnl-link-text">Dashboard Summary</span></a> </li>
             <p class="dnl-nav-title"></p>
-      <p class="dnl-nav-title">MAIN</p>
+      <p class="dnl-nav-title">Cases</p>
       <ul class="dnl-nav">
         <!-- NEW CASE -->
         <li>
