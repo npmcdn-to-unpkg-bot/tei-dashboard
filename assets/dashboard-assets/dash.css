@@ -106,7 +106,9 @@ html {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
+.dash-navbar-top .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: rgba(42, 87, 129, 0.59);
+}
 .dash-navbar-top .navbar-nav > li > a:hover,
 .dash-navbar-top .navbar-nav > li > a:focus {
     background-color: rgba(42, 87, 129, 0.59);
@@ -139,7 +141,7 @@ html {
 .dash-navbar-top .navbar-nav .dropdown-menu > li a {
     padding: 10px 20px;
     position: relative;
-    color: #333333;
+    color: #333;
     display: block;
 }
 
@@ -154,11 +156,11 @@ html {
 
 @media (max-width: 767px) {
     .dash-navbar-top .navbar-nav .dropdown-menu > li > a {
-        color: #7e7e7e;
+        color: #ddd;
     }
     .dash-navbar-top .navbar-nav .dropdown-menu > li > a:hover,
     .dash-navbar-top .navbar-nav .dropdown-menu > li > a:focus {
-        background-color: #15141b;
+        background-color: rgba(42, 87, 129, 0.592157);
     }
 }
 

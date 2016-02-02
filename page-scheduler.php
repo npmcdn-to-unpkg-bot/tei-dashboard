@@ -2,28 +2,6 @@
 /*
 Template Name: Dashboard Scheduler Template
 */
-//  echo "<div class='container'><pre>";
-
-// global $wp_filter;
-// $comment_filters = array ();
-//     $h1  = '<h1>Current Comment Filters</h1>';
-//     $out = '';
-//     $toc = '<ul>';
-//     foreach ( $wp_filter as $key => $val )
-//     {
-//         if ( FALSE !== strpos( $key, '' ) )
-//         {
-//             $comment_filters[$key][] = var_export( $val, TRUE );
-//         }
-//     }
-//     foreach ( $comment_filters as $name => $arr_vals )
-//     {
-//         $out .= "<h2 id=$name>$name</h2><pre>" . implode( "\n\n", $arr_vals ) . '</pre>';
-//         $toc .= "<li><a href='#$name'>$name</a></li>";
-//     }
-//     print "$h1$toc</ul>$out";
-
-//  echo "</pre></div";
 ?>
 <!doctype html>
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -48,6 +26,8 @@ Template Name: Dashboard Scheduler Template
     <?php // or, set /favicon.ico for IE10 win ?>
     <meta name="msapplication-TileColor" content="#2a5781">
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
+<!--    <script src="https://use.typekit.net/wht0akz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script> -->
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
@@ -76,24 +56,6 @@ Template Name: Dashboard Scheduler Template
         <!-- TEI-SCHEDULER CARD -->    
         <div class="col-sm-10 col-sm-offset-1">
             <?php echo do_shortcode('[tei-scheduler]'); ?>
-
-            <div id="del_avail_confim" class="modal fade" tabindex="-1" role="dialog">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Modal title</h4>
-                  </div>
-                  <div class="modal-body">
-                    <p>One fine body&hellip;</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div><!-- /.modal-content -->
-              </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
         </div>
     </div>
     <div class="row">

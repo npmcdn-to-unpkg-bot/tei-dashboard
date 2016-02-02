@@ -78,8 +78,9 @@ $cid= get_field('cid', $field_meta);
         <div class="collapse navbar-collapse" id="dnt-collapse">
           <!-- This dropdown is for avatar -->
           <ul class="nav navbar-nav navbar-right navbar-avatar">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img class="ExpertListPic dnt-avatar" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,h_40,w_40/v50/contacts/<?php echo "$cid";?>.jpg" alt="<?php global $current_user; echo $current_user->user_firstname  ?>"></a>
+            <li class="dropdown_">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <img class="ExpertListPic dnt-avatar" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,h_40,w_40/v50/contacts/<?php echo "$cid";?>.jpg" alt="<?php global $current_user; echo $current_user->user_firstname  ?>"></a>
               <ul class="dropdown-menu" role="menu">
                 <!-- <li><a href="#">Standard <span>go pro</span></a></li> -->
                 <!-- <li><a href="#">Upload</a></li> -->
@@ -88,19 +89,9 @@ $cid= get_field('cid', $field_meta);
               </ul>
             </li>
           </ul>
-<!--           <form class="navbar-form navbar-right dnt-navbar-form" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn"><span class="fa fa-search"></span></button>
-          </form>   -->
+
           <!-- This dropdown is for normal links -->
           <ul class="nav navbar-nav navbar-right">
-            <li>
-            	<a href="#">
-                </a>
-            </li>
-
             <li class="">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php global $current_user;
             		echo "$current_user->user_firstname $current_user->user_lastname";
@@ -110,7 +101,7 @@ $cid= get_field('cid', $field_meta);
 
                 <li><? echo do_shortcode( '[wppb-logout]' );?></li>
                 <li><a href="<?php bloginfo('url'); ?>/edit-profile" target="MainIframe">Edit Profile</a></li>
-                <li><a href="#">Link 3</a></li>
+                <!-- <li><a href="#">Link 3</a></li> -->
               </ul>
             </li>
           </ul>        
@@ -215,7 +206,7 @@ $cid= get_field('cid', $field_meta);
       <p class="dnl-nav-title">Conference Calls</p>
       <ul class="dnl-nav ">
         <li>
-          <a href="#">
+          <a href="https://logintei.staging.wpengine.com/scheduler/?IDU=<?php echo $id_sf;?>" target="MainIframe">
             <span class="fa fa-calendar dnl-link-icon"></span>
             <span class="dnl-link-text">Your Availability</span>
           </a>

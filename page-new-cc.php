@@ -54,6 +54,16 @@ $mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
   $id_contact=$_GET['IDU'];
 
 $id='';
+
+  $query = "SELECT Id,Free_Json_Times__c From Contact  WHERE  Id='$id_contact' ";
+$response = $mySforceConnection->query(($query));
+foreach ($response->records as $record) {
+	
+		$json_times=$record->Free_Json_Times__c;
+	
+}
+
+
   $query = "SELECT Id,Contact__c From Conference_Call__c  WHERE  Contact__c='$id_contact' AND Expert__c='$id_expert' AND Opportunity__c='$id_opp' AND Opportunities_Expert__c='$id_expert_opp'";
 $response = $mySforceConnection->query(($query));
 foreach ($response->records as $record) {
@@ -67,6 +77,8 @@ if ($id==''){
   $sObject = new stdclass();
   $sObject->Contact__c = $id_contact;
   $sObject->Expert__c = $id_expert;
+   $sObject->Json_Times__c = $json_times;
+  	
   $sObject->Opportunity__c = $id_opp;
   $sObject->Opportunities_Expert__c = $id_expert_opp;
  $sObject->Status__c = 'New Request';

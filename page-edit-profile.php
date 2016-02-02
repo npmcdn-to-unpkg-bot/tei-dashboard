@@ -28,6 +28,8 @@ Template Name: edit profile
     <?php // or, set /favicon.ico for IE10 win ?>
     <meta name="msapplication-TileColor" content="#2a5781">
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
+    <script src="https://use.typekit.net/wht0akz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
@@ -41,10 +43,10 @@ Template Name: edit profile
 
 
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-bg.png); background-repeat: no-repeat; background-size: cover;">
 
 
-<div class="container"  style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-bg.png;">
+<div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="jumbotron login-box">
@@ -54,17 +56,11 @@ Template Name: edit profile
          <div id="edit-form" class="">
           <h2 class="text-center">Edit Profile</h2>
              <?php echo do_shortcode('[wppb-edit-profile]' ); 
-
-
-
              $user_id=get_current_user_id( );
              $user_info = get_userdata($user_id);
              $role=$user_info->roles[0];
-
-
              ?>
-             <hr>
-            
+        
          </div>
 
 
