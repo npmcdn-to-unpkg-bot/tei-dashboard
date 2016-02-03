@@ -1,6 +1,28 @@
 @import 'colors';
 /*CASE INTAKE PAGE*/
 
+
+/* Mixins */
+
+.rotate {
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+
+    /* IE */
+    -ms-transform: rotate(90deg);
+
+    /* Opera */
+    -o-transform: rotate(90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=(3));
+}
+
+
+/* Styles */
 * {
     font-family: proxima-nova, "proxima nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -26,7 +48,7 @@ textarea {
     /*border: none;*/
     width: 100%;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-bogx;
     box-sizing: border-box;
     /* Chrome, IE8, Opera, Safari 5.1*/
 }
@@ -60,7 +82,19 @@ textarea {
     margin: 0;
 }
 
-
+.FullAccountAccess {
+  background: #E6711B;
+  border-radius: 2px;
+  color: white;
+  cursor: default;
+  display: inline-block;
+  font-size: 0.7em;
+  position: relative;
+  white-space: nowrap;
+  padding: 4px 10px 4px 10px;
+  margin: 5px 10px 0 0; 
+ -webkit-box-shadow: 5px 5px 0 0 darken($tei-third, 5%) , 5px 5px 0 0 darken($tei-third, 5%) ;
+}
 
 .divider {
     clear: both;
@@ -354,6 +388,7 @@ select[size] {
     width: 95px;
     height: 19px;
     background: url(https://i.imgur.com/SyUeSpE.png) -113px 0 no-repeat;
+    // margin: 0 auto;
 }
 
 .container {
@@ -366,7 +401,9 @@ select[size] {
     font-weight: 300;
     font-size: 1.8em;
 }
-
+/* 
+    STAR RATING 
+ */
 .Stars0_5 {
     background-position: -95px 0;
 }

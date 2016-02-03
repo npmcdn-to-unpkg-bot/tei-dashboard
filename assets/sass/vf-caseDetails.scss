@@ -1,3 +1,5 @@
+@import 'colors.scss';
+// @import 'font-awesome.scss';
 /*-------------------------------------------------------------------------
 | 1. UTILITY CLASSES
 /--------------------------------------------------------------------------*/
@@ -36,6 +38,75 @@
 
 hr:last-of-type {
     display: none;
+}
+a {
+    color: $tei-primary;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+
+/*-------------------------------------------------------------------------
+| STAR RATING
+/--------------------------------------------------------------------------*/
+.ExpertRatingStars {
+    width: 95px;
+    height: 19px;
+    background: url(https://i.imgur.com/SyUeSpE.png) -113px 0 no-repeat;
+    margin: 0 auto;
+}
+
+.container {
+    margin-left: 0px;
+}
+
+.ListHeading {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    font-weight: 300;
+    font-size: 1.8em;
+}
+.Stars0_5 {
+    background-position: -95px 0;
+}
+
+.Stars1 {
+    background-position: -76px -23px;
+}
+
+.Stars1_5 {
+    background-position: -76px 0;
+}
+
+.Stars2 {
+    background-position: -57px -23px;
+}
+
+.Stars2_5 {
+    background-position: -57px 0;
+}
+
+.Stars3 {
+    background-position: -38px -23px;
+}
+
+.Stars3_5 {
+    background-position: -38px 0;
+}
+
+.Stars4 {
+    background-position: -19px -23px;
+}
+
+.Stars4_5 {
+    background-position: -19px 0;
+}
+
+.Stars5 {
+    background-position: 0 0;
 }
 
 
@@ -101,15 +172,6 @@ a:hover {
     text-decoration: none !important;
 }
 
-.navbar-default {
-    background-color: #2a5781;
-    border: none;
-}
-
-.navbar {
-    min-height: 37px;
-}
-
 .main-container {
     background-color: #fff;
     /*border-radius: 3px;*/
@@ -134,7 +196,7 @@ a:hover {
     margin-top: 0;
 }
 
-.casetitle {
+.casetitle, .CaseTitle  {
     font-size: 36px;
     line-height: 47px;
     color: #2a5781;
@@ -169,6 +231,9 @@ a:hover {
     font-size: 24px;
 }
 
+.case-manager-card+.col-md-6 {
+    padding-top: 25px;
+}
 .cardimg {
     position: absolute;
     text-align: center;
@@ -482,31 +547,80 @@ input[type=number]::-webkit-outer-spin-button {
 /*-------------------------------------------------------------------------
 | 5. BUTTON STYLES
 /--------------------------------------------------------------------------*/
+.btn, .btn.btn-default {
+    border: 2px solid $tei-primary;
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: normal;
+    border-radius: 3px;
+    color: $tei-primary;
+    font-size: 14px !important;
+    padding: 16px 32px;
+    
+    //spacing for touching buttons
+    &+.btn {
+        margin-left: 20px;
+        @media (max-width: 768px) {
+            margin-top: 20px;
+        }
+    }
 
-.btn {
-    display: inline-block !important;
+    &.btn-hire a {
+        color: $tei-third;
+    }
 }
 
+.btn {
+    display: inline-block;
+}
+
+.btn.uplod,.btn.LCMTmsg {
+        display: block;
+        width: 300px;
+        max-width: 320px;
+        padding: 16px 32px;
+        margin-left: 0;
+        text-align: left;
+        &:before {
+
+        }
+}
+.btn.upload{
+    &:before {
+        content: "\f0ee";
+        font-family: FontAwesome;
+        margin-right: 6px;
+    }
+
+}
+.btn.LCMTmsg {
+    margin-top: 10px;
+    margin-right: 10px;
+    &:before {
+        content: "\f086";
+        font-family: FontAwesome;
+        margin-right: 6px;
+    }
+}
 .btn-success {
     color: #ffffff;
     display: block;
     width: 100%;
     background-color: #2A8414;
     border: 2px solid #2A8414;
-    font-size: 17px;
+    // font-size: 17px;
     padding: 16px 32px;
 }
 
 .btn-default {
-    font-size: 17px;
-    padding: 16px 32px;
-    border: 2px solid #333;
-    margin: 20px;
+    // font-size: 17px;
+    // margin: 20px;
 }
 
 .btn-hire {
     /*color: #fff;*/
-    display: block;
+    // display: block;
     width: 100%;
     border-radius: 4px;
     border: 2px solid #E6711B;
@@ -520,7 +634,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .btn-hire:hover {
-    color: #fff;
+    a {color: #fff};
     border: 2px solid #E6711B;
     background-color: #E6711B;
 }
@@ -528,6 +642,7 @@ input[type=number]::-webkit-outer-spin-button {
 .btn-hire:active {
     color: #2A8414;
 }
+
 
 
 /*-------------------------------------------------------------------------
@@ -640,4 +755,229 @@ input[type=number]::-webkit-outer-spin-button {
 
 .smpl-step > .smpl-step-step.disabled a.smpl-step-icon {
     pointer-events: none;
+}
+
+/*-------------------------------------------------------------------------
+| Page specific styles
+/--------------------------------------------------------------------------*/
+
+.container {
+    margin-left: 0px;
+    }
+    
+.interviewFormHeaderCell {
+    border-bottom: 1px solid #ffffff;
+    }
+     .logo {
+    display: block;
+    height: auto;
+    margin: 0 auto 18px;
+    max-width: 100%;
+    width: 240px;
+}
+
+.ExpertPic{max-width: 100px;
+    border-radius: 50%;}
+
+.case-manager-img {max-width: 100px;
+    border-radius: 50%;}
+
+body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopbtn div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock, body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock {
+    background-color: #ffffff; 
+}
+.divider{clear:both;margin-bottom:30px;}
+.bPageBlock.brandSecondaryBrd.apexDefaultPageBlock.secondaryPalette {
+    border-top-color: #ffffff;
+}
+.pbHeader{display:none;}
+
+
+.bPageBlock.brandSecondaryBrd.apexDefaultPageBlock.secondaryPalette {
+    border-top-color: #ffffff !important;
+}
+
+body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopup div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock, body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-radius: 4px;
+    border-right: 1px solid #ffffff;
+}
+
+h2 {
+    color: #2a5781;
+    display: block;
+    text-align: center;
+}
+.heading-underline {
+    margin-bottom: 20px !important;
+    display: block;
+}
+.bPageBlock.brandSecondaryBrd.apexDefaultPageBlock.secondaryPalette{ 
+    border-top-color: #2a5781;
+}
+span.text-underline{
+
+}
+
+.ContactData{
+    margin-bottom: 2em;
+    display: block;
+    line-height: 1.67;
+}
+.ContactName{
+    font-weight: 600;
+}
+.ContactAddress{}
+.ContactAddress2{}
+.ContactCityStateZIP{}
+.ContactData .Phone{}
+.ContactEmail{}
+
+.AttachmentContainer{
+     
+     display: inline-block;
+     margin-right: 20px;
+}
+.AttachmentContainer:before {
+}
+
+.AttachmentType {
+    font-weight: 600;
+    float: left;
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px
+}
+.AttachmentType:before {
+    content: " –  ";
+}
+.AttachmentLink{
+    padding-left: 30px;
+    display:block;
+    margin-bottom: 2em;
+  
+}
+.AttachmentLink a {
+    text-decoration: underline;
+    font-weight: 600;
+      color: #2a5781;
+}
+.AttachmentName{
+    font-size: 0.8em;
+    float: left;
+    a {
+        text-decoration: underline;
+    }
+}
+
+img {
+   display: block;
+   margin: 10px 0;
+}
+.EID {
+    font-weight: 600;
+}
+.FeesChart,.FeesDepo,.FeesTrial,.FeesComments{
+    float: left;
+    width: 150px;
+}
+.FeesChart span,.FeesDepo span,.FeesTrial span,.FeesComments span {
+    font-weight: 600;
+    display: block;
+}
+
+
+.FileIcon {
+    float: left;
+    margin-top: 5px;
+}
+
+.FileIcon:before
+ {
+    content: "\f016"; /* generic file icon */
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-family: 'fontAwesome';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    width: 20px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+
+.pdf.FileIcon:before {
+    content: "\f1c1"; /*PDF*/
+  color: red;
+}
+.docx.FileIcon:before,
+.doc.FileIcon:before {
+    content: "\f1c2"; /*Word*/
+    color: blue;
+}
+.xls.FileIcon:before,
+.xlsx.FileIcon:before {
+    content: "\f1c3"; /*Excel*/
+    color: green;
+}
+.ppt.FileIcon:before, 
+.pptx.FileIcon:before {
+    content: "\f1c4"; /*Powerpoint*/
+    color: #CC8400;
+}
+
+
+
+.vf-tei-logo {
+    padding: 20px 0;
+}
+.vf-flow.secondary .logo {
+    display: block;
+    width: 180px;
+    max-width: 100%;
+    margin: 0 auto 18px;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.OppDate {
+    font-weight: 600;
+    font-size: 12px;
+    color: $cool-grey;
+}
+
+.MessageContainer {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 0.8em;
+    border-bottom: 1px dotted $mid-grey;
+    &:before {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+        display: table;
+        content: " ";
+        box-sizing: border-box;
+    }
+}
+.ChatterPic {
+    border-radius: 50%;
+    float: left;
+    max-width: 60px;
+    margin: 0 20px 20px 0;
 }

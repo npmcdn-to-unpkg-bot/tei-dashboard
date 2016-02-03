@@ -45,7 +45,15 @@ Template Name: Dashboard Scheduler Template
         <div class="col-sm-10 col-sm-offset-1 text-center">
             <h1 class="share-case-title ">
             <!-- TITLE GOES HERE -->
-            <?php echo $Opp_name; ?>
+            <?php
+                if ($Opp_name!=''){
+                    echo $Opp_name;        
+                } else {
+                    echo "Your Availability";
+                }
+             
+
+             ?>
             </h1>
             <div class="content">
                 <? echo $greeting; ?>
