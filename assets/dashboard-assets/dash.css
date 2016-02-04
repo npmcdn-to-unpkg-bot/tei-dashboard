@@ -56,6 +56,9 @@ html {
 .dash-navbar-top .navbar-brand span {
     font-size: 10px;
     font-weight: normal;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: 5px;
 }
 
 .dash-navbar-top .navbar-brand:hover,

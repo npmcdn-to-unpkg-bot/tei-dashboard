@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'star-rating';
 /*CASE INTAKE PAGE*/
 
 
@@ -315,7 +316,9 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
     border-radius: 50%;
     display: block;
 }
-
+.vf-flow.main input[type=text] {
+    width: 100%;
+}
 .vf-flow.main label {
     margin-bottom: 20px;
 }
@@ -401,45 +404,4 @@ select[size] {
     font-weight: 300;
     font-size: 1.8em;
 }
-/* 
-    STAR RATING 
- */
-.Stars0_5 {
-    background-position: -95px 0;
-}
 
-.Stars1 {
-    background-position: -76px -23px;
-}
-
-.Stars1_5 {
-    background-position: -76px 0;
-}
-
-.Stars2 {
-    background-position: -57px -23px;
-}
-
-.Stars2_5 {
-    background-position: -57px 0;
-}
-
-.Stars3 {
-    background-position: -38px -23px;
-}
-
-.Stars3_5 {
-    background-position: -38px 0;
-}
-
-.Stars4 {
-    background-position: -19px -23px;
-}
-
-.Stars4_5 {
-    background-position: -19px 0;
-}
-
-.Stars5 {
-    background-position: 0 0;
-}

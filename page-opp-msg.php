@@ -22,13 +22,13 @@ Template Name: Upload Case Attach
     <?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png?v=1">
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/assets/css/vf-caseDetails.css">
     <!--[if IE]>
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
     <![endif]-->
     <?php // or, set /favicon.ico for IE10 win ?>
     <meta name="msapplication-TileColor" content="#2a5781">
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/assets/css/vf-caseDetails.css">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
@@ -38,23 +38,26 @@ Template Name: Upload Case Attach
     <script type="text/javascript">
     var templateDir = "<?php bloginfo('template_directory') ?>";
     </script>
-</head>
+
 
 <?php 
 
 
 $IDU=$_GET['IDU'];
 $IDO=$_GET['IDO'];
+$UID=$_GET['UID'];
+$LCMT_First=$_GET['UFIRST'];
+$LCMT_Last=$_GET['ULAST'];
+$OID=$_GET['OID'];
 $na=$_POST['na'];
 $name=$_GET['case']; 
 $aid=$_GET['aid'];
-$desc=$_POST['desc'];
+$msg=$_POST['msg'];
 ?>
-
 <?php
 
 
-if ($na=='upload')
+if ($na=='send')
 {
 define("SOAP_CLIENT_BASEDIR", "./wp-content/Force.com-Toolkit-for-PHP-master/soapclient");
 require_once (SOAP_CLIENT_BASEDIR.'/SforceEnterpriseClient.php');
@@ -65,99 +68,56 @@ $mySoapClient = $mySforceConnection->createConnection(SOAP_CLIENT_BASEDIR.'/ente
 $mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
 
  
-  $file = $_FILES["filebutton"]["tmp_name"];
-  $fileName = $_FILES["filebutton"]["name"];
 
-if ($fileName!="")
-{
-	
-		
+
+
+    
   $sObject = new stdclass();
-  $sObject->Name = $fileName;
-  $sObject->Opportunity__c = $IDO;
-  $sObject->Description__c = $desc;
-  $createResponse = $mySforceConnection->create(array($sObject), 'Opportunity_Attachment__c');
+  $sObject->Contact__c = $IDU;
+  $sObject->Message__c = $msg;
+  $sObject->Opportunity__c=$IDO;
+  $createResponse = $mySforceConnection->create(array($sObject), 'Opportunity_Messages__c');
   $id=$createResponse[0];
-  $id_attach_header=$id->id;		
+  $id_attach_header=$id->id;    
 
 
-	
-  $handle = fopen($file,'rb');
-  $file_content = fread($handle,filesize($file));
-  fclose($handle);
-
-  $encoded = chunk_split(base64_encode($file_content));
-  $sObject = new stdclass();
-  $sObject->Name = $fileName;
-  $sObject->ParentId = $id_attach_header;
-  $sObject->body = $encoded;
-
-  $createResponse = $mySforceConnection->create(array($sObject), 'Attachment');
-  $id=$createResponse[0];
-  $IDattach=$id->id;
+ 
+ 
+echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU#chatter\">";
   
- 
-  
-  
-  
-          $sObject1 = new stdClass();
-
-	$sObject1->Id =$id_attach_header ;
-	$sObject1->	Attachment__c = $IDattach;
-    $response = $mySforceConnection->update(array($sObject1), 'Opportunity_Attachment__c');
-	
- #echo "<h3>Upload Complete</h3>";
- 
- 
- 
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU\">";
-  
- 
-}
-	
-	
-	
-	
-	
-}
-else
-{
- 
 ?>
+  </head> 
+<?}
+else
+{ ?>
+  
 
-  <div class="container">
+
+
+<div class="container">
 
   <div class="row sec-intro mb">
+<img class="logo" id="logo" border="0" alt="Logo" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face:center/e_grayscale,c_scale,h_80/v40/logos/<? echo "$aid"; ?>.jpg">
 
-  <div class="col-md-12 text-center">
-    <img class="logo" id="logo" border="0" alt="Logo" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face:center/e_grayscale,c_scale,h_80/v40/logos/<? echo "$aid"; ?>.jpg">
+<h2 class="CaseTitle"><? echo "$OID: $name"; ?></h2>
 
-    <h2 class="CaseTitle"><? echo "$name"; ?></h2>
 
-  </div>
-  <div class="col-md-12">
+
   
   
    <form class="form-horizontal validate-form" name="opp_attachment" method="post"  action="?IDO=<? echo "$IDO"; ?>&IDU=<? echo "$IDU"; ?>&case=<? echo "$name"; ?>&aid=<? echo "aid"; ?>" enctype="multipart/form-data">
   
-   <input type="hidden" name="na" value="upload">
+   <input type="hidden" name="na" value="send">
 	<input type="hidden" name="IDO" value="<? echo "$IDO"; ?>">
 	
   <fieldset>
   <!-- Form Name -->
-          <legend>Case Documents</legend>
-          <!-- File Button -->
-          <div class="form-group">
-            <label class="control-label col-sm-4 col-xs-12 " for="filebutton">Upload  <em> (doc/pdf/txt)</em></label>
-            <div class="col-xs-12 col-sm-8 col-md-8">
-              <input id="filebutton" name="filebutton" class="input-file pt" type="file">
-            </div>
-          </div>
-      
+          <legend>Case Message</legend>
+
 		<div class="form-group">
-            <label for="inputDesc" class="control-label col-sm-4 col-xs-12 ">Descriptions</label>
+            <label for="inputDesc" class="control-label col-sm-4 col-xs-12 ">Message</label>
             <div class="col-xs-12 col-sm-8">
-              <textarea type="textarea" class="desc" name="desc" placeholder="Enter any additional information about the File (optional)"></textarea>
+              <textarea type="textarea" class="msg" name="msg" placeholder="Message"></textarea>
             </div>
           </div>
 		    </fieldset>
@@ -165,13 +125,13 @@ else
 
 
             <div class="col-sm-8 col-sm-offset-4 mb">
-              <button type="submit" class="btn btn-submit submit send">Upload</button>
+              <button type="submit" class="btn btn-submit  send">Send Message to <? echo "$LCMT_First"; ?></button>
             </div>
 		</form>
 	
 <? } ?>
 
-	</div></div>
+</div>
 </div>
 <body <?php body_class(); ?>>
 
@@ -181,7 +141,7 @@ else
 
 
 
-
+<div id="status-overlay"></div>
 
 
 
@@ -194,7 +154,7 @@ else
 <script>
   $(document).ready(function() {
     $('button[type=submit]').click(function(e){
-        var overlayMsg = "Document Uploading.....";
+        var overlayMsg = "Sending Message.....";
         var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
         overlay.appendTo(document.body);
         

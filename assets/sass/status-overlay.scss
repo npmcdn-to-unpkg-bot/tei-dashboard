@@ -1,0 +1,28 @@
+#status-overlay{
+        position: absolute;
+        display: none;
+        background: rgba(255, 255, 255, 0.95);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+        border-radius: 4px;
+        min-height: 400px;
+
+        .overlay-message  {
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                color: #2a5781;
+                font-size: 2em;
+                z-index: 2;
+        }  
+    &.show {
+        display: block;
+    }    
+}

@@ -9,21 +9,29 @@
     /*Initialize*/
     console.log('tei-dashboard scripts running....');
 
+
+    /* Login / Register switcher */
     $('.register-switch').click(function(e){
         e.preventDefault();
         $('#login-form').toggleClass('hidden');
         $('#register-form').toggleClass('hidden');
     });
 
+    /* check for old IE versions */
     var isOldIE = (navigator.userAgent.indexOf("MSIE") !== -1); // Detect IE10 and below
-    var $iframe = $('iframe');
+    
+
     /*iFrameResizer plugin*/
+    var $iframe = $('iframe#salesforce-content');
     $iframe.iFrameResize({
         checkOrigin: false,
         heightCalculationMethod: isOldIE ? 'max' : 'lowestElement',
         log: true, // Enable console logging
         enablePublicMethods: true, // Enable methods within iframe hosted page
         inPageLinks: true,
+        readyCallback: function(){
+            console.log('iframe ready');
+        },
         resizedCallback: function(messageData) { // Callback fn when resize is received
             console.log('RESIZE MESSAGE: ');
             console.dir(messageData);
@@ -38,12 +46,12 @@
         messageCallback: function(messageData) { // Callback fn when message is received
             console.log('CALLBACK MESSAGE:');
 
-            $('p#callback ').text(
+            // $('p#callback ').text(
                 // '<b>Frame ID:</b> ' + messageData.iframe.id +
                 // ' <b>Message:</b> ' + messageData.message
 
-                JSON.stringify(messageData.message)
-            );
+                // JSON.stringify(messageData.message)
+            // );
 
             // alert('callback' + messageData.message);
 
