@@ -94,7 +94,7 @@ else
 
 
 
-<div class="container">
+<div class="container main-container">
 
   <div class="row sec-intro mb">
 <img class="logo" id="logo" border="0" alt="Logo" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face:center/e_grayscale,c_scale,h_80/v40/logos/<? echo "$aid"; ?>.jpg">
