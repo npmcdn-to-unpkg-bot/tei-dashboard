@@ -11,7 +11,9 @@ $(document).ready(function() {
     /*Variables */
     var $Chattertoggle =  $( '#Chattertoggle'),
         $ChatterHeading = $Chattertoggle.parent().parent(),
-        $chatterbox = $('#chatterbox');
+        $chatterbox = $('#chatterbox'),
+        $Attachtoggle = $('#Attachtoggle'),
+        $attachbox = $('#attachbox');
         
     //space collapsed chatterheading 
     $ChatterHeading.css('margin-bottom', '60px');
@@ -19,21 +21,26 @@ $(document).ready(function() {
    /* enable toggle*/
    $Chattertoggle.on('click', function(e){
         e.preventDefault();
-        $('#chatterbox').collapse('toggle');
+        $chatterbox.collapse('toggle');
+        $Chattertoggle.find('.indicator').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
     });
+   $Attachtoggle.on('click', function(e){
+      e.preventDefault();
+      $attachbox.collapse('toggle');
+      $Attachtoggle.find('.indicator').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+   });
   
     //check to see if coming from hash and show  chatterbox
     if (window.location.hash == '#chatter') {
       $chatterbox.collapse('show');
+      $Chattertoggle.find('.indicator').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
     }
-  
-    // toggle icon based on chatterbox collapse
-    function toggleChevron(e) {
-        $('.indicator')
-          .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+    if (window.location.hash == '#attachments') {
+      $attachbox.collapse('show');
+      $Attachtoggle.find('.indicator').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
     }
-    $chatterbox.on('hidden.bs.collapse', toggleChevron);
-    $chatterbox.on('shown.bs.collapse', toggleChevron);
+    
+
 
 
 });

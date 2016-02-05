@@ -40,7 +40,7 @@ Template Name: Dashboard Scheduler Template
 </head>
 <body <?php body_class(); ?>>
 
-<div class="container" style="margin-left: 0">
+<div class="container main-container mt" >
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1 text-center">
             <h1 class="share-case-title ">
@@ -65,29 +65,6 @@ Template Name: Dashboard Scheduler Template
         <div class="col-sm-10 col-sm-offset-1">
             <?php echo do_shortcode('[tei-scheduler]'); ?>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 col-md-12 text-center">
-            <div class="tei-card">
-                <div class="header">
-                    Select timezone
-                </div>
-                <div class="content">
-                    <select id="timezone-selector">                
-                                    <!-- <option value="" >none</option> -->
-                                    <option value="local" selected>Local</option>
-                                    <option value="UTC">UTC</option>
-                                    <option value="EST">Eastern</option>
-                                    <option value="CST">Central</option>
-                                    <option value="MST">Mountain</option>
-                                    <option value="PST">Pacific</option>
-                    </select>
-                        <div id="available"></div>
-                </div>
-            </div>
-        </div>
-
-
     </div>
 </div>
 

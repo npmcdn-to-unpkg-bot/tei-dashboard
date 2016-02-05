@@ -395,6 +395,7 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
+
 #### 
 #### Login Stuff
 #### 
@@ -402,7 +403,7 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 add_role( "Expert", "Expert", array( 'read' => true, 'level_0' => true )  );  
 add_role( "Client", "Client", array( 'read' => true, 'level_0' => true )  ); 
 
-add_action( 'user_register', 'myplugin_registration_save', 10, 1 ); 
+add_action( 'user_register', 'myplugin_registration_save', 0, 1 ); 
 
 function myplugin_registration_save( $user_id ) {
 	
@@ -410,44 +411,106 @@ function myplugin_registration_save( $user_id ) {
 	 
 	  
 	$email="$user_info->user_email";
+	
+	#$test=implode(" ",$user_info);
     	
-	$role=$user_role->roles[0];
+	$role=$user_info->roles[0];
+	$test=get_user_meta($user_id, 'role');
+    $test=implode(" ",$test);
+
+	
+
 	
 	  
-define("SOAP_CLIENT_BASEDIR", "./wp-content/Force.com-Toolkit-for-PHP-master/soapclient");
-require_once (SOAP_CLIENT_BASEDIR.'/SforceEnterpriseClient.php');
-require_once ('./wp-content/Force.com-Toolkit-for-PHP-master/samples/userAuth.php');
-ini_set("soap.wsdl_cache_enabled", "0");
-$mySforceConnection = new SforceEnterpriseClient();
-$mySoapClient = $mySforceConnection->createConnection(SOAP_CLIENT_BASEDIR.'/enterprise.wsdl.xml');
-$mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
-
-
-    $query = "SELECT Id,C_ID__c,Email,Phone,LastName,FirstName,IsDeleted,MailingCity,MailingState,MailingCountry,MailingPostalCode from Contact WHERE Email='$email' AND IsDeleted=False";
+ $server_base = $_SERVER['DOCUMENT_ROOT'];
+        
+        define("SOAP_CLIENT_BASEDIR", "$server_base/wp-content/Force.com-Toolkit-for-PHP-master/soapclient");
+        require_once(SOAP_CLIENT_BASEDIR . '/SforceEnterpriseClient.php');
+        require_once("$server_base/wp-content/Force.com-Toolkit-for-PHP-master/samples/userAuth.php");
+        ini_set("soap.wsdl_cache_enabled", "0");
+        $mySforceConnection = new SforceEnterpriseClient();
+        $mySoapClient       = $mySforceConnection->createConnection(SOAP_CLIENT_BASEDIR . '/enterprise.wsdl.xml');
+        $mylogin            = $mySforceConnection->login($USERNAME, $PASSWORD);
+$found=0;
+if (($role=='Client')||($role=='Expert'))
+{
+    $query = "SELECT Id,C_ID__c,AccountId,Account_Name__c,Email,Phone,LastName,FirstName,IsDeleted,MailingCity,MailingState,MailingCountry,MailingPostalCode from Contact WHERE Email='$email' AND IsDeleted=False  LIMIT 1";
       $response = $mySforceConnection->query(($query));
      foreach ($response->records as $record) {
-		 
-
+		$found=1; 
 
 
 update_user_meta($user_id, 'first_name', $record->FirstName); 
 update_user_meta($user_id, 'last_name', $record->LastName);
-update_user_meta($user_id, 'account_name', $role);
+update_user_meta($user_id, 'account_name', $record->Account_Name__c);
+update_user_meta($user_id, 'id_sf_account', $record->AccountId);
 update_user_meta($user_id, 'id_sf_contact', $record->Id); 
 update_user_meta($user_id, 'cid', $record->C_ID__c); 
 
+wp_update_user(array(
+    'ID' => $user_id,
+    'role' => 'client'
+));
+   
+
+     
+	 $sObject1 = new stdClass();
+
+	$sObject1->Id =$record->Id ;
+	$sObject1->WP_Login_ID__c = $user_id;
+    $response = $mySforceConnection->update(array($sObject1), 'Contact');
+
 
 	 }
-		
 	 
-	
 	 
+	 
+	 if ($found==0)
+{
+
+    $query = "SELECT Id,Firstname__c,Lastname__c,Ms_Mr_Dr_Nurse__c,E_ID__c from Expert__c WHERE Email__c='$email' LIMIT 1";
+
+      $response = $mySforceConnection->query(($query));
+     foreach ($response->records as $record) {
+		 
+		 $found=1;
+		 update_user_meta($user_id, 'role', "Expert"); 
+update_user_meta($user_id, 'id_sf_expert', $record->Id); 
+update_user_meta($user_id, 'eid', $record->E_ID__c); 
+update_user_meta($user_id, 'first_name', $record->Firstname__c); 
+update_user_meta($user_id, 'last_name', $record->Lastname__c);
+update_user_meta($user_id, 'title', $record->Ms_Mr_Dr_Nurse__c);
+update_user_meta($user_id, 'role_check', "Expert");
+$update= wp_update_user( array( 'ID' => $user_id, 'role' => "Expert" ) );
+
+     
+	 $sObject1 = new stdClass();
+	$sObject1->Id =$record->Id ;
+	$sObject1->WP_Login_ID__c = $user_id; 
+    $response = $mySforceConnection->update(array($sObject1), 'Expert__c');
+
+
+	 }}
+	 
+	 }
 	 
 	 
 	 
 	 
 }	 
 
+
+add_action( 'wppb_activate_user', 'ChangeRoleExpert', 1, 1 );
+function ChangeRoleExpert( $user_id ){
+	
+	 
+	
+	$role_check=get_user_meta($user_id, 'role_check',1);
+	if ($role_check=='Expert')
+	{
+	$update= wp_update_user( array( 'ID' => $user_id, 'role' => "Expert" ) );
+	}
+}
  ###Autologin User after Email 
  /*
  * Auto Login After Email Confirmation. Tags auto login, email confirmation
@@ -485,7 +548,17 @@ function wppb_custom_autologin(){
 			wp_set_auth_cookie( $uid );
 			delete_user_meta($uid, 'pb_autologin' . $uid );
 			delete_user_meta($uid, 'pb_autologin' . $uid . '_expiration');
-		   wp_redirect( home_url() . '/client-dashboard/' );
+
+	       $user_info = get_userdata($uid);
+	 	   $role=$user_info->roles[0];
+	  
+    	if ($role=='Client')
+    	{wp_redirect( home_url() . '/client-dashboard/' );}
+		if ($role=='Expert')
+    	{wp_redirect( home_url() . '/expert-dashboard/' );}
+	
+			
+		   
 			exit;
 		}
 	}

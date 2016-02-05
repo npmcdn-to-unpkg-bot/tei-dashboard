@@ -96,7 +96,7 @@ else
 
 <div class="container main-container">
 
-  <div class="row sec-intro mb">
+  <div class=" sec-intro mb">
 <img class="logo" id="logo" border="0" alt="Logo" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face:center/e_grayscale,c_scale,h_80/v40/logos/<? echo "$aid"; ?>.jpg">
 
 <h2 class="CaseTitle"><? echo "$OID: $name"; ?></h2>
@@ -109,22 +109,19 @@ else
   
    <input type="hidden" name="na" value="send">
 	<input type="hidden" name="IDO" value="<? echo "$IDO"; ?>">
-	
-  <fieldset>
-  <!-- Form Name -->
-          <legend>Case Message</legend>
-
-		<div class="form-group">
-            <label for="inputDesc" class="control-label col-sm-4 col-xs-12 ">Message</label>
-            <div class="col-xs-12 col-sm-8">
-              <textarea type="textarea" class="msg" name="msg" placeholder="Message"></textarea>
-            </div>
-          </div>
-		    </fieldset>
+	<div class="col-xs-12 col-sm-8">
+    <fieldset>
+  		<div class="form-group">
+              
+                <textarea type="textarea" class="msg" name="msg" placeholder="Message"></textarea>
+              
+        </div>
+      </fieldset>
+    </div>
 		    <div class="clearfix mb"></div>
 
 
-            <div class="col-sm-8 col-sm-offset-4 mb">
+            <div class="col-sm-8 mb">
               <button type="submit" class="btn btn-submit  send">Send Message to <? echo "$LCMT_First"; ?></button>
             </div>
 		</form>
