@@ -51,7 +51,8 @@ $mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
  $id_expert_opp=$_GET['IDOPPEXP'];
   $id_expert=$_GET['IDE'];
   $id_opp=$_GET['IDO'];
-  $id_contact=$_GET['IDU'];
+  $id_contact=$_GET['IDU'];  
+  $WP=$_GET['WP'];
 
 $id='';
 
@@ -97,7 +98,7 @@ $site = get_site_url();
 
  // https://logintei.staging.wpengine.com/scheduler/?ID=006E0000004dajd&IDCC=a1lE0000000NboUIAS&IDU=003E000000HTeqLIAT
 
-   echo "<META http-equiv=\"refresh\" content=\"0;URL=$site/scheduler/?ID=$id_opp&IDCC=$id&IDU=$id_contact\">";
+   echo "<META http-equiv=\"refresh\" content=\"0;URL=$site/scheduler/?ID=$id_opp&IDCC=$id&IDU=$id_contact&WP=$WP\">";
 
  
 

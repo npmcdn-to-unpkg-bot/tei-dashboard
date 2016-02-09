@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Select Expert Page 
+Template Name: Upload Case Attach
 */
 
 //  echo "</pre></div";
@@ -28,6 +28,7 @@ Template Name: Select Expert Page
     <?php // or, set /favicon.ico for IE10 win ?>
     <meta name="msapplication-TileColor" content="#2a5781">
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/assets/css/vf-caseDetails.css">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
@@ -38,65 +39,43 @@ Template Name: Select Expert Page
     var templateDir = "<?php bloginfo('template_directory') ?>";
     </script>
 
-
+<script src='//cameratag.com/api/v7/js/cameratag.js' type='text/javascript'></script>
 <?php 
-define("SOAP_CLIENT_BASEDIR", "./wp-content/Force.com-Toolkit-for-PHP-master/soapclient");
-require_once (SOAP_CLIENT_BASEDIR.'/SforceEnterpriseClient.php');
-require_once ('./wp-content/Force.com-Toolkit-for-PHP-master/samples/userAuth.php');
-ini_set("soap.wsdl_cache_enabled", "0");
-$mySforceConnection = new SforceEnterpriseClient();
-$mySoapClient = $mySforceConnection->createConnection(SOAP_CLIENT_BASEDIR.'/enterprise.wsdl.xml');
-$mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
 
 
-$IDOPPEXP=$_GET['IDOPPEXP'];
-$IDO=@$_GET['IDO'];
-$CLOSE=@$_GET['CLOSE'];
-$IDU=@$_GET['IDU'];
-$WP=@$_GET['WP'];
-
-if (($IDOPPEXP!="")&&($IDO!='')&&($CLOSE==''))
-{
-$sObject1 = new stdClass();
-$sObject1->chosen__c = 1 ;
-$sObject1->Id = $IDOPPEXP;
-$response = $mySforceConnection->update(array($sObject1), 'Opportunities_Expert__c');
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU\">";
-
-}
-
-
-
-if (($IDOPPEXP!="")&&($IDO!='')&&($CLOSE!=''))
-{
-$sObject1 = new stdClass();
-$sObject1->chosen__c = 1 ;
-$sObject1->Id = $IDOPPEXP;
-$response = $mySforceConnection->update(array($sObject1), 'Opportunities_Expert__c');
-
-$sObject2 = new stdClass();
-$sObject2->StageName = 'Closed' ;
-$sObject2->Id = $IDO;
-$response2 = $mySforceConnection->update(array($sObject2), 'Opportunity');
-
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP\">";
-
-}
-
-
-
-
-$site = get_site_url();
-
- // https://logintei.staging.wpengine.com/scheduler/?ID=006E0000004dajd&IDCC=a1lE0000000NboUIAS&IDU=003E000000HTeqLIAT
-
-   
- 
+$IDE=$_GET['IDE'];
 
 ?>
 
 
-</head>
+
+  </head> 
+
+  
+
+
+
+<div class="container main-container">
+
+  <div class=" sec-intro mb">
+
+
+
+
+  
+  
+  
+	<div class="col-xs-12 col-sm-8">
+ 
+   <camera id='MyFirstCamera' data-app-id='a-7b1e6e70-aebc-0133-b4b7-22000b789ce2'></camera>
+    </div>
+		    <div class="clearfix mb"></div>
+
+
+          
+
+</div>
+</div>
 <body <?php body_class(); ?>>
 
 
@@ -105,7 +84,7 @@ $site = get_site_url();
 
 
 
-
+<div id="status-overlay"></div>
 
 
 
@@ -115,5 +94,18 @@ $site = get_site_url();
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
 <?php wp_footer(); ?>
+<script>
+  $(document).ready(function() {
+    $('button[type=submit]').click(function(e){
+        var overlayMsg = "Sending Message.....";
+        var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
+        overlay.appendTo(document.body);
+        
+        overlay.toggleClass('show');
+
+        $(this).fadeOut();
+    });
+  });
+</script>
 </body>
 </html>

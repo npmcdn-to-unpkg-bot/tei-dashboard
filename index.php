@@ -14,7 +14,12 @@
  * @since Twenty Sixteen 1.0
  */
 
-include 'header-login.php'; ?>
+include 'header-login.php';
+
+$return_url=$_GET['return_url'];
+if ($return_url!='')
+{$redirect="redirect_url=\"$return_url\"";}
+ ?>
 
 
 <div class="content dnl-visible" data-effect="dnl-push">
@@ -29,7 +34,7 @@ include 'header-login.php'; ?>
          
            <div id="login-form" class="">
             <h2 class="text-center">Log In</h2>
-               <? echo do_shortcode( '[wppb-login]' );
+               <? echo do_shortcode( '[wppb-login $redirect"]' );
 
 
 

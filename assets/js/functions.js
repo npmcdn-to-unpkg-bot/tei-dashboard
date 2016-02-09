@@ -35,17 +35,31 @@
         resizedCallback: function(messageData) { // Callback fn when resize is received
             console.log('RESIZE MESSAGE: ');
             console.dir(messageData);
+
             // $('p#callback').html(
-            //     '<b>Frame ID:</b> ' + messageData.iframe.id +
-            //     ' <b>Height:</b> ' + messageData.height +
-            //     ' <b>Width:</b> ' + messageData.width +
-            //     ' <b>Event type:</b> ' + messageData.type
+
+                // '<b>Frame ID:</b> ' + messageData.iframe.id +
+                // ' <b>Height:</b> ' + messageData.height +
+                // ' <b>Width:</b> ' + messageData.width +
+                // ' <b>Event type:</b> ' + messageData.type
             // );
 
         },
         messageCallback: function(messageData) { // Callback fn when message is received
             console.log('CALLBACK MESSAGE:');
-
+            console.dir(messageData.message);
+            window.dashboardStatus = messageData.message;
+            $('.open-cases-badge').html(dashboardStatus.CountOpen);
+            $('.closed-cases-badge').html(dashboardStatus.CountClosed);
+            $('.calls-badge').html(dashboardStatus.CountCalls);
+            
+            $('p#callback').html(
+                messageData.message
+                // '<b>Frame ID:</b> ' + messageData.iframe.id +
+                // ' <b>Height:</b> ' + messageData.height +
+                // ' <b>Width:</b> ' + messageData.width +
+                // ' <b>Event type:</b> ' + messageData.type
+            );
             // $('p#callback ').text(
                 // '<b>Frame ID:</b> ' + messageData.iframe.id +
                 // ' <b>Message:</b> ' + messageData.message

@@ -27,7 +27,9 @@
 * {
     font-family: proxima-nova, "proxima nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
+.main-container {
+    margin-left: 0;
+}
 body {
     font-size: 16px;
     color: $body-copy !important;

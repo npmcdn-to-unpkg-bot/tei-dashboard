@@ -2,7 +2,7 @@
 /**
  * TEI-Dashboard functions and definitions
  */
-
+ 
 /**
  * Theme only works in WordPress 4.4 or later.
  */
@@ -215,10 +215,10 @@ function tei_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css',  '4.5.0' );
 	// Dashboard styles 
 	
-	if( is_page_template('page-client-dashboard.php' ) || is_home()) {
+	#if( is_page_template('page-client-dashboard.php' )||is_page_template('page-expert-dashboard.php' )  || is_home()) {
 		wp_enqueue_style( 'dash-css', get_template_directory_uri() . '/assets/dashboard-assets/dash.css',  '3.3.6' );
 		wp_enqueue_script('dash-js', get_template_directory_uri() . '/assets/dashboard-assets/js/dash.js', array('jquery'), '1.0.0', true );
-	}
+	#}
 	// iframeResizer
 	wp_enqueue_script( 'iframeResizer', get_template_directory_uri() . '/assets/js/libs/iframeResizer.min.js', array( 'jquery' ), '3.5.1', true );
 	//jQuery Touch Swipe 
@@ -251,7 +251,7 @@ function tei_scripts() {
 
 
 
-
+  
 
 
 
@@ -449,7 +449,7 @@ update_user_meta($user_id, 'cid', $record->C_ID__c);
 
 wp_update_user(array(
     'ID' => $user_id,
-    'role' => 'client'
+    'role' => 'Client'
 ));
    
 
@@ -474,7 +474,7 @@ wp_update_user(array(
      foreach ($response->records as $record) {
 		 
 		 $found=1;
-		 update_user_meta($user_id, 'role', "Expert"); 
+	
 update_user_meta($user_id, 'id_sf_expert', $record->Id); 
 update_user_meta($user_id, 'eid', $record->E_ID__c); 
 update_user_meta($user_id, 'first_name', $record->Firstname__c); 
@@ -496,6 +496,7 @@ $update= wp_update_user( array( 'ID' => $user_id, 'role' => "Expert" ) );
 	 
 	 
 	 
+
 	 
 }	 
 

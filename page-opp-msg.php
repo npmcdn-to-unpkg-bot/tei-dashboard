@@ -53,6 +53,7 @@ $na=$_POST['na'];
 $name=$_GET['case']; 
 $aid=$_GET['aid'];
 $msg=$_POST['msg'];
+$WP=$_GET['WP'];
 ?>
 <?php
 
@@ -78,12 +79,12 @@ $mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
   $sObject->Opportunity__c=$IDO;
   $createResponse = $mySforceConnection->create(array($sObject), 'Opportunity_Messages__c');
   $id=$createResponse[0];
-  $id_attach_header=$id->id;    
+  $id_msg=$id->id;    
 
 
  
  
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU#chatter\">";
+echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#chatter\">";
   
 ?>
   </head> 
@@ -105,7 +106,7 @@ else
 
   
   
-   <form class="form-horizontal validate-form" name="opp_attachment" method="post"  action="?IDO=<? echo "$IDO"; ?>&IDU=<? echo "$IDU"; ?>&case=<? echo "$name"; ?>&aid=<? echo "aid"; ?>" enctype="multipart/form-data">
+   <form class="form-horizontal validate-form" name="opp_attachment" method="post"  action="?IDO=<? echo "$IDO"; ?>&WP=<? echo "$WP"; ?>&IDU=<? echo "$IDU"; ?>&case=<? echo "$name"; ?>&aid=<? echo "aid"; ?>" enctype="multipart/form-data">
   
    <input type="hidden" name="na" value="send">
 	<input type="hidden" name="IDO" value="<? echo "$IDO"; ?>">

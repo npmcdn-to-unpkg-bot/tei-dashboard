@@ -42,7 +42,7 @@ Template Name: Upload Case Attach
 
 <?php 
 
-
+$WP=$_GET['WP'];
 $IDU=$_GET['IDU'];
 $IDO=$_GET['IDO'];
 $na=$_POST['na'];
@@ -108,9 +108,17 @@ if ($fileName!="")
 	
  #echo "<h3>Upload Complete</h3>";
  
+  $msg="New File Upload $fileName";
+ $sObject3 = new stdclass();
+  $sObject3->Contact__c = $IDU;
+  $sObject3->Message__c = $msg;
+  $sObject3->Opportunity__c=$IDO;
+  $createResponse = $mySforceConnection->create(array($sObject3), 'Opportunity_Messages__c');
+  $id=$createResponse[0];
  
+
  
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU#attachments\">";
+echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#attachments\">";
   
  
 }
@@ -138,7 +146,7 @@ else
   <div class="col-md-12">
   
   
-   <form class="form-horizontal validate-form" name="opp_attachment" method="post"  action="?IDO=<? echo "$IDO"; ?>&IDU=<? echo "$IDU"; ?>&case=<? echo "$name"; ?>&aid=<? echo "aid"; ?>" enctype="multipart/form-data">
+   <form class="form-horizontal validate-form" name="opp_attachment" method="post"  action="?IDO=<? echo "$IDO"; ?>&WP=<? echo "$WP"; ?>&IDU=<? echo "$IDU"; ?>&case=<? echo "$name"; ?>&aid=<? echo "aid"; ?>" enctype="multipart/form-data">
   
    <input type="hidden" name="na" value="upload">
 	<input type="hidden" name="IDO" value="<? echo "$IDO"; ?>">

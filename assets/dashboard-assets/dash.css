@@ -404,9 +404,9 @@ html {
     right: 24px;
     top: 6px;
     padding: 3px 10px;
-    color: #a7a9ac;
+    color: #ddd;
     background-color: transparent;
-    border: 1px solid #4f4a65;
+    border: 1px solid #ddd;
 }
 
 .dash-navbar-left .dnl-nav li a.collapsed .dnl-btn-sub-collapse {
