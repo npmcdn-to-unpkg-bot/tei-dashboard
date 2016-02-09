@@ -49,7 +49,7 @@ Template Name: Dashboard Scheduler Template
                 if ($Opp_name!=''){
                     echo $Opp_name;        
                 } else {
-                    echo "Your Availability";
+                    echo "Set Your Availability";
                 }
              
 

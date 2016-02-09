@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'star-rating';
+@import 'chatter';
 /*CASE INTAKE PAGE*/
 
 
@@ -37,7 +38,7 @@ body {
         color: $body-copy;
     }
 }
-.page-header,h3:first-of-type {
+.page-header,.ListHeading {
     font-size: 34px;
     text-align: center;
     display: block;
@@ -389,12 +390,59 @@ select[size] {
     }
 }
 
-
-
-.ListHeading {
-    display: inline-block;
-    margin-bottom: 0.5em;
-    font-weight: 300;
-    font-size: 1.8em;
+.heading-underline {
+    line-height: normal;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    /*font-size: 1em;*/
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 14px;
+    color: $tei-primary;
+    margin-bottom: 20px;
+    a {
+        color: $tei-primary;
+    }
 }
 
+.text-underline {
+    width: auto;
+    padding-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+    .text-underline {
+        border-bottom: 3px solid #dadada;
+    }
+}
+
+
+
+/*-------------------------------------------------------------------------
+| DASH PANELS
+/--------------------------------------------------------------------------*/
+.panel-dashboard {
+/*   max-width: 250px; */
+  margin: 0 auto;
+ margin-bottom: 2em; 
+}
+.panel-dashboard.panel-info {
+  border-color: #2a5781;
+}
+.panel-dashboard .panel-heading {
+  color: #fff;
+  background: #2a5781;
+  border-bottom-color: #2a5781;
+}
+.panel-dashboard h3.dash-content {
+  font-size: 2.4em;
+  font-weight: 300;
+  margin: 0.5em 0;
+}
+.dash-heading .dashboard-icon {
+  margin-right: 8px;
+}
+
+.dashboard-panel-container {
+    margin: 20px -15px;
+}

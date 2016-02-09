@@ -1,0 +1,116 @@
+@import 'colors';
+/*-------------------------------------------------------------------------
+| CHATTER STYLES
+/--------------------------------------------------------------------------*/
+
+.container.ChatterContainer {
+  padding: 20px;
+}
+.ChatterContainer .col-md-2, .ChatterContainer .col-md-10{
+    padding:0;
+}
+
+
+.ChatterContainer{
+  background: #f9f9f9;
+  margin: 40px 0 0;
+  padding: 0 10px 10px;
+  // @media(max-width: 767px) {
+  //     max-height: 200px;
+  // }
+  // @media  (min-width: 768px){
+  //   max-height: 450px;
+  // }
+
+  // overflow-x:hidden;
+  max-width: 640px;
+}
+
+.MessageContainer.left .OppMsg{
+/*     padding-left:0; */
+/*     margin-left:0; */
+}
+.MessageContainer.right .OppMsg{
+    padding-bottom:20px !important;
+    margin-right:0;
+}
+.OppMsg {
+  background: #fff;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  max-width:100%;
+}
+.OppMsg p {
+    font-size: 13px;
+    margin: 0 0 0.2rem 0;
+  margin-bottom: 1em;
+  }
+.OppMsg > .OppDate {
+    font-size: 11px;
+    color: #ccc;
+}
+.MessageContainer {
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+}
+.MessageContainer .OppLink {
+  border-bottom: 1px dashed #eee;
+  margin-bottom: 4px;
+  
+  span, a {
+    color: $tei-primary;
+    font-weight: 400;
+  }
+  span {
+    margin: 0 8px 0 2px;
+  }
+}
+.chatter-icon {
+  colr: $tei-primary;
+  margin: 0 8px;
+}
+.MessageContainer img {
+    display: block;
+    width: 100%;
+}
+.MessageContainer .avatar {
+    position: relative;
+  max-width: 60px;
+}
+.MessageContainer.left  .avatar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 5px solid #FFF;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.MessageContainer.right {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.MessageContainer.right > .avatar:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 5px solid white;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    box-shadow: 1px 1px 2px rgba(black, 0.2); // not quite perfect but close
+}
+
+.MessageContainer.right .OppMsg > .OppDate{
+    float: right;
+}
+a#Chattertoggle, a#Attachtoggle {
+    text-decoration: none !important;
+}

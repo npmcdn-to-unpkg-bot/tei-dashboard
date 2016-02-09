@@ -1,17 +1,9 @@
 <?php
 /**
- * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
+ *  Template: Login
  *
  *
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
  */
 
 include 'header-login.php';
@@ -42,7 +34,7 @@ if ($return_url!='')
                $user_info = get_userdata($user_id);
                $role=$user_info->roles[0];
 
-               print_r($role);
+               // print_r($role);
                ?>
                <hr>
                <p class="mini">Don't have a login? <a class="mini register-switch"href="#">Register Here</a></p>

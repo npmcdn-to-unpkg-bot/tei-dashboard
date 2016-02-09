@@ -50,10 +50,12 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
+    <!-- Load Typekit fonts -->
     <script src="https://use.typekit.net/wht0akz.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <title>The Expert Institute - Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.0.0/hint.css">
 		<?php wp_head(); ?>
 
 
@@ -140,9 +142,9 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
       <p class="dnl-nav-title">DASHBOARD</p>
       <ul class="dnl-nav">
         <!-- Dashboard summary -->
-        <li><a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&NC=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe"><span class="fa fa-tachometer dnl-link-icon"></span>
+        <li class="active"><a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&NC=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe" class="hint--bottom"  data-hint="Summary of your account" ><span class="fa fa-tachometer dnl-link-icon"></span>
             <span class="dnl-link-text">Dashboard Summary</span></a> </li>
-            <p class="dnl-nav-title"></p>
+      
       <p class="dnl-nav-title">Cases</p>
       <ul class="dnl-nav">
         <!-- NEW CASE -->
@@ -168,72 +170,15 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
             <span class="badge closed-cases-badge"></span>
           </a>
         </li>
-		
-<!--         <li>
-          <a href="#">
-            <span class="glyphicon glyphicon-comment dnl-link-icon"></span>
-            <span class="dnl-link-text">Comments</span>
-            <span class="badge">4</span>
-          </a>
-        </li> -->
-        <li class="hidden">
-          <a class="collapsed" data-toggle="collapse" href="#collapseLevelOne" aria-expanded="false" aria-controls="collapseLevelOne">
-            <span class="fa fa-sort-amount-desc dnl-link-icon"></span>
-            <span class="dnl-link-text">Dropdown level 1</span>
-            <span class="fa fa-angle-up dnl-btn-sub-collapse"></span>
-          </a>
-          <!-- Dropdown level one -->
-          <ul class="dnl-sub-one collapse" id="collapseLevelOne">
-            <li>
-              <a href="#">
-                <span class="fa fa-slack dnl-link-icon"></span>
-                <span class="dnl-link-text">Level 1</span>
-              </a>
-            </li>
-            <li>
-              <a class="collapsed" data-toggle="collapse" href="#collapseLevelTwo" aria-expanded="false" aria-controls="collapseLevelTwo">
-                <span class="fa fa-level-down dnl-link-icon"></span>
-                <span class="dnl-link-text">Dropdown level 2</span>
-                <span class="fa fa-angle-up dnl-btn-sub-collapse"></span>
-              </a>
-              <!-- Dropdown level two -->
-              <ul class="dnl-sub-two collapse" id="collapseLevelTwo">
-                <li>
-                  <a href="#">
-                    <span class="fa fa-wifi dnl-link-icon"></span>
-                    <span class="dnl-link-text">Level 2</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="fa fa-wifi dnl-link-icon"></span>
-                    <span class="dnl-link-text">Level 2</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="fa fa-wifi dnl-link-icon"></span>
-                    <span class="dnl-link-text">Level 2</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <span class="fa fa-slack dnl-link-icon"></span>
-                <span class="dnl-link-text">Level 1</span>
-              </a>
-            </li>
-          </ul>
-        </li>
       </ul>
-      <p class="dnl-nav-title"></p>
+      <!-- <p class="dnl-nav-title"></p> -->
       <p class="dnl-nav-title">Conference Calls</p>
       <ul class="dnl-nav ">
         <li>
           <a href="<?php bloginfo('url'); ?>/scheduler/?IDU=<?php echo $id_sf;?>" target="MainIframe">
             <span class="fa fa-calendar dnl-link-icon"></span>
             <span class="dnl-link-text">Your Availability</span>
+            <span class="badge availability-badge"><i class="fa fa-check"></i></span>
           </a>
         </li>
            <li>
@@ -389,6 +334,7 @@ if (	$role=='Expert')
           <a href="<?php bloginfo('url'); ?>/scheduler/?IDU=<?php echo $id_sf;?>" target="MainIframe">
             <span class="fa fa-calendar dnl-link-icon"></span>
             <span class="dnl-link-text">Your Availability</span>
+            <span class="badge availability-badge"><i class="fa fa-check"></i></span>
           </a>
         </li>
            <li>

@@ -1,6 +1,10 @@
 jQuery(function($) {
     "use strict";
-
+    //dashboard active link on click
+    $('.dash-navbar-left .dnl-nav li').on('click', function(e){
+        $('.dash-navbar-left .dnl-nav li').removeClass('active');
+        $(this).addClass('active');
+    })
 
     // Navbar left
     // -------------------------------------------------

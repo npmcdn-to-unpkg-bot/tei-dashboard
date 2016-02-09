@@ -17,6 +17,9 @@
         $('#register-form').toggleClass('hidden');
     });
 
+    /* Boolean Badges */
+    $('.availability-badge').hide();
+
     /* check for old IE versions */
     var isOldIE = (navigator.userAgent.indexOf("MSIE") !== -1); // Detect IE10 and below
     
@@ -52,6 +55,9 @@
             $('.open-cases-badge').html(dashboardStatus.CountOpen);
             $('.closed-cases-badge').html(dashboardStatus.CountClosed);
             $('.calls-badge').html(dashboardStatus.CountCalls);
+            if (dashboardStatus.ContactTimeSet) {
+                $('.availability-badge').show();
+            }
             
             $('p#callback').html(
                 messageData.message
