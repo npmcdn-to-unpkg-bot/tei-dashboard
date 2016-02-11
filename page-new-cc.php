@@ -52,6 +52,7 @@ $mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
   $id_expert=$_GET['IDE'];
   $id_opp=$_GET['IDO'];
   $id_contact=$_GET['IDU'];  
+    $EID=$_GET['EID']; 
   $WP=$_GET['WP'];
 
 $id='';
@@ -86,7 +87,14 @@ if ($id==''){
 $sObject->Leading_Type__c = 'Attorney';
 $sObject->Auto_Mode__c = 0;
  
-  
+    $msg="Conference Call requested with Expert $EID";
+ $sObject3 = new stdclass();
+  $sObject3->Contact__c =  $id_contact;
+  $sObject3->Message__c = $msg;
+  $sObject3->Opportunity__c=$id_opp;
+  $createResponse = $mySforceConnection->create(array($sObject3), 'Opportunity_Messages__c');
+  $id=$createResponse[0];
+ 
 
   $createResponse = $mySforceConnection->create(array($sObject), 'Conference_Call__c');
 

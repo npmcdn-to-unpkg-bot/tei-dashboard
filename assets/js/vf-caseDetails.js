@@ -14,9 +14,8 @@ $(document).ready(function() {
         $chatterbox = $('#chatterbox'),
         $Attachtoggle = $('#Attachtoggle'),
         $attachbox = $('#attachbox');
-        
-    //space collapsed chatterheading 
-    $ChatterHeading.css('margin-bottom', '60px');
+      
+
    
    /* enable toggle*/
    $Chattertoggle.on('click', function(e){

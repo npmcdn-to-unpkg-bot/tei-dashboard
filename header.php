@@ -142,7 +142,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
       <p class="dnl-nav-title">DASHBOARD</p>
       <ul class="dnl-nav">
         <!-- Dashboard summary -->
-        <li class="active"><a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&NC=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe" class="hint--bottom"  data-hint="Summary of your account" ><span class="fa fa-tachometer dnl-link-icon"></span>
+        <li class="active"><a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&NC=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe" ><span class="fa fa-tachometer dnl-link-icon"></span>
             <span class="dnl-link-text">Dashboard Summary</span></a> </li>
       
       <p class="dnl-nav-title">Cases</p>

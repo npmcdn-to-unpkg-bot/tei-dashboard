@@ -46,15 +46,15 @@ Template Name: edit profile
 <body <?php body_class(); ?>>
 
 
-<div class="container main-container mt">
+<div class="container main-container">
   <div class="row">
     <div class="col-md-8">
-      <div class="____jumbotron login-box">
+      <div class="form-edit-profile">
 
          
        
          <div id="edit-form" class="">
-          <h2 class="text-center">Edit Profile</h2>
+          <h1 class="page-header">Edit Profile</h1>
              <?php echo do_shortcode('[wppb-edit-profile]' ); 
              $user_id=get_current_user_id( );
              $user_info = get_userdata($user_id);

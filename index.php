@@ -6,11 +6,31 @@
  *
  */
 
-include 'header-login.php';
+
 
 $return_url=$_GET['return_url'];
 if ($return_url!='')
 {$redirect="redirect_url=\"$return_url\"";}
+
+
+if (is_user_logged_in()){
+  $user_id=get_current_user_id( );
+  $user_info = get_userdata($user_id);
+  $role=$user_info->roles[0];
+
+  // print_r($role);
+  if($role == "Client"){
+    wp_redirect(home_url("/client-dashboard"));  
+  } elseif ($role == "Expert") {
+    wp_redirect(home_url("/expert-dashboard"));  
+  }
+  
+}
+
+
+
+include 'header-login.php';
+
  ?>
 
 
@@ -29,12 +49,6 @@ if ($return_url!='')
                <? echo do_shortcode( '[wppb-login $redirect"]' );
 
 
-
-               $user_id=get_current_user_id( );
-               $user_info = get_userdata($user_id);
-               $role=$user_info->roles[0];
-
-               // print_r($role);
                ?>
                <hr>
                <p class="mini">Don't have a login? <a class="mini register-switch"href="#">Register Here</a></p>

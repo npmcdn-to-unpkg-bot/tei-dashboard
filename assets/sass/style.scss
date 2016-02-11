@@ -37,7 +37,7 @@ body {
 //full width iframe
 iframe#salesforce-content {
     width: 100%;
-    background-image: url('http://i.imgur.com/WfVW4rH.gif'); 
+    background-image: url(../dashboard-assets/images/loader.gif); 
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
@@ -122,3 +122,41 @@ body.login-page {
     }
 
 }
+
+.page-header,.ListHeading {
+    font-size: 34px;
+    text-align: center;
+    display: block;
+    color: $tei-primary;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.alert.alert-info.alert-tei {
+    color: $tei-primary;
+    background-color: rgba(105, 171, 232, 0.08);
+    border-color: $tei-primary;
+}
+
+/* 
+
+    EDIT PROFILE
+ */
+
+ input#edit_profile.submit.button {
+         transition: all 0.2s ease-in-out;
+         border: 2px solid $tei-primary;
+         background: transparent;
+         max-width: 150px;
+         border-radius: 4px;
+         font-size: 0.9em;
+         text-transform: uppercase;
+         font-weight: 600;
+         font-family: "proxima-nova";
+         color: $tei-primary;
+         padding: 6px 24px;
+         &:hover {
+             background: $tei-primary;
+             color: $white;
+         }
+     }

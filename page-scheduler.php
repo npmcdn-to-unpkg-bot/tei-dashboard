@@ -42,12 +42,12 @@ Template Name: Dashboard Scheduler Template
 
 <div class="container main-container mt" >
     <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 text-center">
-            <h1 class="share-case-title ">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+            <h1 class="ListHeading">
             <!-- TITLE GOES HERE -->
             <?php
                 if ($Opp_name!=''){
-                    echo $Opp_name;        
+                    echo $Opp_name . ' Availability';        
                 } else {
                     echo "Set Your Availability";
                 }
@@ -56,8 +56,13 @@ Template Name: Dashboard Scheduler Template
              ?>
             </h1>
             <div class="content">
+            <div class="alert alert-info alert-tei">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <? echo $greeting; ?>
             </div>
+                
+            </div>
+
         </div>
     </div>
     <div class="row">

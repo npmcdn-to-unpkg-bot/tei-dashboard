@@ -369,13 +369,28 @@ select[size] {
     text-align: center;
 }
 
+
+
 .NewCaseButton {
     color: #fff !important;
     text-decoration: none !important;
 }
 
+ #closedcases a.btn-rate-now {
+        color: $tei-third;
+        padding: 4px 6px;
+        display: inline-block;
+        border: 2px solid $tei-third;
+        margin: 0 auto;
+        border-radius: 14px;
+        &:hover, & a:hover {
+            background: $tei-third;
+            color: #fff;
+            text-decoration: none;
+        }
+}
 .bPageBlock .requiredInput .requiredBlock {
-    background-color: rgb(255, 114, 11);
+    background-color: $tei-third;
     position: absolute;
     width: 2px;
     top: 1px;
@@ -419,6 +434,15 @@ select[size] {
 
 
 /*-------------------------------------------------------------------------
+| EXPERT RATING PAGE
+/--------------------------------------------------------------------------*/
+.vf-flow.star {
+    .requiredBlock {
+        display: none;
+    }
+}
+
+/*-------------------------------------------------------------------------
 | DASH PANELS
 /--------------------------------------------------------------------------*/
 .panel-dashboard {
@@ -434,10 +458,14 @@ select[size] {
   background: #2a5781;
   border-bottom-color: #2a5781;
 }
-.panel-dashboard h3.dash-content {
+.panel-dashboard h3.dash-count {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0.5em 0;
+
+}
+.panel-dashboard .panel-body{
+    text-align: center;
 }
 .dash-heading .dashboard-icon {
   margin-right: 8px;
