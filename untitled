@@ -1,0 +1,546 @@
+/*
+    Title: TEI-Scheduler
+    Description: Scheduler plugin for TEI-Dashboard
+    Version: 2.0
+
+    Notes: Currently 'editable' is false. Once events are set they must be deleted, next step would be to make events editable but update 'cachedEvents' on drag and placement to keep the single source of truth. 
+
+
+*/
+
+jQuery(document).ready(function($) {
+    'use strict';
+
+    /*******************
+    SETTING VARIABLES
+    ********************/
+    var tei_calendar = $('#tei_calendar'),
+        cachedEvents, // where events will be stored / loaded from after inital salesforce ajax call
+        firstRun = true, 
+        availSelect,
+        currentTimezone,
+        currentOffset,
+        now = moment();
+
+    /* Timezone helper elements */
+    var timezoneHelper = $('.tei_scheduler_timezone_helper');
+    var timezoneStatus = $('.time_zone_status');
+    var timezoneSwitcher = $('.tei_timezone_switcher');
+    var timezoneSelector = $('#timezone-selector');
+
+    /* decide if we're selecting or setting */
+    if (salesforce_response.avail_select == "false" || salesforce_response.avail_select == "")  {
+        console.log('-- MODE: SETTING AVAILABILITY --');
+        availSelect = false;
+    } else {
+        console.log('-- MODE: SELECTING TIMESLOT --');
+        availSelect = true;
+    }
+
+    /* when the timezone selector changes, save current cachedEvents, rerender the calendar */
+    timezoneSelector.on('change', function() {
+        $('.tei_scheduler_loading_text').text('CHANGING TIMEZONE');
+        currentTimezone = this.value || false;
+        currentOffset = (moment.tz.zone(currentTimezone).offset(moment()) / -1);
+        console.log('current timezone is ' + currentTimezone);
+
+
+        if(!availSelect){            
+            $.when(saveCalendarState()).done(function(){
+               console.log('done');
+
+               setTimeout(function(){
+                    tei_calendar.fullCalendar('destroy');                
+                    if (salesforce_response.Type == "Conference Call"){
+                        loadCCEvents();                
+                        console.log('loading events from salesforce');
+
+                    } else if(salesforce_response.Type == "Free Times") {
+                        loadFreeTimeEvents(); 
+                        console.log('loading free times');
+                    }
+               }, 2000);
+            });
+        } else {
+
+            // setTimeout(function(){
+                var cachedHeight = tei_calendar.outerHeight();
+
+                  
+                tei_calendar.outerHeight(cachedHeight);
+                tei_calendar.fullCalendar('destroy');
+                console.log('changing timezone for selector');
+                loadCCEvents();
+            // }, 2000);
+        }
+        renderTimezoneHelper();
+        // renderTimezoneSwitcher();
+
+    });
+
+
+    function renderCalendar() {
+        // console.log('firstrun = ' + firstRun);
+        console.log('Rendering Calendar');
+
+        tei_calendar.fullCalendar({
+            header: {
+                left: 'saveButton ',
+                center: '',
+                right: 'today,prev,next'
+            },
+            views: {
+                agendaWeek: {
+                    columnFormat: 'ddd\n M/D',
+                    slotLabelFormat: 'ha'
+                }
+            },
+            customButtons: renderCalendarButtons(availSelect),
+            aspectRatio: 1.8,
+            scrollTime: '08:00',
+            defaultView: 'agendaWeek',
+            slotDuration: '00:30:00',
+            slotLabelInterval: '00:60:00',
+            slotEventOverlap: false,
+            forceEventDuration: true,
+            defaultTimedEventDuration: '00:30:00',
+            timezone: currentTimezone,
+            timeFormat: 'h:mm t',
+            ignoreTimezone: false,
+            overlap: false,
+            eventOverlap: false,
+            allDaySlot: false,
+            // editable: !availSelect,
+            editable: false, 
+            eventLimit: true,
+            selectable: !availSelect,
+
+            selectHelper: !availSelect,
+            selectOverlap: false,
+            events: function(start, end, timezone, callback) {
+                console.log('using cached events')
+                callback(getEvents());
+            },
+            loading: function(isLoading, view) {
+                if (isLoading) {
+                    // console.log('loading');
+                    // $('.tei_scheduler_loading_text').text('LOADING');
+                    $('.sk-cube-grid').toggle();
+                    $('#tei_calendar_loading').fadeIn(200);
+                } else {
+                    $('.sk-cube-grid').toggle();
+                    $('#tei_calendar_loading').fadeOut(200);
+                    // console.log(tei_calendar.fullCalendar('clientEvents'));
+                }
+            },
+            eventRender: function(event, el) {
+                // render the timezone offset below the event title                
+                el.find('.fc-title').after(
+                    $('<div class="tzo"/>').text(renderTimezoneHelper())
+                );
+            },
+            eventClick: function(eventData, jsEvent, view) {
+                if (!availSelect) {
+                    //we're in SET mode so erase event  
+                    var r = confirm("Delete this availability?");
+                    if (r === true) {
+                        $(this).fadeOut(500);
+                        eraseEvent(eventData, jsEvent, view);
+                    }
+                } else {
+                    //we're in SELECT mode so choose a slot 
+                    var r = confirm("Select this timeslot: " + $.fullCalendar.moment(eventData.start).format('LLL') + "?");
+                    if (r === true) {
+                        $(this).css('background-color', 'green');
+
+                        $('.tei_scheduler_loading_text').text('You Selected ' + $.fullCalendar.moment(eventData.start).format('LLL'));
+                        $('#tei_calendar_loading').fadeIn(250);
+                        selectEvent(eventData, jsEvent, view);
+                    }                     
+                    
+                }
+            },
+            select: function(start, end) {
+                createEvent(start, end);
+            }
+        });
+    } //end renderCalendar
+
+    /*******************
+    GET EVENTS
+    ********************/
+    function getEvents(){
+            //render cached events to screen for testing 
+            $.each(cachedEvents, function(index, val) {
+                 /* iterate through array or object */
+                 $('#cachedEvents').append('<li>' + $.fullCalendar.moment(val.start).format('LLL')) + '</li>';
+            });
+        
+        return cachedEvents; 
+    }
+
+    /*******************
+    LOAD CC EVENTS
+    ********************/
+
+    function loadCCEvents(start, end, timezone, callback) {
+        console.log('Loading CC Events');
+        // console.log($.fullCalendar.moment().subtract(7,'d').format("YYYY-MM-DD"));
+        // console.log($.fullCalendar.moment().add(90,'d').format("YYYY-MM-DD"));
+        $.ajax({
+            url: ajaxGetCCEvents.ajaxurl,
+            dataType: 'json',
+            data: {
+                action: 'get_cc_events',
+                nonce: ajaxGetCCEvents.myajax_nonce,
+                avail_id: ajaxGetCCEvents.avail_id,
+                IDU_Type: salesforce_response.IDU_Type,
+                timezone: currentTimezone,            
+                start: $.fullCalendar.moment().subtract(1, 'days').format("YYYY-MM-DD"),
+                end: $.fullCalendar.moment().add(90,'d').format("YYYY-MM-DD")
+                // start: "2016-01-01",
+                // end: "2016-12-31"
+            },
+            success: function(response, responseText, XMLHttpRequest) {
+                console.log('successful load: ' + response);
+                cachedEvents = response;
+                window.cachedEvents = cachedEvents;
+                loadTimezones();
+                renderCalendar();
+            },
+            error: function(error) {
+                console.log(error);
+            }
+
+        });
+    }
+
+    /*******************
+    LOAD FREE TIME EVENTS
+    ********************/
+
+
+    function loadFreeTimeEvents(start, end, timezone, callback) {
+                $.ajax({
+                    url: ajaxGetFreeTimeEvents.ajaxurl,
+                    dataType: 'json',
+                    data: {
+                        action: 'get_free_time_events',
+                        nonce: ajaxGetFreeTimeEvents.myajax_nonce,
+                        avail_id: ajaxGetFreeTimeEvents.avail_id,
+                        IDU_Type: salesforce_response.IDU_Type,
+                        IDU: salesforce_response.ID_Contact,
+                        timezone: currentTimezone,
+                        start: $.fullCalendar.moment().subtract(1, 'days').format("YYYY-MM-DD"),
+                        end: $.fullCalendar.moment().add(90,'d').format("YYYY-MM-DD")
+                    },
+                    success: function(response, responseText, XMLHttpRequest) {
+                        console.log('success');
+                        console.log(XMLHttpRequest);
+                        cachedEvents = response;
+                        window.cachedEvents = cachedEvents;
+                        loadTimezones();
+                        renderCalendar();
+                        
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+
+                });
+    }
+
+
+
+
+
+    /*******************
+    LOAD TIMEZONE LIST
+    ********************/
+    function loadTimezones() {
+        var timezoneNames = moment.tz.names();
+        $.each(timezoneNames, function(i, timezone) {
+            $('#timezone-selector').append(
+                $("<option/>").text(timezone).attr('value', timezone)
+            );
+        });
+    }
+
+
+
+    /*******************
+    RENDER HEADER BUTTON
+    ********************/
+
+    function renderCalendarButtons(availSelect) {
+        if (availSelect == false) {
+            //show save button         
+            return {
+                saveButton: {
+                    text: 'Save',
+                    click: function(e) {
+                        $('.tei_scheduler_loading_text').text('SAVING...');
+                        saveCalendarState();
+                        $(this).fadeOut();
+                    }
+                }
+            };
+        }
+    }
+
+    /*******************
+    RENDER TIMEZONE HELPER 
+    ********************/
+
+    function renderTimezoneHelper() {
+
+        if (currentTimezone == 'local') {
+            timezoneStatus.text('Your timezone is currently: ' + moment.tz(now, moment.tz.guess()).format('z'));            
+            return moment.tz(now, moment.tz.guess()).format('z');
+
+        } else {
+            timezoneStatus.text('Your timezone is currently: ' + moment.tz(now, currentTimezone).format('z'));
+            return moment.tz(now, currentTimezone).format('z');
+        }
+    }
+
+    /*******************
+    RENDER TIMEZONE SWITCHER 
+    ********************/
+
+    function renderTimezoneSwitcher(){
+        timezoneSelector.toggle();
+        timezoneStatus.toggle();
+    }
+    timezoneSwitcher.on('click', function(e){
+        renderTimezoneSwitcher();
+    });
+
+
+
+
+    /*******************
+    CREATE EVENT FUNCTION
+    ********************/
+
+    function createEvent(start, end, timezone) {
+
+        console.log('creating event');
+        var title = 'available';
+        var eventData;
+
+        if (title.length) {
+            //timezone formatted 
+            var momentStart = $.fullCalendar.moment(start).format();
+            var momentEnd = $.fullCalendar.moment(end).format();
+            var startTZ = moment.tz(momentStart, currentTimezone).format();
+            var endTZ = moment.tz(momentEnd, currentTimezone).format();
+            console.log(startTZ);
+            console.log($.fullCalendar.moment(start).format());
+
+            eventData = {
+                id: startTZ,
+                title: title,
+                start: startTZ,
+                end: endTZ
+            };
+            //add event to calendar
+            tei_calendar.fullCalendar('renderEvent', eventData, true); // stick? = true
+        }
+        tei_calendar.fullCalendar('unselect');
+    }
+
+    /*******************
+    ERASE EVENT FUNCTION
+    ********************/
+
+    function eraseEvent(eventData, jsEvent, view) {
+        setTimeout(function() { 
+            /* erase event from fullCalendar clientEvents */
+            console.log('-- Erasing: ' + moment(eventData.id).format() + '--');
+            tei_calendar.fullCalendar('removeEvents', eventData.id);
+
+            /* erase event from cachedEvents array */
+            cachedEvents = cachedEvents.filter(function(avails){
+                console.log('erased ' + eventData.id + ' from cached events');            
+                return avails.id !== eventData.id;
+                
+            });
+        }, 600);
+    }
+
+    /*******************
+    SELECT TIMESLOT 
+    ********************/
+
+    function selectEvent(eventData, jsEvent, view) {
+        // console.log(currentTimezone);
+        // console.log(currentOffset);
+        // var offset;
+        // if (currentTimezone !== 'local') {
+        //     offset = (moment.tz.zone(currentTimezone).parse(eventData.start) * -1);
+        // } else {
+        //     offset = $.fullCalendar.moment().utcOffset();
+        // }
+        // console.log(offset);
+
+        $.ajax({
+            url: ajaxSaveChoice.ajaxurl,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                action: 'save_choice',
+                chosen_start: $.fullCalendar.moment(eventData.start).format(),
+                chosen_end: $.fullCalendar.moment(eventData.end).format(),
+                avail_id: ajaxSaveChoice.avail_id,
+                nonce: ajaxSaveChoice.myajax_nonce,
+                utc_offset: currentOffset,
+                idu_type: salesforce_response.IDU_Type
+            },
+            success: function(response, textStatus, XMLHttpRequest) {
+                $('.tei_scheduler_loading_text').text('SAVED!');
+                $('.sk-cube-grid').hide();
+                tei_calendar.fullCalendar('unselect');
+            },
+            error: function(error) {
+                console.dir(error);
+            }
+        });
+    }
+
+    /*******************
+    SAVE CALENDAR AVAILABILITY
+    ********************/
+
+    function saveCalendarState() {
+        // $('.tei_scheduler_loading_text').text('SAVING');
+        // console.log('saving calendar with timezone ' + currentTimezone + ' and offset of ' + (moment.tz.zone(currentTimezone).offset(moment()) / -1));
+        // console.log('old save sends: ' + $.fullCalendar.moment().utcOffset());
+        $('#tei_calendar_loading').fadeIn();
+
+        //Get all current availability from calendar
+        var availabilityDates = tei_calendar.fullCalendar('clientEvents');
+        console.log('saving: ' + availabilityDates);
+
+        var availsArray = [];
+
+        //take care of the circular object
+        $.each(availabilityDates, function(index, value) {
+            var avail = new Object();
+            avail.id = value.id;
+            avail.id = moment(value.start).format();
+            avail.start = moment(value.start).format();
+            avail.end = moment(value.end).format();
+            avail.title = value.title;
+            availsArray.push(avail);
+        });
+
+        availsArray = JSON.stringify(availsArray);
+
+        if (salesforce_response.Type == "Conference Call"){
+            console.log('saving Conference Call Times '); 
+
+            $.ajax({
+                url: myAjax.ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'save_avails',
+                    updated_avails: availsArray,
+                    avail_id: myAjax.avail_id,
+                    nonce: myAjax.myajax_nonce,
+                    utc_offset: currentOffset,
+                    idu_type: salesforce_response.IDU_Type
+                },
+                success: function(response, textStatus, XMLHttpRequest) {
+                    $('.tei_scheduler_loading_text').text('SAVED!');                    
+                    $('.sk-cube-grid').hide();
+                },
+                error: function(error) {
+                    console.dir(error);
+                    $('.tei_scheduler_loading_text').text('There Was An Error. Try again please.');
+                    // $('#tei_calendar_loading').fadeOut();
+                }
+            });
+
+        } else if(salesforce_response.Type == "Free Times") {
+            console.log('saving free times');
+
+            $.ajax({
+                url: ajaxSaveFreeTime.ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'save_free_time',
+                    updated_avails: availsArray,
+                    IDU: salesforce_response.ID_Contact,                    
+                    nonce: ajaxSaveFreeTime.myajax_nonce,
+                    utc_offset: currentOffset
+                },
+                success: function(response, textStatus, XMLHttpRequest) {
+                    $('.tei_scheduler_loading_text').text('SAVED!');
+                    $('.sk-cube-grid').hide();
+                    
+                },
+                error: function(error) {
+                    console.dir(error);
+                    $('.tei_scheduler_loading_text').text('There Was An Error. Try again please.');
+                    $('#tei_calendar_loading').fadeOut();
+                }
+            });
+        }
+
+    }
+
+    /*******************
+    Delete Event
+    ********************/
+    var deleteEvent = function deleteEvent() {
+        alert('event Deleted!');
+    };
+
+
+    /*******************
+    RENDER SELECTED TIME HELPER 
+    ********************/
+    if (salesforce_response.selected_time != null) {
+
+        // alert(salesforce_response.selected_time);
+        // var tzOffset = Number(salesforce_response.selected_time_offset);
+        // console.log('RAW RESPONSE: ' + salesforce_response.selected_time);
+
+        var theSelectedtime = moment(salesforce_response.selected_time);
+        console.log('Formatted Raw Response: ' + theSelectedtime.format('LLL'));
+      
+        $('.tei_scheduler_loading_text').text('Selected Time: ' + theSelectedtime.zone(300).format('LLL'));
+
+        $('#tei_calendar_loading').fadeIn(250);
+        $('.sk-cube-grid').hide();
+        return false;
+    }
+
+
+
+    /*INITIAL CALENDAR LOAD*/
+    (function initCalendar(){
+        // load list of timezones 
+        loadTimezones();
+
+        /* Set calendar to local on first run */
+        currentTimezone = "local";
+        currentOffset = $.fullCalendar.moment().utcOffset();
+        renderTimezoneHelper();
+        
+        // Check Which Type of Events to load 
+        if (salesforce_response.Type == "Conference Call"){
+            loadCCEvents();                
+            console.log('INIT: loading events from salesforce');
+
+        } else if(salesforce_response.Type == "Free Times") {
+            loadFreeTimeEvents(); 
+            console.log('INIT: loading free times from salesforce');
+        }
+
+        // Flip firstRun switch
+        firstRun = false;
+        console.log('calendar running in ' + currentTimezone + ' timezone');
+    })();
+});

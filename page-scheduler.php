@@ -71,6 +71,11 @@ Template Name: Dashboard Scheduler Template
             <?php echo do_shortcode('[tei-scheduler]'); ?>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-10">
+            <div id="cachedEvents"></div>
+        </div>
+    </div>
 </div>
 
 

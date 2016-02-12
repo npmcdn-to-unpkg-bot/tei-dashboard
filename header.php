@@ -56,6 +56,8 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
 
     <title>The Expert Institute - Dashboard</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.0.0/hint.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hopscotch/0.2.5/css/hopscotch.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hopscotch/0.2.5/js/hopscotch.min.js"></script>
 		<?php wp_head(); ?>
 
 
@@ -142,20 +144,20 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
       <p class="dnl-nav-title">DASHBOARD</p>
       <ul class="dnl-nav">
         <!-- Dashboard summary -->
-        <li class="active"><a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&NC=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe" ><span class="fa fa-tachometer dnl-link-icon"></span>
+        <li class="active" id="nav-dashboard-summary"><a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&NC=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe" ><span class="fa fa-tachometer dnl-link-icon"></span>
             <span class="dnl-link-text">Dashboard Summary</span></a> </li>
       
       <p class="dnl-nav-title">Cases</p>
       <ul class="dnl-nav">
         <!-- NEW CASE -->
-        <li>
+        <li id="nav-new-case">
           <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&DB=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="fa fa-file-text dnl-link-icon"></span>
             <span class="dnl-link-text">New Case</span>
           </a>
         </li>
           <!-- Open Cases -->
-          <li>
+          <li id="nav-open-cases">
           <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&DB=hidden&NC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="glyphicon glyphicon-folder-open dnl-link-icon"></span>
             <span class="dnl-link-text">Open Cases</span>
@@ -163,7 +165,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
           </a>
         </li>
         <!-- Closed Cases -->
-            <li>
+        <li id="nav-closed-cases">
           <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&DB=hidden&OC=hidden&NC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="glyphicon glyphicon-folder-close dnl-link-icon"></span>
             <span class="dnl-link-text">Closed Cases</span>
@@ -186,56 +188,6 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
             <span class="fa fa-phone dnl-link-icon"></span>
             <span class="dnl-link-text">Open Calls</span>
             <span class="badge calls-badge"></span>
-          </a>
-        </li>
-      </ul>
-      <!-- <p class="dnl-nav-title">Category</p> -->
-      <ul class="dnl-nav hidden">
-        <li>
-          <a class="collapsed" data-toggle="collapse" href="#collapseCategoryAll" aria-expanded="false" aria-controls="collapseCategoryAll">
-            <span class="glyphicon glyphicon-tags dnl-link-icon"></span>
-            <span class="dnl-link-text">All</span>
-            <span class="fa fa-angle-up dnl-btn-sub-collapse"></span>
-          </a>
-          <!-- Dropdown level one -->
-          <ul class="dnl-sub-one collapse" id="collapseCategoryAll">
-            <li>
-              <a href="#">
-                <span class="fa fa-dot-circle-o dnl-link-icon"></span>
-                <span class="dnl-link-text">UI</span>
-                <span class="badge">4</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="fa fa-dot-circle-o dnl-link-icon"></span>
-                <span class="dnl-link-text">Design</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="fa fa-dot-circle-o dnl-link-icon"></span>
-                <span class="dnl-link-text">App</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="fa fa-dot-circle-o dnl-link-icon"></span>
-                <span class="dnl-link-text">Homepage</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">
-            <span class="fa fa-dot-circle-o dnl-link-icon"></span>
-            <span class="dnl-link-text">Popular</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="fa fa-dot-circle-o dnl-link-icon"></span>
-            <span class="dnl-link-text">Handpicked</span>
           </a>
         </li>
       </ul>
@@ -351,13 +303,13 @@ if (	$role=='Expert')
         <li>
           <a href="https://theexpertinstitute.secure.force.com/ExpertDashboard/?IDE=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="glyphicon glyphicon-edit dnl-link-icon"></span>
-            <span class="dnl-link-text">Edit Profil</span>
+            <span class="dnl-link-text">Edit Profile</span>
           </a>
         </li>
 		  <li>
           <a href="<?php bloginfo('url'); ?>/profil-video/?IDE=<?php echo $id_sf;?>" target="MainIframe">
             <span class="glyphicon glyphicon-facetime-video dnl-link-icon"></span>
-            <span class="dnl-link-text">Profil Video</span>
+            <span class="dnl-link-text">Profile Video</span>
           </a>
         </li>
 	  
@@ -367,7 +319,47 @@ if (	$role=='Expert')
 ?>
 		
 		
-		
+		<script>
+      // Define the tour!
+          var tour = {
+            id: "hello-hopscotch",
+            steps: [
+              {
+                title: "Dashboard Summary",
+                content: "Get an overview of case activity",
+                target: "nav-dashboard-summary",
+                placement: "right"
+              },
+              {
+                title: "New Case",
+                content: "Start a new inquiry",
+                target: "nav-new-case",
+                placement: "right"
+              },
+              {
+                title: "Open Cases",
+                content: "View currently open cases",
+                target: "nav-open-cases",
+                placement: "right"
+              },
+              {
+                title: "Closed Cases",
+                content: "View completed cases and leave expert feedback",
+                target: "nav-closed-cases",
+                placement: "right"
+              },
+              {
+                title: "My content",
+                content: "Here is where I put my content.",
+                target: document.querySelector("#content p"),
+                placement: "bottom"
+              }
+            ]
+          };
+
+          // Start the tour!
+          // hopscotch.startTour(tour);
+    </script>
 		
 		
 		
