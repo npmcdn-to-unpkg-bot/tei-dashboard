@@ -1,7 +1,7 @@
 <?php
 /**
  *
- *  Template: Login
+ *  Template: Recover Password
  *
  *
  */
@@ -49,24 +49,13 @@ include 'header-login.php';
         </div> 
            
          
-           <div id="login-form" class="">
-            <h2 class="text-center">Log In</h2>
-               <? echo do_shortcode( '[wppb-login $redirect"]' );
-
-
+           <div id="recover-password-form" class="">
+            <h2 class="text-center">Recover Password</h2>
+               <? 
+                echo do_shortcode('[wppb-recover-password] ' );
                ?>
-               <hr>
-               <p class="mini">Don't have a login? <a class="mini register-switch"href="#">Register Here</a></p>
            </div>
 
-            <div id="register-form" class="hidden">
-                <h2 class="text-center">Register</h2>
-                <?php echo do_shortcode('[wppb-register]' );
-
-                ?>
-                <hr>
-                <p class="mini">Already registered? <a class=" mini register-switch"href="#">Login Here</a></p>
-            </div>
 
         </div>
 

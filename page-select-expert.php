@@ -51,17 +51,19 @@ $mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
 
 $IDOPPEXP=$_GET['IDOPPEXP'];
 $IDO=@$_GET['IDO'];
+$EID=@$_GET['EID'];
 $CLOSE=@$_GET['CLOSE'];
 $IDU=@$_GET['IDU'];
 $WP=@$_GET['WP'];
+
+$message="Selected Expert $EID on this Case.";
 
 if (($IDOPPEXP!="")&&($IDO!='')&&($CLOSE==''))
 {
 $sObject1 = new stdClass();
 $sObject1->chosen__c = 1 ;
 $sObject1->Id = $IDOPPEXP;
-$response = $mySforceConnection->update(array($sObject1), 'Opportunities_Expert__c');
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU\">";
+$response = $mySforceConnection->update(array($sObject1), 'Opportunities_Expert__c'); 
 
 }
 
@@ -79,10 +81,25 @@ $sObject2->StageName = 'Closed' ;
 $sObject2->Id = $IDO;
 $response2 = $mySforceConnection->update(array($sObject2), 'Opportunity');
 
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP\">";
+
+
+ 
+
 
 }
 
+
+ $sObject3 = new stdclass();
+  $sObject3->Contact__c = $IDU;
+  $sObject3->Message__c = $message;
+  $sObject3->Opportunity__c=$IDO;
+  $createResponse = $mySforceConnection->create(array($sObject3), 'Opportunity_Messages__c');
+
+  
+  
+  
+
+echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP\">";
 
 
 

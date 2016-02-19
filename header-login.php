@@ -29,6 +29,7 @@ $cid= get_field('cid', $field_meta);
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png?v=1">
     <script src="https://use.typekit.net/wht0akz.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <title>The Expert Institute - Dashboard</title>

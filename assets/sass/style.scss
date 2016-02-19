@@ -71,14 +71,17 @@ body.login-page {
 }
 
 .jumbotron.login-box {
-    max-width: 480px;
+    max-width: 580px;
     margin: 20% auto;
     background: #fff;
-    border-radius: 0;
+    border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    p {
+        font-size: 18px;
+    }
     label {
         font-weight: normal;
-        font-size: 18px;
+        font-size: 1em;
     }
     .login-remember {
         color: $cool-grey;
@@ -93,21 +96,15 @@ body.login-page {
     }
     #login-form,#register-form {
         transition: all 0.2s ease-in-all;
+        .login-submit input ,.form-submit input {
+            max-width: 150px;
+        }
     }
-    .register-switch {
-        font-weight: 600;
-    }
-    h2 {
-        margin: 10px auto 20px;
-        text-transform: uppercase;
-        color: $tei-primary;
-        font-size: 1.1em;
-    }
+
     .login-submit input ,.form-submit input {
         transition: all 0.2s ease-in-out;
         border: 2px solid $tei-primary;
         background: transparent;
-        max-width: 150px;
         border-radius: 4px;
         font-size: 0.9em;
         text-transform: uppercase;
@@ -120,6 +117,16 @@ body.login-page {
             color: $white;
         }
     }
+    .register-switch {
+        font-weight: 600;
+    }
+    h2 {
+        margin: 10px auto 20px;
+        text-transform: uppercase;
+        color: $tei-primary;
+        font-size: 1.1em;
+    }
+
 
 }
 
@@ -160,3 +167,22 @@ body.login-page {
              color: $white;
          }
      }
+
+
+
+
+ /* 
+     SWEET ALERT STYLES
+  */
+
+  .sweet-overlay {
+      background-color: white;
+      -ms-filter: "alpha(opacity=40)";
+      background-color: rgba(255, 255, 255, 0.4);
+
+  }
+  .sweet-alert {
+    font-family: proxima-nova, "proxima nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+  }

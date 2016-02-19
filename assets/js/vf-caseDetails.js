@@ -39,7 +39,37 @@ $(document).ready(function() {
       $Attachtoggle.find('.indicator').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
     }
     
+	/* Check if in iframe */
+	 function inIframe () {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return true;
+        }
+    }
+    console.log("inIframe is " + inIframe());
+    if (!inIframe()){
+        // alert('page not inside iframe');
+        //SHOW PAGE FOR TESTING -- COMMENT THIS OUT FOR LIVE
 
+	
+        window.location.replace('https://logintei.staging.wpengine.com/?return_url='+encodeURIComponent(window.location.href));
+        // $('.main-container').show();
+    } else {
+        $('.main-container').show();
+    }
+
+    /* Hire Button confirm dialog - NEEDS TO BE MODAL */
+    $('.btn-hire').on('click', function(event) {
+      event.preventDefault();
+      var addressValue = $(this).attr("href");
+            
+      var r = confirm("Select this Expert?");
+      if (r === true) {
+          window.location.replace(addressValue);
+      }
+    });
+    
 
 
 });

@@ -588,6 +588,19 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
+.btn-rate-now {
+        color: $tei-third;
+        padding: 4px 6px;
+        display: inline-block;
+        border: 2px solid $tei-third;
+        margin: 0 auto;
+        border-radius: 14px;
+        &:hover, & a:hover {
+            background: $tei-third;
+            color: #fff;
+            text-decoration: none;
+        }
+}
 
 
 

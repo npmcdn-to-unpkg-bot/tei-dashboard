@@ -25,3 +25,16 @@ $new-grey: #F5F8FB;
 // $dark-grey: #818181;
 $dark-grey: #99A7BA;
 $cool-grey: #8c989f;
+
+
+
+/* 
+    COLOR UTILITES
+ */
+
+ .clr-accent,a.clr-accent {
+    color: $tei-third;
+ }
+ .bg-accent {
+    background-color: $tei-third;
+ }

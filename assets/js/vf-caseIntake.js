@@ -23,13 +23,15 @@ $(document).ready(function() {
     if (!inIframe()){
         // alert('page not inside iframe');
         //SHOW PAGE FOR TESTING -- COMMENT THIS OUT FOR LIVE
-        window.location.replace("https://logintei.staging.wpengine.com");
-        $('.main-container').show();
+
+	
+        window.location.replace('https://logintei.staging.wpengine.com/?return_url='+encodeURIComponent(window.location.href));
+        // $('.main-container').show();
     } else {
         $('.main-container').show();
     }
     
-    
+     
 
 
 

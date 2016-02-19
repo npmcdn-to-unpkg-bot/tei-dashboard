@@ -296,7 +296,8 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
 
 .vf-flow.secondary a,
 #opencases a,
-#closedcases a {
+#closedcases a,
+#ConferenceCall a {
     font-weight: 600;
     color: #2a5781;
 }
@@ -314,10 +315,11 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
 .ExpertListPic,
 .ContactListPic,
 .ResearcherListPic {
-    margin: 5px 0 0;
+    margin: 0 5px 0 0;
     max-width: 40px;
     border-radius: 50%;
     display: block;
+    float: left;
 }
 .vf-flow.main input[type=text] {
     width: 100%;

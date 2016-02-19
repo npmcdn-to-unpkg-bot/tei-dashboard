@@ -42,13 +42,17 @@ $cid= get_field('cid', $field_meta);
 <body>
 
 
+<?php 
+  echo do_shortcode('[wppb-recover-password] ' );
+ ?>
+<!-- 
 
 <iframe id="iframe-content" src="http://davidjbradshaw.com/iframe-resizer/example/frame.content.html" frameborder="2" scrolling="no">
 <p>Your browser does not support iframes.</p>
 </iframe>
 <p id="callback"><b>Frame ID:</b> iframe-content <b>Height:</b> 410 <b>Width:</b> 2051 <b>Event type:</b> mutationObserver</p>
 
-
+ -->
 
 
 
