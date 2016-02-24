@@ -10,33 +10,6 @@ $(document).ready(function() {
            
         //    $(this).remove();
         //  });
-    
-    //check if running inside iframe 
-    function inIframe () {
-        try {
-            return window.self !== window.top;
-        } catch (e) {
-            return true;
-        }
-    }
-    console.log("inIframe is " + inIframe());
-    if (!inIframe()){
-        // alert('page not inside iframe');
-        //SHOW PAGE FOR TESTING -- COMMENT THIS OUT FOR LIVE
-
-	
-        window.location.replace('https://logintei.staging.wpengine.com/?return_url='+encodeURIComponent(window.location.href));
-        // $('.main-container').show();
-    } else {
-        $('.main-container').show();
-    }
-    
-     
-
-
-
-
-    
 
     
     /*Variables */

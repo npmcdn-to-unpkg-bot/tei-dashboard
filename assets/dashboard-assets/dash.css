@@ -405,11 +405,14 @@ html {
     right: 24px;
     top: 6px;
     padding: 3px 10px;
-    color: #ddd;
-    background-color: transparent;
-    border: 1px solid #ddd;
+    color: #2a5781;
+    background-color: #ddd;
+    /*border: 1px solid #2a5781;*/
 }
-   
+.dash-navbar-left .dnl-nav li a:hover .badge, .dash-navbar-left .dnl-nav li a:focus .badge {
+    color:#2a5781;
+    background-color: #fff;
+}   
 .dash-navbar-left .dnl-nav li a > .badge.availability-badge{
     padding: 3px 7px;
 }

@@ -29,7 +29,7 @@
     $iframe.iFrameResize({
         checkOrigin: false,
         heightCalculationMethod: isOldIE ? 'max' : 'lowestElement',
-        log: true, // Enable console logging
+        log: false, // Enable console logging
         enablePublicMethods: true, // Enable methods within iframe hosted page
         inPageLinks: true,
         readyCallback: function(){

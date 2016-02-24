@@ -40,6 +40,51 @@ Template Name: Dashboard Scheduler Template
 </head>
 <body <?php body_class(); ?>>
 
+<?php
+// check for logged in
+if ($login!= 1) { ?>
+    
+  
+    <nav class="navbar navbar-static-top dash-navbar-top dnl-visible">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="<?php echo get_site_url(); ?>/" style="margin-left:0;"><img src="<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-logo-inverse.svg" alt="tei-logo" class="header-tei-logo" ><span class="beta-tag hidden-xs">beta</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="dnt-collapse">
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav> <!-- /.navbar -->
+
+<?} else { ?>
+    <script>
+   
+        //check if running inside iframe 
+        function inIframe () {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+        console.log("inIframe is " + inIframe());
+        
+        if (!inIframe()){
+            
+            window.location.replace('<?php echo get_site_url(); ?>/?return_url='+encodeURIComponent(window.location.href));
+
+        } else {
+            $('.main-container').show();
+        }
+
+    </script>
+<? } ?>
+
+
+
 <div class="container main-container mt" >
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2 text-center">
