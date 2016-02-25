@@ -47,22 +47,22 @@ $(document).ready(function() {
       event.preventDefault();
       var addressValue = $(this).attr("href");
             
-      // swal({   
-      //     title:  "Select this expert?",   
-      //     text: "",   
-      //     // type: "warning",   
-      //     showCancelButton: true,   
-      //     confirmButtonColor: "#5cb85c",   
-      //     confirmButtonText: "Yes",   
-      //     closeOnConfirm: true 
-      // }, function(){   
-      //     alert('you selected this expert and are going to: ' + addressValue);
-      //   });
+      swal({   
+          title:  "Select this expert?",   
+          text: "",   
+          // type: "warning",   
+          showCancelButton: true,   
+          confirmButtonColor: "#5cb85c",   
+          confirmButtonText: "Yes",   
+          closeOnConfirm: true 
+      }, function(){   
+          alert('you selected this expert and are going to: ' + addressValue);
+        });
 
-      var r = confirm("Select this Expert?");
-      if (r === true) {
-          window.location.replace(addressValue);
-      }
+      // var r = confirm("Select this Expert?");
+      // if (r === true) {
+      //     window.location.replace(addressValue);
+      // }
     });
     
 

@@ -95,7 +95,7 @@ else
 
 
 
-<div class="container main-container">
+<div class="container main-container" style="display: none;">
 
   <div class=" sec-intro mb">
 <img class="logo" id="logo" border="0" alt="Logo" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face:center/e_grayscale,c_scale,h_80/v40/logos/<? echo "$aid"; ?>.jpg">
@@ -132,7 +132,27 @@ else
 </div>
 </div>
 <body <?php body_class(); ?>>
+ <script>
+   
+        //check if running inside iframe 
+        function inIframe () {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+        console.log("inIframe is " + inIframe());
+        
+        if (!inIframe()){
+            
+            window.location.replace('<?php echo get_site_url(); ?>/?return_url='+encodeURIComponent(window.location.href));
 
+        } else {
+            $('.main-container').show();
+        }
+
+    </script>
 
 
 

@@ -38,6 +38,7 @@ Template Name: Upload Case Attach
     <script type="text/javascript">
     var templateDir = "<?php bloginfo('template_directory') ?>";
     </script>
+
 </head>
 
 <?php 
@@ -133,7 +134,7 @@ else
  
 ?>
 
-  <div class="container main-container">
+  <div class="container main-container" style="display: none;">
 
   <div class="row sec-intro mb">
 
@@ -182,7 +183,27 @@ else
 	</div></div>
 </div>
 <body <?php body_class(); ?>>
+ <script>
+   
+        //check if running inside iframe 
+        function inIframe () {
+            try {
+                return window.self !== window.top;
+            } catch (e) {
+                return true;
+            }
+        }
+        console.log("inIframe is " + inIframe());
+        
+        if (!inIframe()){
+            
+            window.location.replace('<?php echo get_site_url(); ?>/?return_url='+encodeURIComponent(window.location.href));
 
+        } else {
+            $('.main-container').show();
+        }
+
+    </script>
 
 
 
