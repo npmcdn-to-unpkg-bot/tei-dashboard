@@ -11,11 +11,11 @@
 
 
     /* Login / Register switcher */
-    $('.register-switch').click(function(e){
-        e.preventDefault();
-        $('#login-form').toggleClass('hidden');
-        $('#register-form').toggleClass('hidden');
-    });
+    // $('.register-switch').click(function(e){
+    //     e.preventDefault();
+    //     $('#login-form').toggleClass('hidden');
+    //     $('#register-form').toggleClass('hidden');
+    // });
 
     /* Boolean Badges */
     $('.availability-badge').hide();

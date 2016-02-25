@@ -1,7 +1,7 @@
 <?php
 /**
  *
- *  Template: Login
+ *  Template: Register
  *
  *
  */
@@ -49,15 +49,16 @@ include 'header-login.php';
         </div> 
            
          
-           <div id="login-form" class="">
-            <h2 class="text-center">Log In</h2>
-               <? echo do_shortcode( '[wppb-login $redirect"]' );
+        <div id="register-form" class="">
+            <h2 class="text-center">Register</h2>
+            <?php echo do_shortcode('[wppb-register]' );
+
+            ?>
+            <hr>
+            <p class="mini">Already registered? <a class=" mini register-switch"href="<?php echo home_url(); ?>">Login Here</a></p>
+        </div>
 
 
-               ?>
-               <hr>
-               <p class="mini">Don't have a login? <a class="mini register-switch" href="<?php echo home_url(); ?>/register">Register Here</a></p>
-           </div>
         </div>
 
 
