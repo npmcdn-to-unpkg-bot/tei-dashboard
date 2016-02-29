@@ -28,8 +28,6 @@ Template Name: Dashboard Scheduler Template
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
    <script src="https://use.typekit.net/wht0akz.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
-     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hopscotch/0.2.5/css/hopscotch.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hopscotch/0.2.5/js/hopscotch.min.js"></script>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
@@ -132,15 +130,7 @@ if ($login!= 1) { ?>
 
 <?php wp_footer(); ?>
         <script>
-      // Define the tour!
-         $(document).ready(function($) {
-            // add ids
 
-            
-
-
-
-         });
     </script>
 </body>
 </html>
