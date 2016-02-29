@@ -26,8 +26,10 @@ Template Name: Dashboard Scheduler Template
     <?php // or, set /favicon.ico for IE10 win ?>
     <meta name="msapplication-TileColor" content="#2a5781">
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-<!--    <script src="https://use.typekit.net/wht0akz.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script> -->
+   <script src="https://use.typekit.net/wht0akz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hopscotch/0.2.5/css/hopscotch.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hopscotch/0.2.5/js/hopscotch.min.js"></script>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
@@ -102,7 +104,7 @@ if ($login!= 1) { ?>
             </h1>
             <div class="content">
             <div class="alert alert-info alert-tei">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
                 <? echo $greeting; ?>
             </div>
                 
@@ -129,5 +131,16 @@ if ($login!= 1) { ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
 
 <?php wp_footer(); ?>
+        <script>
+      // Define the tour!
+         $(document).ready(function($) {
+            // add ids
+
+            
+
+
+
+         });
+    </script>
 </body>
 </html>

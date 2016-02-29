@@ -56,8 +56,6 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico?v=1">
     <title>The Expert Institute - Dashboard</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.0.0/hint.css">
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hopscotch/0.2.5/css/hopscotch.min.css"> -->
-   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hopscotch/0.2.5/js/hopscotch.min.js"></script> -->
 		<?php wp_head(); ?>
 
 
@@ -319,47 +317,7 @@ if (	$role=='Expert')
 ?>
 		
 		
-		<script>
-      // Define the tour!
-          var tour = {
-            id: "hello-hopscotch",
-            steps: [
-              {
-                title: "Dashboard Summary",
-                content: "Get an overview of case activity",
-                target: "nav-dashboard-summary",
-                placement: "right"
-              },
-              {
-                title: "New Case",
-                content: "Start a new inquiry",
-                target: "nav-new-case",
-                placement: "right"
-              },
-              {
-                title: "Open Cases",
-                content: "View currently open cases",
-                target: "nav-open-cases",
-                placement: "right"
-              },
-              {
-                title: "Closed Cases",
-                content: "View completed cases and leave expert feedback",
-                target: "nav-closed-cases",
-                placement: "right"
-              },
-              {
-                title: "My content",
-                content: "Here is where I put my content.",
-                target: document.querySelector("#content p"),
-                placement: "bottom"
-              }
-            ]
-          };
-
-          // Start the tour!
-          // hopscotch.startTour(tour);
-    </script>
+	
 		
 		
 		
