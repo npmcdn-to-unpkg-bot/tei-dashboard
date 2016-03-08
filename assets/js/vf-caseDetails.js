@@ -46,31 +46,28 @@ $(document).ready(function() {
     $('.btn-hire').on('click', function(event) {
       event.preventDefault();
       var addressValue = $(this).attr("href");
-            
-      // swal({   
-      //     title:  "Select this expert?",   
-      //     text: "",   
-      //     // type: "warning",   
-      //     showCancelButton: true,   
-      //     confirmButtonColor: "#5cb85c",   
-      //     confirmButtonText: "Yes",   
-      //     closeOnConfirm: true 
-      // }, function(){   
-      //     alert('you selected this expert and are going to: ' + addressValue);
-      //   });
 
       var r = confirm("Select this Expert?");
-      if (r === true) {
+         if (r === true) {
+
+         var overlayMsg = "Selecting Expert.....";
+         var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
+
+         overlay.appendTo(document.body);
+         overlay.toggleClass('show');
+
+         //relocate to hired expert
           window.location.replace(addressValue);
+         console.log(addressValue);
       }
     });
-    
+
     /* Modal on conf call */
-    $('.btn-conference-call').click(function(e){
+    $('.btn-default').click(function(e){
         var overlayMsg = "Loading Conference Call Scheduler";
         var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
         overlay.appendTo(document.body);
-        
+
         overlay.toggleClass('show');
 
         $(this).fadeOut();

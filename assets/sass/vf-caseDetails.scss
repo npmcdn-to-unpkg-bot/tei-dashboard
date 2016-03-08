@@ -482,6 +482,10 @@ input[type=number]::-webkit-outer-spin-button {
             color: $white;
         }
     }
+    &:active,&:focus {
+        background-color: $tei-primary;
+        color: $white;
+    }
     //spacing for touching buttons
     &+.btn {
         @media (max-width: 768px) {
@@ -564,7 +568,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: $tei-third;
     background-color: transparent;
     transition: background 0.2s ease-in-out;
-    &:hover {
+    &:hover,&:active,&:focus {
         color: #fff;
         a {color: #fff};
         border: 2px solid $tei-third;
@@ -574,9 +578,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-.btn-hire:active {
-    color: #2A8414;
-}
+// .btn-hire:active {
+//     color: #2A8414;
+// }
 
 .btn-hire + .btn {
     margin-left: 20px;
