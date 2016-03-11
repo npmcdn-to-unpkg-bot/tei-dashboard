@@ -43,8 +43,8 @@ Template Name: Dashboard Scheduler Template
 <?php
 // check for logged in
 if ($login!= 1) { ?>
-    
-  
+
+
     <nav class="navbar navbar-static-top dash-navbar-top dnl-visible">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,8 +61,8 @@ if ($login!= 1) { ?>
 
 <?} else { ?>
     <script>
-   
-        //check if running inside iframe 
+
+        //check if running inside iframe
         function inIframe () {
             try {
                 return window.self !== window.top;
@@ -71,9 +71,9 @@ if ($login!= 1) { ?>
             }
         }
         console.log("inIframe is " + inIframe());
-        
+
         if (!inIframe()){
-            
+
             window.location.replace('<?php echo get_site_url(); ?>/?return_url='+encodeURIComponent(window.location.href));
 
         } else {
@@ -92,11 +92,11 @@ if ($login!= 1) { ?>
             <!-- TITLE GOES HERE -->
             <?php
                 if ($Opp_name!=''){
-                    echo $Opp_name . ' Availability';        
+                    echo $Opp_name . ' Availability';
                 } else {
                     echo "Set Your Availability";
                 }
-             
+
 
              ?>
             </h1>
@@ -105,13 +105,13 @@ if ($login!= 1) { ?>
                 <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
                 <? echo $greeting; ?>
             </div>
-                
+
             </div>
 
         </div>
     </div>
     <div class="row">
-        <!-- TEI-SCHEDULER CARD -->    
+        <!-- TEI-SCHEDULER CARD -->
         <div class="col-sm-10 col-sm-offset-1">
             <?php echo do_shortcode('[tei-scheduler]'); ?>
         </div>

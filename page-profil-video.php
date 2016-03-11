@@ -40,7 +40,7 @@ Template Name: Upload Case Attach
     </script>
 
 <script src='//cameratag.com/api/v7/js/cameratag.js' type='text/javascript'></script>
-<?php 
+<?php
 
 
 $IDE=$_GET['IDE'];
@@ -49,9 +49,9 @@ $IDE=$_GET['IDE'];
 
 
 
-  </head> 
+  </head>
 
-  
+
 
 
 
@@ -62,17 +62,31 @@ $IDE=$_GET['IDE'];
 
 
 
-  
-  
-  
+
+
+
 	<div class="col-xs-12 col-sm-8">
- 
-   <camera id='MyFirstCamera' data-app-id='a-7b1e6e70-aebc-0133-b4b7-22000b789ce2'></camera>
+    <h2 class="CaseTitle">Profile Video</h2>
+
+    <div class="alert alert-info  text-center alert-tei">
+        <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
+      <p>
+        Experts with profile videos have a greater chance of being retained on a case.
+      </p>
+      <p>
+        Give a short summary of your qualifications without revealing your identity please.
+      </p>
+    </div>
+
+   <camera id='MyFirstCamera'
+    data-app-id='a-7b1e6e70-aebc-0133-b4b7-22000b789ce2'
+    data-cssurl='<?php echo get_template_directory_uri();  ?>/assets/css/profile-video.css'
+   ></camera>
     </div>
 		    <div class="clearfix mb"></div>
 
 
-          
+
 
 </div>
 </div>
@@ -100,7 +114,7 @@ $IDE=$_GET['IDE'];
         var overlayMsg = "Sending Message.....";
         var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
         overlay.appendTo(document.body);
-        
+
         overlay.toggleClass('show');
 
         $(this).fadeOut();
