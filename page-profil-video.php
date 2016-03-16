@@ -14,7 +14,7 @@ Template Name: Upload Case Attach
     <meta charset="utf-8">
     <?php // Google Chrome Frame for IE ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><?php if (is_front_page()) { bloginfo('name'); } else { wp_title(''); } ?></title>
+    <title>The Expert Institute | Profile Video </title>
     <?php // mobile meta (hooray!) ?>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -65,24 +65,28 @@ $IDE=$_GET['IDE'];
 
 
 
-	<div class="col-xs-12 col-sm-8">
+	<div class="col-xs-12 col-sm-10">
     <h2 class="CaseTitle">Profile Video</h2>
 
-    <div class="alert alert-info  text-center alert-tei">
-        <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
-      <p>
-        Experts with profile videos have a greater chance of being retained on a case.
-      </p>
-      <p>
-        Give a short summary of your qualifications without revealing your identity please.
-      </p>
-    </div>
+
 
    <camera id='MyFirstCamera'
     data-app-id='a-7b1e6e70-aebc-0133-b4b7-22000b789ce2'
     data-cssurl='<?php echo get_template_directory_uri();  ?>/assets/css/profile-video.css'
+    style="width:80%;height: 100%;"
    ></camera>
-    </div>
+
+   <div class="mt alert alert-info  text-center alert-tei">
+       <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
+     <p>
+       Experts with profile videos have a greater chance of being retained on a case.
+     </p>
+     <p>
+       Give a short summary of your qualifications without revealing your identity please.
+     </p>
+   </div>
+
+  </div>
 		    <div class="clearfix mb"></div>
 
 
