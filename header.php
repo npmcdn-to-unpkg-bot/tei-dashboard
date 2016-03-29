@@ -151,7 +151,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
         <li id="nav-new-case">
           <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&DB=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="fa fa-file-text dnl-link-icon"></span>
-            <span class="dnl-link-text">New Case</span>
+            <span class="dnl-link-text">Submit a New Case</span>
           </a>
         </li>
           <!-- Open Cases -->
@@ -184,7 +184,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
            <li>
           <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&DB=hidden&OC=hidden&NC=hidden&CC=hidden&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="fa fa-phone dnl-link-icon"></span>
-            <span class="dnl-link-text">Open Calls</span>
+            <span class="dnl-link-text">Upcoming Calls</span>
             <span class="badge calls-badge"></span>
           </a>
         </li>
@@ -295,7 +295,7 @@ if (	$role=='Expert')
         </li>
       </ul>
 	   <p class="dnl-nav-title"></p>
-      <p class="dnl-nav-title">Profil</p>
+      <p class="dnl-nav-title">Profile</p>
 	  <ul class="dnl-nav">
      
         <li>

@@ -50,12 +50,12 @@ include 'header-login.php';
            
          
         <div id="register-form" class="">
-            <h2 class="text-center">Register</h2>
+            <h2 class="text-center">New User Registration</h2>
             <?php echo do_shortcode('[wppb-register]' );
 
             ?>
             <hr>
-            <p class="mini">Already registered? <a class=" mini register-switch"href="<?php echo home_url(); ?>">Login Here</a></p>
+            <p class="">Already registered? <a class="  register-switch"href="<?php echo home_url(); ?>">Login Here</a></p>
         </div>
 
 

@@ -56,7 +56,7 @@ include 'header-login.php';
 
                ?>
                <hr>
-               <p class="mini">Don't have a login? <a class="mini register-switch" href="<?php echo home_url(); ?>/register">Register Here</a></p>
+               <p class="">Don't have a login? <a class=" register-switch" href="<?php echo home_url(); ?>/register">Register Here</a></p>
            </div>
         </div>
 

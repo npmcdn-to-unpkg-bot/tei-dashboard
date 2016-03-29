@@ -47,7 +47,7 @@ $(document).ready(function() {
       event.preventDefault();
       var addressValue = $(this).attr("href");
 
-      var r = confirm("Select this Expert?");
+      var r = confirm("By clicking 'OK' you are choosing to retain this expert for your case.");
          if (r === true) {
 
          var overlayMsg = "Selecting Expert.....";

@@ -223,7 +223,7 @@ else
 <script>
   $(document).ready(function() {
     $('button[type=submit]').click(function(e){
-        var overlayMsg = "Document Uploading.....";
+        var overlayMsg = "Uploading Document.....";
         var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
         overlay.appendTo(document.body);
         
