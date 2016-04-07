@@ -93,4 +93,13 @@ $(document).ready(function() {
     /* Modal on conf call */
     // $('.btn-default').click(function(e){
     //     var overlayMsg = "Loading Conference Call Scheduler";
-    //     var overlay = 
+    //     var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
+    //     overlay.appendTo(document.body);
+
+    //     overlay.toggleClass('show');
+
+    //     $(this).fadeOut();
+    // });
+
+
+});

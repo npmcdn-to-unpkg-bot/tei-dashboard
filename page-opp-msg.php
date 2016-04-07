@@ -169,4 +169,6 @@ else
         }); 
  </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
-<?php wp_
+<?php wp_footer(); ?>
+</body>
+</html>

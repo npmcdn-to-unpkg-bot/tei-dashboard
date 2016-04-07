@@ -44,4 +44,17 @@ $(document).ready(function() {
    $Chattertoggle.on('click', function(e){
         e.preventDefault();
         $chatterbox.collapse('toggle');
-        $Chattertoggle.find('.indica
+        $Chattertoggle.find('.indicator').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+    });
+  
+    //check to see if coming from hash and show  chatterbox
+    if (window.location.hash == '#chatter') {
+      $chatterbox.collapse('show');
+      $Chattertoggle.find('.indicator').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+    }   
+
+     $("input.FlowNextBtn").attr("value","Submit").on('click', function(e){
+        // alert('Thank you - your case has been submitted successfully.');
+    });
+
+});

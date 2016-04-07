@@ -120,4 +120,20 @@ if ($login!= 1) { ?>
         <!-- TEI-SCHEDULER CARD -->    
         <div class="col-sm-10 col-sm-offset-1">
             <?php echo do_shortcode('[tei-scheduler]'); ?>
-        <
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-10">
+            <div id="cachedEvents"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
+
+<?php wp_footer(); ?>
+
+</body>
+</html>

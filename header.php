@@ -319,4 +319,50 @@ if (	$role=='Expert')
           </a>
         </li>
 		  <li>
-          <a href="<?php bloginfo('url'); ?>/profil-video/?IDE=<?php echo $id_sf;?>" target="MainI
+          <a href="<?php bloginfo('url'); ?>/profil-video/?IDE=<?php echo $id_sf;?>" target="MainIframe">
+            <span class="glyphicon glyphicon-facetime-video dnl-link-icon"></span>
+            <span class="dnl-link-text">Profile Video</span>
+          </a>
+        </li>
+	  
+    </div> <!-- /.dash-navbar-left -->
+<?	
+}
+?>
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+

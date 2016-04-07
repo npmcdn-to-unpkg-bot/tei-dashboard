@@ -75,4 +75,42 @@
                     $('.availability-badge').show();
                 }
             }
-            if (messageData.message.action == 'showHireAler
+            if (messageData.message.action == 'showHireAlert'){
+                // alert(messageData.message.content);
+                showHireAlert(messageData);
+                
+            }
+
+
+        },
+        closedCallback: function(id) { // Callback fn when iFrame is closed
+            // $('p#callback').html(
+            //     '<b>IFrame (</b>' + id +
+            //     '<b>) removed from page.</b>'
+            // );
+
+        }
+    });
+
+function showHireAlert(messageData){
+    swal({
+            title: messageData.message.title,
+            text: messageData.message.content,
+            type: "info",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            confirmButtonClass: "btn-success",
+            confirmButtonText: "OK",
+            closeOnConfirm: true
+        },
+        function() {             
+            console.dir(messageData);
+            var confirmHireOBJ = {
+                action: 'HIRE',
+                expertURL: messageData.message.expertURL
+            }                       
+            $iframe[0].iFrameResizer.sendMessage(confirmHireOBJ);
+        });
+}
+
+})(jQuery);
