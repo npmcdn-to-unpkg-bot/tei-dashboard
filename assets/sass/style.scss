@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'utility';
+@import 'loading-overlay';
 html {
     /*height: 100%*/
 }
@@ -37,9 +38,9 @@ body {
 //full width iframe
 iframe#salesforce-content {
     width: 100%;
-    background-image: url(../dashboard-assets/images/loader.gif); 
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    // background-image: url(../dashboard-assets/images/loader.gif); 
+    // background-repeat: no-repeat;
+    // background-position: 50% 50%;
 }
 
 .navbar-brand>img.header-tei-logo {
@@ -139,6 +140,13 @@ body.login-page {
     font-weight: 300;
 }
 
+.page-subheader {
+
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: $tei-primary;
+
+}
 .alert.alert-info.alert-tei {
     color: $tei-primary;
     background-color: rgba(105, 171, 232, 0.08);
@@ -183,6 +191,4 @@ body.login-page {
   }
   .sweet-alert {
     font-family: proxima-nova, "proxima nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-
-  }
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30)

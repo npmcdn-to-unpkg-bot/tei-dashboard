@@ -118,9 +118,15 @@ if ($fileName!="")
   $id=$createResponse[0];
  
 
- 
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#attachments\">";
-  
+
+// echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#attachments\">";
+
+echo "<script>
+  window.location.href=\"https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#attachments\";
+                  //hide overlay from inner iframe page 
+                $('#loading-overlay', window.parent.document).hide();
+
+  </script>";
  
 }
 	
@@ -203,35 +209,15 @@ else
             $('.main-container').show();
         }
 
-    </script>
+        //init iframe 
+        window.iFrameResizer = {
+          readyCallback: function(){
+               window.parentIFrame.sendMessage('loading-hide');
+          },
+          messageCallback: function(message){
+            console.dir(message);
+          }
+        };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
-<?php wp_footer(); ?>
-<script>
-  $(document).ready(function() {
-    $('button[type=submit]').click(function(e){
-        var overlayMsg = "Uploading Document.....";
-        var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
-        overlay.appendTo(document.body);
+        //on page change - show loading 
         
-        overlay.toggleClass('show');
-
-        $(this).fadeOut();
-    });
-  });
-</script>
-</body>
-</html>

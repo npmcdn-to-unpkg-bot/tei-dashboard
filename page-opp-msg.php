@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Upload Case Attach
+Template Name: Message Research 
 */
 
 //  echo "</pre></div";
@@ -152,35 +152,21 @@ else
             $('.main-container').show();
         }
 
-    </script>
+        //init iframe 
+        window.iFrameResizer = {
+          readyCallback: function(){
+               window.parentIFrame.sendMessage('loading-hide');
+          },
+          messageCallback: function(message){
+            console.dir(message);
+          }
+        };
 
-
-
-
-
-
-<div id="status-overlay"></div>
-
-
-
-
-
-
-
+        //on page change - show loading 
+        $(window).on('beforeunload ',function() { 
+          //show overlay from inner iframe page 
+          $('#loading-overlay', window.parent.document).show();
+        }); 
+ </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
-<?php wp_footer(); ?>
-<script>
-  $(document).ready(function() {
-    $('button[type=submit]').click(function(e){
-        var overlayMsg = "Sending Message.....";
-        var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
-        overlay.appendTo(document.body);
-        
-        overlay.toggleClass('show');
-
-        $(this).fadeOut();
-    });
-  });
-</script>
-</body>
-</html>
+<?php wp_

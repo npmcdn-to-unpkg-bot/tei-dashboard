@@ -26,6 +26,8 @@
 
     /*iFrameResizer plugin*/
     var $iframe = $('iframe#salesforce-content');
+
+
     $iframe.iFrameResize({
         checkOrigin: false,
         heightCalculationMethod: isOldIE ? 'max' : 'lowestElement',
@@ -51,40 +53,26 @@
         },
         messageCallback: function(messageData) { // Callback fn when message is received
             console.log('CALLBACK MESSAGE:');
-            console.dir(messageData.message);
-            window.dashboardStatus = messageData.message;
-            $('.open-cases-badge').html(dashboardStatus.CountOpen);
-            $('.closed-cases-badge').html(dashboardStatus.CountClosed);
-            $('.calls-badge').html(dashboardStatus.CountCalls);
-            if (dashboardStatus.ContactTimeSet) {
-                $('.availability-badge').show();
+            console.dir(messageData);
+
+            /*HANDLE LOADING */
+            if (messageData.message == "loading-show") {            
+                $('#loading-overlay').show();
+                console.log('SHOW LOADING');
             }
-            
-            $('p#callback').html(
-                messageData.message
-                // '<b>Frame ID:</b> ' + messageData.iframe.id +
-                // ' <b>Height:</b> ' + messageData.height +
-                // ' <b>Width:</b> ' + messageData.width +
-                // ' <b>Event type:</b> ' + messageData.type
-            );
-            // $('p#callback ').text(
-                // '<b>Frame ID:</b> ' + messageData.iframe.id +
-                // ' <b>Message:</b> ' + messageData.message
+            if (messageData.message == "loading-hide") {                
+                $('#loading-overlay').hide();
+                console.log('HIDE LOADING');
+            }
 
-                // JSON.stringify(messageData.message)
-            // );
-
-            // alert('callback' + messageData.message);
-
-        },
-        closedCallback: function(id) { // Callback fn when iFrame is closed
-            // $('p#callback').html(
-            //     '<b>IFrame (</b>' + id +
-            //     '<b>) removed from page.</b>'
-            // );
-
-        }
-    });
-
-
-})(jQuery);
+            /*SET BADGE COUNTS*/
+            if (messageData.message.action == 'setDashboardStatus'){
+                window.dashboardStatus = messageData.message;
+                $('.open-cases-badge').html(dashboardStatus.CountOpen);
+                $('.closed-cases-badge').html(dashboardStatus.CountClosed);
+                $('.calls-badge').html(dashboardStatus.CountCalls);
+                if (dashboardStatus.ContactTimeSet) {
+                    $('.availability-badge').show();
+                }
+            }
+            if (messageData.message.action == 'showHireAler

@@ -1,6 +1,29 @@
 $(document).ready(function() {
     console.log('Case Details Script running....');
 
+    //init iframe 
+    window.iFrameResizer = {
+      readyCallback: function(){  
+          if('parentIFrame' in window) {
+           window.parentIFrame.sendMessage('loading-hide');
+          }  
+           
+      },
+      messageCallback: function(message){
+        console.dir(message);
+        if (message.action ==  'HIRE'){
+            hireExpert(message.expertURL);
+        }
+      }
+    };
+
+    //on page change - show loading 
+    $(window).on('beforeunload ',function() { 
+      if('parentIFrame' in window) {
+        window.parentIFrame.sendMessage('loading-show');
+      }    
+    }); 
+
     /*Remove salesforce default styles */
     console.log('removed Salesforce default styles');
     $("link.user").each(function(){
@@ -42,36 +65,32 @@ $(document).ready(function() {
     
 
 
-    /* Hire Button confirm dialog - NEEDS TO BE MODAL */
+    /* Hire Button confirm dialog */
     $('.btn-hire').on('click', function(event) {
       event.preventDefault();
       var addressValue = $(this).attr("href");
 
-      var r = confirm("By clicking 'OK' you are choosing to retain this expert for your case.");
-         if (r === true) {
+      
+      if('parentIFrame' in window) {
+        var hireOBJ = {
+          title: 'Retain This Expert?',
+          action: 'showHireAlert',
+          content: 'By clicking \'OK\' you are choosing to retain this expert for your case',
+          expertURL: addressValue          
 
-         var overlayMsg = "Selecting Expert.....";
-         var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
-
-         overlay.appendTo(document.body);
-         overlay.toggleClass('show');
-
-         //relocate to hired expert
-          window.location.replace(addressValue);
-         console.log(addressValue);
+        }
+        window.parentIFrame.sendMessage(hireOBJ);
       }
+
     });
+
+    // HIRE FUNCTION 
+    function hireExpert(address){
+        window.location.replace(address);
+    }
+
 
     /* Modal on conf call */
-    $('.btn-default').click(function(e){
-        var overlayMsg = "Loading Conference Call Scheduler";
-        var overlay = jQuery('<div id="status-overlay" class="text-center"><h2 class="overlay-message">' + overlayMsg + '</h2></div>');
-        overlay.appendTo(document.body);
-
-        overlay.toggleClass('show');
-
-        $(this).fadeOut();
-    });
-
-
-});
+    // $('.btn-default').click(function(e){
+    //     var overlayMsg = "Loading Conference Call Scheduler";
+    //     var overlay = 

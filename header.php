@@ -81,6 +81,20 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
 </head>
 <body>
 
+<!-- LOADING OVERLAY -->
+<div id="loading-overlay">
+  <div id="loading">
+  <div class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div>
+  <h2 class="loading-text">LOADING...</h2>
+</div>
+</div>
+
+
 <? if ($role=='Client')
 { ?>
     <!-- Dash Navbar Top 
@@ -305,50 +319,4 @@ if (	$role=='Expert')
           </a>
         </li>
 		  <li>
-          <a href="<?php bloginfo('url'); ?>/profil-video/?IDE=<?php echo $id_sf;?>" target="MainIframe">
-            <span class="glyphicon glyphicon-facetime-video dnl-link-icon"></span>
-            <span class="dnl-link-text">Profile Video</span>
-          </a>
-        </li>
-	  
-    </div> <!-- /.dash-navbar-left -->
-<?	
-}
-?>
-		
-		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-
+          <a href="<?php bloginfo('url'); ?>/profil-video/?IDE=<?php echo $id_sf;?>" target="MainI

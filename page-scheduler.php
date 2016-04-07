@@ -61,25 +61,30 @@ if ($login!= 1) { ?>
 
 <?} else { ?>
     <script>
-   
-        //check if running inside iframe 
-        function inIframe () {
-            try {
-                return window.self !== window.top;
-            } catch (e) {
-                return true;
+        $(document).ready(function() {
+            //check if running inside iframe 
+            function inIframe () {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
             }
-        }
-        console.log("inIframe is " + inIframe());
-        
-        if (!inIframe()){
+            console.log("inIframe is " + inIframe());
             
-            window.location.replace('<?php echo get_site_url(); ?>/?return_url='+encodeURIComponent(window.location.href));
+            if (!inIframe()){
+                
+                window.location.replace('<?php echo get_site_url(); ?>/?return_url='+encodeURIComponent(window.location.href));
 
-        } else {
-            $('.main-container').show();
-        }
-
+            } else {
+                console.log('scheduler running in iframe');
+                //hide overlay from inner iframe page 
+                $('#loading-overlay', window.parent.document).hide();
+                //display page contents
+                $('.main-container').show();
+            }
+    
+        });
     </script>
 <? } ?>
 
@@ -100,7 +105,7 @@ if ($login!= 1) { ?>
 
              ?>
             </h1>
-            <h3>Schedule Your Conference Call</h3>
+            <h3 class="page-subheader">Schedule Your Conference Call</h3>
             <div class="content">
             <div class="alert alert-info alert-tei">
                 <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
@@ -115,23 +120,4 @@ if ($login!= 1) { ?>
         <!-- TEI-SCHEDULER CARD -->    
         <div class="col-sm-10 col-sm-offset-1">
             <?php echo do_shortcode('[tei-scheduler]'); ?>
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col-sm-10">
-            <div id="cachedEvents"></div>
-        </div>
-    </div>
-</div>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
-
-<?php wp_footer(); ?>
-        <script>
-
-    </script>
-</body>
-</html>
+        <
