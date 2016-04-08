@@ -95,11 +95,36 @@ $response2 = $mySforceConnection->update(array($sObject2), 'Opportunity');
   $sObject3->Opportunity__c=$IDO;
   $createResponse = $mySforceConnection->create(array($sObject3), 'Opportunity_Messages__c');
 
-  
+  ?>
+
+  <script>
+      $(document).ready(function() {
+
+          //init iframe 
+          window.iFrameResizer = {
+            readyCallback: function(){
+                 window.parentIFrame.sendMessage('loading-hide');
+            },
+            messageCallback: function(message){
+              console.dir(message);
+            }
+          };
+
+          //on page change - show loading 
+          $(window).on('beforeunload ',function() { 
+            //show overlay from inner iframe page 
+            $('#loading-overlay', window.parent.document).show();
+          }); 
+      });
+  </script>
+
+  <?php
   
   
 
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP\">";
+echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#selected\">";
+
+  // echo "https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP/#selected-expert";
 
 
 
@@ -115,7 +140,6 @@ $site = get_site_url();
 
 </head>
 <body <?php body_class(); ?>>
-
 
 
 

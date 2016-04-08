@@ -6,6 +6,7 @@ $(document).ready(function() {
       readyCallback: function(){  
           if('parentIFrame' in window) {
            window.parentIFrame.sendMessage('loading-hide');
+
           }  
            
       },
@@ -23,6 +24,7 @@ $(document).ready(function() {
         window.parentIFrame.sendMessage('loading-show');
       }    
     }); 
+
 
     /*Remove salesforce default styles */
     console.log('removed Salesforce default styles');
@@ -61,6 +63,11 @@ $(document).ready(function() {
     if (window.location.hash == '#attachments') {
       $attachbox.collapse('show');
       $Attachtoggle.find('.indicator').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+    }
+    //check has for #slected-expert
+    if (window.location.hash == 'selected') {
+
+        $('.EID').prepend('<div id="selected-expert">SELECTED</div>');
     }
     
 
