@@ -1,14 +1,6 @@
 <?php
-/**
- * The template for displaying pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+/*
+  TEI Dashboard Header & Navigation 
  */
 
 
@@ -70,11 +62,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
                html { margin-top: 0 !important; }
                *  body { margin-top: 46px !important; }
         }
-       <?php } else {
-             
-        }
-
-      ?>
+       <?php } ?>
 
     </style>
                 
@@ -84,15 +72,27 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
 <!-- LOADING OVERLAY -->
 <div id="loading-overlay">
   <div id="loading">
+  <div class="cube-container">
   <div class="sk-folding-cube">
     <div class="sk-cube1 sk-cube"></div>
     <div class="sk-cube2 sk-cube"></div>
     <div class="sk-cube4 sk-cube"></div>
     <div class="sk-cube3 sk-cube"></div>
   </div>
+    
+  <div class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div>  
+  </div>
   <h2 class="loading-text">LOADING...</h2>
 </div>
 </div>
+
+
+
 
 
 <? if ($role=='Client')
@@ -137,11 +137,8 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
                     get_currentuserinfo();
                 	?> <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
-
-             
                 <li><a href="<?php bloginfo('url'); ?>/edit-profile" target="MainIframe">Edit Profile</a></li>  
-				<li><? echo do_shortcode( '[wppb-logout]' );?></li>
-                <!-- <li><a href="#">Link 3</a></li> -->
+				        <li><? echo do_shortcode( '[wppb-logout]' );?></li>
               </ul>
             </li>
           </ul>        
@@ -329,40 +326,3 @@ if (	$role=='Expert')
 <?	
 }
 ?>
-		
-		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-

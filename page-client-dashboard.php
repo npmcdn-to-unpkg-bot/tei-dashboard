@@ -2,6 +2,8 @@
 /*
 Template Name: Dashboard - Main Page
 */
+
+
 $user_id= get_current_user_id();
 $user_info = get_userdata($user_id);      
 $role=$user_role->roles[0];
@@ -14,13 +16,10 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
 
 
 $site_url=site_url();
-if ($user_id=="")
-  { ?>
 
-
+/* If user not logged in with ID, Redirect to home */
+if ($user_id==""){ ?>
     <META http-equiv="refresh" content="0;URL=<? echo $site_url; ?>">
-
-
  <?php   die();}
 
 get_header(); ?>
@@ -43,10 +42,7 @@ get_header(); ?>
   {$url_frame=$return_url;}
 ?>
 
-    <!-- Enter your page content below here
-    Available navbar effects: dnl-push, dnl-overlay
-    Available navbar versions: dnl-visible, dnl-hidden 
-    Available content effects: content-opacity -->
+  <!-- DASHBOARD CONTENT  -->
     <div class="content-wrap dnl-visible content-opacity" data-effect="dnl-overlay" >
       <div class="container-fluid">
         <div id="content">
@@ -59,15 +55,6 @@ get_header(); ?>
 
       </div>
     </div> <!-- /.content-wrap -->
-
-
-
-
-
-
-
-
-
 
 
     <!-- end of page scripts -->

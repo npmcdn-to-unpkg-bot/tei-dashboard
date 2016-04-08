@@ -1,35 +1,3 @@
 //EDITED FROM LOCAL 
 
-<div  class="page-wrapper">
-
-</div>
-
-
-
-<div class="header">
-<?php global $current_user;
-get_currentuserinfo();
-
-?>
-
-
-
-
-<img class="ExpertListPic" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,h_40,w_40/v50/contacts/<?php echo "$cid";?>.jpg" style="float:left;">
-Welcome <?php echo "$current_user->user_firstname $current_user->user_lastname"; ?>
-
-<? echo do_shortcode( '[wppb-logout]' );?>
-
-
-
-
-</div>
-
-
-
-    <iframe id="salesforce-content" src="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%">
-  <p>Your browser does not support iframes.</p>
-   </iframe>
- 
-
-</div><!-- .content-area -->
+The rain in spain

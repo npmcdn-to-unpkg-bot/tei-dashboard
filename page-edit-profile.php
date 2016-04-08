@@ -79,7 +79,18 @@ Template Name: edit profile
 
 
 
+<script>
+    $(document).ready(function() {
 
+      //hide overlay from inner iframe page 
+      $('#loading-overlay', window.parent.document).hide();
+        //on page change - show loading 
+        $(window).on('beforeunload ',function() { 
+          //show overlay from inner iframe page 
+          $('#loading-overlay', window.parent.document).show();
+        });
+    });
+</script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>

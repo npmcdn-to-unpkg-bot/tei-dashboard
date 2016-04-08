@@ -24,14 +24,6 @@ $(document).ready(function() {
     //hide account access badge 
     $('#AccountAccess').hide();
 
-    // Remove salesforce default styles 
-        // console.log('removed Salesforce default styles');
-        // $("link.user").each(function(){
-           
-        //    $(this).remove();
-        //  });
-
-    
     /*Variables */
     var $Chattertoggle =  $( '#Chattertoggle'),
         $ChatterHeading = $Chattertoggle.parent().parent(),

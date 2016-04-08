@@ -9,14 +9,6 @@
     /*Initialize*/
     console.log('tei-dashboard scripts running....');
 
-
-    /* Login / Register switcher */
-    // $('.register-switch').click(function(e){
-    //     e.preventDefault();
-    //     $('#login-form').toggleClass('hidden');
-    //     $('#register-form').toggleClass('hidden');
-    // });
-
     /* Boolean Badges */
     $('.availability-badge').hide();
 
@@ -39,17 +31,8 @@
             alert('iframe ready');
         },
         resizedCallback: function(messageData) { // Callback fn when resize is received
-            console.log('RESIZE MESSAGE: ');
-            console.dir(messageData);
-
-            // $('p#callback').html(
-
-                // '<b>Frame ID:</b> ' + messageData.iframe.id +
-                // ' <b>Height:</b> ' + messageData.height +
-                // ' <b>Width:</b> ' + messageData.width +
-                // ' <b>Event type:</b> ' + messageData.type
-            // );
-
+            // console.log('RESIZE MESSAGE: ');
+            // console.dir(messageData);
         },
         messageCallback: function(messageData) { // Callback fn when message is received
             console.log('CALLBACK MESSAGE:');
@@ -75,42 +58,39 @@
                     $('.availability-badge').show();
                 }
             }
-            if (messageData.message.action == 'showHireAlert'){
-                // alert(messageData.message.content);
-                showHireAlert(messageData);
-                
-            }
 
+            /* HANDLE CASE DETAILS EXPERT HIRE CONFIRM */
+            if (messageData.message.action == 'showHireAlert'){
+                showHireAlert(messageData);
+            }
 
         },
         closedCallback: function(id) { // Callback fn when iFrame is closed
-            // $('p#callback').html(
-            //     '<b>IFrame (</b>' + id +
-            //     '<b>) removed from page.</b>'
-            // );
-
+        
         }
     });
 
-function showHireAlert(messageData){
-    swal({
-            title: messageData.message.title,
-            text: messageData.message.content,
-            type: "info",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            confirmButtonClass: "btn-success",
-            confirmButtonText: "OK",
-            closeOnConfirm: true
-        },
-        function() {             
-            console.dir(messageData);
-            var confirmHireOBJ = {
-                action: 'HIRE',
-                expertURL: messageData.message.expertURL
-            }                       
-            $iframe[0].iFrameResizer.sendMessage(confirmHireOBJ);
-        });
-}
+    /*Case Details Hire Confirmation */
+    function showHireAlert(messageData){
+        swal({
+                title: messageData.message.title,
+                text: messageData.message.content,
+                type: "info",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                confirmButtonClass: "btn-success",
+                confirmButtonText: "OK",
+                closeOnConfirm: true
+            },
+            function() {             
+                console.dir(messageData);
+                var confirmHireOBJ = {
+                    action: 'HIRE',
+                    expertURL: messageData.message.expertURL
+                }                       
+                $iframe[0].iFrameResizer.sendMessage(confirmHireOBJ);
+            }
+        );
+    }
 
 })(jQuery);

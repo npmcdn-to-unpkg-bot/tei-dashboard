@@ -1,7 +1,6 @@
 
 /* LOADING OVERLAY */
 #loading-overlay {
-
   background: rgba(255,255,255,1);
   // position: absolute;
   position: fixed;
@@ -19,7 +18,6 @@
 }
 
 #loading {
-/*   width: 60px; */
   height: 150px;
   position: absolute;
   top: 0;
@@ -32,18 +30,28 @@
 .loading-text {
   color: #2a5781;
   display: inline-block;
-/*   margin: 0 0 0 -25px; */
-
+  display: inline-block;
   font-weight: 300;
+  margin-top: -12px;
 }
 
+.cube-container {
+  margin: 0 auto;
+  position: relative;
+  width: 80px;
+}
 .sk-folding-cube {
-  margin: 20px auto;
+  // margin: 20px auto;
   width: 40px;
   height: 40px;
   position: relative;
   -webkit-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
+}
+
+.sk-folding-cube+.sk-folding-cube {
+  left: 40px;
+  top: -40px;
 }
 
 .sk-folding-cube .sk-cube {

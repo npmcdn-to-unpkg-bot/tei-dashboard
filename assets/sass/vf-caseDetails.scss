@@ -553,17 +553,18 @@ input[type=number]::-webkit-outer-spin-button {
     // margin: 20px;
 }
 
-.btn-hire, .btn-submit, .btn.btn-submit{
-    /*color: #fff;*/
+.btn-hire, .btn-submit, .btn.btn-submit {   
+
     // display: block;
     width: 100%;
     border-radius: 4px;
     border: 2px solid $tei-third;
-    /*background-color: $tei-third;*/
     font-weight: 600;
     font-size: 14px;
     padding: 16px 32px;
-    max-width: 400px;
+    @media (min-width: 765px){
+        width: 400px;
+    }
     margin: 0 auto;
     color: $tei-third;
     background-color: transparent;
@@ -584,7 +585,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .btn-hire + .btn {
     margin-left: 20px;
-    @media (max-width: 767px){
+    @media (max-width: 765px){
         margin-top: 10px;
         margin-left: 0;
         display: block;
