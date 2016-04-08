@@ -28,38 +28,30 @@ Template Name: Dashboard Scheduler Template
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
    <script src="https://use.typekit.net/wht0akz.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php // wordpress head functions ?>
     <?php wp_head(); ?>
     <?php // end of wordpress head ?>
-    <?php // drop Google Analytics Here ?>
-    <?php // end analytics ?>
     <script type="text/javascript">
     var templateDir = "<?php bloginfo('template_directory') ?>";
     </script>
 </head>
 <body <?php body_class(); ?>>
-
 <?php
-// check for logged in
+
+/* Check if user has a salesforce account */
 if ($login!= 1) { ?>
-    
-  
+    <!-- User not in salesforce so show header bar -->
     <nav class="navbar navbar-static-top dash-navbar-top dnl-visible">
       <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <a class="navbar-brand" href="<?php echo get_site_url(); ?>/" style="margin-left:0;"><img src="<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-logo-inverse.svg" alt="tei-logo" class="header-tei-logo" ><span class="beta-tag hidden-xs">beta</span></a>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="dnt-collapse">
-
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav> <!-- /.navbar -->
-
 <?} else { ?>
+    <!-- User has a salesforce account -->
     <script>
         $(document).ready(function() {
             //check if running inside iframe 
@@ -72,23 +64,20 @@ if ($login!= 1) { ?>
             }
             console.log("inIframe is " + inIframe());
             
-            if (!inIframe()){
-                
+            /* Redirect salesforce user to dashboard scheduler */
+            if (!inIframe()){                
                 window.location.replace('<?php echo get_site_url(); ?>/?return_url='+encodeURIComponent(window.location.href));
-
             } else {
+                /* Hide dashboard loading screen , show scheduler */
                 console.log('scheduler running in iframe');
                 //hide overlay from inner iframe page 
                 $('#loading-overlay', window.parent.document).hide();
                 //display page contents
                 $('.main-container').show();
             }
-    
         });
     </script>
 <? } ?>
-
-
 
 <div class="container main-container mt" >
     <div class="row">
@@ -96,24 +85,26 @@ if ($login!= 1) { ?>
             <h1 class="ListHeading">
             <!-- TITLE GOES HERE -->
             <?php
+                /* If Conference Call display Opp name, else display general availabilty header */
                 if ($Opp_name!=''){
                     echo $Opp_name ;        
                 } else {
                     echo "Set Your Availability";
-                }
-             
-
+                }             
              ?>
-            </h1>
-            <h3 class="page-subheader">Schedule Your Conference Call</h3>
+            </h1>            
+            <?php
+                /* If a Conference Call, display subheader */
+                if ($Opp_name!=''){
+                    echo '<h3 class="page-subheader">Schedule Your Conference Call</h3>';        
+                }
+             ?>        
             <div class="content">
-            <div class="alert alert-info alert-tei">
-                <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
-                <? echo $greeting; ?>
+                <div class="alert alert-info alert-tei">
+                    <!-- Show contex specific greeting / instructions -->                
+                    <? echo $greeting; ?>
+                </div>                
             </div>
-                
-            </div>
-
         </div>
     </div>
     <div class="row">
@@ -121,16 +112,18 @@ if ($login!= 1) { ?>
         <div class="col-sm-10 col-sm-offset-1">
             <?php echo do_shortcode('[tei-scheduler]'); ?>
         </div>
-
-    </div>
-    <div class="row">
-        <div class="col-sm-10">
-            <div id="cachedEvents"></div>
-        </div>
     </div>
 </div>
 
-
+<script>
+    $(document).ready(function() {
+        //on page change - show loading 
+        $(window).on('unload ',function() { 
+          //show overlay from inner iframe page 
+          $('#loading-overlay', window.parent.document).show();
+        });
+    });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
 
 <?php wp_footer(); ?>
