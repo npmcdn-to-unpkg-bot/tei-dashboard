@@ -70,7 +70,19 @@ $(document).ready(function() {
         $('.EID').prepend('<div id="selected-expert">SELECTED</div>');
     }
     
+    //hide loading overlay on attachment download 
+    $('a[href*="download_attachment"]').on('click', function(event){
+      event.preventDefault();     
+      var url = $(this).attr("href");
+      window.location = url;
 
+
+      setTimeout(function() {
+        if('parentIFrame' in window) {
+              window.parentIFrame.sendMessage('loading-hide');
+        }             
+        }, 1000);
+    });
 
     /* Hire Button confirm dialog */
     $('.btn-hire').on('click', function(event) {
