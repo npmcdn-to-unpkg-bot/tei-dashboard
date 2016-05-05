@@ -19,9 +19,11 @@ body {
     /*background: #f8f8f8;*/
     background-color: #fff;
 }
+
 .container.main-container {
     margin-left: 0;
 }
+
 #content {
     /*padding: 40px 0;*/
 }
@@ -95,14 +97,16 @@ body.login-page {
     p.mini {
         font-size: 1.1em;
     }
-    #login-form,#register-form {
+    #login-form,
+    #register-form {
         transition: all 0.2s ease-in-all;
-        .login-submit input ,.form-submit input {
+        .login-submit input,
+        .form-submit input {
             max-width: 150px;
         }
     }
-
-    .login-submit input ,.form-submit input {
+    .login-submit input,
+    .form-submit input {
         transition: all 0.2s ease-in-out;
         border: 2px solid $tei-primary;
         background: transparent;
@@ -127,11 +131,10 @@ body.login-page {
         color: $tei-primary;
         font-size: 1.1em;
     }
-
-
 }
 
-.page-header,.ListHeading {
+.page-header,
+.ListHeading {
     font-size: 34px;
     text-align: center;
     display: block;
@@ -141,56 +144,53 @@ body.login-page {
 }
 
 .page-subheader {
-
-  margin-top: 0;
-  margin-bottom: 1em;
-  color: $tei-primary;
-
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: $tei-primary;
 }
+
 .alert.alert-info.alert-tei {
     color: $tei-primary;
     background-color: rgba(105, 171, 232, 0.08);
     border-color: $tei-primary;
 }
 
+
 /* 
 
     EDIT PROFILE
  */
 
- input#edit_profile.submit.button {
-         transition: all 0.2s ease-in-out;
-         border: 2px solid $tei-primary;
-         background: transparent;
-         max-width: 150px;
-         border-radius: 4px;
-         font-size: 0.9em;
-         text-transform: uppercase;
-         font-weight: 600;
-         font-family: "proxima-nova";
-         color: $tei-primary;
-         padding: 6px 24px;
-         &:hover {
-             background: $tei-primary;
-             color: $white;
-         }
-     }
+input#edit_profile.submit.button {
+    transition: all 0.2s ease-in-out;
+    border: 2px solid $tei-primary;
+    background: transparent;
+    max-width: 150px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "proxima-nova";
+    color: $tei-primary;
+    padding: 6px 24px;
+    &:hover {
+        background: $tei-primary;
+        color: $white;
+    }
+}
 
 
-
-
- /* 
+/* 
      SWEET ALERT STYLES
   */
 
-  .sweet-overlay {
-      background-color: white;
-      -ms-filter: "alpha(opacity=40)";
-      background-color: rgba(255, 255, 255, 0.4);
+.sweet-overlay {
+    background-color: white;
+    -ms-filter: "alpha(opacity=40)";
+    background-color: rgba(255, 255, 255, 0.4);
+}
 
-  }
-  .sweet-alert {
+.sweet-alert {
     font-family: proxima-nova, "proxima nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-
-  }
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}

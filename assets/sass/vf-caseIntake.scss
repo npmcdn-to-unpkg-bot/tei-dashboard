@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'star-rating';
 @import 'chatter';
+
 /*CASE INTAKE PAGE*/
 
 
@@ -9,28 +10,25 @@
 .rotate {
     /* Safari */
     -webkit-transform: rotate(90deg);
-
     /* Firefox */
     -moz-transform: rotate(90deg);
-
     /* IE */
     -ms-transform: rotate(90deg);
-
     /* Opera */
     -o-transform: rotate(90deg);
-
-    /* Internet Explorer */
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=(3));
 }
 
 
 /* Styles */
+
 * {
     font-family: proxima-nova, "proxima nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 .main-container {
     margin-left: 0;
 }
+
 body {
     font-size: 16px;
     color: $body-copy !important;
@@ -38,10 +36,17 @@ body {
         color: $body-copy;
     }
 }
-h1,h2,h3,h4,h5 {
+
+h1,
+h2,
+h3,
+h4,
+h5 {
     color: $body-copy;
 }
-.page-header,.ListHeading {
+
+.page-header,
+.ListHeading {
     font-size: 34px;
     text-align: center;
     display: block;
@@ -49,7 +54,6 @@ h1,h2,h3,h4,h5 {
     text-transform: uppercase;
     font-weight: 300;
 }
-
 
 textarea {
     /*border: none;*/
@@ -90,17 +94,17 @@ textarea {
 }
 
 .FullAccountAccess {
-  background: #E6711B;
-  border-radius: 2px;
-  color: white;
-  cursor: default;
-  display: inline-block;
-  font-size: 0.7em;
-  position: relative;
-  white-space: nowrap;
-  padding: 4px 10px 4px 10px;
-  margin: 5px 10px 0 0; 
- -webkit-box-shadow: 5px 5px 0 0 darken($tei-third, 5%) , 5px 5px 0 0 darken($tei-third, 5%) ;
+    background: #E6711B;
+    border-radius: 2px;
+    color: white;
+    cursor: default;
+    display: inline-block;
+    font-size: 0.7em;
+    position: relative;
+    white-space: nowrap;
+    padding: 4px 10px 4px 10px;
+    margin: 5px 10px 0 0;
+    -webkit-box-shadow: 5px 5px 0 0 darken($tei-third, 5%), 5px 5px 0 0 darken($tei-third, 5%);
 }
 
 .divider {
@@ -185,9 +189,6 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
 }
 
 .vf-flow.secondary {
-
-    
-   
     .CaseContainer {
         padding: 15px;
         border: 1px solid #ddd;
@@ -211,21 +212,20 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
 }
 
 .CaseContainer {
-    .SupportHeading{}
-    .SupportName{
+    .SupportHeading {}
+    .SupportName {
         font-weight: 600;
         color: $tei-primary;
     }
-    .SupportTitle{
+    .SupportTitle {
         color: $cool-grey;
         font-size: 0.9em;
     }
-    .SupportPhone{}
-    .SupportEmail{
+    .SupportPhone {}
+    .SupportEmail {
         margin-bottom: 1em;
     }
 }
-
 
 .vf-flow.secondary .pbBody,
 .vf-flow.secondary .secondaryPalette.bPageBlock,
@@ -324,9 +324,11 @@ body.UserTagStatsPage .secondaryPalette.bPageBlock {
     display: block;
     float: left;
 }
+
 .vf-flow.main input[type=text] {
     width: 100%;
 }
+
 .vf-flow.main label {
     margin-bottom: 20px;
 }
@@ -374,26 +376,27 @@ select[size] {
     text-align: center;
 }
 
-
-
 .NewCaseButton {
     color: #fff !important;
     text-decoration: none !important;
 }
 
- #closedcases a.btn-rate-now {
-        color: $tei-third;
-        padding: 4px 6px;
-        display: inline-block;
-        border: 2px solid $tei-third;
-        margin: 0 auto;
-        border-radius: 14px;
-        &:hover, & a:hover {
-            background: $tei-third;
-            color: #fff;
-            text-decoration: none;
-        }
+#closedcases a.btn-rate-now {
+    color: $tei-third;
+    padding: 2px 5px;
+    font-size: 14px;
+    display: inline-block;
+    border: 2px solid $tei-third;
+    margin: 0 auto;
+    border-radius: 14px;
+    &:hover,
+    & a:hover {
+        background: $tei-third;
+        color: #fff;
+        text-decoration: none;
+    }
 }
+
 .bPageBlock .requiredInput .requiredBlock {
     background-color: $tei-third;
     position: absolute;
@@ -435,52 +438,66 @@ select[size] {
         border-bottom: 3px solid #dadada;
     }
 }
+
 .vf-flow .pagination>li {
     display: inline;
     margin-left: auto;
 }
 
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
     background-color: #ddd;
     border-color: #ddd;
 }
 
+
 /*-------------------------------------------------------------------------
 | EXPERT RATING PAGE
 /--------------------------------------------------------------------------*/
+
 .vf-flow.star {
     .requiredBlock {
         display: none;
     }
 }
 
+
 /*-------------------------------------------------------------------------
 | DASH PANELS
 /--------------------------------------------------------------------------*/
-.panel-dashboard {
-/*   max-width: 250px; */
-  margin: 0 auto;
- margin-bottom: 2em; 
-}
-.panel-dashboard.panel-info {
-  border-color: #2a5781;
-}
-.panel-dashboard .panel-heading {
-  color: #fff;
-  background: #2a5781;
-  border-bottom-color: #2a5781;
-}
-.panel-dashboard h3.dash-count {
-  font-size: 2.4em;
-  font-weight: 300;
-  margin: 0.5em 0;
 
+.panel-dashboard {
+    /*   max-width: 250px; */
+    margin: 0 auto;
+    margin-bottom: 2em;
 }
-.panel-dashboard .panel-body{
+
+.panel-dashboard.panel-info {
+    border-color: #2a5781;
+}
+
+.panel-dashboard .panel-heading {
+    color: #fff;
+    background: #2a5781;
+    border-bottom-color: #2a5781;
+}
+
+.panel-dashboard h3.dash-count {
+    font-size: 2.4em;
+    font-weight: 300;
+    margin: 0.5em 0;
+}
+
+.panel-dashboard .panel-body {
     text-align: center;
 }
+
 .dash-heading .dashboard-icon {
-  margin-right: 8px;
+    margin-right: 8px;
 }
 
 .dashboard-panel-container {

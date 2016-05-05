@@ -28,7 +28,6 @@
         inPageLinks: true,
         readyCallback: function(){
             console.log('iframe ready');
-            alert('iframe ready');
         },
         resizedCallback: function(messageData) { // Callback fn when resize is received
             // console.log('RESIZE MESSAGE: ');
