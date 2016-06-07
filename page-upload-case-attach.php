@@ -46,6 +46,7 @@ Template Name: Upload Case Attach
 $WP=$_GET['WP'];
 $IDU=$_GET['IDU'];
 $IDO=$_GET['IDO'];
+$OID=$_GET['OID'];
 $na=$_POST['na'];
 $name=$_GET['case']; 
 $aid=$_GET['aid'];
@@ -147,7 +148,7 @@ else
   <div class="col-md-12 text-center">
     <img class="logo" id="logo" border="0" alt="Logo" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face:center/e_grayscale,c_scale,h_80/v40/logos/<? echo "$aid"; ?>.jpg">
 
-    <h2 class="CaseTitle"><? echo "$name"; ?></h2>
+    <h2 class="CaseTitle"><? echo "$OID: $name"; ?></h2>
 
   </div>
   <div class="col-md-12">

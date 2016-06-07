@@ -57,6 +57,7 @@ $WP=$_GET['WP'];
 ?>
 <?php
 
+$case_manage_img ="<img class='case-manager-img text-center' src=\"https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face:center,h_60,w_60/v40/users/$UID.jpg\">";
 
 if ($na=='send')
 {
@@ -100,7 +101,8 @@ else
   <div class=" sec-intro mb">
 <img class="logo" id="logo" border="0" alt="Logo" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face:center/e_grayscale,c_scale,h_80/v40/logos/<? echo "$aid"; ?>.jpg">
 
-<h2 class="CaseTitle"><? echo "$OID: $name"; ?></h2>
+<h2 class="CaseTitle mb"><? echo "$OID: $name"; ?></h2>
+
 
 
 
@@ -110,21 +112,23 @@ else
   
    <input type="hidden" name="na" value="send">
 	<input type="hidden" name="IDO" value="<? echo "$IDO"; ?>">
-	<div class="col-xs-12 col-sm-8">
-    <fieldset>
-  		<div class="form-group">
-              
-                <textarea type="textarea" class="msg" name="msg" placeholder="Message"></textarea>
-              
+  <div class="row">
+    <div class="col-sm-2 col-sm-offset-2 mb text-center"><?php echo $case_manage_img; ?></div>  
+      <div class="col-sm-6">
+        <textarea type="textarea" class="msg" name="msg" placeholder="Message"></textarea>
         </div>
-      </fieldset>
-    </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-6 col-sm-offset-4 mb">
+        <button type="submit" class="btn btn-submit  send">Send Message to <? echo "$LCMT_First"; ?></button>
+      </div>
+  </div>
+  
+
 		    <div class="clearfix mb"></div>
 
 
-            <div class="col-sm-8 mb">
-              <button type="submit" class="btn btn-submit  send">Send Message to <? echo "$LCMT_First"; ?></button>
-            </div>
+
 		</form>
 	
 <? } ?>

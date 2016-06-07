@@ -12,7 +12,7 @@ Template Name: Dashboard Scheduler Template
     <meta charset="utf-8">
     <?php // Google Chrome Frame for IE ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><?php if (is_front_page()) { bloginfo('name'); } else { wp_title(''); } ?></title>
+    <title>TEI - Conference Call Scheduler</title>
     <?php // mobile meta (hooray!) ?>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -20,9 +20,8 @@ Template Name: Dashboard Scheduler Template
     <?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png?v=1">
-    <!--[if IE]>
+    
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-    <![endif]-->
     <?php // or, set /favicon.ico for IE10 win ?>
     <meta name="msapplication-TileColor" content="#2a5781">
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">

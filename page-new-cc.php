@@ -100,6 +100,12 @@ $sObject->Auto_Mode__c = 0;
 
   $response=$createResponse[0];
     $id=$response->id;
+
+$sObject1                = new stdClass();
+$sObject1->StageName = 'CC Requested';
+$sObject1->Id            = $id_opp;
+$response                = $mySforceConnection->update(array($sObject1),'Opportunity');
+
 }
 
 $site = get_site_url();

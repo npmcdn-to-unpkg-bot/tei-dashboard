@@ -71,6 +71,12 @@ body.login-page {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom right;
+    background-image: url("../dashboard-assets/images/login-bg.jpg");
+    background: #1d3d5b;
+}
+
+body.login-page .navbar-brand {
+    display: none !important;
 }
 
 .jumbotron.login-box {
@@ -81,6 +87,9 @@ body.login-page {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     p {
         font-size: 18px;
+        @media (max-width: 768px) {
+            font-size: 1em;
+        }
     }
     label {
         font-weight: normal;

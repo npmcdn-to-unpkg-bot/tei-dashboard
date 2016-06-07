@@ -3,6 +3,7 @@
 @import 'status-overlay.scss';
 @import 'chatter';
 // @import 'font-awesome.scss';
+
 /*-------------------------------------------------------------------------
 | 1. UTILITY CLASSES - specific to Case Details
 /--------------------------------------------------------------------------*/
@@ -42,6 +43,7 @@
 hr:last-of-type {
     display: none;
 }
+
 a {
     color: $tei-primary;
     &:hover {
@@ -50,13 +52,9 @@ a {
 }
 
 
-
-
-
 /*-------------------------------------------------------------------------
 | 2. GLOBAL STYLES
 /--------------------------------------------------------------------------*/
-
 
 div {
     line-height: 1.8em;
@@ -120,24 +118,34 @@ a:hover {
     /*box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);*/
 }
 
-
-
-
-.casetitle, .CaseTitle  {
+.casetitle,
+.CaseTitle {
     font-size: 36px;
     line-height: 47px;
     color: #2a5781;
-    margin-bottom: 40px;
     font-weight: 400;
     text-align: center;
     @media (max-width: 768px) {
         font-size: 1.4em;
+    }
+}
+
+.OppSpecialty {
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    color: #2a5781;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    text-align: center;
+    @media (max-width: 768px) {
+        font-size: 1em;
         margin-bottom: 80px;
     }
 }
 
 
 /* CASE MANAGER CARD */
+
 .case-manager-card {
     position: relative;
     margin-top: 25px;
@@ -157,10 +165,9 @@ a:hover {
         padding-top: 214px;
         padding-bottom: 40px;
     }
-     span {
+    span {
         font-size: 24px;
     }
-
     //targets button container to the right: 
     &+.col-md-6 {
         padding-top: 25px;
@@ -179,7 +186,6 @@ a:hover {
         margin-bottom: 12px;
     }
 }
-
 
 .read-more-show,
 .read-more-hide {
@@ -202,9 +208,7 @@ a:hover {
 }
 
 .expert-pic {
-    
-        display: inline;
-
+    display: inline;
     padding: 0 0 60px 0;
     text-align: center;
 }
@@ -212,8 +216,6 @@ a:hover {
 .expert-pic p {
     margin: 0;
 }
-
-
 
 .feedback {
     /*font-size: 22px;*/
@@ -285,8 +287,6 @@ footer {
         border-bottom: 3px solid #dadada;
     }
 }
-
-
 
 
 /*-------------------------------------------------------------------------
@@ -464,7 +464,9 @@ input[type=number]::-webkit-outer-spin-button {
 /*-------------------------------------------------------------------------
 | 5. BUTTON STYLES
 /--------------------------------------------------------------------------*/
-.btn, .btn.btn-default {
+
+.btn,
+.btn.btn-default {
     transition: all 0.2s ease-in-out;
     border: 2px solid $tei-primary;
     padding: 12px;
@@ -482,7 +484,8 @@ input[type=number]::-webkit-outer-spin-button {
             color: $white;
         }
     }
-    &:active,&:focus {
+    &:active,
+    &:focus {
         background-color: $tei-primary;
         color: $white;
     }
@@ -492,7 +495,6 @@ input[type=number]::-webkit-outer-spin-button {
             margin-top: 20px;
         }
     }
-
     &.btn-hire a {
         color: $tei-third;
     }
@@ -502,34 +504,34 @@ input[type=number]::-webkit-outer-spin-button {
     display: inline-block;
 }
 
-.btn.upload,.btn.LCMTmsg {
-        display: block;
-        width: 300px;
-        @media (max-width: 767px){
-            width: 100%;
-            text-align: center;
-        }
-        padding: 16px 32px;
-        margin-left: 0;
-        text-align: left;
-
-        color: $tei-primary;
-        &:hover {
-            color: $white !important;
-        }
-        &:hover:before {
-            color: $white;
-        }
+.btn.upload,
+.btn.LCMTmsg {
+    display: block;
+    width: 300px;
+    @media (max-width: 767px) {
+        width: 100%;
+        text-align: center;
+    }
+    padding: 16px 32px;
+    margin-left: 0;
+    text-align: left;
+    color: $tei-primary;
+    &:hover {
+        color: $white !important;
+    }
+    &:hover:before {
+        color: $white;
+    }
 }
-.btn.upload{
 
+.btn.upload {
     &:before {
         content: "\f0ee";
         font-family: FontAwesome;
         margin-right: 6px;
     }
-
 }
+
 .btn.LCMTmsg {
     margin-top: 10px;
     &:before {
@@ -538,6 +540,7 @@ input[type=number]::-webkit-outer-spin-button {
         margin-right: 6px;
     }
 }
+
 .btn-success {
     color: #ffffff;
     display: block;
@@ -553,8 +556,9 @@ input[type=number]::-webkit-outer-spin-button {
     // margin: 20px;
 }
 
-.btn-hire, .btn-submit, .btn.btn-submit {   
-
+.btn-hire,
+.btn-submit,
+.btn.btn-submit {
     // display: block;
     width: 100%;
     border-radius: 4px;
@@ -562,30 +566,32 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 600;
     font-size: 14px;
     padding: 16px 32px;
-    @media (min-width: 765px){
+    @media (min-width: 765px) {
         width: 400px;
     }
     margin: 0 auto;
     color: $tei-third;
     background-color: transparent;
     transition: background 0.2s ease-in-out;
-    &:hover,&:active,&:focus {
+    &:hover,
+    &:active,
+    &:focus {
         color: #fff;
-        a {color: #fff};
+        a {
+            color: #fff
+        }
+        ;
         border: 2px solid $tei-third;
         background-color: $tei-third;
     }
 }
 
-
-
 // .btn-hire:active {
 //     color: #2A8414;
 // }
-
 .btn-hire + .btn {
     margin-left: 20px;
-    @media (max-width: 765px){
+    @media (max-width: 765px) {
         margin-top: 10px;
         margin-left: 0;
         display: block;
@@ -594,59 +600,95 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .btn-rate-now {
-        color: $tei-third;
-        padding: 4px 6px;
-        display: inline-block;
-        border: 2px solid $tei-third;
-        margin: 0 auto;
-        border-radius: 14px;
-        &:hover, & a:hover {
-            background: $tei-third;
-            color: #fff;
-            text-decoration: none;
-        }
+    color: $tei-third;
+    padding: 4px 6px;
+    display: inline-block;
+    border: 2px solid $tei-third;
+    margin: 0 auto;
+    border-radius: 14px;
+    &:hover,
+    & a:hover {
+        background: $tei-third;
+        color: #fff;
+        text-decoration: none;
+    }
 }
-
 
 
 /*-------------------------------------------------------------------------
 | Page specific styles
 /--------------------------------------------------------------------------*/
 
-
-    
 .interviewFormHeaderCell {
     border-bottom: 1px solid #ffffff;
-    }
-     .logo {
+}
+
+.logo {
     display: block;
     height: auto;
     margin: 20px auto;
     max-width: 100%;
-    width: 240px;
+    width: 140px;
 }
 
-.ExpertPic{max-width: 100px;
-    border-radius: 50%;}
-
-.case-manager-img {max-width: 100px;
-    border-radius: 50%;}
-
-body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopbtn div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock, body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock {
-    background-color: #ffffff; 
+.ExpertPic {
+    max-width: 100px;
+    border-radius: 50%;
 }
-.divider{clear:both;margin-bottom:30px;}
+
+.case-manager-img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+body .bPageBlock,
+body #bodyCell .bResource .secondaryPalette,
+body .secondaryPalette.bPageBlock,
+body .individualPalette .secondaryPalette.bPageBlock,
+body .bodyDiv .genericTable,
+body .genericPageBlockTable,
+body .bodyDiv .bSubBlock,
+body .bComponentBlock .bPageBlock,
+body .bMyDashboard .bPageBlock,
+body.rlHoverFrame .bPageBlock,
+body.subjectSelectionPopbtn div.choicesBox,
+body.lookupTab .secondaryPalette.bPageBlock,
+body.popupTab .secondaryPalette.bPageBlock,
+body.UserTagStatsPage .secondaryPalette.bPageBlock {
+    background-color: #ffffff;
+}
+
+.divider {
+    clear: both;
+    margin-bottom: 30px;
+}
+
 .bPageBlock.brandSecondaryBrd.apexDefaultPageBlock.secondaryPalette {
     border-top-color: #ffffff;
 }
-.pbHeader{display:none;}
 
+.pbHeader {
+    display: none;
+}
 
 .bPageBlock.brandSecondaryBrd.apexDefaultPageBlock.secondaryPalette {
     border-top-color: #ffffff !important;
 }
 
-body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopup div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock, body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock {
+body .bPageBlock,
+body #bodyCell .bResource .secondaryPalette,
+body .secondaryPalette.bPageBlock,
+body .individualPalette .secondaryPalette.bPageBlock,
+body .bodyDiv .genericTable,
+body .genericPageBlockTable,
+body .bodyDiv .bSubBlock,
+body .bComponentBlock .bPageBlock,
+body .bMyDashboard .bPageBlock,
+body.rlHoverFrame .bPageBlock,
+body.subjectSelectionPopup div.choicesBox,
+body.lookupTab .secondaryPalette.bPageBlock,
+body.popupTab .secondaryPalette.bPageBlock,
+body.UserTagStatsPage .secondaryPalette.bPageBlock {
     background-color: #ffffff;
     border-bottom: 1px solid #ffffff;
     border-left: 1px solid #ffffff;
@@ -654,36 +696,38 @@ body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPa
     border-right: 1px solid #ffffff;
 }
 
-
-
-.bPageBlock.brandSecondaryBrd.apexDefaultPageBlock.secondaryPalette{ 
+.bPageBlock.brandSecondaryBrd.apexDefaultPageBlock.secondaryPalette {
     border-top-color: #2a5781;
 }
-span.text-underline{
 
-}
+span.text-underline {}
 
-.ContactData{
+.ContactData {
     margin-bottom: 2em;
     display: block;
     line-height: 1.67;
 }
-.ContactName{
+
+.ContactName {
     font-weight: 600;
 }
-.ContactAddress{}
-.ContactAddress2{}
-.ContactCityStateZIP{}
-.ContactData .Phone{}
-.ContactEmail{}
 
-.AttachmentContainer{
-     
-     display: inline-block;
-     margin-right: 20px;
+.ContactAddress {}
+
+.ContactAddress2 {}
+
+.ContactCityStateZIP {}
+
+.ContactData .Phone {}
+
+.ContactEmail {}
+
+.AttachmentContainer {
+    display: inline-block;
+    margin-right: 20px;
 }
-.AttachmentContainer:before {
-}
+
+.AttachmentContainer:before {}
 
 .AttachmentType {
     font-weight: 600;
@@ -692,21 +736,24 @@ span.text-underline{
     margin-right: 20px;
     margin-left: 20px
 }
+
 .AttachmentType:before {
     content: " –  ";
 }
-.AttachmentLink{
+
+.AttachmentLink {
     padding-left: 30px;
-    display:block;
+    display: block;
     margin-bottom: 2em;
-  
 }
+
 .AttachmentLink a {
     text-decoration: underline;
     font-weight: 600;
-      color: #2a5781;
+    color: #2a5781;
 }
-.AttachmentName{
+
+.AttachmentName {
     font-size: 0.8em;
     float: left;
     a {
@@ -715,31 +762,39 @@ span.text-underline{
 }
 
 img.ExpertPic {
-   display: inline;
-   text-align: center;
-   margin: 10px 0;
+    display: inline;
+    text-align: center;
+    margin: 10px 0;
 }
+
 .EID {
     font-weight: 600;
 }
-.FeesChart,.FeesDepo,.FeesTrial,.FeesComments{
+
+.FeesChart,
+.FeesDepo,
+.FeesTrial,
+.FeesComments {
     float: left;
     width: 150px;
 }
-.FeesChart span,.FeesDepo span,.FeesTrial span,.FeesComments span {
+
+.FeesChart span,
+.FeesDepo span,
+.FeesTrial span,
+.FeesComments span {
     font-weight: 600;
     display: block;
 }
-
 
 .FileIcon {
     float: left;
     margin-top: 5px;
 }
 
-.FileIcon:before
- {
-    content: "\f016"; /* generic file icon */
+.FileIcon:before {
+    content: "\f016";
+    /* generic file icon */
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-family: 'fontAwesome';
@@ -753,32 +808,37 @@ img.ExpertPic {
     margin-right: 10px;
 }
 
-
 .pdf.FileIcon:before {
-    content: "\f1c1"; /*PDF*/
-  color: red;
+    content: "\f1c1";
+    /*PDF*/
+    color: red;
 }
+
 .docx.FileIcon:before,
 .doc.FileIcon:before {
-    content: "\f1c2"; /*Word*/
+    content: "\f1c2";
+    /*Word*/
     color: blue;
 }
+
 .xls.FileIcon:before,
 .xlsx.FileIcon:before {
-    content: "\f1c3"; /*Excel*/
+    content: "\f1c3";
+    /*Excel*/
     color: green;
 }
-.ppt.FileIcon:before, 
+
+.ppt.FileIcon:before,
 .pptx.FileIcon:before {
-    content: "\f1c4"; /*Powerpoint*/
+    content: "\f1c4";
+    /*Powerpoint*/
     color: #CC8400;
 }
-
-
 
 .vf-tei-logo {
     padding: 20px 0;
 }
+
 .vf-flow.secondary .logo {
     display: block;
     width: 180px;
@@ -786,11 +846,3 @@ img.ExpertPic {
     margin: 0 auto 18px;
     height: auto;
 }
-
-
-
-
-
-
-
-
