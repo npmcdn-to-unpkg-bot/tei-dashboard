@@ -454,10 +454,41 @@ select[size] {
     border-color: #ddd;
 }
 
+.casetitle,
+.CaseTitle {
+    font-size: 36px;
+    line-height: 47px;
+    color: #2a5781;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+    @media (max-width: 768px) {
+        font-size: 1.4em;
+    }
+}
+
+.OppSpecialty {
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    color: #2a5781;
+    display: block;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+    text-align: center;
+    @media (max-width: 768px) {
+        font-size: 1em;
+        margin-bottom: 80px;
+    }
+}
+
 
 /*-------------------------------------------------------------------------
 | EXPERT RATING PAGE
 /--------------------------------------------------------------------------*/
+
+.ExpertBox {
+    text-align: center;
+}
 
 .vf-flow.star {
     .requiredBlock {

@@ -71,6 +71,7 @@ if ($login!= 1) { ?>
                 console.log('scheduler running in iframe');
                 //hide overlay from inner iframe page 
                 $('#loading-overlay', window.parent.document).hide();
+                window.parent.parent.scrollTo(0,0);
                 //display page contents
                 $('.main-container').show();
             }
@@ -81,37 +82,50 @@ if ($login!= 1) { ?>
 <div class="container main-container mt" >
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2 text-center">
-            <h1 class="ListHeading">
+            <h2 class="ListHeading">
             <!-- TITLE GOES HERE -->
             <?php
                 /* If Conference Call display Opp name, else display general availabilty header */
                 if ($Opp_name!=''){
-                    echo $Opp_name ;        
+                    echo "$oid: $Opp_name" ;        
                 } else {
                     echo "Set Your Availability";
                 }             
              ?>
-            </h1>            
+            </h2>
+            <?php
+
+                if ($specialty!=''){
+                    echo "<h4 class=\"OppSpecialty\">$specialty</h4>";
+                }            
+             ?>
+            
+            
             <?php
                 /* If a Conference Call, display subheader */
                 if ($Opp_name!=''){
-                    echo '<h3 class="page-subheader">Schedule Your Conference Call</h3>';        
+                    echo "<h3 class=\"page-subheader\">Schedule Your Conference Call with Expert $eid</h3>";        
                 }
              ?>        
+
+        </div>
+    </div>
+    <div class="row">
+        <!-- TEI-SCHEDULER CARD -->    
+        <div class="col-sm-10 col-sm-offset-1 clearfix">
+            <?php echo do_shortcode('[tei-scheduler]'); ?>
+        </div>
+        <div class="col-sm-8 col-sm-offset-2 text-center">
             <div class="content">
                 <div class="alert alert-info alert-tei">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <!-- Show contex specific greeting / instructions -->                
                     <? echo $greeting; ?>
                 </div>                
             </div>
         </div>
     </div>
-    <div class="row">
-        <!-- TEI-SCHEDULER CARD -->    
-        <div class="col-sm-10 col-sm-offset-1">
-            <?php echo do_shortcode('[tei-scheduler]'); ?>
-        </div>
-    </div>
+
 </div>
 
 <script>

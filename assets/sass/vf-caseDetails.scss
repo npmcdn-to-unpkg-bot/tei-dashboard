@@ -207,6 +207,25 @@ a:hover {
     border-top: 1px solid #dedede;
 }
 
+.expert-info {
+    padding-top: 0;
+    @media screen and (min-width: 991px) {
+        padding: 15px;
+        padding-top: 0;
+    }
+    border: 1px solid #eceef1;
+    & .ContactData .heading-underline:nth-child(1) {
+        margin-top: 0;
+    }
+    &>.heading-underline {
+        margin-top: 0;
+    }
+    // fix this in caseDetail 
+    & .visible-xs.visible-sm+.heading-underline {
+        margin-top: 0;
+    }
+}
+
 .expert-pic {
     display: inline;
     padding: 0 0 60px 0;
@@ -222,8 +241,8 @@ a:hover {
     font-weight: 400;
     line-height: 1.7;
     font-size: 1em;
-    background: #eceef1;
-    padding: 25px 15px;
+    // background: #eceef1;
+    // padding: 25px 15px;
 }
 
 .price {
@@ -251,7 +270,7 @@ a:hover {
         line-height: 1.2em;
     }
     .feedback {
-        font-size: 1.2em;
+        // font-size: 1.2em;
     }
     h1 {
         text-align: center;
@@ -265,16 +284,34 @@ footer {
     height: 25px;
 }
 
-.heading-underline {
+
+/* .heading-underline {
     line-height: normal;
     border-bottom: 1px solid #ddd;
     text-align: left;
-    /*font-size: 1em;*/
     text-transform: uppercase;
     font-weight: 600;
     padding-bottom: 14px;
     color: #2a5781;
     margin-bottom: 20px;
+} */
+
+.heading-underline {
+    line-height: normal;
+    border-bottom: none;
+    text-align: left;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: 300 !important;
+    letter-spacing: 1px;
+    color: #2a5781;
+    background: rgb(249, 249, 249);
+    margin-bottom: 20px;
+    b {
+        font-weight: inherit;
+    }
 }
 
 .text-underline {
@@ -284,7 +321,7 @@ footer {
 
 @media (min-width: 768px) {
     .text-underline {
-        border-bottom: 3px solid #dadada;
+        // border-bottom: 3px solid #dadada;
     }
 }
 
@@ -477,6 +514,8 @@ input[type=number]::-webkit-outer-spin-button {
     color: $tei-primary;
     font-size: 14px !important;
     padding: 16px 32px;
+    width: 400px;
+    max-width: 100%;
     &:hover {
         background: $tei-primary;
         color: $white;
@@ -510,7 +549,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 300px;
     @media (max-width: 767px) {
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
     padding: 16px 32px;
     margin-left: 0;
@@ -586,16 +625,21 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
-// .btn-hire:active {
-//     color: #2A8414;
-// }
-.btn-hire + .btn {
-    margin-left: 20px;
-    @media (max-width: 765px) {
-        margin-top: 10px;
-        margin-left: 0;
+.btn-hire {
+    margin: 15px auto;
+    display: block;
+    @media (max-width: 768px) {
+        margin: 15px auto;
         display: block;
-        width: 100%;
+        width: calc(100% - 30px);
+    }
+}
+
+.btn-hire + .btn {
+    margin: 15px auto;
+    display: block;
+    @media (max-width: 765px) {
+        width: calc(100% - 30px);
     }
 }
 
