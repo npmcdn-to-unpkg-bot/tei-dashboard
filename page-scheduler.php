@@ -20,7 +20,7 @@ Template Name: Dashboard Scheduler Template
     <?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png?v=1">
-    
+
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
     <?php // or, set /favicon.ico for IE10 win ?>
     <meta name="msapplication-TileColor" content="#2a5781">
@@ -53,7 +53,7 @@ if ($login!= 1) { ?>
     <!-- User has a salesforce account -->
     <script>
         $(document).ready(function() {
-            //check if running inside iframe 
+            //check if running inside iframe
             function inIframe () {
                 try {
                     return window.self !== window.top;
@@ -62,14 +62,14 @@ if ($login!= 1) { ?>
                 }
             }
             console.log("inIframe is " + inIframe());
-            
+
             /* Redirect salesforce user to dashboard scheduler */
-            if (!inIframe()){                
+            if (!inIframe()){
                 window.location.replace('<?php echo get_site_url(); ?>/?return_url='+encodeURIComponent(window.location.href));
             } else {
                 /* Hide dashboard loading screen , show scheduler */
                 console.log('scheduler running in iframe');
-                //hide overlay from inner iframe page 
+                //hide overlay from inner iframe page
                 $('#loading-overlay', window.parent.document).hide();
                 window.parent.parent.scrollTo(0,0);
                 //display page contents
@@ -89,29 +89,29 @@ if ($login!= 1) { ?>
 
                 if ($IDU_Type == 'Expert'){
                     echo $opp_name_expert;
-                }                
+                }
                 elseif ($Opp_name!='' && $IDU_Type == 'Attorney'){
-                    echo "$oid: $Opp_name" ;        
+                    echo "$oid: $Opp_name" ;
                 } else {
                     echo "Set Your Availability";
-                }             
+                }
              ?>
             </h2>
             <?php
 
                 if ($specialty!==''){
                     echo "<h4 class=\"OppSpecialty\">$specialty</h4>";
-                }                      
+                }
                 /* If a Conference Call, display subheader */
                 if ($Opp_name!='' && $IDU_Type == 'Attorney'){
-                    echo "<h3 class=\"page-subheader\">Conference Call with Expert $eid</h3>";        
+                    echo "<h3 class=\"page-subheader\">Conference Call with Expert $eid</h3>";
                 }
-             ?>        
+             ?>
 
         </div>
     </div>
     <div class="row">
-        <!-- TEI-SCHEDULER CARD -->    
+        <!-- TEI-SCHEDULER CARD -->
         <div class="col-sm-10 col-sm-offset-1 clearfix">
             <?php echo do_shortcode('[tei-scheduler]'); ?>
         </div>
@@ -119,9 +119,9 @@ if ($login!= 1) { ?>
             <div class="content">
                 <div class="alert alert-info alert-tei" id="info_box">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <!-- Show contex specific greeting / instructions -->                
+                    <!-- Show contex specific greeting / instructions -->
                     <? echo $greeting; ?>
-                </div>                
+                </div>
             </div>
         </div>
     </div>
@@ -130,9 +130,9 @@ if ($login!= 1) { ?>
 
 <script>
     $(document).ready(function() {
-        //on page change - show loading 
-        $(window).on('unload ',function() { 
-          //show overlay from inner iframe page 
+        //on page change - show loading
+        $(window).on('unload ',function() {
+          //show overlay from inner iframe page
           $('#loading-overlay', window.parent.document).show();
         });
     });

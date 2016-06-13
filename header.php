@@ -110,7 +110,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
           <button class="dnl-btn-toggle">
             <span class="fa fa-bars"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo get_site_url(); ?>/client-dashboard"><img src="<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-logo-inverse.svg" alt="tei-logo" class="header-tei-logo"><span class="beta-tag hidden-xs">beta</span></a>
+          <a class="navbar-brand" href="<?php echo get_site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-logo-inverse.svg" alt="tei-logo" class="header-tei-logo"><span class="beta-tag hidden-xs">beta</span></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
