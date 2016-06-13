@@ -40,9 +40,11 @@ body {
 //full width iframe
 iframe#salesforce-content {
     width: 100%;
-    // background-image: url(../dashboard-assets/images/loader.gif); 
-    // background-repeat: no-repeat;
-    // background-position: 50% 50%;
+    background-image: url(../dashboard-assets/images/loader.gif); 
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    outline: 1px solid #eee;
+
 }
 
 .navbar-brand>img.header-tei-logo {

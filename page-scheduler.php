@@ -81,7 +81,7 @@ if ($login!= 1) { ?>
 
 <div class="container main-container mt" >
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 text-center">
+        <div class="col-sm-12 text-center">
             <h2 class="ListHeading">
             <!-- TITLE GOES HERE -->
             <?php
@@ -115,9 +115,9 @@ if ($login!= 1) { ?>
         <div class="col-sm-10 col-sm-offset-1 clearfix">
             <?php echo do_shortcode('[tei-scheduler]'); ?>
         </div>
-        <div class="col-sm-8 col-sm-offset-2 text-center">
+        <div class="col-sm-8 col-sm-offset-2 text-center" id="info_box_container">
             <div class="content">
-                <div class="alert alert-info alert-tei">
+                <div class="alert alert-info alert-tei" id="info_box">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <!-- Show contex specific greeting / instructions -->                
                     <? echo $greeting; ?>
