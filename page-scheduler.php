@@ -84,9 +84,13 @@ if ($login!= 1) { ?>
         <div class="col-sm-12 text-center">
             <h2 class="ListHeading">
             <!-- TITLE GOES HERE -->
+
             <?php
-                /* If Conference Call display Opp name, else display general availabilty header */
-                if ($Opp_name!=''){
+
+                if ($IDU_Type == 'Expert'){
+                    echo $opp_name_expert;
+                }                
+                elseif ($Opp_name!='' && $IDU_Type == 'Attorney'){
                     echo "$oid: $Opp_name" ;        
                 } else {
                     echo "Set Your Availability";
@@ -95,16 +99,12 @@ if ($login!= 1) { ?>
             </h2>
             <?php
 
-                if ($specialty!=''){
+                if ($specialty!==''){
                     echo "<h4 class=\"OppSpecialty\">$specialty</h4>";
-                }            
-             ?>
-            
-            
-            <?php
+                }                      
                 /* If a Conference Call, display subheader */
-                if ($Opp_name!=''){
-                    echo "<h3 class=\"page-subheader\">Schedule Your Conference Call with Expert $eid</h3>";        
+                if ($Opp_name!='' && $IDU_Type == 'Attorney'){
+                    echo "<h3 class=\"page-subheader\">Conference Call with Expert $eid</h3>";        
                 }
              ?>        
 

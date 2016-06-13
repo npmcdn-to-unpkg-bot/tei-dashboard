@@ -14,7 +14,7 @@ ini_set("soap.wsdl_cache_enabled", "0");
 
     $mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
 
-    $query1 = "SELECT Id,Name,E_ID__c,Opportunity_Name__c,Time_end__c,Time_start__c from Conference_Call__c WHERE Id='$id'";$response1 = $mySforceConnection->query(($query1));
+    $query1 = "SELECT Id,Name,E_ID__c,Opportunity_Name__c,Opportunity_Name_Expert__c,Time_end__c,Time_start__c from Conference_Call__c WHERE Id='$id'";$response1 = $mySforceConnection->query(($query1));
 foreach ($response1->records as $cc) {
 
     $start=str_replace('-','',$cc->Time_start__c);
@@ -32,7 +32,27 @@ foreach ($response1->records as $cc) {
     } else { 
         $cc_subject = 'Attorney';
     };
-	  
+
+
+if ($IDU_Type=="Expert")	
+{  
+$file="BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//www.theexpertinstitute.com//Conference Call Scheduling//EN
+X-WR-CALNAME:Conference Call
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTAMP:$start
+UID:$cc->Name
+DTSTART;TZID=\"Etc/UTC\":$start2
+DTEND;TZID=\"Etc/UTC\":$end
+SUMMARY:Conference call with $cc_subject
+DESCRIPTION:$cc->Opportunity_Name_Expert__c - Conference call with $cc_subject
+END:VEVENT
+END:VCALENDAR";
+}
+else
+{  
 $file="BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//www.theexpertinstitute.com//Conference Call Scheduling//EN
@@ -47,6 +67,7 @@ SUMMARY:Conference call with $cc_subject
 DESCRIPTION:$cc->Opportunity_Name__c - Conference call with $cc_subject
 END:VEVENT
 END:VCALENDAR";
+}
   
 $name_output = "$cc->Name.ics"; 
  
