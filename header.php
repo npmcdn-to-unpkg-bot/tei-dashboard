@@ -221,7 +221,7 @@ if (	$role=='Expert')
           <button class="dnl-btn-toggle">
             <span class="fa fa-bars"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo get_site_url(); ?>/client-dashboard"><img src="<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-logo-inverse.svg" alt="tei-logo" class="header-tei-logo"><span class="beta-tag hidden-xs">beta</span></a>
+          <a class="navbar-brand" href="<?php echo get_site_url(); ?>/expert-dashboard"><img src="<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-logo-inverse.svg" alt="tei-logo" class="header-tei-logo"><span class="beta-tag hidden-xs">beta</span></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -241,18 +241,15 @@ if (	$role=='Expert')
           </ul>
 
           <!-- This dropdown is for normal links -->
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right hidden">
             <li class="">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php global $current_user;
             		echo "$current_user->user_firstname $current_user->user_lastname";
                     get_currentuserinfo();
                 	?> <span class="fa fa-angle-down"></span></a>
-              <ul class="dropdown-menu" role="menu">
-
-         
+              <!-- <ul class="dropdown-menu" role="menu"> -->
                 <li><a href="<?php bloginfo('url'); ?>/edit-profile" target="MainIframe">Edit Profile</a></li>
 				       <li><? echo do_shortcode( '[wppb-logout]' );?></li>
-                <!-- <li><a href="#">Link 3</a></li> -->
               </ul>
             </li>
           </ul>        
@@ -268,18 +265,19 @@ if (	$role=='Expert')
       <ul class="dnl-nav">
         <!-- Dashboard summary -->
         <li><a href="https://theexpertinstitute.secure.force.com/ExpertDashboard/?IDE=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe"><span class="fa fa-tachometer dnl-link-icon"></span>
-            <span class="dnl-link-text">Dashboard Summary</span></a> </li>
+            <span class="dnl-link-text">Dashboard Summary</span></a> 
+        </li>
             <p class="dnl-nav-title"></p>
-      <p class="dnl-nav-title">Cases</p>
+<!--       <p class="dnl-nav-title">Cases</p>
       <ul class="dnl-nav">
-        <!-- NEW CASE -->
+       
         <li>
           <a href="https://theexpertinstitute.secure.force.com/ExpertDashboard/?IDE=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="fa fa-file-text dnl-link-icon"></span>
             <span class="dnl-link-text">New Cases</span>
           </a>
         </li>
-          <!-- Open Cases -->
+ 
           <li>
           <a href="https://theexpertinstitute.secure.force.com/ExpertDashboard/?IDE=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="glyphicon glyphicon-folder-open dnl-link-icon"></span>
@@ -320,7 +318,7 @@ if (	$role=='Expert')
             <span class="glyphicon glyphicon-facetime-video dnl-link-icon"></span>
             <span class="dnl-link-text">Profile Video</span>
           </a>
-        </li>
+        </li> -->
 	  
     </div> <!-- /.dash-navbar-left -->
 <?	
