@@ -34,7 +34,7 @@
             // console.dir(messageData);
         },
         messageCallback: function(messageData) { // Callback fn when message is received
-            console.log('CALLBACK MESSAGE:');
+            console.log('PARENT GOT MESSAGE:');
             console.dir(messageData);
 
             /*HANDLE LOADING */
@@ -63,6 +63,13 @@
                 showHireAlert(messageData);
             }
 
+            /* HANDLE SCHEDULER DELETE POPUP */
+            if (messageData.message.action == 'showDeleteAlert'){
+                console.log(messageData);
+                showDeleteAlert(messageData.message);
+            }
+
+
         },
         closedCallback: function(id) { // Callback fn when iFrame is closed
         
@@ -90,6 +97,18 @@
                 $iframe[0].iFrameResizer.sendMessage(confirmHireOBJ);
             }
         );
+    }
+
+    /* Scheduler delete alert */
+    function showDeleteAlert(messageData){        
+        swal(messageData.swalOBJ,function(){
+            var deleteEventOBJ = {
+                action: 'DELETE',
+                eventData: messageData.eventData
+            }              
+            $iframe[0].iFrameResizer.sendMessage(deleteEventOBJ);
+        });
+
     }
 
 })(jQuery);
