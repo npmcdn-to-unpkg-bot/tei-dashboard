@@ -51,21 +51,6 @@ $cid= get_field('cid', $field_meta);
 </head>
 <body  class="login-page" <?php body_class(); ?> >
 
-    <!-- Dash Navbar Top 
-    Available versions: dnl-visible, dnl-hidden -->
-    <nav class="navbar navbar-static-top dash-navbar-top dnl-visible">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a class="navbar-brand" href="<?php echo get_site_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/assets/dashboard-assets/images/login-logo-inverse.svg" alt="tei-logo" class="header-tei-logo"><span class="beta-tag hidden-xs">beta</span></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="dnt-collapse">
-
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav> <!-- /.navbar -->
 
 
 
