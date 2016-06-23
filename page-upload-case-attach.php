@@ -171,7 +171,7 @@ else
           </div>
       
 		<div class="form-group">
-            <label for="inputDesc" class="control-label col-sm-4 col-xs-12 ">Descriptions</label>
+            <label for="inputDesc" class="control-label col-sm-4 col-xs-12 ">Description</label>
             <div class="col-xs-12 col-sm-8">
               <textarea type="textarea" class="desc" name="desc" placeholder="Enter any additional information about the File (optional)"></textarea>
             </div>
@@ -184,7 +184,6 @@ else
               <button type="submit" class="btn btn-submit submit send">Upload</button>
             </div>
 		</form>
-	
 <? } ?>
 
 	</div></div>
