@@ -122,7 +122,7 @@ $response2 = $mySforceConnection->update(array($sObject2), 'Opportunity');
   
   
 
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#selected\">";
+echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/Client/ClientCaseDetail?IDO=$IDO&IDU=$IDU&WP=$WP#selected\">";
 
   // echo "https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP/#selected-expert";
 

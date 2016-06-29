@@ -36,7 +36,7 @@ get_header(); ?>
   $id_sf= get_field('id_sf_contact', $field_meta);
   $cid= get_field('cid', $field_meta);
   
-  $url_frame="https://theexpertinstitute.secure.force.com/NewCase/?IDU=$id_sf&NC=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=$wp";
+  $url_frame="https://theexpertinstitute.secure.force.com/Client/ClientDashboard?IDU=$id_sf&WP=$wp";
   
   if ($return_url!='')
   {$url_frame=$return_url;}

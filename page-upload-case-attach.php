@@ -123,7 +123,7 @@ if ($fileName!="")
 // echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#attachments\">";
 
 echo "<script>
-  window.location.href=\"https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#attachments\";
+  window.location.href=\"https://theexpertinstitute.secure.force.com/Client/ClientCaseDetail?IDO=$IDO&IDU=$IDU&WP=$WP#attachments\";
                   //hide overlay from inner iframe page 
                 $('#loading-overlay', window.parent.document).hide();
 

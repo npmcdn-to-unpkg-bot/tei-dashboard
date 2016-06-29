@@ -153,21 +153,21 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
       <p class="dnl-nav-title">DASHBOARD</p>
       <ul class="dnl-nav">
         <!-- Dashboard summary -->
-        <li class="active" id="nav-dashboard-summary"><a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&NC=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe" ><span class="fa fa-tachometer dnl-link-icon"></span>
+        <li class="active" id="nav-dashboard-summary"><a href="https://theexpertinstitute.secure.force.com/Client/ClientDashboard?IDU=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe" ><span class="fa fa-tachometer dnl-link-icon"></span>
             <span class="dnl-link-text">Dashboard Summary</span></a> </li>
       
       <p class="dnl-nav-title">Cases</p>
       <ul class="dnl-nav">
         <!-- NEW CASE -->
         <li id="nav-new-case">
-          <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&DB=hidden&OC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe">
+          <a href="https://theexpertinstitute.secure.force.com/Client/ClientNewCase?IDU=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="fa fa-file-text dnl-link-icon"></span>
             <span class="dnl-link-text">Submit a New Case</span>
           </a>
         </li>
           <!-- Open Cases -->
           <li id="nav-open-cases">
-          <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&DB=hidden&NC=hidden&CC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe">
+          <a href="https://theexpertinstitute.secure.force.com/Client/ClientOpenCases?IDU=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="glyphicon glyphicon-folder-open dnl-link-icon"></span>
             <span class="dnl-link-text">Open Cases</span>
             <span class="badge open-cases-badge"></span>
@@ -175,7 +175,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
         </li>
         <!-- Closed Cases -->
         <li id="nav-closed-cases">
-          <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&DB=hidden&OC=hidden&NC=hidden&CCL=hidden&WP=<? echo $wp; ?>" target="MainIframe">
+          <a href="https://theexpertinstitute.secure.force.com/Client/ClientClosedCases?IDU=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="glyphicon glyphicon-folder-close dnl-link-icon"></span>
             <span class="dnl-link-text">Closed Cases</span>
             <span class="badge closed-cases-badge"></span>
@@ -193,7 +193,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
           </a>
         </li>
            <li>
-          <a href="https://theexpertinstitute.secure.force.com/NewCase/?IDU=<?php echo $id_sf;?>&DB=hidden&OC=hidden&NC=hidden&CC=hidden&WP=<? echo $wp; ?>" target="MainIframe">
+          <a href="https://theexpertinstitute.secure.force.com/Client/ClientConferenceCall?IDU=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="fa fa-phone dnl-link-icon"></span>
             <span class="dnl-link-text">Upcoming Calls</span>
             <span class="badge calls-badge"></span>

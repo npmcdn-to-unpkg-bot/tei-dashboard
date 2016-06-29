@@ -85,7 +85,7 @@ $mylogin = $mySforceConnection->login($USERNAME, $PASSWORD);
 
  
  
-echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/CaseDetails/?IDO=$IDO&IDU=$IDU&WP=$WP#chatter\">";
+echo "<META http-equiv=\"refresh\" content=\"0;URL=https://theexpertinstitute.secure.force.com/Client/ClientCaseDetail?IDO=$IDO&IDU=$IDU&WP=$WP#chatter\">";
   
 ?>
   </head> 
