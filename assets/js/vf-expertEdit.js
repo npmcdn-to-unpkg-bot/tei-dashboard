@@ -93,18 +93,6 @@ $(document).ready(function(){
                     $('#inputSpecialtyArea').val(expObj.specialtyArea);
                     // legal experience 
                     $('#inputLegalExperience').val(expObj.legalExperience);
-
-                    //set Name 
-                    // $('.expert-name').html(expObj.firstName + " " + expObj.lastName);
-
-                    // set picture;
-                    $('#expert-avatar').attr('src', expObj.imageURL);
-
-                    // Get Expert Opportunities
-                    // fetchOpps(expObj.Id);
-
-                    // Get Expert Attachments
-                    // fetchAttachments(expObj.Id);
                 });
             }
         
