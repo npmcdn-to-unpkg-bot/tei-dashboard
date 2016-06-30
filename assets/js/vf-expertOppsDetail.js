@@ -13,46 +13,38 @@
     }
 
 
-    fetchOpps();
-
+    fetchOppDetail();
+console.log(getUrlVars());
     
     //Function to fetch Opps 
-      function fetchOpps(){
-        console.log('fetching Expert Opps for expertID: '+ getUrlVars()["Id"]);
-        var OppExp = new SObjectModel.oppExp();
-          OppExp.retrieve({
+      function fetchOppDetail(){
+        console.log('fetching Opportunty with ID: '+ getUrlVars()["Id"]);
+        var Opp = new SObjectModel.opp();
+          Opp.retrieve({
             where: {
-              Expert__c: {eq: getUrlVars()["Id"] }
+              Id: {eq: getUrlVars()["Id"] }
             },
             limit: 100
           }, function (err, records){
             if(err){
               console.log(err.message);
             }
-            else {              
+            else {       
+            console.log(records);       
               records.forEach(function(record){
-                  var oppExpObj = {
+                  var OppObj = {
                     name: record.get('Name'),
                     Id: record.get('Id'),
-                    Expert__c: record.get('Expert__c'),
+                    Case_Summery_or_Expert__c: record.get('Case_Summery_or_Expert__c'),
                     ExpertId__c: record.get('ExpertId__c'),
                     Opportunity__c: record.get('Opportunity__c'),
                     Opp_Name__c: record.get('Opp_Name__c')
                   };
-                  // console.log(oppExpObj);
-                  var tableRow = $('<tr>'+
-                    '<td><a href="Expert_Profile_Opportunity_Detail?Id='+oppExpObj.Opportunity__c+'&idOppExpert='+oppExpObj.Id+'" target="_blank">'+oppExpObj.Opp_Name__c+'</a></td>'+
-                    '<td>'+oppExpObj.Opportunity__c+'</td>'+                            
-                    // '<td>john@example.com</td>'+
-                  '</tr>');
-                  $('.oppTable').append(tableRow);
+                  
+                $('#case-summary').html(OppObj.Case_Summery_or_Expert__c);
                   
               });
-              //init dataTable plugin
-
-              $('.datatable').dataTable({
-                    "order": [[ 0, "desc" ]]
-                });
+              
             }
           });
       }

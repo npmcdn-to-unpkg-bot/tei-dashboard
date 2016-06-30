@@ -162,6 +162,8 @@ $(document).ready(function(){
     // cancel button click 
     $('#btnCancel').click(function(e){
       e.preventDefault();
+      alert('Form Reset');
+      $(this).blur();
       fetchExpert();
     });
     //Save button click       
