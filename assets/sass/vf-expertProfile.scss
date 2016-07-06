@@ -94,7 +94,7 @@ body {
     margin: 1em auto;
     text-align: center;
     display: block;
-    max-width: 120px;
+    max-width: 80px;
     border-radius: 100%;
   }
   .table-hover>tbody>tr:hover {
@@ -205,8 +205,30 @@ body {
   }
 
   .expert-profile-section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    .expert-profile-section-header {
+      margin-bottom: 40px;
+    }
   }
   .expert-questions {
     white-space: pre;
+  }
+
+  .ExpertListPic, .ContactListPic, .ResearcherListPic {
+      margin: 0 5px 0 0;
+      max-width: 40px;
+      border-radius: 50%;
+      display: block;
+      float: left;
+  }
+  .list-pic-container {
+    margin: 0 5px 0 0;
+    border-radius: 50%;
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }

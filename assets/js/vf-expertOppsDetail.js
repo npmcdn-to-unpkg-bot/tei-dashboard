@@ -47,12 +47,29 @@
                     name: record.get('Name'),
                     Id: record.get('Id'),
                     Case_Summery_or_Expert__c: record.get('Case_Summery_or_Expert__c'),
+                    Case_Summary_for_Expert_Images__c: record.get('Case_Summary_for_Expert_Images__c'),
                     ExpertId__c: record.get('ExpertId__c'),
                     Opportunity__c: record.get('Opportunity__c'),
                     Opp_Name__c: record.get('Opp_Name__c')
                   };
                   
-                $('#case-summary').html(OppObj.Case_Summery_or_Expert__c);
+                  var BuildCaseSummaryImageSection = function(imageString){
+                    if(imageString !== undefined){
+                                            
+                      var decodedImageString = $("<p/>").html(imageString).text(); 
+                      var caseSummaryImages = $.parseHTML(decodedImageString);
+                      
+                      var csImgSection = $('<div class="row expert-profile-section"><div class="col-md-12"><h3 class="heading-underline"><span class="text-underline">Case Media</span></h3><div id="case-media"></div></div></div>');                      
+                      $('.case-overview').closest('.expert-profile-section').after(csImgSection);
+                      $('#case-media').append(caseSummaryImages);
+                    } else {
+                      
+                    }
+                  }
+                  BuildCaseSummaryImageSection(OppObj.Case_Summary_for_Expert_Images__c);
+
+                
+
                   
               });
               

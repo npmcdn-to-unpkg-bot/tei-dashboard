@@ -37,15 +37,19 @@
                     Expert__c: record.get('Expert__c'),
                     ExpertId__c: record.get('ExpertId__c'),
                     Opportunity__c: record.get('Opportunity__c'),
-                    Opp_Name__c: record.get('Opp_Name__c')
+                    Opp_Name__c: record.get('Opp_Name__c'),
+                    O_ID__c: record.get('O_ID__c'),
+                    LCMT_USER__c: record.get('LCMT_USER__c'),
+                    LCMT_USER_Picture__c: record.get('LCMT_USER_Picture__c')
                   };
                   // console.log(oppExpObj);
                   var tableRow = $('<tr>'+
                     '<td><a href="Expert_Profile_Opportunity_Detail?Id='+oppExpObj.Opportunity__c+'&idOppExpert='+oppExpObj.Id+'" target="_blank">'+oppExpObj.Opp_Name__c+'</a></td>'+
-                    '<td>'+oppExpObj.Opportunity__c+'</td>'+                            
+                    '<td><div class="list-pic-container" style="background-image:url('+oppExpObj.LCMT_USER_Picture__c+')"></div>'+oppExpObj.LCMT_USER__c+'</td>'+                            
                     // '<td>john@example.com</td>'+
-                  '</tr>');
+                  '</tr>');                  
                   $('.oppTable').append(tableRow);
+
                   
               });
               //init dataTable plugin
