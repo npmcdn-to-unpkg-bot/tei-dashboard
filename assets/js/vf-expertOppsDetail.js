@@ -76,7 +76,7 @@
       }
       
 
-      // get expert info 
+      // get Opportunity-Expert info 
       function fetchOppExpert(){
         var oppExpertID = getUrlVars()["idOppExpert"]; 
         console.log('fetching Expert with ID: '+ oppExpertID);
