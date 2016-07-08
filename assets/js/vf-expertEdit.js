@@ -1,4 +1,15 @@
 $(document).ready(function(){
+  console.log('Expert Profile Script running....');
+
+
+  //on page change - show loading 
+  $(window).on('beforeunload ', function() {
+      if ('parentIFrame' in window) {
+          window.parentIFrame.sendMessage('loading-show');
+          window.parentIFrame.scrollToOffset(0, 0);
+      }
+  });
+
   function getUrlVars()
   {
       var vars = [], hash;
@@ -41,16 +52,15 @@ $(document).ready(function(){
                         address1: record.get('Address__c'),
                         address2: record.get('Address2__c'),
                         city: record.get('City__c'),
-                        state: record.get('State__c'),
+                        state: record.get('State_List__c'),
+                        country: record.get('Country__c'),
                         zip: record.get('ZIP__c'),
                         hourlyReviewFee: record.get('Hourly_Review_Fee__c'),
                         hourlyDepositionFee: record.get('Hourly_Deposition_Fee__c'),
                         hourlyCourtFee: record.get('Hourly_Court_Fee__c'),
                         feeComments: record.get('Fee_Comments__c'),
                         specialtyArea: record.get('Specialty_Area__c'),
-                        legalExperience: record.get('Legal_Experience__c'),
-                        State_List__c: record.get('State_List__c'),
-                        Country__c: record.get('Country__c')
+                        legalExperience: record.get('Legal_Experience__c')                       
                     }
                     console.log(expObj);
                     
@@ -77,8 +87,13 @@ $(document).ready(function(){
                     $('#inputAddressLine2').val(expObj.address2);
                     // city 
                     $('#inputCityTown').val(expObj.city);
+                    // country 
+                    $('#inputCountry').val(expObj.country);                    
                     // state 
-                    $('#inputStateProvinceRegion').val(expObj.state);
+                    // $('#inputStateProvinceRegion').val(expObj.state);
+                    handleCountryChange(expObj.country, expObj.state);
+
+
                     // zip 
                     $('#inputZipPostalCode').val(expObj.zip);
 
@@ -115,7 +130,7 @@ $(document).ready(function(){
           Address__c: $('#inputAddressLine1').val(),
           Address2__c: $('#inputAddressLine2').val(),
           City__c: $('#inputCityTown').val(),
-          State__c:  $('#inputStateProvinceRegion').val(),
+          State_List__c:  $('#inputStateProvinceRegion').val(),
           Country__c: $('#inputCountry').val(),
           ZIP__c:  $('#inputZipPostalCode').val(),
           Hourly_Review_Fee__c: $('#inputHourlyReview').val(),
@@ -125,6 +140,8 @@ $(document).ready(function(){
           Specialty_Area__c: $('#inputSpecialtyArea').val(),
           Legal_Experience__c:  $('#inputLegalExperience').val()
       });
+
+      console.log($('#inputStateProvinceRegion').val());
        expertID = $('#expertID').val();
 
       //If expertID is null then Create new Expert
@@ -132,6 +149,7 @@ $(document).ready(function(){
         updateExp.create(updateCallback);
       }else{
       //Id expertID has value then update the Expert record
+      console.log(updateExp);
         updateExp.set('Id',expertID);
         updateExp.update(updateCallback);
       }
@@ -142,8 +160,8 @@ $(document).ready(function(){
       if (err) { 
           alert(err); 
       } else {
-          alert('SAVED!');
-          console.log('saved')
+          // alert('SAVED!');
+          console.log('saved',ids)
       }
     }
 
@@ -175,103 +193,114 @@ $(document).ready(function(){
       createExpert();
     });
 
+    // chang input for region 
     $('#inputCountry').on('change', function(e){
       var value = e.target.value;
       console.log(value, e);
-      switch (value){
-        case "US":
+      handleCountryChange(value);
+    });
+
+    var handleCountryChange = function(country, state){
+      switch (country){
+        case "United States":
           $('#inputStateProvinceRegion-container').html(stateUS);
           break;
-        case "CA":
+        case "Canada":
         $('#inputStateProvinceRegion-container').html(stateCanada);
           break;
         default:
-          $('#inputStateProvinceRegion-container').html(stateInput);
+          $('#inputStateProvinceRegion-container').html(stateNone);
           break;
       }
-    });
+      $('#inputStateProvinceRegion').val(state);
+    }
 
     // input for non-north american countries
-    var stateInput="";
-    stateInput += "            <input type=\"text\" class=\"form-control\" id=\"inputStateProvinceRegion\" name=\"state-province-region\" placeholder=\"State \/ Province \/ Region\" \/>";
+    var stateNone="";
+    stateNone += "<select name=\"state-province-region\" class=\"form-control\" id=\"inputStateProvinceRegion\">";
+    stateNone += "  <option value=\"None\" selected=\"selected\">None<\/option>";
+    stateNone += "<\/select>  ";
 
     var stateCanada="";
     stateCanada += "<select name=\"state-province-region\" class=\"form-control\" id=\"inputStateProvinceRegion\">";
-    stateCanada += "  <option value=\"AB\">Alberta<\/option>";
-    stateCanada += "  <option value=\"BC\">British Columbia<\/option>";
-    stateCanada += "  <option value=\"MB\">Manitoba<\/option>";
-    stateCanada += "  <option value=\"NB\">New Brunswick<\/option>";
-    stateCanada += "  <option value=\"NL\">Newfoundland and Labrador<\/option>";
-    stateCanada += "  <option value=\"NS\">Nova Scotia<\/option>";
-    stateCanada += "  <option value=\"ON\">Ontario<\/option>";
-    stateCanada += "  <option value=\"PE\">Prince Edward Island<\/option>";
-    stateCanada += "  <option value=\"QC\">Quebec<\/option>";
-    stateCanada += "  <option value=\"SK\">Saskatchewan<\/option>";
-    stateCanada += "  <option value=\"NT\">Northwest Territories<\/option>";
-    stateCanada += "  <option value=\"NU\">Nunavut<\/option>";
-    stateCanada += "  <option value=\"YT\">Yukon<\/option>";
+    stateCanada += "  <option value=\"Alberta\">Alberta<\/option>";
+    stateCanada += "  <option value=\"British Columbia\">British Columbia<\/option>";
+    stateCanada += "  <option value=\"Manitoba\">Manitoba<\/option>";
+    stateCanada += "  <option value=\"New Brunswick\">New Brunswick<\/option>";
+    stateCanada += "  <option value=\"Newfoundland and Labrador\">Newfoundland and Labrador<\/option>";
+    stateCanada += "  <option value=\"Nova Scotia\">Nova Scotia<\/option>";
+    stateCanada += "  <option value=\"Ontario\">Ontario<\/option>";
+    stateCanada += "  <option value=\"Prince Edward Island\">Prince Edward Island<\/option>";
+    stateCanada += "  <option value=\"Quebec\">Quebec<\/option>";
+    stateCanada += "  <option value=\"Saskatchewan\">Saskatchewan<\/option>";
+    stateCanada += "  <option value=\"Northwest Territories\">Northwest Territories<\/option>";
+    stateCanada += "  <option value=\"Nunavut\">Nunavut<\/option>";
+    stateCanada += "  <option value=\"Yukon\">Yukon<\/option>";
     stateCanada += "<\/select>  ";
 
-    var stateUS="";
-    stateUS += "              <select name=\"state-province-region\" class=\"form-control\" id=\"inputStateProvinceRegion\">";
-    stateUS += "                <option value=\"AL\">Alabama<\/option>";
-    stateUS += "                <option value=\"AK\">Alaska<\/option>";
-    stateUS += "                <option value=\"AZ\">Arizona<\/option>";
-    stateUS += "                <option value=\"AR\">Arkansas<\/option>";
-    stateUS += "                <option value=\"CA\">California<\/option>";
-    stateUS += "                <option value=\"CO\">Colorado<\/option>";
-    stateUS += "                <option value=\"CT\">Connecticut<\/option>";
-    stateUS += "                <option value=\"DE\">Delaware<\/option>";
-    stateUS += "                <option value=\"DC\">District Of Columbia<\/option>";
-    stateUS += "                <option value=\"FL\">Florida<\/option>";
-    stateUS += "                <option value=\"GA\">Georgia<\/option>";
-    stateUS += "                <option value=\"HI\">Hawaii<\/option>";
-    stateUS += "                <option value=\"ID\">Idaho<\/option>";
-    stateUS += "                <option value=\"IL\">Illinois<\/option>";
-    stateUS += "                <option value=\"IN\">Indiana<\/option>";
-    stateUS += "                <option value=\"IA\">Iowa<\/option>";
-    stateUS += "                <option value=\"KS\">Kansas<\/option>";
-    stateUS += "                <option value=\"KY\">Kentucky<\/option>";
-    stateUS += "                <option value=\"LA\">Louisiana<\/option>";
-    stateUS += "                <option value=\"ME\">Maine<\/option>";
-    stateUS += "                <option value=\"MD\">Maryland<\/option>";
-    stateUS += "                <option value=\"MA\">Massachusetts<\/option>";
-    stateUS += "                <option value=\"MI\">Michigan<\/option>";
-    stateUS += "                <option value=\"MN\">Minnesota<\/option>";
-    stateUS += "                <option value=\"MS\">Mississippi<\/option>";
-    stateUS += "                <option value=\"MO\">Missouri<\/option>";
-    stateUS += "                <option value=\"MT\">Montana<\/option>";
-    stateUS += "                <option value=\"NE\">Nebraska<\/option>";
-    stateUS += "                <option value=\"NV\">Nevada<\/option>";
-    stateUS += "                <option value=\"NH\">New Hampshire<\/option>";
-    stateUS += "                <option value=\"NJ\">New Jersey<\/option>";
-    stateUS += "                <option value=\"NM\">New Mexico<\/option>";
-    stateUS += "                <option value=\"NY\">New York<\/option>";
-    stateUS += "                <option value=\"NC\">North Carolina<\/option>";
-    stateUS += "                <option value=\"ND\">North Dakota<\/option>";
-    stateUS += "                <option value=\"OH\">Ohio<\/option>";
-    stateUS += "                <option value=\"OK\">Oklahoma<\/option>";
-    stateUS += "                <option value=\"OR\">Oregon<\/option>";
-    stateUS += "                <option value=\"PA\">Pennsylvania<\/option>";
-    stateUS += "                <option value=\"RI\">Rhode Island<\/option>";
-    stateUS += "                <option value=\"SC\">South Carolina<\/option>";
-    stateUS += "                <option value=\"SD\">South Dakota<\/option>";
-    stateUS += "                <option value=\"TN\">Tennessee<\/option>";
-    stateUS += "                <option value=\"TX\">Texas<\/option>";
-    stateUS += "                <option value=\"UT\">Utah<\/option>";
-    stateUS += "                <option value=\"VT\">Vermont<\/option>";
-    stateUS += "                <option value=\"VA\">Virginia<\/option>";
-    stateUS += "                <option value=\"WA\">Washington<\/option>";
-    stateUS += "                <option value=\"WV\">West Virginia<\/option>";
-    stateUS += "                <option value=\"WI\">Wisconsin<\/option>";
-    stateUS += "                <option value=\"WY\">Wyoming<\/option>";
-    stateUS += "                <option value=\"AS\">American Samoa<\/option>";
-    stateUS += "                <option value=\"GU\">Guam<\/option>";
-    stateUS += "                <option value=\"MP\">Northern Mariana Islands<\/option>";
-    stateUS += "                <option value=\"PR\">Puerto Rico<\/option>";
-    stateUS += "                <option value=\"UM\">United States Minor Outlying Islands<\/option>";
-    stateUS += "                <option value=\"VI\">Virgin Islands<\/option>     ";
-    stateUS += "              <\/select>";
+var stateUS="";
+stateUS += "              <select name=\"state-province-region\" class=\"form-control\" id=\"inputStateProvinceRegion\">";
+stateUS += "              <option value=\"Alabama\">Alabama<\/option>";
+stateUS += "              <option value=\"Alaska\">Alaska<\/option>";
+stateUS += "              <option value=\"Arizona\">Arizona<\/option>";
+stateUS += "              <option value=\"Arkansas\">Arkansas<\/option>";
+stateUS += "              <option value=\"California\">California<\/option>";
+stateUS += "              <option value=\"Colorado\">Colorado<\/option>";
+stateUS += "              <option value=\"Connecticut\">Connecticut<\/option>";
+stateUS += "              <option value=\"Delaware\">Delaware<\/option>";
+stateUS += "              <option value=\"District Of Columbia\">District Of Columbia<\/option>";
+stateUS += "              <option value=\"Florida\">Florida<\/option>";
+stateUS += "              <option value=\"Georgia\">Georgia<\/option>";
+stateUS += "              <option value=\"Hawaii\">Hawaii<\/option>";
+stateUS += "              <option value=\"Idaho\">Idaho<\/option>";
+stateUS += "              <option value=\"Illinois\">Illinois<\/option>";
+stateUS += "              <option value=\"Indiana\">Indiana<\/option>";
+stateUS += "              <option value=\"Iowa\">Iowa<\/option>";
+stateUS += "              <option value=\"Kansas\">Kansas<\/option>";
+stateUS += "              <option value=\"Kentucky\">Kentucky<\/option>";
+stateUS += "              <option value=\"Louisiana\">Louisiana<\/option>";
+stateUS += "              <option value=\"Maine\">Maine<\/option>";
+stateUS += "              <option value=\"Maryland\">Maryland<\/option>";
+stateUS += "              <option value=\"Massachusetts\">Massachusetts<\/option>";
+stateUS += "              <option value=\"Michigan\">Michigan<\/option>";
+stateUS += "              <option value=\"Minnesota\">Minnesota<\/option>";
+stateUS += "              <option value=\"Mississippi\">Mississippi<\/option>";
+stateUS += "              <option value=\"Missouri\">Missouri<\/option>";
+stateUS += "              <option value=\"Montana\">Montana<\/option>";
+stateUS += "              <option value=\"Nebraska\">Nebraska<\/option>";
+stateUS += "              <option value=\"Nevada\">Nevada<\/option>";
+stateUS += "              <option value=\"New Hampshire\">New Hampshire<\/option>";
+stateUS += "              <option value=\"New Jersey\">New Jersey<\/option>";
+stateUS += "              <option value=\"New Mexico\">New Mexico<\/option>";
+stateUS += "              <option value=\"New York\">New York<\/option>";
+stateUS += "              <option value=\"North Carolina\">North Carolina<\/option>";
+stateUS += "              <option value=\"North Dakota\">North Dakota<\/option>";
+stateUS += "              <option value=\"Ohio\">Ohio<\/option>";
+stateUS += "              <option value=\"Oklahoma\">Oklahoma<\/option>";
+stateUS += "              <option value=\"Oregon\">Oregon<\/option>";
+stateUS += "              <option value=\"Pennsylvania\">Pennsylvania<\/option>";
+stateUS += "              <option value=\"Rhode Island\">Rhode Island<\/option>";
+stateUS += "              <option value=\"South Carolina\">South Carolina<\/option>";
+stateUS += "              <option value=\"South Dakota\">South Dakota<\/option>";
+stateUS += "              <option value=\"Tennessee\">Tennessee<\/option>";
+stateUS += "              <option value=\"Texas\">Texas<\/option>";
+stateUS += "              <option value=\"Utah\">Utah<\/option>";
+stateUS += "              <option value=\"Vermont\">Vermont<\/option>";
+stateUS += "              <option value=\"Virginia\">Virginia<\/option>";
+stateUS += "              <option value=\"Washington\">Washington<\/option>";
+stateUS += "              <option value=\"West Virginia\">West Virginia<\/option>";
+stateUS += "              <option value=\"Wisconsin\">Wisconsin<\/option>";
+stateUS += "              <option value=\"Wyoming\">Wyoming<\/option>";
+stateUS += "              <option value=\"American Samoa\">American Samoa<\/option>";
+stateUS += "              <option value=\"Guam\">Guam<\/option>";
+stateUS += "              <option value=\"Northern Mariana Islands\">Northern Mariana Islands<\/option>";
+stateUS += "              <option value=\"Puerto Rico\">Puerto Rico<\/option>";
+stateUS += "              <option value=\"United States Minor Outlying Islands\">United States Minor Outlying Islands<\/option>";
+stateUS += "              <option value=\"Virgin Islands \">Virgin Islands <\/option>    ";
+stateUS += "              <\/select>";
+
+
+
 
 
 
