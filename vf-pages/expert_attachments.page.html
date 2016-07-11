@@ -1,0 +1,200 @@
+<apex:page docType="html-5.0" applyHtmlTag="true" applyBodyTag="true"
+           showHeader="false" sidebar="false" standardStylesheets="false"
+           title="Expert Profile - Attachments"  standardController="Expert__c"  extensions="UploadAttachmentController">
+           <apex:param name="ID" value="{!Expert__c.Id} "/>
+<head>    
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />    
+</head>   
+ <apex:remoteObjects>
+        <apex:remoteObjectModel name="Expert__c" jsShorthand="exp" fields="
+        Ms_Mr_Dr_Nurse__c,
+        Firstname__c,
+        Lastname__c,
+        Mobile__c,
+        Email__c,
+        Image_URL__c,
+        Date_of_birth__c,
+        ID_expert__c,
+        Id,
+        Address__c,
+        Address2__c,
+        City__c,
+        State__c,
+        ZIP__c,
+        Hourly_Review_Fee__c,
+        Hourly_Deposition_Fee__c,
+        Hourly_Court_Fee__c,
+        Fee_Comments__c,
+        Specialty_Area__c,
+        Legal_Experience__c
+        "></apex:remoteObjectModel>
+        <apex:remoteObjectModel name="Opportunities_Expert__c" jsShorthand="oppExp" fields="
+        Name,
+        Id,
+        Expert__c,
+        ExpertId__c,
+        Opportunity__c,
+        Opp_Name__c
+        ">
+        </apex:remoteObjectModel>
+        <apex:remoteObjectModel name="Expert_Attachments__c" jsShorthand="expAttachment" fields="
+        Name,
+        Id,
+        Expert__c,
+        Share__c,
+        Attachment__c,
+        Description__c,
+        Type__c
+        ">
+        </apex:remoteObjectModel>
+
+    </apex:remoteObjects>
+    
+   <!-- Fonts  -->
+  <script src="https://use.typekit.net/wht0akz.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  
+  <!-- Boostrap CSS -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+  <!-- Expert Profile Styles  -->
+  <link rel="stylesheet" type="text/css" href="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/css/vf-expertProfile.css" />
+
+           
+   <!-- Jquery & Bootstrap JS -->    
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+    <!-- Attachment APEX  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- Page Title -->
+        <h3 class="expert-profile-header ListHeading">EXPERT Attachments</h3>
+        <!-- Expert Name -->
+        <p class="expert-profile-subheader expert-name">{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}</p>
+        <!-- Expert Image  -->
+        <img id="expert-avatar" class="expert-avatar" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face,h_120,w_120/v524/experts/{!Expert__c.E_ID__c}.jpg" alt="{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}" />
+      </div>
+    </div>
+
+
+    <!-- Nav Pills -->
+    <div class="row">
+      <ul class="nav nav-pills">
+        <li >        
+            <apex:outputLink value="{! $Page.Expert_Profile_Edit}">
+              <apex:param name="Id" value="{!Expert__c.Id}"/>
+              PROFILE
+            </apex:outputLink>        
+        </li>
+        <li class="active">        
+            <apex:outputLink value="{! $Page.Expert_Profile_Attachments}">
+              <apex:param name="Id" value="{!Expert__c.Id}"/>
+              ATTACHMENTS
+            </apex:outputLink>          
+        </li>
+        <li>              
+            <apex:outputLink value="{! $Page.Expert_Profile_Opportunities}">
+              <apex:param name="Id" value="{!Expert__c.Id}"/>
+              OPPORTUNITIES
+            </apex:outputLink>        
+        </li>      
+      </ul>
+    </div>
+
+
+    <!-- Attachment  -->
+    <div class="row expert-profile-section">
+      <div class="col-md-12">          
+        <apex:form id="form_Upload">
+        <apex:pageBlock >
+        <h3 class="heading-underline"><span class="text-underline">Upload File</span></h3>      
+
+        <apex:pageMessages />
+        
+         <apex:pageBlockSection columns="1">        
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="Upload File" for="file_File" styleClass="fileContainer"/>
+             <apex:inputFile id="file_File" styleClass="inputfile" value="{!fileBody}" filename="{!fileName}"/>
+           </apex:pageBlockSectionItem>
+          <br/>
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="Type" for="type"/>
+             <apex:selectList value="{!selectedType}" size="1" id="type"> 
+               <apex:selectOption itemValue="CV" itemLabel="CV"/>
+               <apex:selectOption itemValue="Fees" itemLabel="Fees"/>
+               <apex:selectOption itemValue="Legal History" itemLabel="Legal History"/>
+               <apex:selectOption itemValue="TLOxp Report " itemLabel="TLOxp Report "/>   
+               <apex:selectOption itemValue="Other" itemLabel="Other"/>
+             </apex:selectList>
+           </apex:pageBlockSectionItem>
+           <br/>
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="Share this File?" for="visible"/>
+             <apex:selectList value="{!selectedShare}" size="1" id="visible">
+               <apex:selectOption itemValue="false" itemLabel="No"/>
+               <apex:selectOption itemValue="true" itemLabel="Yes"/>       
+             </apex:selectList>
+           </apex:pageBlockSectionItem>    
+           <br/>
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="Description" for="description"/> 
+             <apex:inputTextarea id="description" value="{!description}" rows="4" cols="50"/>
+           </apex:pageBlockSectionItem>
+           <br/>
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="" for="uploadBtn"/> 
+             <apex:commandButton id="uploadBtn" styleClass="btn btn-submit" value="Attach File" action="{!processUpload}" />
+           </apex:pageBlockSectionItem>    
+           
+         </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+        
+        
+        </apex:form>
+      </div>
+    </div>
+    
+
+    <!--  EXPERT FILES -->
+    <div class="row expert-profile-section">
+
+      <div class="col-md-12">
+      <h3 class="heading-underline"><span class="text-underline">Your Files</span></h3>  
+        <div class="table-responsive">
+                  
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Attachment Name</th>                
+                  <th>Type</th>
+                  <th>Share</th>
+                </tr>
+              </thead>
+              <tbody class="attachmentTable">
+                <!-- Attchments  get rowed in here -->
+              </tbody>
+            </table>
+        </div>
+           
+      </div>
+    </div>
+  </div>  
+<!-- END Attachment APEX -->
+
+<script src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
+  <link rel="stylesheet" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css" />
+
+   <script src="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/js/vf-expertAttachment.js">
+   </script> 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
+</apex:page>

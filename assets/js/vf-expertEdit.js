@@ -62,7 +62,7 @@ $(document).ready(function(){
                         specialtyArea: record.get('Specialty_Area__c'),
                         legalExperience: record.get('Legal_Experience__c')                       
                     }
-                    console.log(expObj);
+                    console.log('LOADED EXPERT:',expObj);
                     
                     // Expert Object ID 
                     $('#expertID').val(expObj.Id);
@@ -140,16 +140,14 @@ $(document).ready(function(){
           Specialty_Area__c: $('#inputSpecialtyArea').val(),
           Legal_Experience__c:  $('#inputLegalExperience').val()
       });
-
-      console.log($('#inputStateProvinceRegion').val());
+      
        expertID = $('#expertID').val();
 
       //If expertID is null then Create new Expert
       if(!expertID){
         updateExp.create(updateCallback);
       }else{
-      //Id expertID has value then update the Expert record
-      console.log(updateExp);
+      //Id expertID has value then update the Expert record      
         updateExp.set('Id',expertID);
         updateExp.update(updateCallback);
       }
@@ -159,9 +157,11 @@ $(document).ready(function(){
     function updateCallback(err, ids){
       if (err) { 
           alert(err); 
-      } else {
-          // alert('SAVED!');
-          console.log('saved',ids)
+      } else {          
+          $('#btnSave').attr('disabled', true);
+          $('#btnCancel').fadeOut();
+          alert('Success: Your Profile Information has been updated');
+          // console.log('saved',ids)
       }
     }
 
@@ -188,9 +188,9 @@ $(document).ready(function(){
       fetchExpert();
     });
     //Save button click       
-    $('#btnSave').click(function(e){ 
+    $('#expert-profile-form').submit(function(e){ 
       e.preventDefault();
-      createExpert();
+
     });
 
     // chang input for region 
@@ -215,28 +215,28 @@ $(document).ready(function(){
       $('#inputStateProvinceRegion').val(state);
     }
 
-    // input for non-north american countries
-    var stateNone="";
-    stateNone += "<select name=\"state-province-region\" class=\"form-control\" id=\"inputStateProvinceRegion\">";
-    stateNone += "  <option value=\"None\" selected=\"selected\">None<\/option>";
-    stateNone += "<\/select>  ";
+// input for non-north american countries
+var stateNone="";
+stateNone += "<select name=\"state-province-region\" class=\"form-control\" id=\"inputStateProvinceRegion\">";
+stateNone += "  <option value=\"None\" selected=\"selected\">None<\/option>";
+stateNone += "<\/select>  ";
 
-    var stateCanada="";
-    stateCanada += "<select name=\"state-province-region\" class=\"form-control\" id=\"inputStateProvinceRegion\">";
-    stateCanada += "  <option value=\"Alberta\">Alberta<\/option>";
-    stateCanada += "  <option value=\"British Columbia\">British Columbia<\/option>";
-    stateCanada += "  <option value=\"Manitoba\">Manitoba<\/option>";
-    stateCanada += "  <option value=\"New Brunswick\">New Brunswick<\/option>";
-    stateCanada += "  <option value=\"Newfoundland and Labrador\">Newfoundland and Labrador<\/option>";
-    stateCanada += "  <option value=\"Nova Scotia\">Nova Scotia<\/option>";
-    stateCanada += "  <option value=\"Ontario\">Ontario<\/option>";
-    stateCanada += "  <option value=\"Prince Edward Island\">Prince Edward Island<\/option>";
-    stateCanada += "  <option value=\"Quebec\">Quebec<\/option>";
-    stateCanada += "  <option value=\"Saskatchewan\">Saskatchewan<\/option>";
-    stateCanada += "  <option value=\"Northwest Territories\">Northwest Territories<\/option>";
-    stateCanada += "  <option value=\"Nunavut\">Nunavut<\/option>";
-    stateCanada += "  <option value=\"Yukon\">Yukon<\/option>";
-    stateCanada += "<\/select>  ";
+var stateCanada="";
+stateCanada += "<select name=\"state-province-region\" class=\"form-control\" id=\"inputStateProvinceRegion\">";
+stateCanada += "  <option value=\"Alberta\">Alberta<\/option>";
+stateCanada += "  <option value=\"British Columbia\">British Columbia<\/option>";
+stateCanada += "  <option value=\"Manitoba\">Manitoba<\/option>";
+stateCanada += "  <option value=\"New Brunswick\">New Brunswick<\/option>";
+stateCanada += "  <option value=\"Newfoundland and Labrador\">Newfoundland and Labrador<\/option>";
+stateCanada += "  <option value=\"Nova Scotia\">Nova Scotia<\/option>";
+stateCanada += "  <option value=\"Ontario\">Ontario<\/option>";
+stateCanada += "  <option value=\"Prince Edward Island\">Prince Edward Island<\/option>";
+stateCanada += "  <option value=\"Quebec\">Quebec<\/option>";
+stateCanada += "  <option value=\"Saskatchewan\">Saskatchewan<\/option>";
+stateCanada += "  <option value=\"Northwest Territories\">Northwest Territories<\/option>";
+stateCanada += "  <option value=\"Nunavut\">Nunavut<\/option>";
+stateCanada += "  <option value=\"Yukon\">Yukon<\/option>";
+stateCanada += "<\/select>  ";
 
 var stateUS="";
 stateUS += "              <select name=\"state-province-region\" class=\"form-control\" id=\"inputStateProvinceRegion\">";
@@ -302,7 +302,64 @@ stateUS += "              <\/select>";
 
 
 
+// validate form 
+$('#expert-profile-form').validate({
+    debug: true,
+    ignore: ".ignore",
+    rules: {
+      firstname:{
+        required: true
+      },
+      lastname: {
+        required: true
+      },
+      mobile: {
+        required: true,
+        phoneUS: true
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      "hiddenRecaptcha": {
+        required: function() {
+          if(grecaptcha.getResponse() == ''){
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }
+    },
+    messages: {
+      firstname: {
+        required: "Please enter your first name"
+      },
+      lastname: {
+        required: "Please enter your last name"
+      },
+      mobile: {
+        required: "Please enter a phone number",
+        phoneUS: "Number must be formatted like: 555-555-5555"
+      },
+      email: {
+        required: "Please enter your email address",
+        email: "Enter a valid email address"
+      },
+      "inputSpecialtyArea": {
+        required: "Please enter your field of specialization"
+      },
+      "hiddenRecaptcha": {
+        required: "Please verify that you're human."
+      }
 
-
+    },
+    submitHandler: function(form){
+      console.log('form submmiting...');
+      if(grecaptcha.getResponse().length !== 0){
+        createExpert();  
+      }
+    }
+  });
 
 }); //end ready

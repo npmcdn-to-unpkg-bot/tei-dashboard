@@ -1,0 +1,185 @@
+<apex:page docType="html-5.0" applyHtmlTag="true" applyBodyTag="true"
+           showHeader="false" sidebar="false" standardStylesheets="false"
+           title="Expert Profile - Opportunities: Detail"  standardController="Opportunity" >
+  <head>    
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />    
+  </head>
+    <apex:remoteObjects>
+        <apex:remoteObjectModel name="Opportunity" jsShorthand="opp" fields="
+        Opportunity_Name_Expert__c,
+        Id,
+        Case_Summery_or_Expert__c,
+        Case_Summary_for_Expert_Images__c,
+        Expert_Question__c
+        ">
+        </apex:remoteObjectModel>
+        <apex:remoteObjectModel name="Opportunities_Expert__c" jsShorthand="oppExp" fields="
+        Name,
+        Id,
+        Expert__c,
+        ExpertId__c,
+        Opportunity__c,
+        Opp_Name__c,
+        Specific_Qualifications__c,
+        Expert_Answer__c,
+        LCMT_USER__c,
+        LCMT_USER_Email__c,
+        LCMT_USER_Phone__c,
+        LCMT_USER_Picture__c,
+        Title__c,
+        Lastname__c,
+        Contacting_Expert_Template__c
+        ">
+        </apex:remoteObjectModel>
+    </apex:remoteObjects>
+    <!-- Fonts  -->
+    <script src="https://use.typekit.net/wht0akz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- Boostrap CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <!-- Datatables CSS  -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css"></link>
+
+    <!-- Expert Profile Styles  -->
+    <link rel="stylesheet" type="text/css" href="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/css/vf-expertProfile.css" />
+
+    <div class="container">
+      <!-- PAGE HEADER -->
+      <div class="row">
+        <div class="col-sm-12">
+          <!-- Page Title   -->
+          <h3 class="expert-profile-header ListHeading"> {!Opportunity.Opportunity_Name_Expert__c}</h3>
+          <!-- Expert Name -->
+          <p class="expert-profile-subheader expert-name">Expert Feedback</p>
+        </div>
+      </div>
+
+      <!-- CASE INTRO / CASE MANAGER CARD  -->
+      <div class="row expert-profile-section" >
+        <div class="col-md-8 col-sm-12">
+            <h2 class="case-intro-title"></h2>
+            <div class="case-intro">               
+                <p>In order to move forward with this opportunity, we need to gather your initial feedback.</p><p>Below, you will find a short description of the case, along with a few questions that should be addressed in your response.
+                <br/>
+                <br/>
+                <em class="case-intro-signature"></em></p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="card case-manager-card">
+                  <div class="card-header"></div>
+                  <div id="LCMT_USER_Picture__c" class="case-manager-image">                    
+                  </div>
+                  <p class="case-manager-card-title">Your Case Manager:</p>
+                  <h3 class="case-manager-card-name" id="LCMT_USER__c">The Expert Institute</h3>
+                  <div class="card-body bio-card">
+                    <ul class="case-manager-bio-meta">
+                      <li>
+                        <span class="case-manager-bio-meta--label">Phone</span><br/>
+                        <a id="LCMT_USER_Phone__c" href="tel:888-858-9511">888-858-9511</a>
+                      </li>
+                    <li><span class="case-manager-bio-meta--label">Email</span><br/> <a id="LCMT_USER_Email__c" href="mailto:info@theexpertinstitute.com">info@theexpertinstitute.com</a></li>          
+
+                    <li>
+                      <span class="case-manager-bio-meta--label">Address</span>
+                      
+                        <address class="case-manager-bio-meta--address">
+                          <span>The Expert Institute</span><br/>
+                                75 Maiden Lane, Suite 704 <br/>
+                                New York, NY 10038
+                        </address>
+
+                      
+                    </li>
+                  </ul>
+                  </div> <!-- end card-body -->
+                </div>
+        </div>
+      </div>
+
+      <!-- CASE OVERVIEW -->
+      <div class="row expert-profile-section">
+        <div class="col-md-12">
+          <h3 class="heading-underline">
+            <span class="text-underline">
+              Case Overview
+            </span>
+          </h3>
+          <div class="case-overview">
+            {!Opportunity.Case_Summery_or_Expert__c}
+          </div>   
+        </div>
+      </div>
+    
+      <!-- EXPERT QUESTIONS -->
+      <div class="row expert-profile-section">
+        <div class="col-md-12">
+          <h3 class="heading-underline">
+            <span class="text-underline">
+              Questions 
+            </span>
+          </h3>
+          <div id="expert-questions" class="expert-questions">
+            {!Opportunity.Expert_Question__c}    
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERT FEEDBACK -->
+      <div class="row expert-profile-section">
+        <div class="col-md-12">
+          <h3 class="heading-underline">
+            <span class="text-underline">
+              Expert Feedback
+            </span>
+          </h3>
+            <form class="form-horizontal expert-form" role="form">
+
+            <!--    Initial Thoughts  -->
+            <div class="form-group">
+              <label for="inputInitialThoughts" class="col-sm-2 control-label">YOUR INITIAL THOUGHTS</label>
+              <div class="col-sm-6">
+                <textarea class="form-control" id="inputInitialThoughts" name="initial-thoughts" placeholder="Enter a preliminary answer to the questions"></textarea>
+              </div>
+            </div>
+
+            <!--    Initial Thoughts  -->
+            <div class="form-group">
+              <label for="InputSpecificQualifications" class="col-sm-2 control-label">YOUR SPECIFIC QUALIFICATIONS</label>
+              <div class="col-sm-6">
+                <textarea class="form-control" id="InputSpecificQualifications" name="specific-qualifications" placeholder="Enter / Update your qualifications for this case"></textarea>
+              </div>
+            </div>
+
+            <!-- hidden ID field -->
+            <input type="hidden" id="OppExpertID" />
+            <!--     Form Footer     -->
+            <div class="modal-footer">                      
+              <button type="button" class="btn btn-submit" id="btnSave">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> <!-- end container  -->
+
+   
+    
+
+
+
+    
+
+
+
+
+
+    <!-- Jquery & Bootstrap JS -->    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--dataTables Plugin -->
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+
+    <script src="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/js/vf-expertOppsDetail.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
+</apex:page>

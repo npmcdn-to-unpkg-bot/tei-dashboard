@@ -1,0 +1,266 @@
+<apex:page docType="html-5.0" applyHtmlTag="true" applyBodyTag="true"
+           showHeader="false" sidebar="false" standardStylesheets="false"
+           title="Expert Profile Edit"  standardController="Expert__c"  extensions="UploadAttachmentController">
+           <apex:param name="ID" value="{!Expert__c.Id} "/>
+    <apex:remoteObjects>
+        <apex:remoteObjectModel name="Expert__c" jsShorthand="exp" fields="
+        Ms_Mr_Dr_Nurse__c,
+        Firstname__c,
+        Lastname__c,
+        Mobile__c,
+        Email__c,
+        Image_URL__c,
+        Date_of_birth__c,
+        ID_expert__c,
+        Id,
+        Address__c,
+        Address2__c,
+        City__c,
+        State__c,
+        ZIP__c,
+        Hourly_Review_Fee__c,
+        Hourly_Deposition_Fee__c,
+        Hourly_Court_Fee__c,
+        Fee_Comments__c,
+        Specialty_Area__c,
+        Legal_Experience__c
+        "></apex:remoteObjectModel>
+        <apex:remoteObjectModel name="Opportunities_Expert__c" jsShorthand="oppExp" fields="
+        Name,
+        Id,
+        Expert__c,
+        ExpertId__c,
+        Opportunity__c,
+        Opp_Name__c
+        ">
+        </apex:remoteObjectModel>
+        <apex:remoteObjectModel name="Expert_Attachments__c" jsShorthand="expAttachment" fields="
+        Name,
+        Id,
+        Expert__c,
+        Share__c,
+        Attachment__c,
+        Description__c,
+        Type__c
+        ">
+        </apex:remoteObjectModel>
+
+    </apex:remoteObjects>
+    
+    <!-- Fonts  -->
+    <script src="https://use.typekit.net/wht0akz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- Boostrap CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+<style type="text/css" media="screen">
+  body {
+    font-family: "proxima-nova", "proxima nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 60px 0;
+  }
+
+  label, legend {
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0.375rem;
+    text-transform: uppercase;
+  }
+
+  input[type="email"], input[type="text"], input[type="number"], textarea.form-control, select.form-control {
+    background: #fafafa;
+    border: 1px solid #dbdbe0;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 0.375rem 0.75rem;
+  }
+  input[type="email"]:focus, input[type="text"]:focus, input[type="number"]:focus, textarea.form-control:focus {
+    background-color: #fff;
+    border-color: #2a5781;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    outline: none;
+  }
+
+  .form-section {
+    margin-top: 4em;
+  }
+
+  .navbar-btn {
+    margin-right: 16px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+  }
+
+  .page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background: #ddd;
+  }
+
+  .whoops-enter {
+    transform: translate3d(0, 25%, 0);
+    transition: transform 0.5s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  }
+
+  .whoops-enter.whoops-enter-active {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .whoops-leave {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform .5s ease-in;
+  }
+
+  .whoops-leave.whoops-leave-active {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+</style>
+
+    
+<div id="app"></div>
+
+<!-- Attachment APEX  -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+            <apex:sectionHeader title="{!Expert__c.Name}" subtitle="Attach File"/>
+        
+        <apex:form id="form_Upload">
+        <apex:pageBlock >
+        
+        <apex:pageBlockButtons location="bottom" >
+          <apex:commandButton action="{!back}" value="Back to {!Expert__c.Name}"/>
+          <apex:commandButton action="{!back}" value="Cancel"/>
+        </apex:pageBlockButtons>
+        <apex:pageMessages />
+        
+         <apex:pageBlockSection columns="1">
+         
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="File" for="file_File"/>
+             <apex:inputFile id="file_File" value="{!fileBody}" filename="{!fileName}"/>
+           </apex:pageBlockSectionItem>
+         
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="Type" for="type"/>
+             <apex:selectList value="{!selectedType}" size="1" id="type"> 
+               <apex:selectOption itemValue="CV" itemLabel="CV"/>
+               <apex:selectOption itemValue="Fees" itemLabel="Fees"/>
+               <apex:selectOption itemValue="Legal History" itemLabel="Legal History"/>
+               <apex:selectOption itemValue="TLOxp Report " itemLabel="TLOxp Report "/>   
+               <apex:selectOption itemValue="Other" itemLabel="Other"/>
+             </apex:selectList>
+           </apex:pageBlockSectionItem>
+           
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="Share this File?" for="visible"/>
+             <apex:selectList value="{!selectedShare}" size="1" id="visible">
+               <apex:selectOption itemValue="false" itemLabel="No"/>
+               <apex:selectOption itemValue="true" itemLabel="Yes"/>       
+             </apex:selectList>
+           </apex:pageBlockSectionItem>    
+           
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="Description" for="description"/> 
+             <apex:inputTextarea id="description" value="{!description}" rows="4" cols="50"/>
+           </apex:pageBlockSectionItem>
+           
+           <apex:pageBlockSectionItem >
+             <apex:outputLabel value="" for="uploadBtn"/> 
+             <apex:commandButton id="uploadBtn" value="Attach File" action="{!processUpload}" />
+           </apex:pageBlockSectionItem>    
+           
+         </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+        
+        
+        </apex:form>
+      </div>
+    </div>
+  </div>  
+<!-- END Attachment APEX -->
+
+
+    <!-- Jquery & Bootstrap JS -->    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Moment  -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <!-- Datepicker -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <!-- react scripts  -->
+    <script src="https://npmcdn.com/history@1.17.0/umd/History.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-with-addons.min.js"></script>
+    <script src="https://npmcdn.com/react-router@2.4.1/umd/ReactRouter.min.js"></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js"></script>
+    <script type="text/babel">
+
+    console.log('test');
+    const {Router, Route, IndexRedirect, Link} = ReactRouter;
+    const {createHashHistory} = History;
+    const {CSSTransitionGroup} = React.addons;
+
+    const Page1 = () => <div className="page"><h1>Hello World!</h1> This is the home page</div>;
+    const Page2 = () => <div className="page"><h1>Page 2</h1> Well, OK</div>;
+    const Page3 = () => <div className="page"><h1>Page 3</h1> I'm another goddamn page!</div>;
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <ul>
+              <li><Link to="p1" activeStyle={{ color: 'red' }}>1</Link></li>
+              <li><Link to="p2" activeStyle={{ color: 'red' }}>2</Link></li>
+              <li><Link to="p3" activeStyle={{ color: 'red' }}>3</Link></li>
+            </ul>
+
+            <CSSTransitionGroup
+              component="div"
+              transitionName="whoops"
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={500}>
+              {React.cloneElement(this.props.children, {
+                key: this.props.location.pathname
+              })}
+            </CSSTransitionGroup>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(
+      <Router history={createHashHistory({ queryKey: false })}>
+        <Route path="/" component={App}>
+          <IndexRedirect to="p1" />
+          <Route path="p1" component={Page1} />
+          <Route path="p2" component={Page2} />
+          <Route path="p3" component={Page3} />
+        </Route>
+      </Router>,
+      document.getElementById('app')
+    )
+    
+    </script>
+
+    
+    
+ 
+</apex:page>

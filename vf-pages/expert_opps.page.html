@@ -1,0 +1,130 @@
+<apex:page docType="html-5.0" applyHtmlTag="true" applyBodyTag="true"
+           showHeader="false" sidebar="false" standardStylesheets="false"
+           title="Expert Profile - Opportunities"  standardController="Expert__c" >
+<head>    
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />    
+</head>  
+    <apex:remoteObjects>
+        <apex:remoteObjectModel name="Expert__c" jsShorthand="exp" fields="
+        Ms_Mr_Dr_Nurse__c,
+        Firstname__c,
+        Lastname__c,
+        Mobile__c,
+        Email__c,
+        Image_URL__c,
+        Date_of_birth__c,
+        ID_expert__c,
+        Id,
+        Address__c,
+        Address2__c,
+        City__c,
+        State__c,
+        ZIP__c,
+        Hourly_Review_Fee__c,
+        Hourly_Deposition_Fee__c,
+        Hourly_Court_Fee__c,
+        Fee_Comments__c,
+        Specialty_Area__c,
+        Legal_Experience__c
+        "></apex:remoteObjectModel>
+        <apex:remoteObjectModel name="Opportunities_Expert__c" jsShorthand="oppExp" fields="
+        Name,
+        Id,
+        Expert__c,
+        ExpertId__c,
+        Opportunity__c,
+        Opp_Name__c,
+        LCMT_USER__c,
+        LCMT_USER_Picture__c,
+        ">
+        </apex:remoteObjectModel>
+    </apex:remoteObjects>
+    
+    <!-- Fonts  -->
+    <script src="https://use.typekit.net/wht0akz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- Boostrap CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <!-- Datatables CSS  -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css"></link>
+
+    <!-- Expert Profile Styles  -->
+    <link rel="stylesheet" type="text/css" href="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/css/vf-expertProfile.css" />
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- Page Title   -->
+      <h3 class="expert-profile-header ListHeading">EXPERT OPPORTUNITIES</h3>
+      <!-- Expert Name -->
+      <p class="expert-profile-subheader expert-name">{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}</p>
+      <!-- Expert Image  -->
+      <img id="expert-avatar" class="expert-avatar" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face,h_120,w_120/v524/experts/{!Expert__c.E_ID__c}.jpg" alt="{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}" />
+    </div>
+  </div>
+
+  <!-- Nav Pills -->
+  <div class="row">
+    <ul class="nav nav-pills">
+      <li >        
+          <apex:outputLink value="{! $Page.Expert_Profile_Edit}">
+            <apex:param name="Id" value="{!Expert__c.Id}"/>
+            PROFILE
+          </apex:outputLink>        
+      </li>
+      <li >        
+          <apex:outputLink value="{! $Page.Expert_Profile_Attachments}">
+            <apex:param name="Id" value="{!Expert__c.Id}"/>
+            ATTACHMENTS
+          </apex:outputLink>          
+      </li>
+      <li class="active">              
+          <apex:outputLink value="{! $Page.Expert_Profile_Opportunities}">
+            <apex:param name="Id" value="{!Expert__c.Id}"/>
+            OPPORTUNITIES
+          </apex:outputLink>        
+      </li>     
+    </ul>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12">
+    <h3 class="heading-underline">
+      <span class="text-underline">
+        Your Opportunities
+      </span>
+    </h3>
+      <!-- BEGIN Opps Table -->
+      <div class="table-responsive">
+        <h2 class="expert-name"></h2>          
+          <table class="table table-bordered datatable">
+            <thead>
+              <tr>
+                <th>Opp. Name</th>                
+                <th>Researcher</th>
+              </tr>
+            </thead>
+            <tbody class="oppTable">
+              <!-- Opps get rowed in here -->
+            </tbody>
+          </table>
+      </div>
+      <!-- END End Opps Table  -->
+    </div>
+  </div>
+</div>
+
+
+    <!-- Jquery & Bootstrap JS -->    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--dataTables Plugin -->
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+
+    <script src="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/js/vf-expertOpps.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
+</apex:page>
