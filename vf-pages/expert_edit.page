@@ -687,7 +687,6 @@
 
     <!-- Dropify -->
     <script src="{!URLFOR($Resource.dropify, 'js/dropify.min.js')}"></script>
-    dropify.min.js
     <link rel="stylesheet" href="{!URLFOR($Resource.dropify, 'css/dropify.min.css')}" />
 
   
