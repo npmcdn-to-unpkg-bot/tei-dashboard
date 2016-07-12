@@ -15,6 +15,8 @@
         Date_of_birth__c,
         ID_expert__c,
         Id,
+        E_ID__c,
+        Image_Version__c,
         Address__c,
         Address2__c,
         City__c,
@@ -35,7 +37,7 @@
         Opportunity__c,
         Opp_Name__c,
         LCMT_USER__c,
-        LCMT_USER_Picture__c,
+        LCMT_USER_Picture__c
         ">
         </apex:remoteObjectModel>
     </apex:remoteObjects>
@@ -61,7 +63,7 @@
       <!-- Expert Name -->
       <p class="expert-profile-subheader expert-name">{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}</p>
       <!-- Expert Image  -->
-      <img id="expert-avatar" class="expert-avatar" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face,h_120,w_120/v524/experts/{!Expert__c.E_ID__c}.jpg" alt="{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}" />
+      <img id="expert-avatar" class="expert-avatar" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face,h_120,w_120/v66{!FLOOR(Expert__c.Image_Version__c)}/experts/{!Expert__c.E_ID__c}.jpg" alt="{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}" />
     </div>
   </div>
 

@@ -28,6 +28,7 @@
         Hourly_Court_Fee__c,
         Fee_Comments__c,
         Specialty_Area__c,
+        Image_Version__c,
         Legal_Experience__c
         "></apex:remoteObjectModel>
         <apex:remoteObjectModel name="Opportunities_Expert__c" jsShorthand="oppExp" fields="
@@ -73,7 +74,7 @@
       <!-- Expert Name -->
       <p class="expert-profile-subheader expert-name">{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}</p>
       <!-- Expert Image  -->
-      <img id="expert-avatar" class="expert-avatar" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face,h_120,w_120/v524/experts/{!Expert__c.E_ID__c}.jpg" alt="{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}" />
+      <img id="expert-avatar" class="expert-avatar" src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face,h_120,w_120/v66{!FLOOR(Expert__c.Image_Version__c)}/experts/{!Expert__c.E_ID__c}.jpg" alt="{!Expert__c.Firstname__c} {!Expert__c.Lastname__c}" />
     </div>
   </div>
 
@@ -92,7 +93,7 @@
             <apex:param name="Id" value="{!Expert__c.Id}"/>
             ATTACHMENTS
           </apex:outputLink>          
-      </li>`
+      </li>
       <li>              
           <apex:outputLink value="{! $Page.Expert_Profile_Opportunities}">
             <apex:param name="Id" value="{!Expert__c.Id}"/>
@@ -104,13 +105,23 @@
 
   <div class="row expert-profile-section">
     <div class="col-xs-12">
+      <!--  Profile Image -->
+      <h3 class="heading-underline expert-profile-section-header"><span class="text-underline">Profile Image</span></h3>
+      <div class="row">
+        <div class="col-sm-6">
+          <form class="cloudinary">
+          </form>
+        </div>
+      </div>
+
+
       <form class="form-horizontal expert-form" role="form" id="expert-profile-form">
        <div class="expert-profile-section">
          <h3 class="heading-underline expert-profile-section-header"><span class="text-underline">Contact Info</span></h3>  
          <!-- Title Select -->
          <div class="form-group">
-           <label class="col-sm-2 control-label" for="title">Title</label>
-           <div class="col-sm-2">
+           <label class="col-md-2 col-sm-4 control-label" for="title">Title</label>
+           <div class="col-sm-4">
              <select id="inputTitle" name="title" class="form-control">
                <option value="Dr.">Dr.</option>
                <option value="Mr.">Mr.</option>
@@ -123,24 +134,24 @@
 
          <!-- First Name -->
          <div class="form-group">
-           <label for="firstname" class="col-sm-2 control-label">First Name</label>
-           <div class="col-sm-4">
+           <label for="firstname" class="col-md-2 col-sm-4  control-label">First Name</label>
+           <div class="col-sm-6 col-md-4">
              <input type="text" class="form-control" id="inputFirstName" name="firstname" placeholder="First Name" required="required" />
            </div>
          </div>
 
          <!-- Last Name -->
          <div class="form-group">
-           <label for="lastname" class="col-sm-2 control-label">Last Name</label>
-           <div class="col-sm-4">
+           <label for="lastname" class="col-md-2 col-sm-4  control-label">Last Name</label>
+           <div class="col-sm-6 col-md-4">
              <input type="text" class="form-control" id="inputLastName" name="lastname" placeholder="Last Name" required="required" />
            </div>
          </div>
 
          <!-- Mobile Phone-->
          <div class="form-group">
-           <label class="col-sm-2 control-label" for="mobile">Mobile</label>
-           <div class="col-sm-4">
+           <label class="col-md-2 col-sm-4  control-label" for="mobile">Mobile</label>
+           <div class="col-sm-6 col-md-4">
              <input id="inputMobile" name="mobile" type="text" placeholder="555-555-5555" class="form-control input-md" required="required"/>
 
            </div>
@@ -148,23 +159,17 @@
 
          <!-- Email -->
          <div class="form-group">
-           <label class="col-sm-2 control-label" for="email">Email</label>
-           <div class="col-sm-4">
+           <label class="col-md-2 col-sm-4  control-label" for="email">Email</label>
+           <div class="col-sm-6 col-md-4">
              <input id="inputEmail" name="email" type="email" placeholder="email@example.com" class="form-control input-md" required="required" />
            </div>
          </div>
-         <!--    Image Url      -->
-         <div class="form-group">
-           <label for="inputImageUrl" class="col-sm-2 control-label">Profile Image URL</label>
-           <div class="col-sm-4">
-             <input type="text" class="form-control" id="inputImageUrl" name="imageURL" placeholder="Profile Image url" />
-           </div>
-         </div>
+
 
          <!--    Date of Birth    -->
          <div class="form-group">
-           <label for="inputDOB" class="col-sm-2 control-label">Date Of Birth</label>
-           <div class="col-sm-4">
+           <label for="inputDOB" class="col-md-2 col-sm-4  control-label">Date Of Birth</label>
+           <div class="col-sm-6 col-md-4">
              <input type="text" class="form-control" id="inputDOB" name="date-of-birth" placeholder="mm/dd/yyyy" />
            </div>
          </div>
@@ -174,37 +179,37 @@
       
       <div class="expert-profile-section">
         
-        <h3 class="heading-underline expert-profile-section-header"><span class="text-underline">Address /Personal Info</span></h3>  
+        <h3 class="heading-underline expert-profile-section-header"><span class="text-underline">Address / Personal Info</span></h3>  
 
 
         <!--   Address  / Personal Info     -->
         <div class="form-group">
-          <label for="inputAddressLine1" class="col-sm-2 control-label">Address</label>
-          <div class="col-sm-4">
+          <label for="inputAddressLine1" class="col-md-2 col-sm-4  control-label">Address</label>
+          <div class="col-sm-6 col-md-4">
             <input type="text" class="form-control" id="inputAddressLine1" name="address-line1" placeholder="Address" />
           </div>
         </div>
 
         <!-- Address line 2  -->
         <div class="form-group">
-          <label for="inputAddressLine2" class="col-sm-2 control-label">Address 2</label>
-          <div class="col-sm-4">
+          <label for="inputAddressLine2" class="col-md-2 col-sm-4  control-label">Address 2</label>
+          <div class="col-sm-6 col-md-4">
             <input type="text" class="form-control" id="inputAddressLine2" name="address-line2" placeholder="Apt, suite, etc. (optional)" />
           </div>
         </div>
 
         <!-- City -->
         <div class="form-group">
-          <label for="inputCityTown" class="col-sm-2 control-label">City / Town</label>
-          <div class="col-sm-4">
+          <label for="inputCityTown" class="col-md-2 col-sm-4  control-label">City / Town</label>
+          <div class="col-sm-6 col-md-4">
             <input type="text" class="form-control" id="inputCityTown" name="city-town" placeholder="City / Town" />
           </div>
         </div>
 
         <!--    State      -->
         <div class="form-group">
-          <label for="inputStateProvinceRegion" class="col-sm-2 control-label">State / Province / Region</label>
-          <div class="col-sm-4">
+          <label for="inputStateProvinceRegion" class="col-md-2 col-sm-4  control-label">State / Province</label>
+          <div class="col-sm-6 col-md-4">
             <div id="inputStateProvinceRegion-container">
               <select name="state-province-region" class="form-control" id="inputStateProvinceRegion">
               <option value="Alabama">Alabama</option>
@@ -272,8 +277,8 @@
 
         <!--    Country      -->
         <div class="form-group">
-          <label for="inputCountry" class="col-sm-2 control-label">Country</label>
-          <div class="col-sm-4">
+          <label for="inputCountry" class="col-md-2 col-sm-4  control-label">Country</label>
+          <div class="col-sm-6 col-md-4">
             <select class="form-control" id="inputCountry" name="country">
               <option value="Afghanistan">Afghanistan</option>
               <option value="Åland Islands">Åland Islands</option>
@@ -532,8 +537,8 @@
 
         <!-- Zip  -->
         <div class="form-group">
-          <label for="inputZipPostalCode" class="col-sm-2 control-label">Zip / Postal Code</label>
-          <div class="col-sm-4">
+          <label for="inputZipPostalCode" class="col-md-2 col-sm-4  control-label">Zip / Postal Code</label>
+          <div class="col-sm-6 col-md-4">
             <input type="text" class="form-control" id="inputZipPostalCode" name="zip-postal-code" placeholder="Zip / Postal Code" />
           </div>
         </div>
@@ -547,33 +552,46 @@
 
         <!--    Hourly Review Fee    -->
         <div class="form-group">
-          <label for="inputHourlyReview" class="col-sm-2 control-label">Hourly Review Fee</label>
-          <div class="col-sm-4">
-            <input type="number" class="form-control" id="inputHourlyReview" name="hourly-review-fee" placeholder="ex. $400" />
+          <label for="inputHourlyReview" class="col-md-2 col-sm-4  control-label">Hourly Review Fee</label>
+          <div class="col-sm-6 col-md-4">
+            <!-- <input type="number" class="form-control" id="inputHourlyReview" name="inputHourlyReview" placeholder="ex. $400" /> -->
+            <div class="input-group">
+              <span class="input-group-addon start">$</span>
+              <input type="number" class="form-control input-group-addon-main" id="inputHourlyReview" name="inputHourlyReview" placeholder="ex. 400" />
+              <span class="input-group-addon end">/hr</span>
+            </div>
           </div>
         </div>
 
         <!--    Hourly Deposition Fee    -->
         <div class="form-group">
-          <label for="inputHourlyDeposition" class="col-sm-2 control-label">Hourly Deposition Fee</label>
-          <div class="col-sm-4">
-            <input type="number" class="form-control" id="inputHourlyDeposition" name="hourly-deposition-fee" placeholder="ex. $400" />
+          <label for="inputHourlyDeposition" class="col-md-2 col-sm-4  control-label">Hourly Deposition Fee</label>
+          <div class="col-sm-6 col-md-4">
+            <div class="input-group">
+              <span class="input-group-addon start">$</span>
+              <input type="number" class="form-control input-group-addon-main" id="inputHourlyDeposition" name="inputHourlyDeposition" placeholder="ex. 400" />
+              <span class="input-group-addon end">/hr</span>
+            </div>
           </div>
         </div>
 
         <!--    Hourly Court Fee    -->
         <div class="form-group">
-          <label for="inputHourlyCourt" class="col-sm-2 control-label">Hourly Court Fee</label>
-          <div class="col-sm-4">
-            <input type="number" class="form-control" id="inputHourlyCourt" name="hourly-court-fee" placeholder="ex. $400" />
+          <label for="inputHourlyCourt" class="col-md-2 col-sm-4  control-label">Hourly Court Fee</label>
+          <div class="col-sm-6 col-md-4">
+            <div class="input-group">
+              <span class="input-group-addon start">$</span>
+              <input type="number" class="form-control input-group-addon-main" id="inputHourlyCourt" name="inputHourlyCourt" placeholder="ex. 400" />
+              <span class="input-group-addon end">/hr</span>
+            </div>
           </div>
         </div>
 
         <!--    Fee Comments   -->
         <div class="form-group">
-          <label for="inputFeeComments" class="col-sm-2 control-label">Fee Comments</label>
-          <div class="col-sm-4">
-            <textarea class="form-control" id="inputFeeComments" name="fee-comments" placeholder="fee comments"></textarea>
+          <label for="inputFeeComments" class="col-md-2 col-sm-4  control-label">Fee Comments</label>
+          <div class="col-sm-6 col-md-4">
+            <textarea class="form-control" id="inputFeeComments" name="inputFeeComments" placeholder="fee comments"></textarea>
           </div>
         </div>
       </div>
@@ -585,15 +603,15 @@
 
           <!--    Specialty Area   -->
           <div class="form-group">
-            <label for="inputSpecialtyArea" class="col-sm-2 control-label">Specialty Area</label>
-            <div class="col-sm-4">
+            <label for="inputSpecialtyArea" class="col-md-2 col-sm-4  control-label">Specialty Area</label>
+            <div class="col-sm-6 col-md-4">
               <input type="text" class="form-control" id="inputSpecialtyArea" name="inputSpecialtyArea" placeholder="ex. Radiology" required="required"/>
             </div>
           </div>
 
           <!--    Legal Experience   -->
           <div class="form-group">
-            <label for="inputLegalExperience" class="col-sm-2 control-label">Legal Experience</label>
+            <label for="inputLegalExperience" class="col-md-2 col-sm-4  control-label">Legal Experience</label>
             <div class="col-sm-4">
               <textarea class="form-control" id="inputLegalExperience" name="legal-experience" placeholder="Enter any previous legal experience"></textarea>
             </div>
@@ -601,7 +619,7 @@
 
           <!-- recaptcha -->
           <div class="form-group">
-            <label for="hiddenRecaptcha" class="col-sm-2 control-label">reCAPTCHA</label>
+            <label for="hiddenRecaptcha" class="col-md-2 col-sm-4  control-label"></label>
             <div class="col-sm-4">
               <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha" />
               <div class="g-recaptcha" data-sitekey="6LfkbSQTAAAAAN4-3qW5uDIarQ0kcJb4glpdXlvF"></div>
@@ -611,12 +629,15 @@
 
           <!-- hidden ID field -->
           <input type="hidden" class="ignore" id="expertID" />
+          <input type="hidden" name="EID" class="ignore" id="EID" />
             <!--     Form Footer     -->
         </div>          
           <div class="form-footer clearfix">
-            <div class="col-md-6 col-sm-12 text-left">
-              <button type="button" class="btn btn-cancel " id="btnCancel">Cancel Changes</button>
-              <input type="submit" name="submit" class="btn btn-submit" id="btnSave" value="Save Changes"></input>
+            <div class="row text-left">
+              <div class="col-md-6 col-md-offset-2">
+                <input type="submit" name="submit" class="btn btn-submit" id="btnSave" value="Save Changes"></input>
+                <button type="button" class="btn btn-cancel " id="btnCancel">Cancel Changes</button>                
+              </div>
             </div>
 
 
@@ -657,9 +678,24 @@
     <!-- recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
+    <!-- Cloudinary -->
+    <script src="{!URLFOR($Resource.cloudinary, 'jquery.ui.widget.js')}"></script>
+    <script src="{!URLFOR($Resource.cloudinary, 'jquery.iframe-transport.js')}"></script>
+    <script src="{!URLFOR($Resource.cloudinary, 'jquery.fileupload.js')}"></script>
+    <script src="{!URLFOR($Resource.cloudinary, 'cloudinary-jquery-file-upload.js')}"></script>
+    
+
+    <!-- Dropify -->
+    <script src="{!URLFOR($Resource.dropify, 'js/dropify.min.js')}"></script>
+    dropify.min.js
+    <link rel="stylesheet" href="{!URLFOR($Resource.dropify, 'css/dropify.min.css')}" />
+
+  
     <!-- Page Script -->
     <script src="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/js/vf-expertEdit.js"></script>
 
     <!-- Iframe resize script - IFRAME -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
+
+
 </apex:page>

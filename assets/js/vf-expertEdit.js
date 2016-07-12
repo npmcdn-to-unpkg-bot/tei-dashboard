@@ -1,5 +1,12 @@
 $(document).ready(function(){
   console.log('Expert Profile Script running....');
+  
+  // add image upload function 
+  handleCloudinaryUpload();
+
+  var _EID,
+      _IMGVER;
+
 
 
   //on page change - show loading 
@@ -42,12 +49,14 @@ $(document).ready(function(){
 
                     var expObj = {
                         Id: record.get('Id'),
+                        E_ID: record.get('E_ID__c'),
                         title: record.get('Ms_Mr_Dr_Nurse__c'),
                         firstName: record.get('Firstname__c'),
                         lastName: record.get('Lastname__c'),
                         mobile: record.get('Mobile__c'),
                         email: record.get('Email__c'),
                         imageURL: record.get('Image_URL__c'),
+                        imageVersion: record.get('Image_Version__c'),
                         dateOfBirth: record.get('Date_of_birth__c'),
                         address1: record.get('Address__c'),
                         address2: record.get('Address2__c'),
@@ -66,6 +75,9 @@ $(document).ready(function(){
                     
                     // Expert Object ID 
                     $('#expertID').val(expObj.Id);
+                    // EID 
+                    $('#EID').val(expObj.E_ID);  
+
                     //title 
                     $('#inputTitle').val(expObj.title);
                     //first name 
@@ -110,6 +122,10 @@ $(document).ready(function(){
                     $('#inputSpecialtyArea').val(expObj.specialtyArea);
                     // legal experience 
                     $('#inputLegalExperience').val(expObj.legalExperience);
+
+                    //expose global variables
+                    _EID = expObj.E_ID; 
+                    _IMGVER = expObj.imageVersion;
                 });
             }
         
@@ -125,7 +141,6 @@ $(document).ready(function(){
           Lastname__c: $('#inputLastName').val(),
           Mobile__c: $('#inputMobile').val(),
           Email__c: $('#inputEmail').val(),
-          Image_URL__c: $('#inputImageUrl').val(),
           Date_of_birth__c: moment($('#inputDOB').val()).toDate(), //convert to date object 
           Address__c: $('#inputAddressLine1').val(),
           Address2__c: $('#inputAddressLine2').val(),
@@ -165,9 +180,30 @@ $(document).ready(function(){
       }
     }
 
-    // disabled editing on load 
-    // $('.form-control').prop('disabled',true);
-    
+    // update profile image 
+    function updateProfileImage(imgUrl){
+      var updateExpImg = new SObjectModel.exp({
+        Image_URL__c: imgUrl
+      });
+      expertID = $('#expertID').val();
+      updateExpImg.set('Id',expertID);
+      updateExpImg.update(updateImgCallback);
+
+      //update onpage avatar 
+      var resultURL = imgUrl;
+          resultURL = resultURL.substring(0,62)+"/c_thumb,g_face,h_120,w_120/"+resultURL.substring(62);
+      $('.expert-avatar').attr('src', resultURL);
+
+    }
+    function updateImgCallback(err, ids){
+      if (err) { 
+          alert(err); 
+      } else {          
+
+          alert('Success: Your Profile Picture has Been Updated');
+
+      }
+    }
 
     // Edit button Click 
     $('#btnEdit').click(function(e){
@@ -321,6 +357,9 @@ $('#expert-profile-form').validate({
         required: true,
         email: true
       },
+      "inputHourlyReview": {
+        required: true
+      },
       "hiddenRecaptcha": {
         required: function() {
           if(grecaptcha.getResponse() == ''){
@@ -349,6 +388,9 @@ $('#expert-profile-form').validate({
       "inputSpecialtyArea": {
         required: "Please enter your field of specialization"
       },
+      "inputHourlyReview": {
+        required: "please enter your hourly rate"
+      },
       "hiddenRecaptcha": {
         required: "Please verify that you're human."
       }
@@ -361,5 +403,22 @@ $('#expert-profile-form').validate({
       }
     }
   });
+
+function handleCloudinaryUpload(){
+  $.cloudinary.config({ cloud_name: 'theexpertinstitute-com', api_key: '111988869247593'});
+  $('.cloudinary').append($.cloudinary.unsigned_upload_tag('tei_dashboard_expert_profile_upload', {
+            cloud_name: 'theexpertinstitute-com',
+            tags: 'expert_dashboard_upload'                     
+        }).bind('cloudinarydone', function(e,data){          
+          console.log(data.result.url);
+
+
+
+        
+          updateProfileImage(data.result.url);
+        }));
+}
+// Style file input 
+$("input[type='file']").dropify();
 
 }); //end ready
