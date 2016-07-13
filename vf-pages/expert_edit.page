@@ -108,9 +108,12 @@
       <!--  Profile Image -->
       <h3 class="heading-underline expert-profile-section-header"><span class="text-underline">Profile Image</span></h3>
       <div class="row">
-        <div class="col-sm-6">
-          <form class="cloudinary">
-          </form>
+        <!-- First Name -->
+        <div class="form-group">
+          <label for="firstname" class="col-md-2 col-sm-4  control-label">Profile Image</label>
+          <div class="col-sm-6 col-md-4">
+            <form class="cloudinary"></form>
+          </div>
         </div>
       </div>
 

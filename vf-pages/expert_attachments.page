@@ -195,7 +195,6 @@
   
   <!-- Dropify -->
   <script src="{!URLFOR($Resource.dropify, 'js/dropify.min.js')}"></script>
-  dropify.min.js
   <link rel="stylesheet" href="{!URLFOR($Resource.dropify, 'css/dropify.min.css')}" />
 
    <script src="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/js/vf-expertAttachment.js">

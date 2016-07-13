@@ -1,4 +1,34 @@
   $(document).ready(function() {
+
+
+
+      //init iframe 
+      window.iFrameResizer = {
+          readyCallback: function() {
+              if ('parentIFrame' in window) {
+                  window.parentIFrame.sendMessage('loading-hide');
+                  window.parentIFrame.scrollToOffset(0, 0);
+
+              }
+
+          },
+          messageCallback: function(message) {
+              console.dir(message);
+              if (message.action == 'HIRE') {
+                  hireExpert(message.expertURL);
+              }
+          }
+      };
+
+    //on page change - show loading 
+    $(window).on('beforeunload ', function() {
+        if ('parentIFrame' in window) {
+            window.parentIFrame.sendMessage('loading-show');
+            window.parentIFrame.scrollToOffset(0, 0);
+        }
+    });
+
+    
     function getUrlVars()
     {
         var vars = [], hash;

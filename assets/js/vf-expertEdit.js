@@ -8,6 +8,23 @@ $(document).ready(function(){
       _IMGVER;
 
 
+    //init iframe 
+    window.iFrameResizer = {
+        readyCallback: function() {
+            if ('parentIFrame' in window) {
+                window.parentIFrame.sendMessage('loading-hide');
+                window.parentIFrame.scrollToOffset(0, 0);
+
+            }
+
+        },
+        messageCallback: function(message) {
+            console.dir(message);
+            if (message.action == 'HIRE') {
+                hireExpert(message.expertURL);
+            }
+        }
+    };
 
   //on page change - show loading 
   $(window).on('beforeunload ', function() {
@@ -205,17 +222,6 @@ $(document).ready(function(){
       }
     }
 
-    // Edit button Click 
-    $('#btnEdit').click(function(e){
-      e.preventDefault();
-      if($('.form-control').prop('disabled')){
-        $('.form-control').removeProp('disabled');
-      }else {
-        $('.form-control').prop('disabled',true);
-      }
-    });
-
-
     // cancel button click 
     $('#btnCancel').click(function(e){
       e.preventDefault();
@@ -226,7 +232,6 @@ $(document).ready(function(){
     //Save button click       
     $('#expert-profile-form').submit(function(e){ 
       e.preventDefault();
-
     });
 
     // chang input for region 
@@ -236,6 +241,7 @@ $(document).ready(function(){
       handleCountryChange(value);
     });
 
+    // handle country select change
     var handleCountryChange = function(country, state){
       switch (country){
         case "United States":
@@ -250,6 +256,19 @@ $(document).ready(function(){
       }
       $('#inputStateProvinceRegion').val(state);
     }
+
+    function handleCloudinaryUpload(){
+      $.cloudinary.config({ cloud_name: 'theexpertinstitute-com', api_key: '111988869247593'});
+      $('.cloudinary').append($.cloudinary.unsigned_upload_tag('tei_dashboard_expert_profile_upload', {
+                cloud_name: 'theexpertinstitute-com',
+                tags: 'expert_dashboard_upload'                     
+            }).bind('cloudinarydone', function(e,data){          
+              console.log(data.result.url);
+              updateProfileImage(data.result.url);
+            }));
+    }
+    // Style file input 
+    $("input[type='file']").dropify();
 
 // input for non-north american countries
 var stateNone="";
@@ -399,26 +418,13 @@ $('#expert-profile-form').validate({
     submitHandler: function(form){
       console.log('form submmiting...');
       if(grecaptcha.getResponse().length !== 0){
+        // update/create expert in Salesforce
         createExpert();  
       }
     }
   });
 
-function handleCloudinaryUpload(){
-  $.cloudinary.config({ cloud_name: 'theexpertinstitute-com', api_key: '111988869247593'});
-  $('.cloudinary').append($.cloudinary.unsigned_upload_tag('tei_dashboard_expert_profile_upload', {
-            cloud_name: 'theexpertinstitute-com',
-            tags: 'expert_dashboard_upload'                     
-        }).bind('cloudinarydone', function(e,data){          
-          console.log(data.result.url);
 
 
-
-        
-          updateProfileImage(data.result.url);
-        }));
-}
-// Style file input 
-$("input[type='file']").dropify();
 
 }); //end ready
