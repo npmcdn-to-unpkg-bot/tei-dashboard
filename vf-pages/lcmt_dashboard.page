@@ -1,0 +1,207 @@
+<apex:page docType="html-5.0" applyHtmlTag="true" applyBodyTag="true"
+           showHeader="true" sidebar="false" standardStylesheets="true"
+           title="LCMT DASHBOARD"  standardController="Opportunity" >
+  <head>    
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+            <!-- Boostrap CSS -->
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+            <!-- <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.bootstrap_grid_tables_forms_buttons)}"></link> -->
+            
+            <!-- Datatables CSS  -->
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css"></link>
+
+
+
+            <style>
+            .oppTable {
+              font-size: 12px;
+            }
+            .oppName {
+              font-size: 14px;
+              font-weight: 600;
+            }
+            .user-header {
+              margin-bottom: 0.8em;
+            }
+              .well.stats-well {
+               padding: 2px; 
+               margin: 7px 0;  
+              }
+              .opp-stats-list {
+                font-size: 12px;
+                margin-bottom: 0;
+              }
+              .account-image,
+              .contact-image,
+              .last-chatter {
+                font-size: 12px;
+              }
+              .account-image img{
+                  max-height: 40px;
+              }
+              .user-avatar {
+                display: block;
+                max-width: 40px;
+                border-radius: 100%;                
+              }
+              .lcmt_name {
+                font-size: 24px;
+              }
+              .lcmt-dashboard-nav {
+                margin-bottom: 2em;
+              }
+              .new-opp-badge {
+                margin: 5px;
+                background: #ec711b;
+                color: #fff;
+                font-size: 8px;
+                padding: 2px 4px;
+                vertical-align: text-top;
+                border-radius: 4px;
+              }
+              .contact-image img {
+                  width:40px;
+              }
+          
+            </style>
+   
+  </head>
+
+ <apex:remoteObjects >
+        <apex:remoteObjectModel name="Opportunity" jsShorthand="opp" fields="Name,
+        Id,
+        O_ID__c,
+        StageName,
+        RecordTypeId,
+        LCMT_User__c,
+        Stage_LCMT_Active__c,
+        Stage_LCMT_Closing__c,
+        Specialty_Description__c,
+        Account_Logo_small__c,
+        Contact_Image__c,
+        Business_Days_Contacting_to_Share__c,
+        Business_Days_Contacting_2_to_Share_2__c,
+        Date_Approved_Inquiry__c,
+        Last_Chatter__c,
+        Experts__c,
+        Expert_Answers__c,
+        Expert_Share__c,
+        Conference_Calls__c,
+        Conference_Call_User__c,
+        Experts_Choosen__c,
+        LCMT_New_Opp__c,
+        Time_since_LCMT_Assigned__c">
+        </apex:remoteObjectModel>
+        <apex:remoteObjectModel name="User" jsShorthand="usr" fields="Name,
+        Id,
+        U_ID__c,
+        User_Picture__c,
+        User_Picture_Url__c">
+        </apex:remoteObjectModel>
+        <apex:remoteObjectModel name="Conference_Call__c" jsShorthand="cc" fields="Name,
+        Id,
+        LCMT_ID__c,
+        Opportunity__c,
+        Opportunity_Name__c,
+        Expert__c,
+        E_ID__c,
+        Contact__c,
+        Contact_Firstname__c,
+        Contact_Lastname__c,
+        Date_Conference_Call__c
+        ">
+        </apex:remoteObjectModel>
+        
+ </apex:remoteObjects>
+
+     <div id="lcmtID" style="display: none;"> {!$User.Id}</div>
+      
+      
+  <div class="container-fluid">
+  <div class="row clearfix user-header">
+    <div class="col-sm-12">
+      <h1 class="lcmt_name pull-left">Hi {!$User.Firstname}</h1>
+      <div class="pull-right">
+        <img class="user-avatar" id="lcmtPic" src=""/>  
+      </div>
+    </div>
+
+  </div>
+    <ul class="nav nav-tabs lcmt-dashboard-nav">
+      <li class="active"><a data-toggle="tab" href="#LCMT_active">Active Opps</a></li>
+      <li><a data-toggle="tab" href="#LCMT_closing">Closing Opps</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="LCMT_active" class="tab-pane fade in active">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- BEGIN Opps Table -->
+            <div class="table-responsive">        
+                <table id="tableActiveOpps" class="table table-bordered datatable">
+                  <thead>
+                    <tr>
+                      <th>Opp. Name</th>                
+                      <th>Stage</th>
+                      <th>Specialty</th>
+                      <th>Contact</th>
+                      <th>Account</th>
+                      <th>Last Chatter</th>
+                      <th>Days</th>
+                    </tr>
+                  </thead>
+                  <tbody class="oppTable">
+                    <!-- Opps get rowed in here -->
+                  </tbody>
+                </table>
+            </div>
+            <!-- END End Opps Table  -->
+          </div>
+        </div>
+      </div>
+      <div id="LCMT_closing" class="tab-pane fade">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- BEGIN Opps Table -->
+            <div class="table-responsive">        
+                <table id="tableClosingOpps" class="table table-bordered datatable">
+                  <thead>
+                    <tr>
+                      <th>Opp. Name</th>                
+                      <th>Stage</th>
+                      <th>Specialty</th>
+                      <th>Contact</th>
+                      <th>Account</th>
+                      <th>Last Chatter</th>
+                      <th>Days</th>
+                    </tr>
+                  </thead>
+                  <tbody class="oppTable">
+                    <!-- Opps get rowed in here -->
+                  </tbody>
+                </table>
+            </div>
+            <!-- END End Opps Table  -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div> <!-- / container-fluid -->
+
+ 
+  
+  
+  
+      <!-- Jquery & Bootstrap JS -->    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--dataTables Plugin -->
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+    
+    <script src="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/js/vf-lcmtDashboard.js"></script>
+  
+   </apex:page>
