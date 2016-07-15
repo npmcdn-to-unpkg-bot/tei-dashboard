@@ -16,6 +16,12 @@
             .oppTable {
               font-size: 12px;
             }
+            .table-bordered>thead>tr>th {
+              background: #ddd !important;
+              /*text-transform: uppercase;*/
+              border: 1px solid #aaa;
+              border-bottom: 0;
+            }
             .oppName {
               font-size: 14px;
               font-weight: 600;
@@ -62,7 +68,108 @@
               .contact-image img {
                   width:40px;
               }
-          
+              /* Filters */
+              .tableFilters {
+                text-align: center;
+                font-size: 12px;
+              }
+              .btn-filter-group {
+                margin:0 auto 1em;
+              }
+              .btn.btn-filter {
+                background: #fff !important;
+                border: 1px solid #ddd !important;
+                padding: 7px !important;
+              }
+              .btn.btn-filter.active {
+                background-image: none;                
+                background: #ddd !important;
+              }
+
+              /*LOADING */
+              .loading-container {
+                  background: white;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  z-index: 2;
+                  display: flex;
+                  /*display: none;*/
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 767px;
+              }
+              .loader {
+                margin: 100px auto;
+                font-size: 18px;
+                width: 1em;
+                height: 1em;
+                border-radius: 50%;
+                position: relative;
+                text-indent: -9999em;
+                -webkit-animation: load5 1.1s infinite ease;
+                animation: load5 1.1s infinite ease;
+                -webkit-transform: translateZ(0);
+                -ms-transform: translateZ(0);
+                transform: translateZ(0);
+              }
+              @-webkit-keyframes load5 {
+                0%,
+                100% {
+                  box-shadow: 0em -2.6em 0em 0em #265682, 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.5), -1.8em -1.8em 0 0em rgba(38,86,130, 0.7);
+                }
+                12.5% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.7), 1.8em -1.8em 0 0em #265682, 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.5);
+                }
+                25% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.5), 1.8em -1.8em 0 0em rgba(38,86,130, 0.7), 2.5em 0em 0 0em #265682, 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                37.5% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.5), 2.5em 0em 0 0em rgba(38,86,130, 0.7), 1.75em 1.75em 0 0em #265682, 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                50% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.5), 1.75em 1.75em 0 0em rgba(38,86,130, 0.7), 0em 2.5em 0 0em #265682, -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                62.5% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.5), 0em 2.5em 0 0em rgba(38,86,130, 0.7), -1.8em 1.8em 0 0em #265682, -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                75% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.5), -1.8em 1.8em 0 0em rgba(38,86,130, 0.7), -2.6em 0em 0 0em #265682, -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                87.5% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.5), -2.6em 0em 0 0em rgba(38,86,130, 0.7), -1.8em -1.8em 0 0em #265682;
+                }
+              }
+              @keyframes load5 {
+                0%,
+                100% {
+                  box-shadow: 0em -2.6em 0em 0em #265682, 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.5), -1.8em -1.8em 0 0em rgba(38,86,130, 0.7);
+                }
+                12.5% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.7), 1.8em -1.8em 0 0em #265682, 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.5);
+                }
+                25% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.5), 1.8em -1.8em 0 0em rgba(38,86,130, 0.7), 2.5em 0em 0 0em #265682, 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                37.5% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.5), 2.5em 0em 0 0em rgba(38,86,130, 0.7), 1.75em 1.75em 0 0em #265682, 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                50% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.5), 1.75em 1.75em 0 0em rgba(38,86,130, 0.7), 0em 2.5em 0 0em #265682, -1.8em 1.8em 0 0em rgba(38,86,130, 0.2), -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                62.5% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.5), 0em 2.5em 0 0em rgba(38,86,130, 0.7), -1.8em 1.8em 0 0em #265682, -2.6em 0em 0 0em rgba(38,86,130, 0.2), -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                75% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.5), -1.8em 1.8em 0 0em rgba(38,86,130, 0.7), -2.6em 0em 0 0em #265682, -1.8em -1.8em 0 0em rgba(38,86,130, 0.2);
+                }
+                87.5% {
+                  box-shadow: 0em -2.6em 0em 0em rgba(38,86,130, 0.2), 1.8em -1.8em 0 0em rgba(38,86,130, 0.2), 2.5em 0em 0 0em rgba(38,86,130, 0.2), 1.75em 1.75em 0 0em rgba(38,86,130, 0.2), 0em 2.5em 0 0em rgba(38,86,130, 0.2), -1.8em 1.8em 0 0em rgba(38,86,130, 0.5), -2.6em 0em 0 0em rgba(38,86,130, 0.7), -1.8em -1.8em 0 0em #265682;
+                }
+              }
+
             </style>
    
   </head>
@@ -108,7 +215,17 @@
         Contact__c,
         Contact_Firstname__c,
         Contact_Lastname__c,
-        Date_Conference_Call__c
+        Date_Conference_Call__c,
+        Status__c,
+        Time_start__c,
+        Time_end__c,
+        Time_start_Contact__c,
+        Time_start_Expert__c,
+        Timezone_Contact__c,
+        Timezone_Expert__c,
+        O_ID__c,
+        Expert_Phone__c,
+        Contact_Phone_Call__c
         ">
         </apex:remoteObjectModel>
         
@@ -118,6 +235,9 @@
       
       
   <div class="container-fluid">
+  <div class="loading-container">
+    <div class="loader">Loading...</div>
+  </div>
   <div class="row clearfix user-header">
     <div class="col-sm-12">
       <h1 class="lcmt_name pull-left">Hi {!$User.Firstname}</h1>
@@ -128,8 +248,16 @@
 
   </div>
     <ul class="nav nav-tabs lcmt-dashboard-nav">
-      <li class="active"><a data-toggle="tab" href="#LCMT_active">Active Opps</a></li>
-      <li><a data-toggle="tab" href="#LCMT_closing">Closing Opps</a></li>
+      <li class="active">
+        <a data-toggle="tab" href="#LCMT_active">Active Opps</a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#LCMT_closing">Closing Opps</a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#LCMT_conferenceCalls">Conference Calls</a>
+      </li>
+
     </ul>
 
     <div class="tab-content">
@@ -138,6 +266,7 @@
           <div class="col-md-12">
             <!-- BEGIN Opps Table -->
             <div class="table-responsive">        
+            <div class="tableFilters tableFiltersActive"></div>
                 <table id="tableActiveOpps" class="table table-bordered datatable">
                   <thead>
                     <tr>
@@ -163,7 +292,8 @@
         <div class="row">
           <div class="col-md-12">
             <!-- BEGIN Opps Table -->
-            <div class="table-responsive">        
+            <div class="table-responsive"> 
+            <div class="tableFilters tableFiltersClosing"></div>       
                 <table id="tableClosingOpps" class="table table-bordered datatable">
                   <thead>
                     <tr>
@@ -185,6 +315,30 @@
           </div>
         </div>
       </div>
+      <div id="LCMT_conferenceCalls" class="tab-pane fade">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- BEGIN CC Table -->
+            <div class="table-responsive">        
+                <table id="tableConferenceCalls" class="table table-bordered datatable">
+                  <thead>
+                    <tr>
+                      <th>Opp. Name</th>                
+                      <th>Stage</th>
+                      <th>Date</th>
+                      <th>Contact</th>
+                      <th>Expert</th>
+                    </tr>
+                  </thead>
+                  <tbody class="oppTable">
+                    
+                  </tbody>
+                </table>
+            </div>
+            <!-- END CC Table  -->
+          </div>
+        </div>
+      </div>
 
     </div>
   </div> <!-- / container-fluid -->
@@ -200,7 +354,9 @@
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
     <!-- Chart.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script> -->
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
     
     <script src="https://logintei.staging.wpengine.com/wp-content/themes/tei-dashboard/assets/js/vf-lcmtDashboard.js"></script>
   

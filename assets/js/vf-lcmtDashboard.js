@@ -45,13 +45,20 @@ $(document).ready(function(){
             limit: 100
         };
 
-
+function hideLoader(){
+  $('.loading-container').css('display', 'none');
+}
+function showLoader(){
+  $('.loading-container').css('display', 'flex');
+}
     function fetchOpps(args,tableElement){
         var opp = new SObjectModel.opp();
         opp.retrieve(args, function(err,records){
             if(err) {
               console.log(err.message);
+               hideLoader();
             }else {
+                hideLoader();
                 console.log('found: ' +records.length + ' Opps');
                 var rowNum=0;          
                 records.forEach(function(record){
@@ -79,7 +86,7 @@ $(document).ready(function(){
                         Time_since_LCMT_Assigned__c: record.get('Time_since_LCMT_Assigned__c')
 
                     }
-                    console.log('LOADED Opp: ',oppObj);
+                    // console.log('LOADED Opp: ',oppObj);
 
                     //check for new flag, add badge 
                     var newOppCheck = function(){
@@ -96,7 +103,7 @@ $(document).ready(function(){
                       } else {
                         return '';
                       }
-                    }
+                    };
                     // trim chatter length 
                     var trimChatter = function(chatter){
                       if(chatter){
@@ -105,7 +112,7 @@ $(document).ready(function(){
                         return '';
                       }
                       
-                    }
+                    };
 
                     // Build table row for each Opp 
                     var tableRow = $('<tr>'+
@@ -135,14 +142,14 @@ $(document).ready(function(){
                       $('#tableActiveOpps').append(tableRow);
                     } else {
                       $('#tableClosingOpps').append(tableRow);
-                    }                  
+                    };                  
                     
 
                 });
             }
             // set dataTable options 
             if ( ! $.fn.DataTable.isDataTable( tableElement ) ) {
-              $(tableElement).dataTable({
+             $(tableElement).dataTable({
                     "order": [[ 0, "desc" ]],
                     "pageLength": 50,
                     "columns": [
@@ -154,20 +161,91 @@ $(document).ready(function(){
                       null,
                       {"width": "20px"}
                     ]
-                });
+                });              
             }
 
 
+
+
+
+
+            buildFilters(tableElement);
+            handleFilterClick(tableElement);
         });
     } // end fetchOpps
-    fetchOpps(activeOppsArgs,'#tableActiveOpps');
+    
+    $(document).one('ready', function(){
+        fetchOpps(activeOppsArgs,'#tableActiveOpps');
 
-
-    // handle tab change 
-    $('a[href="#LCMT_closing"]').one('click',function(e){
-        e.preventDefault();
-        fetchOpps(closingOppsArgs,'#tableClosingOpps');
     });
+
+    //create table filters 
+    function buildFilters(tableElement){
+      console.log('building filters for: ', tableElement);
+      var filterList;
+      switch(tableElement){
+        case '#tableActiveOpps':                
+              filterList =['New Inquiry',          
+              'Pending Approval',    
+              'Approved Inquiry',
+              'Contacting Experts',  
+              'Contacting Experts #2',
+              'CC Requested',    
+              'CC Scheduled',    
+              'Review',
+              'Discuss Review'];
+              break;
+        case '#tableClosingOpps':                
+              filterList = ['Ready to Share',
+              'Experts Shared',
+              'CC Completed',
+              'Waiting',
+              'Invoiced',
+              'Invoiced with Info',
+              'Active',
+              'Closed w/ Conflict']; 
+              break;
+      }              
+      var filters_active = '<div class="btn-filter-group btn-group" role="group" aria-label="search-filters">';
+          // add button to filter group for each filter 
+          filterList.forEach(function(filter){
+              filters_active+=('<button type="button" class="btn btn-filter">'+filter+'</button>');
+          });
+          filters_active +='</div>';
+          
+          // add filters to table 
+          
+          switch(tableElement){
+            case '#tableActiveOpps':                        
+                $('.tableFiltersActive').append(filters_active);
+                break;
+            case '#tableClosingOpps': 
+              $('.tableFiltersClosing').append(filters_active);
+              break;
+          };
+    }; // end buildFilters
+
+    
+
+    function handleFilterClick(tableElement){
+      //handle filter button click 
+      $('.btn-filter').on( 'click', function (e) {                        
+        var filterString=$(this)[0].innerHTML;                 
+         $(this).hasClass('active') ? deactivateFilter($(this),tableElement) : activateFilter($(this),filterString,tableElement);
+      } );
+      function activateFilter(context,string,tableElement){
+        $('.btn-filter').removeClass('active');
+        $(tableElement).DataTable().search( string ).draw();
+        context.addClass('active');
+      }
+      function deactivateFilter(context,tableElement){
+        console.log('deactivating', context);
+        $(tableElement).DataTable().search( '' ).draw();
+        console.log(tableElement);
+        context.removeClass('active'); 
+      }  
+    }
+
 
     //get user info 
     function fetchUser(){
@@ -196,6 +274,11 @@ $(document).ready(function(){
     };
     fetchUser();
 
+    function formatDate(dateString){
+      // return moment(dateString).format('dddd MMMM Do YYYY, h:mm a');
+      return moment(dateString).format('L');
+    }
+
     //get Conference Calls 
     function fetchConferenceCalls(){
       console.log('getting conference calls');
@@ -208,7 +291,9 @@ $(document).ready(function(){
       }, function(err,records){
         if(err){
           console.log(err.message);
+          hideLoader();
         }else {
+          hideLoader();
           records.forEach(function(record){
             var ccObj = {
               Id: record.get('Id'),
@@ -221,13 +306,22 @@ $(document).ready(function(){
               Contact_Firstname__c: record.get('Contact_Firstname__c'),
               Contact_Lastname__c: record.get('Contact_Lastname__c'),
               Date_Conference_Call__c: record.get('Date_Conference_Call__c'),
-              Status__c: record.get('Status__c')
+              Status__c: record.get('Status__c'),
+              Time_start__c: record.get('Time_start__c'),
+              Time_end__c: record.get('Time_end__c'),
+              Time_start_Contact__c: record.get('Time_start_Contact__c'),
+              Time_start_Expert__c: record.get('Time_start_Expert__c'),
+              Timezone_Contact__c: record.get('Timezone_Contact__c'),
+              Timezone_Expert__c: record.get('Timezone_Expert__c'),
+              O_ID__c: record.get('O_ID__c'),
+              Expert_Phone__c: record.get('Expert_Phone__c'),
+              Contact_Phone_Call__c: record.get('Contact_Phone_Call__c')
             };
-            console.log('fetching Conference Calls',ccObj);
+            console.log('Conference Call:',ccObj);
             var tableRow = '<tr>'+
               '<td><a href="https://tei.my.salesforce.com/'+ccObj.Id+'" target="_blank">'+ccObj.Opportunity_Name__c+'</a></td>'+
               '<td>'+ccObj.Status__c+'</td>'+
-              '<td>'+ccObj.Date_Conference_Call__c+'</td>'+
+              '<td>'+formatDate(ccObj.Date_Conference_Call__c)+'</td>'+
               '<td><a href="https://tei.my.salesforce.com/'+ccObj.Contact__c+'" target="_blank">'+ccObj.Contact_Firstname__c+ ' ' + ccObj.Contact_Lastname__c +'</a></td>'+
               '<td><a href="https://tei.my.salesforce.com/'+ccObj.Expert__c+'" target="_blank">'+ccObj.E_ID__c +'</a></td>'+
               '</tr>';
@@ -237,7 +331,7 @@ $(document).ready(function(){
           // set dataTable options 
           if ( ! $.fn.DataTable.isDataTable( '#tableConferenceCalls' ) ) {
             $('#tableConferenceCalls').dataTable({
-                  "order": [[ 0, "desc" ]],
+                  "order": [[ 2, "asc" ]],
                   "pageLength": 50,
                   "columns": [
                     { "width": "25%" },
@@ -251,7 +345,7 @@ $(document).ready(function(){
         }
       }); 
     };
-    fetchConferenceCalls();
+    
 
     //image decoding
     function decodeImg(imgString){
@@ -259,6 +353,18 @@ $(document).ready(function(){
       return d;
     };
 
-
+    // handle tab change 
+    $('a[href="#LCMT_closing"]').one('click',function(e){
+        e.preventDefault();
+        showLoader();
+        fetchOpps(closingOppsArgs,'#tableClosingOpps');
+    });
+    $('a[href="#LCMT_conferenceCalls"]').one('click', function(e){
+      e.preventDefault();
+      showLoader();
+      fetchConferenceCalls();
+    });
+    $('a[href="#LCMT_active"]').on('click',handleFilterClick('#tableActiveOpps'));
+    $('a[href="#LCMT_closing"]').on('click',handleFilterClick('#tableClosingOpps'));
 
 }); //end ready
