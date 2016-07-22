@@ -1,6 +1,8 @@
+'use strict';
 $(document).ready(function(){
- 
 
+ 
+  // 
   function getUrlVars()
   {
       var vars = [], hash;
@@ -45,6 +47,18 @@ $(document).ready(function(){
             limit: 100
         };
 
+      var accountOwnerOppsArgs = {
+        where:{
+          Stage_LCMT_Active_Closing__c: {eq: true},
+          and: {
+            RecordTypeId: {ne: '012E0000000kDXO'},
+            LCMT_Account_Owner_ID__c: {eq: lcmtID} 
+          }                 
+        },
+        limit: 100
+    };
+  
+
 function hideLoader(){
   $('.loading-container').css('display', 'none');
 }
@@ -83,11 +97,41 @@ function showLoader(){
                         Conference_Call_User__c: record.get('Conference_Call_User__c'),
                         Experts_Choosen__c:record.get('Experts_Choosen__c'),
                         LCMT_New_Opp__c: record.get('LCMT_New_Opp__c'),
-                        Time_since_LCMT_Assigned__c: record.get('Time_since_LCMT_Assigned__c')
+                        Time_since_LCMT_Assigned__c: record.get('Time_since_LCMT_Assigned__c'),
+                        LCMT_U_ID__c: record.get('LCMT_U_ID__c'),
+                        LCMT_Firstname__c: record.get('LCMT_Firstname__c'),
+                        LCMT_Lastname__c: record.get('LCMT_Lastname__c'),
+                        LCMT_SF_ID__c: record.get('LCMT_SF_ID__c')
 
                     }
-                    // console.log('LOADED Opp: ',oppObj);
-
+                    // console.log(oppObj);
+                    // build lcmt picture url 
+                    var lcmtPic = "https://res.cloudinary.com/theexpertinstitute-com/image/upload/c_thumb,g_face:center,h_60,w_60/v40/users/"+oppObj.LCMT_U_ID__c+".jpg";
+                    
+                    // build record type 
+                    var getRecordTypeName = function(id){
+                      var recordTypeName;
+                        switch(id){
+                          case '012E0000000RZt8IAG':
+                                recordTypeName = "Case Clinic";
+                                break;
+                          case '012E0000000NBhPIAW':
+                                recordTypeName = "Finance";
+                                break;
+                          case '012E0000000NBhUIAW':
+                                recordTypeName = "Legal";
+                                break;
+                          case '012E0000000NGBQIA4':
+                                recordTypeName = "Phone Call";
+                                break;
+                          case '012E0000000kDXOIA2':
+                                recordTypeName = "Subscription";
+                                break;                          
+                          default:
+                               recordTypeName = "N/A";                          
+                        }
+                        return recordTypeName;
+                    }
                     //check for new flag, add badge 
                     var newOppCheck = function(){
                      if(oppObj.LCMT_New_Opp__c){
@@ -130,8 +174,10 @@ function showLoader(){
                       '</td>'+
                       '<td>'+oppObj.StageName+'</td>'+                            
                       '<td>'+oppObj.Specialty_Description__c+'</td>'+
+                      '<td><a href="https://tei.my.salesforce.com/'+oppObj.LCMT_SF_ID__c+'" target="_blank"><img src="'+lcmtPic+'" class="user-avatar"/><br/>'+oppObj.LCMT_Firstname__c+' '+oppObj.LCMT_Lastname__c +'</a></td>'+
                       '<td><div class="contact-image">'+decodeImg(oppObj.Contact_Image__c)+'</div></td>'+
                       '<td><div class="account-image">'+decodeImg(oppObj.Account_Logo_small__c)+'</div></td>'+
+                      '<td>'+getRecordTypeName(oppObj.RecordType)+'</td>'+
                       '<td class="last-chatter">'+trimChatter(oppObj.Last_Chatter__c)+'</td>'+
                       '<td>'+DateAssignedCheck()+'</td>'+
                     '</tr>'
@@ -140,6 +186,8 @@ function showLoader(){
                     // apend rows to correct table 
                     if(args.where.Stage_LCMT_Active__c !== undefined){
                       $('#tableActiveOpps').append(tableRow);
+                    }else if (args.where.Stage_LCMT_Active_Closing__c){
+                      $('#tableOwnedOpps').append(tableRow);
                     } else {
                       $('#tableClosingOpps').append(tableRow);
                     };                  
@@ -153,99 +201,53 @@ function showLoader(){
                     "order": [[ 0, "desc" ]],
                     "pageLength": 50,
                     "columns": [
-                      { "width": "25%" },
+                      { "width": "250px" },
                       null,
                       null,
                       null,
-                      { "width": "100px" },
                       null,
+                      null,
+                      null,
+                      { "width": "180px" },
                       {"width": "20px"}
-                    ]
+                    ],
+                    "autoWidth": false,
+                    initComplete: function () {
+                      var sortableCols = this.api().columns();
+                          console.log(sortableCols);                          
+                          sortableCols[0].splice(0,1);     
+                          // sortableCols[0].splice(2,1);
+                          sortableCols[0].splice(6,1);
+                    // console.log(sortableCols);
+                      sortableCols.every(function (){
+                        var column = this;
+                        var select = $('<select><option value=""></option></select>')
+                          .appendTo( $(column.footer()).empty() )
+                          .on( 'change', function() {
+                              var val= $(this).val();
+                              column 
+                                // .search( val ? '^'+val+'$' : '', true, false)
+                                .search(val,false,true)
+                                .draw();
+                          });
+                          column.data().unique().sort().each( function(d,j){
+                            if(d.match(/<img/)) {
+                              var start_pos = d.indexOf('<br>')+"<br>".length;
+                              var end_pos = d.indexOf('</a>',start_pos);
+                              var text_to_get = d.substring(start_pos,end_pos);
+                              d=text_to_get;                              
+                            }
+                             else if(d.match(/<a/)){
+                              d= $(d).find('a').html();                                 
+                            }
+                            select.append('<option value="'+d+'">'+ d +'</option>')
+                          });
+                      }) //end .every()
+                    }
                 });              
             }
-
-
-
-
-
-
-            buildFilters(tableElement);
-            handleFilterClick(tableElement);
         });
     } // end fetchOpps
-    
-    $(document).one('ready', function(){
-        fetchOpps(activeOppsArgs,'#tableActiveOpps');
-
-    });
-
-    //create table filters 
-    function buildFilters(tableElement){
-      console.log('building filters for: ', tableElement);
-      var filterList;
-      switch(tableElement){
-        case '#tableActiveOpps':                
-              filterList =['New Inquiry',          
-              'Pending Approval',    
-              'Approved Inquiry',
-              'Contacting Experts',  
-              'Contacting Experts #2',
-              'CC Requested',    
-              'CC Scheduled',    
-              'Review',
-              'Discuss Review'];
-              break;
-        case '#tableClosingOpps':                
-              filterList = ['Ready to Share',
-              'Experts Shared',
-              'CC Completed',
-              'Waiting',
-              'Invoiced',
-              'Invoiced with Info',
-              'Active',
-              'Closed w/ Conflict']; 
-              break;
-      }              
-      var filters_active = '<div class="btn-filter-group btn-group" role="group" aria-label="search-filters">';
-          // add button to filter group for each filter 
-          filterList.forEach(function(filter){
-              filters_active+=('<button type="button" class="btn btn-filter">'+filter+'</button>');
-          });
-          filters_active +='</div>';
-          
-          // add filters to table 
-          
-          switch(tableElement){
-            case '#tableActiveOpps':                        
-                $('.tableFiltersActive').append(filters_active);
-                break;
-            case '#tableClosingOpps': 
-              $('.tableFiltersClosing').append(filters_active);
-              break;
-          };
-    }; // end buildFilters
-
-    
-
-    function handleFilterClick(tableElement){
-      //handle filter button click 
-      $('.btn-filter').on( 'click', function (e) {                        
-        var filterString=$(this)[0].innerHTML;                 
-         $(this).hasClass('active') ? deactivateFilter($(this),tableElement) : activateFilter($(this),filterString,tableElement);
-      } );
-      function activateFilter(context,string,tableElement){
-        $('.btn-filter').removeClass('active');
-        $(tableElement).DataTable().search( string ).draw();
-        context.addClass('active');
-      }
-      function deactivateFilter(context,tableElement){
-        console.log('deactivating', context);
-        $(tableElement).DataTable().search( '' ).draw();
-        console.log(tableElement);
-        context.removeClass('active'); 
-      }  
-    }
-
 
     //get user info 
     function fetchUser(){
@@ -317,12 +319,12 @@ function showLoader(){
               Expert_Phone__c: record.get('Expert_Phone__c'),
               Contact_Phone_Call__c: record.get('Contact_Phone_Call__c')
             };
-            console.log('Conference Call:',ccObj);
+            // console.log('Conference Call:',ccObj);
             var tableRow = '<tr>'+
               '<td><a href="https://tei.my.salesforce.com/'+ccObj.Id+'" target="_blank">'+ccObj.Opportunity_Name__c+'</a></td>'+
               '<td>'+ccObj.Status__c+'</td>'+
               '<td>'+formatDate(ccObj.Date_Conference_Call__c)+'</td>'+
-              '<td><a href="https://tei.my.salesforce.com/'+ccObj.Contact__c+'" target="_blank">'+ccObj.Contact_Firstname__c+ ' ' + ccObj.Contact_Lastname__c +'</a></td>'+
+              '<td><a href="https://tei.my.salesforce.com/'+ccObj.Contact__c+'" target="_blank">'+ccObj.Contact_Firstname__c+ ' ' + ccObj.Contact_Lastname__c +'</a><br/>'+moment(ccObj.Time_start_Contact__c).calendar()+'</td>'+
               '<td><a href="https://tei.my.salesforce.com/'+ccObj.Expert__c+'" target="_blank">'+ccObj.E_ID__c +'</a></td>'+
               '</tr>';
               $('#tableConferenceCalls').append(tableRow);
@@ -353,18 +355,26 @@ function showLoader(){
       return d;
     };
 
-    // handle tab change 
+
+    // initial fetch opps 
+    $(document).one('ready', function(){
+        fetchOpps(activeOppsArgs,'#tableActiveOpps');
+    });
     $('a[href="#LCMT_closing"]').one('click',function(e){
         e.preventDefault();
         showLoader();
         fetchOpps(closingOppsArgs,'#tableClosingOpps');
+    });
+    $('a[href="#LCMT_owned"]').one('click',function(e){
+        e.preventDefault();
+        showLoader();
+        fetchOpps(accountOwnerOppsArgs,'#tableOwnedOpps');
     });
     $('a[href="#LCMT_conferenceCalls"]').one('click', function(e){
       e.preventDefault();
       showLoader();
       fetchConferenceCalls();
     });
-    $('a[href="#LCMT_active"]').on('click',handleFilterClick('#tableActiveOpps'));
-    $('a[href="#LCMT_closing"]').on('click',handleFilterClick('#tableClosingOpps'));
+
 
 }); //end ready

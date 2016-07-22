@@ -203,8 +203,22 @@ body {
       margin-bottom: 40px;
     }
   }
+
+  /* Case Summary Images  */
+  .case-summary-image-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    // height: 250px;
+  }
+  .case-summary-image {
+    max-width: 100%;
+    display: block;
+    margin-bottom: 1em;
+  }
+  
+  /* QUESTIONS  */
   .expert-questions {
-    white-space: pre;
+    white-space: pre-wrap;
   }
 
   .ExpertListPic, .ContactListPic, .ResearcherListPic {

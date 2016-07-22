@@ -100,6 +100,15 @@
           var csMediaSection = $('<div class="row expert-profile-section"><div class="col-md-12"><h3 class="heading-underline"><span class="text-underline">Case Media</span></h3><div id="case-media"></div></div></div>');                      
           $('.case-overview').closest('.expert-profile-section').after(csMediaSection);
           $('#case-media').append(caseSummaryMedia);
+            $('img[alt="User-added image"]').each(function(index, el) {
+              var el_url = $(el).attr('src');
+              var el_height=  $(el).innerHeight();
+              console.log(el_height);
+              $(el).addClass('case-summary-image');
+              $(el).remove();
+              $('<div class="col-sm-6 col-md-4 col-xs-12 case-summary-image-container">').css('background-image', 'url(https://theexpertinstitute.secure.force.com/'+el_url+')').css('min-height', el_height).appendTo('#case-media');
+              
+            });
         } else {
           
         }

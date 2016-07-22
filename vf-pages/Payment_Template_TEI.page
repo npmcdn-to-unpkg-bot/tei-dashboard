@@ -1,0 +1,182 @@
+<apex:page docType="html-5.0" showHeader="false" id="SiteTemplate" standardStylesheets="false" language="{!$CurrentPage.Parameters.lang}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+<!-- <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.pymt__PaymentConnect,'styles/sites_basic.css')}" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.pymt__PaymentConnect,'styles/blue/main.css')}" /> -->
+<!-- Boostrap CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.pymt__PaymentConnect,'styles/trust_logos.css')}" />
+<!-- Fonts  -->
+<script src="https://use.typekit.net/wht0akz.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<style>
+    /* Sticky footer styles
+    -------------------------------------------------- */
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+    body {
+      /* Margin bottom by footer height */
+      margin-bottom: 120px;      
+      font-family: proxima-nova, "proxima nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;   
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      height: 60px;
+      line-height: 60px;
+      background: #1d3d5b;
+      color: #fff;
+      width: 100%;
+      margin-top: 60px;
+    }
+
+    h1, h2, h3 {
+        color:#2a5781;
+        font-weight: 300;
+        padding-bottom: 6px;
+        border-bottom: 2px solid #2a5781;
+    }
+    h2,h3,h4 {
+        margin-top: 2em;
+    }
+    .payment-connect-container {
+        max-width: 991px;
+    }
+    .navbar.dash-navbar-top {
+        background-color: #1d3d5b;
+        margin-bottom: 60px;
+        min-height: 61px;
+    }
+    .dash-navbar-top .navbar-brand {
+        padding: 20px;
+        font-weight: bold;
+        margin-left: 20px;
+        color: #d7d7d7;
+    }
+    .header-tei-logo {
+        width: 240px;
+        max-width: 250px;
+        display: inline-block;
+    }
+    @media (max-width: 768px) {
+        .header-tei-logo {
+        max-width: 170px;    
+        }
+        
+    }
+
+    .labelColumn {
+        width:150px;
+        text-align:left;
+    }
+    .fieldColumn {margin-left:0px;padding-left:2px;}
+    .fieldColumn input {margin-left:0px;margin-right:4px;}
+
+    table.pc_cart_item_table, table.pc_opp_line_item_table  {
+        width:100%;
+        border-collapse:separate;
+        border-spacing:2px;
+    }
+
+    .pc_cart_item_table th, .pc_opp_line_item_table th {
+        padding:0px;
+    }
+
+    .pc_page_content td {
+        padding:2px;
+    }
+    .totalsLabelColumn {
+        color:#666666;
+        font-weight:bold;
+        padding-right:15px;
+    }
+    .org_name {
+        margin-top:5px;
+        color:white;font-size:3em;
+        }
+        
+    .pc_frame .message {
+        background-color: #EAF3F5;
+        border-color: #9CF;
+    }
+    input[value="Accept and Pay Online"],input[value="Submit Payment"] {
+        -webkit-appearance: button !important;
+        cursor: pointer !important;
+        background: none !important;
+        padding: 8px 15px !important;
+        border-radius: 6px !important;
+        text-transform: uppercase !important;
+        font-weight: 600 !important;
+        transition: 0.2s ease-in all !important;
+        border: 2px solid #e6711b !important;
+        color: #e6711b !important;
+        margin-top: 1em;
+    }    
+    input[value="Accept and Pay Online"]:hover,input[value="Submit Payment"]:hover {
+        background: #e6711b !important;
+        color: #fff !important;
+    }
+    input[value="Cancel"]{
+        display: none !important;
+        visibility: hidden;
+/*        -webkit-appearance: button !important;
+        cursor: pointer !important;
+        background: none !important;
+        padding: 8px 15px !important;
+        border-radius: 6px !important;
+        text-transform: uppercase !important;
+        font-weight: 600 !important;
+        transition: 0.2s ease-in all !important;
+        border: 2px solid #333 !important;
+        color: #333 !important;
+        margin-top: 1em;*/
+    }
+    input[value="Cancel"]:hover {
+        border: 2px solid #333 !important;
+        background: #333 !important;
+        color: #fff !important;
+    }
+    select {
+        max-width: 175px;
+    }
+
+
+
+    
+</style>
+
+<body id="htmlBody">
+    <nav class="navbar navbar-static-top dash-navbar-top dnl-visible">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" alt="tei-logo">
+          <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1468944612/cdn/tei-logo-inverse.svg" alt="tei-logo" class="header-tei-logo" />
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="dnt-collapse">
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav> <!-- /.navbar -->
+
+    <div class="container payment-connect-container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="pc_frame rounded-corners-5 box">
+            <div class="pc_frame_inner">
+                <apex:insert name="body"/>  
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+
+    <footer class="footer">
+        <div id="poweredby" class="container text-center">{!$Label.site.powered_by} Linvio PaymentConnect</div>    
+    </footer>
+</body>
+</apex:page>
