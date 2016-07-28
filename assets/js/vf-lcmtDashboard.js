@@ -223,11 +223,11 @@ function showLoader(){
                         var column = this;
                         var select = $('<select><option value=""></option></select>')
                           .appendTo( $(column.footer()).empty() )
-                          .on( 'change', function() {
-                              var val= $(this).val();
+                          .on( 'change', function() {                          
+                              var val= $(this).val();                              
                               column 
-                                // .search( val ? '^'+val+'$' : '', true, false)
                                 .search(val,false,true)
+                                // .search( val ? '^'+val+'$' : '', true, false )
                                 .draw();
                           });
                           column.data().unique().sort().each( function(d,j){
@@ -244,7 +244,8 @@ function showLoader(){
                           });
                       }) //end .every()
                     }
-                });              
+                });
+                $('.table-head-filter th:first-of-type').html('FILTERS:');              
             }
         });
     } // end fetchOpps
