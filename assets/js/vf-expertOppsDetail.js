@@ -42,9 +42,14 @@
         return vars;
     }
 
+    var compliance= confirm("By Clicking OK you agree that you are free of any conflict?");
+    if(compliance===true){
+      fetchOppDetail();
+      fetchOppExpert();
+    } else {
+      $('body').html('<h1>YOU ARE CONFLICTED!</h1>');
+    }
 
-    fetchOppDetail();
-    fetchOppExpert();
 
     //handle feedback submission
     $('#btnSave').on('click',function(e){
@@ -97,20 +102,19 @@
           var decodedmediaString = $("<p/>").html(mediaString).text(); 
           var caseSummaryMedia = $.parseHTML(decodedmediaString);
           
-          var csMediaSection = $('<div class="row expert-profile-section"><div class="col-md-12"><h3 class="heading-underline"><span class="text-underline">Case Media</span></h3><div id="case-media"></div></div></div>');                      
+          var csMediaSection = $('<div class="row expert-profile-section"><div class="col-md-12"><h3 class="heading-underline"><span class="text-underline">Case Media</span></h3><div id="case-media" class="row"></div></div></div>');                      
           $('.case-overview').closest('.expert-profile-section').after(csMediaSection);
           $('#case-media').append(caseSummaryMedia);
-            $('img[alt="User-added image"]').each(function(index, el) {
+          $('img[alt="User-added image"]').each(function(index, el) {
               var el_url = $(el).attr('src');
               var el_height=  $(el).innerHeight();
-              console.log(el_height);
               $(el).addClass('case-summary-image');
               $(el).remove();
-              $('<div class="col-sm-6 col-md-4 col-xs-12 case-summary-image-container">').css('background-image', 'url(https://theexpertinstitute.secure.force.com/'+el_url+')').css('min-height', el_height).appendTo('#case-media');
+              var cs_image_container = $('<div class="col-md-6 col-xs-12 case-summary-image-container">');
+              var cs_image =$('<div class="case-summary-image"><a target="_blank" class="case-summary-image-link" href="https://theexpertinstitute.secure.force.com/'+el_url+'">View Image</a>').css('background-image', 'url(https://theexpertinstitute.secure.force.com/'+el_url+')').css('min-height', el_height)
+              cs_image_container.append(cs_image).appendTo('#case-media');
               
             });
-        } else {
-          
         }
       }
       
@@ -185,9 +189,10 @@
        var oppExpertID = $('#OppExpertID').val();
        //If expertID is null then Create new Expert
        if(!oppExpertID){
-         expertFeedback.create(updateCallback);
+         // expertFeedback.create(updateCallback);
        }else{
        //Id oppExpertID has value then update the Expert record
+        $('.btn-submit').addClass('disabled').html('saving...');
          expertFeedback.set('Id',oppExpertID);
          expertFeedback.update(updateCallback);
        }
@@ -197,9 +202,9 @@
       // Callback to handle DML Remote Objects calls
       function updateCallback(err, ids){
         if (err) { 
-            alert(err); 
+            alert(err);             
         } else {
-            alert('SAVED!');
+            $('.btn-submit').html('SAVED').off('click');
             console.log('saved')
         }
       }
