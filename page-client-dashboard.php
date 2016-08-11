@@ -56,6 +56,75 @@ get_header(); ?>
       </div>
     </div> <!-- /.content-wrap -->
 
+    <!-- Onboard Modal -->
+
+    <!-- Modal -->
+    <div class="modal right fade onboard-modal" id="onboardModal" tabindex="-1" role="dialog" aria-labelledby="onboardModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+<!--           <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            
+          </div> -->
+
+          <div class="modal-body">
+            <div class="row">
+              <div class="_col-sm-12">
+                <div class="owl-carousel owl-theme">
+                  <!--                Slide 1 - Intro  -->
+                  <div class="walkthrough-slide">
+                    <div class="item-image-container">
+                      <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470857602/cdn/dashboard-onboarding/main-step1.jpg" class="img-responsive" alt="First slide" />
+                    </div>
+                    <div class="item-text-container">
+                      <h4 class="onboard-modal-title">Welcome!</h4>
+                      <div class="item-text onboard-step-description">
+                    </div>
+                    </div>
+                  </div>
+                  <!--                Slide 2 - New Case -->
+                  <div class="walkthrough-slide">
+                    <div class="item-image-container">
+                      <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470859790/cdn/dashboard-onboarding/main-step2.jpg" class="img-responsive" alt="Second slide" />
+                    </div>
+                    <h4 class="onboard-modal-subtitle"></h4>
+                    <div class="item-text onboard-step-description">
+                    </div>
+                  </div>
+                  <!--                Slide 3 - Case Detail -->
+                  <div class="walkthrough-slide">
+                    <div class="item-image-container">
+                      <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470862192/cdn/dashboard-onboarding/case-detail-animation.gif" class="img-responsive" alt="Third slide" />
+                    </div>
+                    <h4 class="onboard-modal-subtitle"></h4>
+                    <div class="item-text onboard-step-description">
+                    </div>
+                  </div>
+                  <!--                Slide 4 - Schedule -->
+                  <div class="walkthrough-slide">
+                    <div class="item-image-container">
+                      <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470862458/cdn/dashboard-onboarding/main-step-schedule.jpg" class="img-responsive" alt="Fourth slide" />
+                    </div>
+                    <h4 class="onboard-modal-subtitle"></h4>
+                    <div class="item-text onboard-step-description">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-md-offset-3">
+                <div class="btn btn-block btn-default btn-onboard">Get Started</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal-content -->
+      </div>
+      <!-- modal-dialog -->
+    </div>
+    <!-- modal -->
+
+
 
     <!-- end of page scripts -->
 

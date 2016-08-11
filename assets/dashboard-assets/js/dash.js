@@ -25,7 +25,7 @@ jQuery(function($) {
                 height: windowHeight,
                 overflow: 'hidden'
             });
-            $('html, body').css('overflow', 'hidden');
+            $('html, body').css('overflow', 'hidden').css({'position': 'fixed','top': 0,'left':0,'right': 0});            
         }
     }
 
@@ -35,7 +35,7 @@ jQuery(function($) {
                 height: 'auto',
                 overflow: 'auto'
             });
-            $('html, body').css('overflow', 'auto');
+            $('html, body').css('overflow', 'auto').css({'position': 'initial'});
         }
     }
     // Collapse dash nabnar left on link click

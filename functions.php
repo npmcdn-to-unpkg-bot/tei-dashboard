@@ -138,6 +138,16 @@ function tei_scripts() {
 	wp_enqueue_style( 'tei-dashboard-style', get_template_directory_uri(). '/assets/css/style.css', array('bootstrap-css') );//Theme Javascript 
 	wp_enqueue_script( 'tei-dashboard-script', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), '20151204', true );
 
+	// owl carousel 
+	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array( 'jquery' ), '20151205', true );
+	wp_enqueue_style('owl-carousel-style',get_template_directory_uri(). '/assets/css/owl.carousel.min.css', '20151205' );
+	wp_enqueue_style('owl-carousel-theme',get_template_directory_uri(). '/assets/css/owl.theme.default.min.css', '20151204' );
+	
+
+	// onboarding modal 
+	wp_enqueue_style( 'tei-dashboard-onboard-style', get_template_directory_uri(). '/assets/css/onboard.css', array('bootstrap-css') );
+	wp_enqueue_script( 'tei-dashboard-onboard-script', get_template_directory_uri() . '/assets/js/onboard.js', array( 'jquery' ), '20151204', true );
+
 
 
 

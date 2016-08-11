@@ -47,7 +47,6 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico?v=1">
     <title>The Expert Institute - Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.0.0/hint.css">
 		<?php wp_head(); ?>
 
 
