@@ -110,5 +110,9 @@
         });
 
     }
+    $('.dash-navbar-left .dnl-nav li a').on('click', function(e){
+        // e.preventDefault();
+        $('#loading-overlay').show();
+    });
 
 })(jQuery);

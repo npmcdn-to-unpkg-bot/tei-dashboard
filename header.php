@@ -1,6 +1,6 @@
 <?php
 /*
-  TEI Dashboard Header & Navigation 
+  TEI Dashboard Header & Navigation
  */
 
 
@@ -23,8 +23,8 @@ if ($role=='Expert')
 $field_meta="user_".$user_id;
 $id_sf= get_field('id_sf_expert', $field_meta);
 $title= get_field('title', $field_meta);
-$eid= get_field('eid', $field_meta);	
-} 
+$eid= get_field('eid', $field_meta);
+}
 
 
 
@@ -32,7 +32,7 @@ $site_url=site_url();
 $wp=1;
 if (($site_url=="https://logintei.staging.wpengine.com")||($site_url=="http://logintei.staging.wpengine.com")){$wp=0;}
 if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://login.theexpertinstitute.com")){$wp=1;}
-?> 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -52,7 +52,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
 
     <style type="text/css" media="screen">
 
-      <?php 
+      <?php
         if ( is_admin() ) { ?>
              /* ADMIN BAR SPACING - REMOVE THIS */
              html { margin-top: 32px !important; }
@@ -64,29 +64,16 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
        <?php } ?>
 
     </style>
-                
+
 </head>
 <body>
 
 <!-- LOADING OVERLAY -->
 <div id="loading-overlay">
   <div id="loading">
-  <div class="cube-container">
-  <div class="sk-folding-cube">
-    <div class="sk-cube1 sk-cube"></div>
-    <div class="sk-cube2 sk-cube"></div>
-    <div class="sk-cube4 sk-cube"></div>
-    <div class="sk-cube3 sk-cube"></div>
-  </div>
-    
-  <div class="sk-folding-cube">
-    <div class="sk-cube1 sk-cube"></div>
-    <div class="sk-cube2 sk-cube"></div>
-    <div class="sk-cube4 sk-cube"></div>
-    <div class="sk-cube3 sk-cube"></div>
-  </div>  
-  </div>
-  <h2 class="loading-text">LOADING...</h2>
+    <!-- loader -->
+    <div class="loader"></div>
+  <h2 class="loading-text">LOADING</h2>
 </div>
 </div>
 
@@ -96,7 +83,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
 
 <? if ($role=='Client')
 { ?>
-    <!-- Dash Navbar Top 
+    <!-- Dash Navbar Top
     Available versions: dnl-visible, dnl-hidden -->
     <nav class="navbar navbar-static-top dash-navbar-top dnl-visible">
       <div class="container-fluid">
@@ -126,7 +113,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
                 <li><? echo do_shortcode( '[wppb-logout]' );?></li>
               </ul>
             </li>
-          </ul> 
+          </ul>
 
           <!-- This dropdown is for normal links -->
           <ul class="nav navbar-nav navbar-right">
@@ -136,17 +123,17 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
                     get_currentuserinfo();
                 	?> <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="<?php bloginfo('url'); ?>/edit-profile" target="MainIframe">Edit Profile</a></li>  
+                <li><a href="<?php bloginfo('url'); ?>/edit-profile" target="MainIframe">Edit Profile</a></li>
 				        <li><? echo do_shortcode( '[wppb-logout]' );?></li>
               </ul>
             </li>
-          </ul>        
+          </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav> <!-- /.navbar -->
 
 
-    <!-- Dash Navbar Left 
+    <!-- Dash Navbar Left
     Available versions: dnl-visible, dnl-hidden -->
     <div class="dash-navbar-left dnl-visible">
       <p class="dnl-nav-title">DASHBOARD</p>
@@ -154,7 +141,7 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
         <!-- Dashboard summary -->
         <li class="active" id="nav-dashboard-summary"><a href="https://theexpertinstitute.secure.force.com/Client/ClientDashboard?IDU=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe" ><span class="fa fa-tachometer dnl-link-icon"></span>
             <span class="dnl-link-text">Dashboard Summary</span></a> </li>
-      
+
       <p class="dnl-nav-title">Cases</p>
       <ul class="dnl-nav">
         <!-- NEW CASE -->
@@ -203,11 +190,11 @@ if (($site_url=="https://login.theexpertinstitute.com")||($site_url=="http://log
 <?
 }
 
-if (	$role=='Expert') 
+if (	$role=='Expert')
 {
-	
+
 ?>
-    <!-- Dash Navbar Top 
+    <!-- Dash Navbar Top
     Available versions: dnl-visible, dnl-hidden -->
     <nav class="navbar navbar-static-top dash-navbar-top dnl-visible">
       <div class="container-fluid">
@@ -251,39 +238,39 @@ if (	$role=='Expert')
 				       <li><? echo do_shortcode( '[wppb-logout]' );?></li>
               </ul>
             </li>
-          </ul>        
+          </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav> <!-- /.navbar -->
 
 
-    <!-- Dash Navbar Left 
+    <!-- Dash Navbar Left
     Available versions: dnl-visible, dnl-hidden -->
     <div class="dash-navbar-left dnl-visible">
       <p class="dnl-nav-title">DASHBOARD</p>
       <ul class="dnl-nav">
         <!-- Dashboard summary -->
         <li><a href="https://theexpertinstitute.secure.force.com/ExpertDashboard/?IDE=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe"><span class="fa fa-tachometer dnl-link-icon"></span>
-            <span class="dnl-link-text">Dashboard Summary</span></a> 
+            <span class="dnl-link-text">Dashboard Summary</span></a>
         </li>
             <p class="dnl-nav-title"></p>
 <!--       <p class="dnl-nav-title">Cases</p>
       <ul class="dnl-nav">
-       
+
         <li>
           <a href="https://theexpertinstitute.secure.force.com/ExpertDashboard/?IDE=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="fa fa-file-text dnl-link-icon"></span>
             <span class="dnl-link-text">New Cases</span>
           </a>
         </li>
- 
+
           <li>
           <a href="https://theexpertinstitute.secure.force.com/ExpertDashboard/?IDE=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="glyphicon glyphicon-folder-open dnl-link-icon"></span>
             <span class="dnl-link-text">Engaged Cases</span>
-          </a> 
+          </a>
         </li>
-    
+
       </ul>
 	   <p class="dnl-nav-title"></p>
       <p class="dnl-nav-title">Conference Calls</p>
@@ -305,7 +292,7 @@ if (	$role=='Expert')
 	   <p class="dnl-nav-title"></p>
       <p class="dnl-nav-title">Profile</p>
 	  <ul class="dnl-nav">
-     
+
         <li>
           <a href="https://theexpertinstitute.secure.force.com/ExpertDashboard/?IDE=<?php echo $id_sf;?>&WP=<? echo $wp; ?>" target="MainIframe">
             <span class="glyphicon glyphicon-edit dnl-link-icon"></span>
@@ -318,8 +305,8 @@ if (	$role=='Expert')
             <span class="dnl-link-text">Profile Video</span>
           </a>
         </li> -->
-	  
+
     </div> <!-- /.dash-navbar-left -->
-<?	
+<?
 }
 ?>

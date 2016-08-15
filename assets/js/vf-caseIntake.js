@@ -49,4 +49,15 @@ $(document).ready(function() {
         // alert('Thank you - your case has been submitted successfully.');
     });
 
+     // show loader for any links to Case Details
+     var CDPageLinks =$('a[href*="https://theexpertinstitute.secure.force.com/Client/ClientCaseDetail"]');
+
+       CDPageLinks.click(function(event) {
+         if('parentIFrame' in window) {
+           window.parentIFrame.sendMessage('loading-show');
+         }    
+       });
+
+     
+
 });

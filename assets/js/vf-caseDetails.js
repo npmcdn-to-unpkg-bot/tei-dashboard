@@ -109,4 +109,12 @@ $(document).ready(function() {
     function hireExpert(address) {
         window.location.replace(address);
     }
+    
+    // show loader for any links to Case Details
+    $(document).on('click touchend','.LCMTmsg, .btn.upload',function(event) {
+
+      if('parentIFrame' in window) {
+        window.parentIFrame.sendMessage('loading-show');
+      }    
+    });
 });
