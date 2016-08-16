@@ -1,0 +1,188 @@
+<apex:page Controller="new_case_intake" showHeader="false" cache="false"  docType="html">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>New Case Intake - The Expert Institute</title>
+    <script src="https://use.typekit.net/wht0akz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"></link> 
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/dataTables.bootstrap.css"></link>
+    <link rel="stylesheet" type="text/css" href="{!WPUrl}/wp-content/themes/tei-dashboard/assets/css/vf-caseIntake.css"></link>
+</head>
+<body>
+<div class="hidden">{!REFERER}   {!WPUrl}</div>
+
+ <!-- Main container -->
+<div class="container main-container vf-flow-wrapper" style="display: none;">
+    <div class="row">
+     <div class="{!$CurrentPage.parameters.NC}">
+        <div class="col-md-12 vf-flow main" ID="NewCase">
+             <flow:interview name="Case_Intake" interview="{!Case_Intake}" finishLocation="{!FinishPage}">
+             </flow:interview>
+        </div><!-- end vf-flow main -->
+    
+   </div>
+    </div><!--end row -->
+    
+    <div class="row">
+     <div class="{!$CurrentPage.parameters.OC}">
+        <div class="col-md-12 vf-flow open-cases" id="opencases">    
+             <flow:interview name="Case_List"   >
+             </flow:interview>
+             </div>
+        </div>
+         <div class="{!$CurrentPage.parameters.CC}">
+        <div class="col-md-12 vf-flow closed-cases" id="closedcases">
+            <flow:interview name="Case_List_Closed"  >
+            </flow:interview>
+        </div></div>
+        
+          <div class="{!$CurrentPage.parameters.CCL}">
+        <div class="col-md-12 vf-flow closed-cases" id="ConferenceCall">
+            <flow:interview name="Conference_Call_List"  >
+            </flow:interview>
+        </div></div>
+     
+      <div class="{!$CurrentPage.parameters.DB}">
+     <div class="col-md-12 vf-flow main container main-container vf-flow-wrapper" >
+   <div class="col-md-8 vf-flow">
+             <flow:interview name="Client_Dashboard"  >
+             </flow:interview>
+        </div>
+        <div class="col-md-4 vf-flow secondary">
+                    <flow:interview name="Case_Intake_Support"  >
+             </flow:interview>
+        </div></div></div>
+     
+      <div class="hidden">
+        <div class="col-md-12 vf-flow Numbers" id="ConferenceCall">
+            <flow:interview name="Client_Numbers"  >
+            </flow:interview>
+        </div></div>
+     
+     
+    </div>
+    
+    
+</div><!-- end Main container vf-flow wrapper-->
+
+<!--<button onclick="if ('parentIFrame' in window) window.parentIFrame.sendMessage('Hello from the iFrame');return false;">Send Message</button>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--dataTables Plugin -->
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<!-- Page script -->
+<script src="{!WPUrl}/wp-content/themes/tei-dashboard/assets/js/vf-caseIntake.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+        //check if running inside iframe 
+    function inIframe () {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return true;
+        }
+    }
+    console.log("inIframe is " + inIframe());
+    
+    if (!inIframe()){
+   
+        window.location.replace('{!WPUrl}/?return_url='+encodeURIComponent(window.location.href));
+
+    } else {
+        $('.main-container').show();
+    }
+
+
+
+  //init dataTable plugin
+  $('.datatable').dataTable({
+        "order": [[ 0, "desc" ]]
+    });
+  
+  
+//New Case Placeholders 
+$('[name="j_id0:j_id2:i:f:pb:d:element___input____Case_Name"]').attr('placeholder', ' Ex. John Doe v. United Health Care Center');
+$('[name="j_id0:j_id2:i:f:pb:d:element___input____Specialty_Requested"]').attr('placeholder', ' Ex. Neurology, Mechanical Engineering, etc.');
+$('[name="j_id0:j_id2:i:f:pb:d:element___input____Case_Summary"]').attr('placeholder', ' Ex. This case involves a patient who suffered a retinal detachment. The repair procedure was complicated by…');
+$('[name="j_id0:j_id2:i:f:pb:d:element___input____Geographic_Requirements"]').attr('placeholder', ' Ex. New York area');
+$('[name="j_id0:j_id2:i:f:pb:d:element___input____Pending_Deadlines"]').attr('placeholder', ' Ex: 8/10/16');
+$('[name="j_id0:j_id2:i:f:pb:d:element___input____Do_not_contact_list"]').attr('placeholder', ' Ex. Dr. James Smith, New York Presbyterian Hospital');
+$('[name="j_id0:j_id2:i:f:pb:d:element___input____Notes_for_Research_Team"]').attr('placeholder', ' Ex. I prefer to work with experts who are 55+ years old and have experience performing retinal detachment surgeries.');
+
+
+// $("input.FlowNextBtn").attr("value","Submit").on('click', function(e){alert('submit message here')});
+ 
+         var url      = window.location.href;  
+    var hostname = $('<a>').prop('href', url).prop('hostname');
+    
+    //dashboard variables
+    var CountOpen = Number($('#CountOpen').html());
+    var CountClosed = Number($('#CountClosed').html());
+    var CountNoRating = Number($('#CountNoRating').html());
+    var CountCalls = Number($('#CountCalls').html());
+    var AccountAccess = $('#AccountAccess').html().toLowerCase() == "true";
+    var ContactTimeSet = $('#ContactTimeSet').html().toLowerCase() == "true";
+    
+    
+    var dashboardStatus = {
+        action:'setDashboardStatus',
+        CountOpen: CountOpen,
+        CountClosed: CountClosed,
+        CountNoRating: CountNoRating,
+        CountCalls: CountCalls,
+        AccountAccess: AccountAccess,
+        ContactTimeSet: ContactTimeSet
+    };
+
+    //exposed for testing
+      window.dashboardStatus = dashboardStatus;
+      
+    
+    //show badge in flow
+    if (AccountAccess) {     $('#AccountAccess').show();}
+    
+    
+     //wait for parent Iframe to draw and send message
+    var timer = setTimeout(function(){
+        if ('parentIFrame' in window){
+
+            //parent of iframe loaded
+            if ({!$CurrentPage.parameters.WP} == 0){
+              window.parentIFrame.sendMessage(dashboardStatus, 'https://logintei.staging.wpengine.com/');
+            } else {
+              window.parentIFrame.sendMessage(dashboardStatus, 'https://login.theexpertinstitute.com/');
+            }
+             return false;
+             
+        } else {
+            //redirect to home
+           // window.location.replace("https://logintei.staging.wpengine.com/");
+        }
+    },1000);
+ 
+     window.iFrameResizer = {
+        readyCallback: function(){
+            var myId = window.parentIFrame.getId();
+            console.log('The ID of the iFrame in the parent page is: '+myId);
+                    console.log('iframe loaded');
+           window.parentIFrame.sendMessage('loading-hide');
+        }
+    };
+ 
+});
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
+</body>
+
+  </apex:page>

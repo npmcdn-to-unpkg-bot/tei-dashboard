@@ -1,0 +1,61 @@
+<apex:page Controller="new_case_intake" showHeader="false" cache="false"   docType="html">
+<head>
+<title>Case Details - The Expert Institute</title></head>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"></link>
+
+<script src="https://use.typekit.net/wht0akz.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<link rel="stylesheet" type="text/css" href="{!WPUrl}/wp-content/themes/tei-dashboard/assets/css/vf-caseDetails.css"></link>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+<body>
+  <div class="vf-flow main container main-container vf-flow-wrapper" style="display: none;">
+ 
+             <flow:interview name="CaseDetails">
+             </flow:interview>
+        
+</div>
+
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<script src="{!WPUrl}/wp-content/themes/tei-dashboard/assets/js/vf-caseDetails.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
+
+<script src="{!WPUrl}/wp-content/themes/tei-dashboard/assets/js/libs/sweetalert2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{!WPUrl}/wp-content/themes/tei-dashboard/assets/css/sweetalert2.css"></link>
+
+
+
+<script>
+$(document).ready(function(){
+    //check if running inside iframe 
+    function inIframe () {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return true;
+        }
+    }
+    console.log("inIframe is " + inIframe());
+    
+    if (!inIframe()){
+   
+        window.location.replace('{!WPUrl}/?return_url='+encodeURIComponent(window.location.href));
+
+    } else {
+        $('.main-container').show();
+    }
+
+});
+</script>
+</body>
+
+  </apex:page>
