@@ -40,11 +40,11 @@
             /*HANDLE LOADING */
             if (messageData.message == "loading-show") {            
                 $('#loading-overlay').show();
-                console.log('SHOW LOADING');
+                // console.log('SHOW LOADING');
             }
             if (messageData.message == "loading-hide") {                
                 $('#loading-overlay').hide();
-                console.log('HIDE LOADING');
+                // console.log('HIDE LOADING');
             }
 
             /*SET BADGE COUNTS*/
