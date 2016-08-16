@@ -171,6 +171,12 @@ else
           //show overlay from inner iframe page 
           $('#loading-overlay', window.parent.document).show();
         }); 
+        $('.btn-submit').on('click', function(event) {
+          if($('.msg').val() !== ""){
+            $('#loading-overlay', window.parent.document).show();
+          }
+          /* Act on the event */
+        });
  </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.contentWindow.min.js"></script>
 <?php wp_footer(); ?>

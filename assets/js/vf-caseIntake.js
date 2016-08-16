@@ -45,8 +45,11 @@ $(document).ready(function() {
       $Chattertoggle.find('.indicator').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
     }   
 
-     $("input.FlowNextBtn").attr("value","Submit").on('click', function(e){
-        // alert('Thank you - your case has been submitted successfully.');
+     $("a:not(#Chattertoggle,.tipsLink)").attr("target","_self").on('click', function(e){
+        if('parentIFrame' in window) {
+          window.parentIFrame.sendMessage('loading-show');
+        }    
+
     });
 
      // show loader for any links to Case Details

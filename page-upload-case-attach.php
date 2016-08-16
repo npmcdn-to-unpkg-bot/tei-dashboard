@@ -224,6 +224,9 @@ else
           //show overlay from inner iframe page 
           $('#loading-overlay', window.parent.document).show();
         }); 
+        $('form').on('submit', function(e){
+          $('#loading-overlay', window.parent.document).show();
+        });
 
 
     </script>

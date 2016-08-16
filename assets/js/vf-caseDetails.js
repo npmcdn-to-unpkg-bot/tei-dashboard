@@ -29,9 +29,7 @@ $(document).ready(function() {
 
 
     /*Remove salesforce default styles */
-    console.log('removed Salesforce default styles');
-    $("link.user").each(function() {
-        // $(this).attr("disabled", "disabled");
+    $("link.user").each(function() {       
         $(this).remove();
     });
 
@@ -109,12 +107,12 @@ $(document).ready(function() {
     function hireExpert(address) {
         window.location.replace(address);
     }
-    
-    // show loader for any links to Case Details
-    $(document).on('click touchend','.LCMTmsg, .btn.upload',function(event) {
 
-      if('parentIFrame' in window) {
-        window.parentIFrame.sendMessage('loading-show');
-      }    
+    // show loader for links on Case Details
+     $("a:not(#Chattertoggle,#Attachtoggle,.btn-hire)").attr("target","_self").on('click', function(e){
+        if('parentIFrame' in window) {
+          window.parentIFrame.sendMessage('loading-show');
+        }    
+
     });
 });
