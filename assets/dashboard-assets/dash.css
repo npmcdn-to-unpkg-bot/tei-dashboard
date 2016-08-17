@@ -539,7 +539,7 @@ html {
 }
 
 .content-wrap.dnl-visible {
-    margin-left: 250px;
+    margin-left: 250px;    
 }
 
 @media (max-width: 767px) {
@@ -548,6 +548,7 @@ html {
         -webkit-transition: all 300ms;
         -o-transition: all 300ms;
         transition: all 300ms;
+        z-index: 8;
     }
     .content-wrap.dnl-visible.dnl-push {
         -webkit-transform: translate(250px, 0);

@@ -101,7 +101,7 @@ add_action( 'wp_head', 'twentysixteen_javascript_detection', 0 );
 function replace_jquery() {
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js', false, '1.9.1');
+		wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js', false, '2.1.4');		
 	}
 }
 add_action('init', 'replace_jquery');
@@ -110,7 +110,10 @@ add_action('init', 'replace_jquery');
 function tei_scripts() {
 
 	//underscore.js 
-	 wp_enqueue_script( 'wp-util' );
+	 #wp_enqueue_script( 'wp-util' );
+
+	 // jquery mobile 
+	 //wp_enqueue_script('jquery-mobile', 'https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js', array( 'jquery' ), '1.4.5', true);
 
 	// Bootstrap 
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css',  '3.3.6' );
@@ -139,13 +142,14 @@ function tei_scripts() {
 	wp_enqueue_script( 'tei-dashboard-script', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), '20151204', true );
 
 	// owl carousel 
-	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array( 'jquery' ), '20151205', true );
-	wp_enqueue_style('owl-carousel-style',get_template_directory_uri(). '/assets/css/owl.carousel.min.css', '20151205' );
-	wp_enqueue_style('owl-carousel-theme',get_template_directory_uri(). '/assets/css/owl.theme.default.min.css', '20151204' );
+	// wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array( 'jquery' ), '20151205', true );
+	// wp_enqueue_style('owl-carousel-style',get_template_directory_uri(). '/assets/css/owl.carousel.min.css', '20151205' );
+	// wp_enqueue_style('owl-carousel-theme',get_template_directory_uri(). '/assets/css/owl.theme.default.min.css', '20151204' );
 	
 
 	// onboarding modal 
-	wp_enqueue_style( 'tei-dashboard-onboard-style', get_template_directory_uri(). '/assets/css/onboard.css', array('bootstrap-css') );
+	//wp_enqueue_style( 'tei-dashboard-onboard-style', get_template_directory_uri(). '/assets/css/onboard.css', array('bootstrap-css') );
+
 	wp_enqueue_script( 'tei-dashboard-onboard-script', get_template_directory_uri() . '/assets/js/onboard.js', array( 'jquery' ), '20151204', true );
 
 

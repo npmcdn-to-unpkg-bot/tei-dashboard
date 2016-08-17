@@ -1,10 +1,11 @@
+"use strict";
 jQuery(function($) {
-    "use strict";
+    
     //dashboard active link on click
-    $('.dash-navbar-left .dnl-nav li').on('click', function(e){
+    $('.dash-navbar-left .dnl-nav li').on('click', function() {
         $('.dash-navbar-left .dnl-nav li').removeClass('active');
         $(this).addClass('active');
-    })
+    });
 
     // Navbar left
     // -------------------------------------------------
@@ -25,7 +26,12 @@ jQuery(function($) {
                 height: windowHeight,
                 overflow: 'hidden'
             });
-            $('html, body').css('overflow', 'hidden').css({'position': 'fixed','top': 0,'left':0,'right': 0});            
+            $('html, body').css('overflow', 'hidden').css({
+                'position': 'fixed',
+                'top': 0,
+                'left': 0,
+                'right': 0
+            });
         }
     }
 
@@ -35,18 +41,17 @@ jQuery(function($) {
                 height: 'auto',
                 overflow: 'auto'
             });
-            $('html, body').css('overflow', 'auto').css({'position': 'initial'});
+            $('html, body').css('overflow', 'auto').css({
+                'position': 'initial'
+            });
         }
     }
     // Collapse dash nabnar left on link click
 
-    $('.dnl-nav a').click(function(e) {
-
+    $('.dnl-nav a').click(function() {
         dnlHide();
     });
-    if (dnl.hasClass('dnl-show')) {
-        console.log('sidebar open');
-    }
+
 
 
     function dnlShow() {
@@ -101,37 +106,39 @@ jQuery(function($) {
     });
 
     // Code credit: https://tr.im/CZzf4
-    function isMobile() {
-        try {
-            document.createEvent("TouchEvent");
-            return true;
-        } catch (e) {
-            return false;
-        }
-    }
+    // function isMobile() {
+    //     try {
+    //         document.createEvent("TouchEvent");
+    //         return true;
+    //     } catch (e) {
+    //         return false;
+    //     }
+    // }
 
     // Swipe the navbar
-    if (isMobile() == true) {
-        $(window).swipe({
-            swipeRight: function() {
-                dnlShow();
-                $('.navbar-collapse').removeClass('in');
-            },
-            swipeLeft: function() {
-                dnlHide();
-            },
-            threshold: 75
-        });
-    }
+    // if (isMobile() == true) {
+    //     $(window).swipe({
+    //         swipeRight: function() {
+    //             dnlShow();
+    //             $('.navbar-collapse').removeClass('in');
+    //         },
+    //         swipeLeft: function() {
+    //             dnlHide();
+    //         },
+    //         threshold: 75
+    //     });
+    // }
 
     // Collapse navbar on content click
-    $('.content-wrap').click(function() {
-        dnlHide();
+    $('.content-wrap').click(function(e) {
+        console.log(e.target);
+        // dnlHide();
     });
 
     // Auto collapse other opens subnavs
     /*$(".dnl-nav > li > a").click( function() {
         $( document ).find( 'ul .in' ).collapse( 'hide' );
     });*/
+
 
 });

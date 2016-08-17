@@ -54,80 +54,62 @@ get_header(); ?>
         </div>
 
       </div>
+
     </div> <!-- /.content-wrap -->
 
-    <!-- Onboard Modal -->
+    <!-- Onboard tour -->
+    <ul class="cd-tour-wrapper">
+      <li class="cd-single-step">
+        <span>Step 1</span>
 
-    <!-- Modal -->
-    <div class="modal right fade onboard-modal" id="onboardModal" tabindex="-1" role="dialog" aria-labelledby="onboardModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="cd-more-info bottom">
 
-<!--           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            
-          </div> -->
-
-          <div class="modal-body">
-            <div class="row">
-              <div class="_col-sm-12">
-                <div class="owl-carousel owl-theme">
-                  <!--                Slide 1 - Intro  -->
-                  <div class="walkthrough-slide">
-                    <div class="item-image-container">
-                      <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470857602/cdn/dashboard-onboarding/main-step1.jpg" class="img-responsive" alt="First slide" />
-                    </div>
-                    <div class="item-text-container">
-                      <h4 class="onboard-modal-title">Welcome!</h4>
-                      <div class="item-text onboard-step-description"></div>
-                    </div>
-                  </div>
-                  <!--                Slide 2 - New Case -->
-                  <div class="walkthrough-slide">
-                    <div class="item-image-container">
-                      <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470859790/cdn/dashboard-onboarding/main-step2.jpg" class="img-responsive" alt="Second slide" />
-                    </div>
-                    <div class="item-text-container">
-                      <h4 class="onboard-modal-title">New Case</h4>
-                      <div class="item-text onboard-step-description"></div>
-                    </div>
-                  </div>
-                  <!--                Slide 3 - Case Detail -->
-                  <div class="walkthrough-slide">
-                    <div class="item-image-container">
-                      <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470862192/cdn/dashboard-onboarding/case-detail-animation.gif" class="img-responsive" alt="Third slide" />
-                    </div>
-                    <div class="item-text-container">
-                      <h4 class="onboard-modal-title">Case Details</h4>
-                      <div class="item-text onboard-step-description"></div>
-                    </div>
-                  </div>
-                  <!--                Slide 4 - Schedule -->
-                  <div class="walkthrough-slide">
-                    <div class="item-image-container">
-                      <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470862458/cdn/dashboard-onboarding/main-step-schedule.jpg" class="img-responsive" alt="Fourth slide" />
-                    </div>
-                    <div class="item-text-container">
-                      <h4 class="onboard-modal-title">Schedule Calls</h4>
-                      <div class="item-text onboard-step-description"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-6 col-md-offset-3">
-                <div data-dismiss="modal" aria-label="Close" class="btn btn-block btn-default btn-onboard">Get Started</div>
-                <div class="checkbox">
-                  <label><input id="onboardOptOut" type="checkbox" value="">Don't Show This Again</label>
-                </div>
-              </div>
+          <h2>Welcome to your Dashboard Summary</h2>
+          <p>At a glance, you can see the status of your open and closed cases and conference calls.</p>          
+          <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470857602/cdn/dashboard-onboarding/main-step1.jpg" class="img-responsive"  alt="Welcome to your Dashboard"/>
+            <div class="checkbox">
+              <label><input type="checkbox" id="onboardOptOut" value=""> Hide these tips </label>
             </div>
-          </div>
         </div>
-        <!-- modal-content -->
-      </div>
-      <!-- modal-dialog -->
-    </div>
-    <!-- modal -->
+
+      </li> <!-- .cd-single-step -->
+
+      <li class="cd-single-step">
+        <span>Step 2</span>
+
+        <div class="cd-more-info top">
+          <h2>Submit a New Inquiry</h2>
+          <p>You can submit a new inquiry directly to our Research Team</p>
+          <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470859790/cdn/dashboard-onboarding/main-step2.jpg" class="img-responsive" alt="Submit a New Inquiry" />
+        </div>
+      </li> <!-- .cd-single-step -->
+
+      <li class="cd-single-step">
+        <span>Step 3</span>
+
+        <div class="cd-more-info right">
+          <h2>View Case Details</h2>
+          <p>After selecting a case, this page allows you to upload documents, message your researcher, view expert responses, hire experts, and request conference calls</p>
+          <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470862192/cdn/dashboard-onboarding/case-detail-animation.gif" class="img-responsive" alt="Third slide" />
+        </div>
+      </li> <!-- .cd-single-step -->
+
+      <li class="cd-single-step">
+        <span>Step 4</span>
+
+        <div class="cd-more-info right">
+          <h2>Schedule Conference Calls</h2>
+          <p>You can set blocks of time that you have available for conference calls, 'Your Availability' applies these times to all future conference calls.</p>
+          <img src="https://res.cloudinary.com/theexpertinstitute-com/image/upload/v1470862458/cdn/dashboard-onboarding/main-step-schedule.jpg" class="img-responsive" alt="Fourth slide" />
+        </div>
+      </li> <!-- .cd-single-step -->
+    </ul> <!-- .cd-tour-wrapper -->
+
+
+
+
+    <div class="cd-cover-layer"></div>
+   
 
 
 
