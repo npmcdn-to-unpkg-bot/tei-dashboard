@@ -206,9 +206,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
     
     <!-- react scripts  -->
-    <script src="https://npmcdn.com/history@1.17.0/umd/History.min.js"></script>
+    <script src="https://unpkg.com/history@1.17.0/umd/History.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-with-addons.min.js"></script>
-    <script src="https://npmcdn.com/react-router@2.4.1/umd/ReactRouter.min.js"></script>
+    <script src="https://unpkg.com/react-router@2.4.1/umd/ReactRouter.min.js"></script>
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js"></script>
     <script type="text/babel">
